@@ -1487,6 +1487,7 @@ namespace ortoxela.Principal
 
         private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             Form nuevo = new Reportes.Pedidos.frm_ReportePedidos();
             nuevo.MdiParent = this;
             nuevo.Show();

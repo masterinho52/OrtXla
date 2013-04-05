@@ -9,12 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_pedidosTableAdapter" GeneratorDataComponentClassName="v_pedidosTableAdapter" Name="v_pedidos" UserDataComponentName="v_pedidosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_pedidos" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_pedidos" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        codigo_articulo, Articulo, cantidad_enviada, costo_sin_iva, costo_iva, nombre_bodega, fecha_compra, contado_credito, Nombre_Cliente, `Socio Comercial`, 
-                         no_documento, tipo_documento, nombre_status, tipo_cliente, descuentoPct, DescuentoQ, Total_sin_iva, total_iva
-FROM            v_pedidos</CommandText>
+                    <CommandText>select * from v_pedidos</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -30,7 +28,8 @@ FROM            v_pedidos</CommandText>
               <Mapping SourceColumn="fecha_compra" DataSetColumn="fecha_compra" />
               <Mapping SourceColumn="contado_credito" DataSetColumn="contado_credito" />
               <Mapping SourceColumn="Nombre_Cliente" DataSetColumn="Nombre_Cliente" />
-              <Mapping SourceColumn="Socio Comercial" DataSetColumn="Socio Comercial" />
+              <Mapping SourceColumn="Socio_Comercial" DataSetColumn="Socio_Comercial" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
               <Mapping SourceColumn="tipo_documento" DataSetColumn="tipo_documento" />
               <Mapping SourceColumn="nombre_status" DataSetColumn="nombre_status" />
               <Mapping SourceColumn="tipo_cliente" DataSetColumn="tipo_cliente" />
@@ -38,7 +37,6 @@ FROM            v_pedidos</CommandText>
               <Mapping SourceColumn="DescuentoQ" DataSetColumn="DescuentoQ" />
               <Mapping SourceColumn="Total_sin_iva" DataSetColumn="Total_sin_iva" />
               <Mapping SourceColumn="total_iva" DataSetColumn="total_iva" />
-              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento1" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -86,20 +84,14 @@ FROM            v_pedidos</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Socio_x0020_Comercial" msprop:Generator_ColumnVarNameInTable="columnSocio_Comercial" msprop:Generator_ColumnPropNameInRow="Socio_Comercial" msprop:Generator_ColumnPropNameInTable="Socio_ComercialColumn" msprop:Generator_UserColumnName="Socio Comercial" minOccurs="0">
+              <xs:element name="Socio_Comercial" msprop:Generator_ColumnVarNameInTable="columnSocio_Comercial" msprop:Generator_ColumnPropNameInRow="Socio_Comercial" msprop:Generator_ColumnPropNameInTable="Socio_ComercialColumn" msprop:Generator_UserColumnName="Socio_Comercial" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="65535" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
               <xs:element name="tipo_documento" msprop:Generator_ColumnVarNameInTable="columntipo_documento" msprop:Generator_ColumnPropNameInRow="tipo_documento" msprop:Generator_ColumnPropNameInTable="tipo_documentoColumn" msprop:Generator_UserColumnName="tipo_documento" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -125,7 +117,6 @@ FROM            v_pedidos</CommandText>
               <xs:element name="DescuentoQ" msprop:Generator_ColumnVarNameInTable="columnDescuentoQ" msprop:Generator_ColumnPropNameInRow="DescuentoQ" msprop:Generator_ColumnPropNameInTable="DescuentoQColumn" msprop:Generator_UserColumnName="DescuentoQ" type="xs:decimal" minOccurs="0" />
               <xs:element name="Total_sin_iva" msprop:Generator_ColumnVarNameInTable="columnTotal_sin_iva" msprop:Generator_ColumnPropNameInRow="Total_sin_iva" msprop:Generator_ColumnPropNameInTable="Total_sin_ivaColumn" msprop:Generator_UserColumnName="Total_sin_iva" type="xs:decimal" minOccurs="0" />
               <xs:element name="total_iva" msprop:Generator_ColumnVarNameInTable="columntotal_iva" msprop:Generator_ColumnPropNameInRow="total_iva" msprop:Generator_ColumnPropNameInTable="total_ivaColumn" msprop:Generator_UserColumnName="total_iva" type="xs:decimal" />
-              <xs:element name="no_documento1" msdata:Caption="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento1" msprop:Generator_ColumnPropNameInRow="no_documento1" msprop:Generator_ColumnPropNameInTable="no_documento1Column" msprop:Generator_UserColumnName="no_documento1" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
