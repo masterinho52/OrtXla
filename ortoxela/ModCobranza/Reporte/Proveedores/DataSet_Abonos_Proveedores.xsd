@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Abonos_Proveedores" targetNamespace="http://tempuri.org/DataSet_Abonos_Proveedores.xsd" xmlns:mstns="http://tempuri.org/DataSet_Abonos_Proveedores.xsd" xmlns="http://tempuri.org/DataSet_Abonos_Proveedores.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_abonos_a_proveedoresTableAdapter" GeneratorDataComponentClassName="v_abonos_a_proveedoresTableAdapter" Name="v_abonos_a_proveedores" UserDataComponentName="v_abonos_a_proveedoresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_abonos_a_proveedores" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        codigo_proveedor, nitProveedor, nombre_proveedor, Factura, no_factura, monto_neto, saldo_factura, fecha_operacion, docto_abono, no_recibo, monto_abono, 
+                         refer_documento
+FROM            v_abonos_a_proveedores</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codigo_proveedor" DataSetColumn="codigo_proveedor" />
+              <Mapping SourceColumn="nitProveedor" DataSetColumn="nitProveedor" />
+              <Mapping SourceColumn="nombre_proveedor" DataSetColumn="nombre_proveedor" />
+              <Mapping SourceColumn="Factura" DataSetColumn="Factura" />
+              <Mapping SourceColumn="no_factura" DataSetColumn="no_factura" />
+              <Mapping SourceColumn="monto_neto" DataSetColumn="monto_neto" />
+              <Mapping SourceColumn="saldo_factura" DataSetColumn="saldo_factura" />
+              <Mapping SourceColumn="fecha_operacion" DataSetColumn="fecha_operacion" />
+              <Mapping SourceColumn="docto_abono" DataSetColumn="docto_abono" />
+              <Mapping SourceColumn="no_recibo" DataSetColumn="no_recibo" />
+              <Mapping SourceColumn="monto_abono" DataSetColumn="monto_abono" />
+              <Mapping SourceColumn="refer_documento" DataSetColumn="refer_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Abonos_Proveedores" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Abonos_Proveedores" msprop:Generator_UserDSName="DataSet_Abonos_Proveedores">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_abonos_a_proveedores" msprop:Generator_TableClassName="v_abonos_a_proveedoresDataTable" msprop:Generator_TableVarName="tablev_abonos_a_proveedores" msprop:Generator_TablePropName="v_abonos_a_proveedores" msprop:Generator_RowDeletingName="v_abonos_a_proveedoresRowDeleting" msprop:Generator_UserTableName="v_abonos_a_proveedores" msprop:Generator_RowChangingName="v_abonos_a_proveedoresRowChanging" msprop:Generator_RowEvHandlerName="v_abonos_a_proveedoresRowChangeEventHandler" msprop:Generator_RowDeletedName="v_abonos_a_proveedoresRowDeleted" msprop:Generator_RowEvArgName="v_abonos_a_proveedoresRowChangeEvent" msprop:Generator_RowChangedName="v_abonos_a_proveedoresRowChanged" msprop:Generator_RowClassName="v_abonos_a_proveedoresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_proveedor" msprop:Generator_ColumnVarNameInTable="columncodigo_proveedor" msprop:Generator_ColumnPropNameInRow="codigo_proveedor" msprop:Generator_ColumnPropNameInTable="codigo_proveedorColumn" msprop:Generator_UserColumnName="codigo_proveedor" type="xs:unsignedInt" />
+              <xs:element name="nitProveedor" msprop:Generator_ColumnVarNameInTable="columnnitProveedor" msprop:Generator_ColumnPropNameInRow="nitProveedor" msprop:Generator_ColumnPropNameInTable="nitProveedorColumn" msprop:Generator_UserColumnName="nitProveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Factura" msprop:Generator_ColumnVarNameInTable="columnFactura" msprop:Generator_ColumnPropNameInRow="Factura" msprop:Generator_ColumnPropNameInTable="FacturaColumn" msprop:Generator_UserColumnName="Factura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="153" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_factura" msprop:Generator_ColumnVarNameInTable="columnno_factura" msprop:Generator_ColumnPropNameInRow="no_factura" msprop:Generator_ColumnPropNameInTable="no_facturaColumn" msprop:Generator_UserColumnName="no_factura" type="xs:int" />
+              <xs:element name="monto_neto" msprop:Generator_ColumnVarNameInTable="columnmonto_neto" msprop:Generator_ColumnPropNameInRow="monto_neto" msprop:Generator_ColumnPropNameInTable="monto_netoColumn" msprop:Generator_UserColumnName="monto_neto" type="xs:decimal" />
+              <xs:element name="saldo_factura" msprop:Generator_ColumnVarNameInTable="columnsaldo_factura" msprop:Generator_ColumnPropNameInRow="saldo_factura" msprop:Generator_ColumnPropNameInTable="saldo_facturaColumn" msprop:Generator_UserColumnName="saldo_factura" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_operacion" msprop:Generator_ColumnVarNameInTable="columnfecha_operacion" msprop:Generator_ColumnPropNameInRow="fecha_operacion" msprop:Generator_ColumnPropNameInTable="fecha_operacionColumn" msprop:Generator_UserColumnName="fecha_operacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="docto_abono" msprop:Generator_ColumnVarNameInTable="columndocto_abono" msprop:Generator_ColumnPropNameInRow="docto_abono" msprop:Generator_ColumnPropNameInTable="docto_abonoColumn" msprop:Generator_UserColumnName="docto_abono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="153" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_recibo" msprop:Generator_ColumnVarNameInTable="columnno_recibo" msprop:Generator_ColumnPropNameInRow="no_recibo" msprop:Generator_ColumnPropNameInTable="no_reciboColumn" msprop:Generator_UserColumnName="no_recibo" type="xs:int" minOccurs="0" />
+              <xs:element name="monto_abono" msprop:Generator_ColumnVarNameInTable="columnmonto_abono" msprop:Generator_ColumnPropNameInRow="monto_abono" msprop:Generator_ColumnPropNameInTable="monto_abonoColumn" msprop:Generator_UserColumnName="monto_abono" type="xs:decimal" minOccurs="0" />
+              <xs:element name="refer_documento" msprop:Generator_ColumnVarNameInTable="columnrefer_documento" msprop:Generator_ColumnPropNameInRow="refer_documento" msprop:Generator_ColumnPropNameInTable="refer_documentoColumn" msprop:Generator_UserColumnName="refer_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

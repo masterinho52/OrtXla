@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetTraslado" targetNamespace="http://tempuri.org/DataSetTraslado.xsd" xmlns:mstns="http://tempuri.org/DataSetTraslado.xsd" xmlns="http://tempuri.org/DataSetTraslado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EncabezadoTableAdapter" GeneratorDataComponentClassName="EncabezadoTableAdapter" Name="Encabezado" UserDataComponentName="EncabezadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        bodegas_header.nombre_bodega AS ORIGEN, bodegas_header_1.nombre_bodega, CONCAT(tipos_documento.nombre_documento, '-', 
+                         series_documentos.serie_documento) AS TIPODOCS, traslado_bodega_header.descripcion, traslado_bodega_header.fecha_creacion, 
+                         traslado_bodega_header.no_doc_traslado, traslado_bodega_header.no_traslado_bodega
+FROM            traslado_bodega_header INNER JOIN
+                         bodegas_header ON traslado_bodega_header.bodega_origen = bodegas_header.codigo_bodega INNER JOIN
+                         bodegas_header bodegas_header_1 ON traslado_bodega_header.bodega_destino = bodegas_header_1.codigo_bodega INNER JOIN
+                         series_documentos ON traslado_bodega_header.codigo_serie = series_documentos.codigo_serie INNER JOIN
+                         tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ORIGEN" DataSetColumn="ORIGEN" />
+              <Mapping SourceColumn="nombre_bodega" DataSetColumn="nombre_bodega" />
+              <Mapping SourceColumn="TIPODOCS" DataSetColumn="TIPODOCS" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="no_doc_traslado" DataSetColumn="no_doc_traslado" />
+              <Mapping SourceColumn="fecha_creacion" DataSetColumn="fecha_creacion" />
+              <Mapping SourceColumn="no_traslado_bodega" DataSetColumn="no_traslado_bodega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalleTableAdapter" GeneratorDataComponentClassName="detalleTableAdapter" Name="detalle" UserDataComponentName="detalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        traslado_bodega_detail.no_traslado_bodega, traslado_bodega_detail.codigo_articulo, traslado_bodega_detail.cantidad, articulos.descripcion, 
+                         traslado_bodega_detail.id_tbd
+FROM            traslado_bodega_detail INNER JOIN
+                         articulos ON traslado_bodega_detail.codigo_articulo = articulos.codigo_articulo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="no_traslado_bodega" DataSetColumn="no_traslado_bodega" />
+              <Mapping SourceColumn="codigo_articulo" DataSetColumn="codigo_articulo" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="id_tbd" DataSetColumn="id_tbd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetTraslado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTraslado" msprop:Generator_UserDSName="DataSetTraslado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowClassName="EncabezadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORIGEN" msprop:Generator_ColumnVarNameInTable="columnORIGEN" msprop:Generator_ColumnPropNameInRow="ORIGEN" msprop:Generator_ColumnPropNameInTable="ORIGENColumn" msprop:Generator_UserColumnName="ORIGEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_bodega" msprop:Generator_ColumnVarNameInTable="columnnombre_bodega" msprop:Generator_ColumnPropNameInRow="nombre_bodega" msprop:Generator_ColumnPropNameInTable="nombre_bodegaColumn" msprop:Generator_UserColumnName="nombre_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPODOCS" msprop:Generator_ColumnVarNameInTable="columnTIPODOCS" msprop:Generator_ColumnPropNameInRow="TIPODOCS" msprop:Generator_ColumnPropNameInTable="TIPODOCSColumn" msprop:Generator_UserColumnName="TIPODOCS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="151" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_doc_traslado" msprop:Generator_ColumnVarNameInTable="columnno_doc_traslado" msprop:Generator_ColumnPropNameInRow="no_doc_traslado" msprop:Generator_ColumnPropNameInTable="no_doc_trasladoColumn" msprop:Generator_UserColumnName="no_doc_traslado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="no_traslado_bodega" msprop:Generator_ColumnVarNameInTable="columnno_traslado_bodega" msprop:Generator_ColumnPropNameInRow="no_traslado_bodega" msprop:Generator_ColumnPropNameInTable="no_traslado_bodegaColumn" msprop:Generator_UserColumnName="no_traslado_bodega" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalle" msprop:Generator_TableClassName="detalleDataTable" msprop:Generator_TableVarName="tabledetalle" msprop:Generator_TablePropName="detalle" msprop:Generator_RowDeletingName="detalleRowDeleting" msprop:Generator_UserTableName="detalle" msprop:Generator_RowChangingName="detalleRowChanging" msprop:Generator_RowEvHandlerName="detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="detalleRowDeleted" msprop:Generator_RowEvArgName="detalleRowChangeEvent" msprop:Generator_RowChangedName="detalleRowChanged" msprop:Generator_RowClassName="detalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="no_traslado_bodega" msprop:Generator_ColumnVarNameInTable="columnno_traslado_bodega" msprop:Generator_ColumnPropNameInRow="no_traslado_bodega" msprop:Generator_ColumnPropNameInTable="no_traslado_bodegaColumn" msprop:Generator_UserColumnName="no_traslado_bodega" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_tbd" msprop:Generator_ColumnVarNameInTable="columnid_tbd" msprop:Generator_ColumnPropNameInRow="id_tbd" msprop:Generator_ColumnPropNameInTable="id_tbdColumn" msprop:Generator_UserColumnName="id_tbd" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Encabezado" />
+      <xs:field xpath="mstns:no_traslado_bodega" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Encabezado_detalle" msdata:parent="Encabezado" msdata:child="detalle" msdata:parentkey="no_traslado_bodega" msdata:childkey="no_traslado_bodega" msprop:Generator_UserChildTable="detalle" msprop:Generator_ChildPropName="GetdetalleRows" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_UserRelationName="Encabezado_detalle" msprop:Generator_RelationVarName="relationEncabezado_detalle" msprop:Generator_UserParentTable="Encabezado" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

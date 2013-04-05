@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Estadistica_mes" targetNamespace="http://tempuri.org/DataSet_Estadistica_mes.xsd" xmlns:mstns="http://tempuri.org/DataSet_Estadistica_mes.xsd" xmlns="http://tempuri.org/DataSet_Estadistica_mes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_estadisticas_mesTableAdapter" GeneratorDataComponentClassName="v_estadisticas_mesTableAdapter" Name="v_estadisticas_mes" UserDataComponentName="v_estadisticas_mesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_estadisticas_mes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Socio_Comercial, mes, anio, Total_Venta, Medico_Quirurgico, DCP, Linea_Blanda, Austin_Moore, Solido, Autocompresion, `Targon Femur`, `Targon TIbia`, 
+                         Fijador_Externo, Instrumental, Asco_35, Asco_50, Intrauma_35, Intrauma_50, Gypsona_Doc, Implantes, Artroscopia, Microfragmentos, `Peq. Frag.Asco`, 
+                         `PT Richards`
+FROM            v_estadisticas_mes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Socio_Comercial" DataSetColumn="Socio_Comercial" />
+              <Mapping SourceColumn="mes" DataSetColumn="mes" />
+              <Mapping SourceColumn="anio" DataSetColumn="anio" />
+              <Mapping SourceColumn="Total_Venta" DataSetColumn="Total_Venta" />
+              <Mapping SourceColumn="Medico_Quirurgico" DataSetColumn="Medico_Quirurgico" />
+              <Mapping SourceColumn="DCP" DataSetColumn="DCP" />
+              <Mapping SourceColumn="Linea_Blanda" DataSetColumn="Linea_Blanda" />
+              <Mapping SourceColumn="Austin_Moore" DataSetColumn="Austin_Moore" />
+              <Mapping SourceColumn="Solido" DataSetColumn="Solido" />
+              <Mapping SourceColumn="Autocompresion" DataSetColumn="Autocompresion" />
+              <Mapping SourceColumn="Targon Femur" DataSetColumn="Targon Femur" />
+              <Mapping SourceColumn="Targon TIbia" DataSetColumn="Targon TIbia" />
+              <Mapping SourceColumn="Fijador_Externo" DataSetColumn="Fijador_Externo" />
+              <Mapping SourceColumn="Instrumental" DataSetColumn="Instrumental" />
+              <Mapping SourceColumn="Asco_35" DataSetColumn="Asco_35" />
+              <Mapping SourceColumn="Asco_50" DataSetColumn="Asco_50" />
+              <Mapping SourceColumn="Intrauma_35" DataSetColumn="Intrauma_35" />
+              <Mapping SourceColumn="Intrauma_50" DataSetColumn="Intrauma_50" />
+              <Mapping SourceColumn="Gypsona_Doc" DataSetColumn="Gypsona_Doc" />
+              <Mapping SourceColumn="Implantes" DataSetColumn="Implantes" />
+              <Mapping SourceColumn="Artroscopia" DataSetColumn="Artroscopia" />
+              <Mapping SourceColumn="Microfragmentos" DataSetColumn="Microfragmentos" />
+              <Mapping SourceColumn="Peq. Frag.Asco" DataSetColumn="Peq_ Frag_Asco" />
+              <Mapping SourceColumn="PT Richards" DataSetColumn="PT Richards" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Estadistica_mes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Estadistica_mes" msprop:Generator_UserDSName="DataSet_Estadistica_mes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_estadisticas_mes" msprop:Generator_TableClassName="v_estadisticas_mesDataTable" msprop:Generator_TableVarName="tablev_estadisticas_mes" msprop:Generator_TablePropName="v_estadisticas_mes" msprop:Generator_RowDeletingName="v_estadisticas_mesRowDeleting" msprop:Generator_UserTableName="v_estadisticas_mes" msprop:Generator_RowChangingName="v_estadisticas_mesRowChanging" msprop:Generator_RowEvHandlerName="v_estadisticas_mesRowChangeEventHandler" msprop:Generator_RowDeletedName="v_estadisticas_mesRowDeleted" msprop:Generator_RowEvArgName="v_estadisticas_mesRowChangeEvent" msprop:Generator_RowChangedName="v_estadisticas_mesRowChanged" msprop:Generator_RowClassName="v_estadisticas_mesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Socio_Comercial" msprop:Generator_ColumnVarNameInTable="columnSocio_Comercial" msprop:Generator_ColumnPropNameInRow="Socio_Comercial" msprop:Generator_ColumnPropNameInTable="Socio_ComercialColumn" msprop:Generator_UserColumnName="Socio_Comercial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mes" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:int" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:int" minOccurs="0" />
+              <xs:element name="Total_Venta" msprop:Generator_ColumnVarNameInTable="columnTotal_Venta" msprop:Generator_ColumnPropNameInRow="Total_Venta" msprop:Generator_ColumnPropNameInTable="Total_VentaColumn" msprop:Generator_UserColumnName="Total_Venta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Medico_Quirurgico" msprop:Generator_ColumnVarNameInTable="columnMedico_Quirurgico" msprop:Generator_ColumnPropNameInRow="Medico_Quirurgico" msprop:Generator_ColumnPropNameInTable="Medico_QuirurgicoColumn" msprop:Generator_UserColumnName="Medico_Quirurgico" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DCP" msprop:Generator_ColumnVarNameInTable="columnDCP" msprop:Generator_ColumnPropNameInRow="DCP" msprop:Generator_ColumnPropNameInTable="DCPColumn" msprop:Generator_UserColumnName="DCP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Linea_Blanda" msprop:Generator_ColumnVarNameInTable="columnLinea_Blanda" msprop:Generator_ColumnPropNameInRow="Linea_Blanda" msprop:Generator_ColumnPropNameInTable="Linea_BlandaColumn" msprop:Generator_UserColumnName="Linea_Blanda" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Austin_Moore" msprop:Generator_ColumnVarNameInTable="columnAustin_Moore" msprop:Generator_ColumnPropNameInRow="Austin_Moore" msprop:Generator_ColumnPropNameInTable="Austin_MooreColumn" msprop:Generator_UserColumnName="Austin_Moore" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Solido" msprop:Generator_ColumnVarNameInTable="columnSolido" msprop:Generator_ColumnPropNameInRow="Solido" msprop:Generator_ColumnPropNameInTable="SolidoColumn" msprop:Generator_UserColumnName="Solido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Autocompresion" msprop:Generator_ColumnVarNameInTable="columnAutocompresion" msprop:Generator_ColumnPropNameInRow="Autocompresion" msprop:Generator_ColumnPropNameInTable="AutocompresionColumn" msprop:Generator_UserColumnName="Autocompresion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Targon_x0020_Femur" msprop:Generator_ColumnVarNameInTable="columnTargon_Femur" msprop:Generator_ColumnPropNameInRow="Targon_Femur" msprop:Generator_ColumnPropNameInTable="Targon_FemurColumn" msprop:Generator_UserColumnName="Targon Femur" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Targon_x0020_TIbia" msprop:Generator_ColumnVarNameInTable="columnTargon_TIbia" msprop:Generator_ColumnPropNameInRow="Targon_TIbia" msprop:Generator_ColumnPropNameInTable="Targon_TIbiaColumn" msprop:Generator_UserColumnName="Targon TIbia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fijador_Externo" msprop:Generator_ColumnVarNameInTable="columnFijador_Externo" msprop:Generator_ColumnPropNameInRow="Fijador_Externo" msprop:Generator_ColumnPropNameInTable="Fijador_ExternoColumn" msprop:Generator_UserColumnName="Fijador_Externo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Instrumental" msprop:Generator_ColumnVarNameInTable="columnInstrumental" msprop:Generator_ColumnPropNameInRow="Instrumental" msprop:Generator_ColumnPropNameInTable="InstrumentalColumn" msprop:Generator_UserColumnName="Instrumental" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Asco_35" msprop:Generator_ColumnVarNameInTable="columnAsco_35" msprop:Generator_ColumnPropNameInRow="Asco_35" msprop:Generator_ColumnPropNameInTable="Asco_35Column" msprop:Generator_UserColumnName="Asco_35" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Asco_50" msprop:Generator_ColumnVarNameInTable="columnAsco_50" msprop:Generator_ColumnPropNameInRow="Asco_50" msprop:Generator_ColumnPropNameInTable="Asco_50Column" msprop:Generator_UserColumnName="Asco_50" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Intrauma_35" msprop:Generator_ColumnVarNameInTable="columnIntrauma_35" msprop:Generator_ColumnPropNameInRow="Intrauma_35" msprop:Generator_ColumnPropNameInTable="Intrauma_35Column" msprop:Generator_UserColumnName="Intrauma_35" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Intrauma_50" msprop:Generator_ColumnVarNameInTable="columnIntrauma_50" msprop:Generator_ColumnPropNameInRow="Intrauma_50" msprop:Generator_ColumnPropNameInTable="Intrauma_50Column" msprop:Generator_UserColumnName="Intrauma_50" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Gypsona_Doc" msprop:Generator_ColumnVarNameInTable="columnGypsona_Doc" msprop:Generator_ColumnPropNameInRow="Gypsona_Doc" msprop:Generator_ColumnPropNameInTable="Gypsona_DocColumn" msprop:Generator_UserColumnName="Gypsona_Doc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Implantes" msprop:Generator_ColumnVarNameInTable="columnImplantes" msprop:Generator_ColumnPropNameInRow="Implantes" msprop:Generator_ColumnPropNameInTable="ImplantesColumn" msprop:Generator_UserColumnName="Implantes" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Artroscopia" msprop:Generator_ColumnVarNameInTable="columnArtroscopia" msprop:Generator_ColumnPropNameInRow="Artroscopia" msprop:Generator_ColumnPropNameInTable="ArtroscopiaColumn" msprop:Generator_UserColumnName="Artroscopia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Microfragmentos" msprop:Generator_ColumnVarNameInTable="columnMicrofragmentos" msprop:Generator_ColumnPropNameInRow="Microfragmentos" msprop:Generator_ColumnPropNameInTable="MicrofragmentosColumn" msprop:Generator_UserColumnName="Microfragmentos" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Peq__x0020_Frag_Asco" msdata:Caption="Peq. Frag.Asco" msprop:Generator_ColumnVarNameInTable="columnPeq__Frag_Asco" msprop:Generator_ColumnPropNameInRow="Peq__Frag_Asco" msprop:Generator_ColumnPropNameInTable="Peq__Frag_AscoColumn" msprop:Generator_UserColumnName="Peq_ Frag_Asco" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PT_x0020_Richards" msprop:Generator_ColumnVarNameInTable="columnPT_Richards" msprop:Generator_ColumnPropNameInRow="PT_Richards" msprop:Generator_ColumnPropNameInTable="PT_RichardsColumn" msprop:Generator_UserColumnName="PT Richards" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

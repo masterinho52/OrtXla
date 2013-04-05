@@ -1,0 +1,2143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED58C325-3C3D-46CB-9BFC-FA859E3A946C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ortoxela</RootNamespace>
+    <AssemblyName>ortoxela</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.1.UI, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Reporting.Extensions, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Core, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnulaFactura\FacturaAnula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnulaFactura\FacturaAnula.Designer.cs">
+      <DependentUpon>FacturaAnula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnularDocumento\frm_reimpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnularDocumento\frm_reimpresion.Designer.cs">
+      <DependentUpon>frm_reimpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos\Articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\Articulos.designer.cs">
+      <DependentUpon>Articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos\Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos\SubCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\SubCategoria.Designer.cs">
+      <DependentUpon>SubCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos\Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos\Marcas.designer.cs">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\Tipo Bodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega\Tipo Bodega.Designer.cs">
+      <DependentUpon>Tipo Bodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscador\Buscador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscador\Buscador.Designer.cs">
+      <DependentUpon>Buscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscador\frm_Buscador_documentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscador\frm_Buscador_documentos.Designer.cs">
+      <DependentUpon>frm_Buscador_documentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clases\ClassMensajes.cs" />
+    <Compile Include="clases\ClassVariables.cs" />
+    <Compile Include="clases\classortoxela.cs" />
+    <Compile Include="Clientes\form_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\form_cliente.Designer.cs">
+      <DependentUpon>form_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Tipo_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Tipo_cliente.Designer.cs">
+      <DependentUpon>Tipo_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Tipo_cliente_conta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Tipo_cliente_conta.Designer.cs">
+      <DependentUpon>Tipo_cliente_conta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\frm_compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra\frm_compras.Designer.cs">
+      <DependentUpon>frm_compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\frm_compras_varias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra\frm_compras_varias.Designer.cs">
+      <DependentUpon>frm_compras_varias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\PrintIngresoProd\DataSetIngresoProd.cs">
+      <DependentUpon>DataSetIngresoProd.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Compra\PrintIngresoProd\DataSetIngresoProd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetIngresoProd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\PrintIngresoProd\XtraReportIngresoProd.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Compra\PrintIngresoProd\XtraReportIngresoProd.Designer.cs">
+      <DependentUpon>XtraReportIngresoProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\DataSet_Solicitud_compra.cs">
+      <DependentUpon>DataSet_Solicitud_compra.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\DataSet_Solicitud_compra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Solicitud_compra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\frm_solicitud_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\frm_solicitud_compra.Designer.cs">
+      <DependentUpon>frm_solicitud_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\DataSet_Cotizacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Cotizacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\frm_cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\frm_cotizacion.Designer.cs">
+      <DependentUpon>frm_cotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\XtraReport_Cotizacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\XtraReport_Cotizacion.Designer.cs">
+      <DependentUpon>XtraReport_Cotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\XtraReport_Solicitud_compra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\XtraReport_Solicitud_compra.Designer.cs">
+      <DependentUpon>XtraReport_Solicitud_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones\Ciudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones\Ciudades.Designer.cs">
+      <DependentUpon>Ciudades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones\Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones\Departamentos.Designer.cs">
+      <DependentUpon>Departamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones\Direcciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones\Direcciones.Designer.cs">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones\Municipios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones\Municipios.Designer.cs">
+      <DependentUpon>Municipios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones\Paises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones\Paises.Designer.cs">
+      <DependentUpon>Paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estado\Estado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estado\Estado.designer.cs">
+      <DependentUpon>Estado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturaTemporal\IngresarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaTemporal\IngresarFacturas.Designer.cs">
+      <DependentUpon>IngresarFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniLogin\LoginMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiniLogin\LoginMini.Designer.cs">
+      <DependentUpon>LoginMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Bancos\Banco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Bancos\Banco.Designer.cs">
+      <DependentUpon>Banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\frm_Abono_adelantado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\frm_Abono_adelantado.Designer.cs">
+      <DependentUpon>frm_Abono_adelantado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\frm_Abono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\frm_Abono.Designer.cs">
+      <DependentUpon>frm_Abono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\frm_pagos_proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\frm_pagos_proveedores.Designer.cs">
+      <DependentUpon>frm_pagos_proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Proveedores\Tipo_proveedor_conta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Proveedores\Tipo_proveedor_conta.Designer.cs">
+      <DependentUpon>Tipo_proveedor_conta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Recibos\frm_recibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Recibos\frm_recibo.Designer.cs">
+      <DependentUpon>frm_recibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\DataSet_Abonos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Abonos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\DataSetFacturas_credito_canceladas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFacturas_credito_canceladas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\DataSet_Factura_pendientes.cs">
+      <DependentUpon>DataSet_Factura_pendientes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\DataSet_Factura_pendientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Factura_pendientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\frm_reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\frm_reportes.Designer.cs">
+      <DependentUpon>frm_reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\DataSet_Abonos_Proveedores.cs">
+      <DependentUpon>DataSet_Abonos_Proveedores.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\DataSet_Abonos_Proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Abonos_Proveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Canceladas_Proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Facturas_Canceladas_Proveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Pendientes_Proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Facturas_Pendientes_Proveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\frm_reportes_pagos_a_proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\frm_reportes_pagos_a_proveedores.Designer.cs">
+      <DependentUpon>frm_reportes_pagos_a_proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Abonos_Proveedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Abonos_Proveedores.Designer.cs">
+      <DependentUpon>XtraReport_Abonos_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Canceladas_Proveedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Canceladas_Proveedores.Designer.cs">
+      <DependentUpon>XtraReport_Facturas_Canceladas_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Pendientes_Proveedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Pendientes_Proveedores.Designer.cs">
+      <DependentUpon>XtraReport_Facturas_Pendientes_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_facturas_credito_canceladas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_facturas_credito_canceladas.Designer.cs">
+      <DependentUpon>XtraReport_facturas_credito_canceladas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_Facturas_Pendientes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_Facturas_Pendientes.Designer.cs">
+      <DependentUpon>XtraReport_Facturas_Pendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_ReporteAbonosClientes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Reporte\XtraReport_ReporteAbonosClientes.Designer.cs">
+      <DependentUpon>XtraReport_ReporteAbonosClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\TipoDocs\TipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\TipoDocs\TipoDoc.Designer.cs">
+      <DependentUpon>TipoDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_condicion_conta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_condicion_conta.Designer.cs">
+      <DependentUpon>frm_condicion_conta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_config_partida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_config_partida.Designer.cs">
+      <DependentUpon>frm_config_partida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_partida_manual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModContabilidad\Partidas\frm_partida_manual.Designer.cs">
+      <DependentUpon>frm_partida_manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Reportes\DataSetPartidas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPartidas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Reportes\frm_partidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModContabilidad\Reportes\frm_partidas.Designer.cs">
+      <DependentUpon>frm_partidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModContabilidad\Reportes\XtraReportPartidas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModContabilidad\Reportes\XtraReportPartidas.Designer.cs">
+      <DependentUpon>XtraReportPartidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.cs">
+      <DependentUpon>DataSetEnvioDetallado.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEnvioDetallado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\EnvioDetallado\DataSet_EnvioDetallado2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_EnvioDetallado2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\EnvioDetallado\XtraReportEnvioDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\EnvioDetallado\XtraReportEnvioDetallado.designer.cs">
+      <DependentUpon>XtraReportEnvioDetallado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Factura\DataSetFactura.cs">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\Factura\DataSetFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Factura\XtraReportFactura.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\Factura\XtraReportFactura.Designer.cs">
+      <DependentUpon>XtraReportFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\frm_pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\frm_pedido.designer.cs">
+      <DependentUpon>frm_pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ortoxelaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ortoxelaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\frm_regreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\frm_regreso.Designer.cs">
+      <DependentUpon>frm_regreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\ReciboCaja\DataSetReciboCaja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReciboCaja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\ReciboCaja\XtraReportReciboCaja.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\ReciboCaja\XtraReportReciboCaja.Designer.cs">
+      <DependentUpon>XtraReportReciboCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Vale\DataSetVale.cs">
+      <DependentUpon>DataSetVale.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\Vale\DataSetVale.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVale.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\Vale\XtraReportVale.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\Vale\XtraReportVale.Designer.cs">
+      <DependentUpon>XtraReportVale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permisos\Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permisos\Selector_Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos\Selector_Permisos.Designer.cs">
+      <DependentUpon>Selector_Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Principal.designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModCobranza\Proveedores\Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Proveedores\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModCobranza\Proveedores\Tipo_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModCobranza\Proveedores\Tipo_Proveedor.Designer.cs">
+      <DependentUpon>Tipo_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReciboCredito\frm_reciboCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReciboCredito\frm_reciboCredito.Designer.cs">
+      <DependentUpon>frm_reciboCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reimpresion\frm_reimpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reimpresion\frm_reimpresion.Designer.cs">
+      <DependentUpon>frm_reimpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Admin\DataSet_Consumo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Consumo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Admin\Frm_ReportesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Admin\Frm_ReportesAdmin.Designer.cs">
+      <DependentUpon>Frm_ReportesAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Admin\XtraReport_ReporteConsumo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Admin\XtraReport_ReporteConsumo.Designer.cs">
+      <DependentUpon>XtraReport_ReporteConsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\DataSetRequisicionesDetalle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRequisicionesDetalle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\DataSet_ComprasGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ComprasGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_v_compras_detalle_proveedor_categoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\Frm_RepComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\Frm_RepComp.designer.cs">
+      <DependentUpon>Frm_RepComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_Compras_por_Categoria.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_Compras_por_Categoria.Designer.cs">
+      <DependentUpon>XtraReport_Compras_por_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_Requisiciones_Detalle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_Requisiciones_Detalle.Designer.cs">
+      <DependentUpon>XtraReport_Requisiciones_Detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_x_Compra_X_Arti.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_x_Compra_X_Arti.designer.cs">
+      <DependentUpon>XtraReport_x_Compra_X_Arti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_x_NoCompra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport_x_NoCompra.designer.cs">
+      <DependentUpon>XtraReport_x_NoCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSetPrueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPrueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_Inventario2H.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Inventario2H.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\Frm_RepInventarioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\Frm_RepInventarioAdmin.Designer.cs">
+      <DependentUpon>Frm_RepInventarioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Inventario2H.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Inventario2H.designer.cs">
+      <DependentUpon>XtraReport_Inventario2H.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_Inventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Inventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_Inventario2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Inventario2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_InventarioResumen.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_InventarioResumen.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_Kardex.cs">
+      <DependentUpon>DataSet_Kardex.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_Kardex1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Kardex.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\Frm_RepInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\Frm_RepInventario.designer.cs">
+      <DependentUpon>Frm_RepInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Inventario1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Inventario1.designer.cs">
+      <DependentUpon>XtraReport_Inventario1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_InventarioExistencia.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_InventarioExistencia.Designer.cs">
+      <DependentUpon>XtraReport_InventarioExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_InventarioResumen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_InventarioResumen.Designer.cs">
+      <DependentUpon>XtraReport_InventarioResumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Kardex.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Kardex.designer.cs">
+      <DependentUpon>XtraReport_Kardex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_TomaInventario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_TomaInventario.designer.cs">
+      <DependentUpon>XtraReport_TomaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\ClassPedidos.cs" />
+    <Compile Include="Reportes\Pedidos\DataSet_Pedidos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Pedidos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\ds_vueltos.cs">
+      <DependentUpon>ds_vueltos.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\ds_vueltos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_vueltos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\frm_ReportePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\frm_ReportePedidos.designer.cs">
+      <DependentUpon>frm_ReportePedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\frm_RepVueltos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\frm_RepVueltos.Designer.cs">
+      <DependentUpon>frm_RepVueltos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\XtraReport_x_SocioComercial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\XtraReport_x_SocioComercial.designer.cs">
+      <DependentUpon>XtraReport_x_SocioComercial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\xtr_vueltos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Pedidos\xtr_vueltos.Designer.cs">
+      <DependentUpon>xtr_vueltos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Producto\frm_Existencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Producto\frm_Existencias.designer.cs">
+      <DependentUpon>frm_Existencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\DataSet_RepProveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_RepProveedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\Frm_RepProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\Frm_RepProveedores.designer.cs">
+      <DependentUpon>Frm_RepProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\XtraReport_RepProveedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\XtraReport_RepProveedores.designer.cs">
+      <DependentUpon>XtraReport_RepProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\XtraReport_RepUnProveedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Proveedores\XtraReport_RepUnProveedor.designer.cs">
+      <DependentUpon>XtraReport_RepUnProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSettest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSettest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_CorteCajaRecibos1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_CorteCajaRecibos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_Estadistica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Estadistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_Estadistica_mes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Estadistica_mes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_VentaGeneralTipoCliente1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_VentaGeneralTipoCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_VentasArticuloMas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_VentasArticuloMas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_VentasGeneral.cs">
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_VentasGeneral1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_ventas_cliente_categoria1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ventas_cliente_categoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_Ventas_Detalle1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Ventas_Detalle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_ventas_de_costo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ventas_de_costo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_Ventas_TipoCliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Ventas_TipoCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_CortesCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_CortesCaja.Designer.cs">
+      <DependentUpon>Frm_CortesCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_RepVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_RepVentas.designer.cs">
+      <DependentUpon>Frm_RepVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_VentasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_VentasClientes.Designer.cs">
+      <DependentUpon>Frm_VentasClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_CorteCajaRecibos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_CorteCajaRecibos.designer.cs">
+      <DependentUpon>XtraReport_CorteCajaRecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Corte_Caja.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Corte_Caja.designer.cs">
+      <DependentUpon>XtraReport_Corte_Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Estadistica_Mes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Estadistica_Mes.designer.cs">
+      <DependentUpon>XtraReport_Estadistica_Mes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_ProductosMasVendidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_ProductosMasVendidos.Designer.cs">
+      <DependentUpon>XtraReport_ProductosMasVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentaClientes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentaClientes.designer.cs">
+      <DependentUpon>XtraReport_VentaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasGeneral.designer.cs">
+      <DependentUpon>XtraReport_VentasGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasPorTipoCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasPorTipoCliente.designer.cs">
+      <DependentUpon>XtraReport_VentasPorTipoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasTotalesPorMes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_VentasTotalesPorMes.designer.cs">
+      <DependentUpon>XtraReport_VentasTotalesPorMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_categoria.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_categoria.designer.cs">
+      <DependentUpon>XtraReport_Ventas_categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_Detalle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_Detalle.designer.cs">
+      <DependentUpon>XtraReport_Ventas_Detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Clientes\XtraReport_Ventas_por_Cliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Clientes\XtraReport_Ventas_por_Cliente.Designer.cs">
+      <DependentUpon>XtraReport_Ventas_por_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_por_cliente_sc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_por_cliente_sc.designer.cs">
+      <DependentUpon>XtraReport_Ventas_por_cliente_sc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_por_SocioComercial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\XtraReport_Ventas_por_SocioComercial.Designer.cs">
+      <DependentUpon>XtraReport_Ventas_por_SocioComercial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\CambioContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\CambioContrasena.Designer.cs">
+      <DependentUpon>CambioContrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportprueba.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportprueba.Designer.cs">
+      <DependentUpon>XtraReportprueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Series\SerieDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Series\SerieDoc.Designer.cs">
+      <DependentUpon>SerieDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumentos\TipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoDocumentos\TipoDoc.Designer.cs">
+      <DependentUpon>TipoDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoPago\TipPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoPago\TipPago.Designer.cs">
+      <DependentUpon>TipPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\DataSetTraslado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.Designer.cs">
+      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrasladoBodega\TrasladoBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrasladoBodega\TrasladoBodega.designer.cs">
+      <DependentUpon>TrasladoBodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Modulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Modulo.Designer.cs">
+      <DependentUpon>Modulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Rol_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Rol_usuario.Designer.cs">
+      <DependentUpon>Rol_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vueltos\Vueltos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vueltos\Vueltos.Designer.cs">
+      <DependentUpon>Vueltos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vueltos\Vuelto\DataSetVuelto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVuelto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vueltos\Vuelto\XtraReportVueltos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vueltos\Vuelto\XtraReportVueltos.Designer.cs">
+      <DependentUpon>XtraReportVueltos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnulaFactura\FacturaAnula.resx">
+      <DependentUpon>FacturaAnula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnularDocumento\frm_reimpresion.resx">
+      <DependentUpon>frm_reimpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\Articulos.resx">
+      <DependentUpon>Articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\SubCategoria.resx">
+      <DependentUpon>SubCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos\Marcas.resx">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\Tipo Bodega.resx">
+      <DependentUpon>Tipo Bodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscador\Buscador.resx">
+      <DependentUpon>Buscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscador\frm_Buscador_documentos.resx">
+      <DependentUpon>frm_Buscador_documentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\form_cliente.resx">
+      <DependentUpon>form_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Tipo_cliente.resx">
+      <DependentUpon>Tipo_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Tipo_cliente_conta.resx">
+      <DependentUpon>Tipo_cliente_conta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra\frm_compras.resx">
+      <DependentUpon>frm_compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra\frm_compras_varias.resx">
+      <DependentUpon>frm_compras_varias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra\PrintIngresoProd\XtraReportIngresoProd.resx">
+      <DependentUpon>XtraReportIngresoProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\frm_solicitud_compra.resx">
+      <DependentUpon>frm_solicitud_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\frm_cotizacion.resx">
+      <DependentUpon>frm_cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\XtraReport_Cotizacion.resx">
+      <DependentUpon>XtraReport_Cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\XtraReport_Solicitud_compra.resx">
+      <DependentUpon>XtraReport_Solicitud_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones\Ciudades.resx">
+      <DependentUpon>Ciudades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones\Departamentos.resx">
+      <DependentUpon>Departamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones\Direcciones.resx">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones\Municipios.resx">
+      <DependentUpon>Municipios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones\Paises.resx">
+      <DependentUpon>Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estado\Estado.resx">
+      <DependentUpon>Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturaTemporal\IngresarFacturas.resx">
+      <DependentUpon>IngresarFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniLogin\LoginMini.resx">
+      <DependentUpon>LoginMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Bancos\Banco.resx">
+      <DependentUpon>Banco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\frm_Abono_adelantado.resx">
+      <DependentUpon>frm_Abono_adelantado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\frm_Abono.resx">
+      <DependentUpon>frm_Abono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\frm_pagos_proveedores.resx">
+      <DependentUpon>frm_pagos_proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Proveedores\Tipo_proveedor_conta.resx">
+      <DependentUpon>Tipo_proveedor_conta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Recibos\frm_recibo.resx">
+      <DependentUpon>frm_recibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\frm_reportes.resx">
+      <DependentUpon>frm_reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\Proveedores\frm_reportes_pagos_a_proveedores.resx">
+      <DependentUpon>frm_reportes_pagos_a_proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\Proveedores\XtraReport_Abonos_Proveedores.resx">
+      <DependentUpon>XtraReport_Abonos_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Canceladas_Proveedores.resx">
+      <DependentUpon>XtraReport_Facturas_Canceladas_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\Proveedores\XtraReport_Facturas_Pendientes_Proveedores.resx">
+      <DependentUpon>XtraReport_Facturas_Pendientes_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\XtraReport_facturas_credito_canceladas.resx">
+      <DependentUpon>XtraReport_facturas_credito_canceladas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\XtraReport_Facturas_Pendientes.resx">
+      <DependentUpon>XtraReport_Facturas_Pendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Reporte\XtraReport_ReporteAbonosClientes.resx">
+      <DependentUpon>XtraReport_ReporteAbonosClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\TipoDocs\TipoDoc.resx">
+      <DependentUpon>TipoDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModContabilidad\Partidas\frm_condicion_conta.resx">
+      <DependentUpon>frm_condicion_conta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModContabilidad\Partidas\frm_config_partida.resx">
+      <DependentUpon>frm_config_partida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModContabilidad\Partidas\frm_partida_manual.resx">
+      <DependentUpon>frm_partida_manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModContabilidad\Reportes\frm_partidas.resx">
+      <DependentUpon>frm_partidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModContabilidad\Reportes\XtraReportPartidas.resx">
+      <DependentUpon>XtraReportPartidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\EnvioDetallado\XtraReportEnvioDetallado.resx">
+      <DependentUpon>XtraReportEnvioDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\Factura\XtraReportFactura.resx">
+      <DependentUpon>XtraReportFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\frm_pedido.resx">
+      <DependentUpon>frm_pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\frm_regreso.resx">
+      <DependentUpon>frm_regreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\ReciboCaja\XtraReportReciboCaja.resx">
+      <DependentUpon>XtraReportReciboCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\Vale\XtraReportVale.resx">
+      <DependentUpon>XtraReportVale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permisos\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permisos\Selector_Permisos.resx">
+      <DependentUpon>Selector_Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ModCobranza\Proveedores\Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModCobranza\Proveedores\Tipo_Proveedor.resx">
+      <DependentUpon>Tipo_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReciboCredito\frm_reciboCredito.resx">
+      <DependentUpon>frm_reciboCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reimpresion\frm_reimpresion.resx">
+      <DependentUpon>frm_reimpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Admin\Frm_ReportesAdmin.resx">
+      <DependentUpon>Frm_ReportesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\Frm_RepComp.resx">
+      <DependentUpon>Frm_RepComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\XtraReport_Compras_por_Categoria.resx">
+      <DependentUpon>XtraReport_Compras_por_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\XtraReport_Requisiciones_Detalle.resx">
+      <DependentUpon>XtraReport_Requisiciones_Detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\XtraReport_x_Compra_X_Arti.resx">
+      <DependentUpon>XtraReport_x_Compra_X_Arti.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\XtraReport_x_NoCompra.resx">
+      <DependentUpon>XtraReport_x_NoCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\Frm_RepInventarioAdmin.resx">
+      <DependentUpon>Frm_RepInventarioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_Inventario2H.resx">
+      <DependentUpon>XtraReport_Inventario2H.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\Frm_RepInventario.resx">
+      <DependentUpon>Frm_RepInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_Inventario1.resx">
+      <DependentUpon>XtraReport_Inventario1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_InventarioExistencia.resx">
+      <DependentUpon>XtraReport_InventarioExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_InventarioResumen.resx">
+      <DependentUpon>XtraReport_InventarioResumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_Kardex.resx">
+      <DependentUpon>XtraReport_Kardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_TomaInventario.resx">
+      <DependentUpon>XtraReport_TomaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pedidos\frm_ReportePedidos.resx">
+      <DependentUpon>frm_ReportePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pedidos\frm_RepVueltos.resx">
+      <DependentUpon>frm_RepVueltos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pedidos\XtraReport_x_SocioComercial.resx">
+      <DependentUpon>XtraReport_x_SocioComercial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Pedidos\xtr_vueltos.resx">
+      <DependentUpon>xtr_vueltos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Producto\frm_Existencias.resx">
+      <DependentUpon>frm_Existencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Proveedores\Frm_RepProveedores.resx">
+      <DependentUpon>Frm_RepProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Proveedores\XtraReport_RepProveedores.resx">
+      <DependentUpon>XtraReport_RepProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Proveedores\XtraReport_RepUnProveedor.resx">
+      <DependentUpon>XtraReport_RepUnProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\Frm_CortesCaja.resx">
+      <DependentUpon>Frm_CortesCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\Frm_RepVentas.resx">
+      <DependentUpon>Frm_RepVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\Frm_VentasClientes.resx">
+      <DependentUpon>Frm_VentasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_CorteCajaRecibos.resx">
+      <DependentUpon>XtraReport_CorteCajaRecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Corte_Caja.resx">
+      <DependentUpon>XtraReport_Corte_Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Estadistica_Mes.resx">
+      <DependentUpon>XtraReport_Estadistica_Mes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_ProductosMasVendidos.resx">
+      <DependentUpon>XtraReport_ProductosMasVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_VentaClientes.resx">
+      <DependentUpon>XtraReport_VentaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_VentasGeneral.resx">
+      <DependentUpon>XtraReport_VentasGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_VentasPorTipoCliente.resx">
+      <DependentUpon>XtraReport_VentasPorTipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_VentasTotalesPorMes.resx">
+      <DependentUpon>XtraReport_VentasTotalesPorMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Ventas_categoria.resx">
+      <DependentUpon>XtraReport_Ventas_categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Ventas_Detalle.resx">
+      <DependentUpon>XtraReport_Ventas_Detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\Clientes\XtraReport_Ventas_por_Cliente.resx">
+      <DependentUpon>XtraReport_Ventas_por_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Ventas_por_cliente_sc.resx">
+      <DependentUpon>XtraReport_Ventas_por_cliente_sc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\XtraReport_Ventas_por_SocioComercial.resx">
+      <DependentUpon>XtraReport_Ventas_por_SocioComercial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\CambioContrasena.resx">
+      <DependentUpon>CambioContrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportprueba.resx">
+      <DependentUpon>XtraReportprueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Series\SerieDoc.resx">
+      <DependentUpon>SerieDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoDocumentos\TipoDoc.resx">
+      <DependentUpon>TipoDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPago\TipPago.resx">
+      <DependentUpon>TipPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.resx">
+      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrasladoBodega\TrasladoBodega.resx">
+      <DependentUpon>TrasladoBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Modulo.resx">
+      <DependentUpon>Modulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Rol_usuario.resx">
+      <DependentUpon>Rol_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vueltos\Vueltos.resx">
+      <DependentUpon>Vueltos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vueltos\Vuelto\XtraReportVueltos.resx">
+      <DependentUpon>XtraReportVueltos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Compra\PrintIngresoProd\DataSetIngresoProd.xsc">
+      <DependentUpon>DataSetIngresoProd.xsd</DependentUpon>
+    </None>
+    <None Include="Compra\PrintIngresoProd\DataSetIngresoProd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetIngresoProd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Compra\PrintIngresoProd\DataSetIngresoProd.xss">
+      <DependentUpon>DataSetIngresoProd.xsd</DependentUpon>
+    </None>
+    <None Include="Cotizacion\DataSet_Cotizacion.xsc">
+      <DependentUpon>DataSet_Cotizacion.xsd</DependentUpon>
+    </None>
+    <None Include="Cotizacion\DataSet_Cotizacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Cotizacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Cotizacion\DataSet_Cotizacion.xss">
+      <DependentUpon>DataSet_Cotizacion.xsd</DependentUpon>
+    </None>
+    <None Include="Cotizacion\DataSet_Solicitud_compra.xsc">
+      <DependentUpon>DataSet_Solicitud_compra.xsd</DependentUpon>
+    </None>
+    <None Include="Cotizacion\DataSet_Solicitud_compra.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Solicitud_compra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Cotizacion\DataSet_Solicitud_compra.xss">
+      <DependentUpon>DataSet_Solicitud_compra.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSetFacturas_credito_canceladas.xsc">
+      <DependentUpon>DataSetFacturas_credito_canceladas.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSetFacturas_credito_canceladas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFacturas_credito_canceladas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSetFacturas_credito_canceladas.xss">
+      <DependentUpon>DataSetFacturas_credito_canceladas.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Abonos.xsc">
+      <DependentUpon>DataSet_Abonos.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Abonos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Abonos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Abonos.xss">
+      <DependentUpon>DataSet_Abonos.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Factura_pendientes.xsc">
+      <DependentUpon>DataSet_Factura_pendientes.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Factura_pendientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Factura_pendientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\DataSet_Factura_pendientes.xss">
+      <DependentUpon>DataSet_Factura_pendientes.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Abonos_Proveedores.xsc">
+      <DependentUpon>DataSet_Abonos_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Abonos_Proveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Abonos_Proveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Abonos_Proveedores.xss">
+      <DependentUpon>DataSet_Abonos_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Canceladas_Proveedores.xsc">
+      <DependentUpon>DataSet_Facturas_Canceladas_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Canceladas_Proveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Facturas_Canceladas_Proveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Canceladas_Proveedores.xss">
+      <DependentUpon>DataSet_Facturas_Canceladas_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Pendientes_Proveedores.xsc">
+      <DependentUpon>DataSet_Facturas_Pendientes_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Pendientes_Proveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Facturas_Pendientes_Proveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Pendientes_Proveedores.xss">
+      <DependentUpon>DataSet_Facturas_Pendientes_Proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="ModContabilidad\Reportes\DataSetPartidas.xsc">
+      <DependentUpon>DataSetPartidas.xsd</DependentUpon>
+    </None>
+    <None Include="ModContabilidad\Reportes\DataSetPartidas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPartidas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ModContabilidad\Reportes\DataSetPartidas.xss">
+      <DependentUpon>DataSetPartidas.xsd</DependentUpon>
+    </None>
+    <None Include="ortoxelaDataSet.xsc">
+      <DependentUpon>ortoxelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ortoxelaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ortoxelaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ortoxelaDataSet.xss">
+      <DependentUpon>ortoxelaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.xsc">
+      <DependentUpon>DataSetEnvioDetallado.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEnvioDetallado.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.xss">
+      <DependentUpon>DataSetEnvioDetallado.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSet_EnvioDetallado2.xsc">
+      <DependentUpon>DataSet_EnvioDetallado2.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSet_EnvioDetallado2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_EnvioDetallado2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Pedido\EnvioDetallado\DataSet_EnvioDetallado2.xss">
+      <DependentUpon>DataSet_EnvioDetallado2.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Factura\DataSetFactura.xsc">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Factura\DataSetFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pedido\Factura\DataSetFactura.xss">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\ReciboCaja\DataSetReciboCaja.xsc">
+      <DependentUpon>DataSetReciboCaja.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\ReciboCaja\DataSetReciboCaja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReciboCaja.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pedido\ReciboCaja\DataSetReciboCaja.xss">
+      <DependentUpon>DataSetReciboCaja.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Vale\DataSetVale.xsc">
+      <DependentUpon>DataSetVale.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Vale\DataSetVale.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVale.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pedido\Vale\DataSetVale.xss">
+      <DependentUpon>DataSetVale.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\Admin\DataSet_Consumo.xsc">
+      <DependentUpon>DataSet_Consumo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Admin\DataSet_Consumo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Consumo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Admin\DataSet_Consumo.xss">
+      <DependentUpon>DataSet_Consumo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Compras\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSetRequisicionesDetalle.xsc">
+      <DependentUpon>DataSetRequisicionesDetalle.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSetRequisicionesDetalle.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRequisicionesDetalle.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Compras\DataSetRequisicionesDetalle.xss">
+      <DependentUpon>DataSetRequisicionesDetalle.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet_ComprasGeneral.xsc">
+      <DependentUpon>DataSet_ComprasGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet_ComprasGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ComprasGeneral.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Compras\DataSet_ComprasGeneral.xss">
+      <DependentUpon>DataSet_ComprasGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.xsc">
+      <DependentUpon>DataSet_v_compras_detalle_proveedor_categoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_v_compras_detalle_proveedor_categoria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.xss">
+      <DependentUpon>DataSet_v_compras_detalle_proveedor_categoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario.xsc">
+      <DependentUpon>DataSet_Inventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Inventario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario.xss">
+      <DependentUpon>DataSet_Inventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2.xsc">
+      <DependentUpon>DataSet_Inventario2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Inventario2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2.xss">
+      <DependentUpon>DataSet_Inventario2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2H.xsc">
+      <DependentUpon>DataSet_Inventario2H.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2H.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Inventario2H.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Inventario2H.xss">
+      <DependentUpon>DataSet_Inventario2H.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_InventarioResumen.xsc">
+      <DependentUpon>DataSet_InventarioResumen.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_InventarioResumen.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_InventarioResumen.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_InventarioResumen.xss">
+      <DependentUpon>DataSet_InventarioResumen.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Kardex.xsc">
+      <DependentUpon>DataSet_Kardex.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Kardex.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Kardex1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_Kardex.xss">
+      <DependentUpon>DataSet_Kardex.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Pedidos\DataSet_Pedidos.xsc">
+      <DependentUpon>DataSet_Pedidos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Pedidos\DataSet_Pedidos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Pedidos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Pedidos\DataSet_Pedidos.xss">
+      <DependentUpon>DataSet_Pedidos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Pedidos\ds_vueltos.xsc">
+      <DependentUpon>ds_vueltos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Pedidos\ds_vueltos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_vueltos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Pedidos\ds_vueltos.xss">
+      <DependentUpon>ds_vueltos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Proveedores\DataSet_RepProveedores.xsc">
+      <DependentUpon>DataSet_RepProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Proveedores\DataSet_RepProveedores.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_RepProveedores.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Proveedores\DataSet_RepProveedores.xss">
+      <DependentUpon>DataSet_RepProveedores.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSettest.xsc">
+      <DependentUpon>DataSettest.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSettest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSettest.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSettest.xss">
+      <DependentUpon>DataSettest.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_CorteCajaRecibos.xsc">
+      <DependentUpon>DataSet_CorteCajaRecibos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_CorteCajaRecibos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_CorteCajaRecibos1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_CorteCajaRecibos.xss">
+      <DependentUpon>DataSet_CorteCajaRecibos.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica.xsc">
+      <DependentUpon>DataSet_Estadistica.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Estadistica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica.xss">
+      <DependentUpon>DataSet_Estadistica.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica_mes.xsc">
+      <DependentUpon>DataSet_Estadistica_mes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica_mes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Estadistica_mes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Estadistica_mes.xss">
+      <DependentUpon>DataSet_Estadistica_mes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentaGeneralTipoCliente.xsc">
+      <DependentUpon>DataSet_VentaGeneralTipoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentaGeneralTipoCliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_VentaGeneralTipoCliente1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentaGeneralTipoCliente.xss">
+      <DependentUpon>DataSet_VentaGeneralTipoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasArticuloMas.xsc">
+      <DependentUpon>DataSet_VentasArticuloMas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasArticuloMas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_VentasArticuloMas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasArticuloMas.xss">
+      <DependentUpon>DataSet_VentasArticuloMas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsc">
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_VentasGeneral1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xss">
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.xsc">
+      <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Ventas_Clientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.xss">
+      <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_cliente_categoria.xsc">
+      <DependentUpon>DataSet_ventas_cliente_categoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_cliente_categoria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ventas_cliente_categoria1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_cliente_categoria.xss">
+      <DependentUpon>DataSet_ventas_cliente_categoria.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_Detalle.xsc">
+      <DependentUpon>DataSet_Ventas_Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_Detalle.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Ventas_Detalle1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_Detalle.xss">
+      <DependentUpon>DataSet_Ventas_Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_de_costo.xsc">
+      <DependentUpon>DataSet_ventas_de_costo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_de_costo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ventas_de_costo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_ventas_de_costo.xss">
+      <DependentUpon>DataSet_ventas_de_costo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_TipoCliente.xsc">
+      <DependentUpon>DataSet_Ventas_TipoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_TipoCliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Ventas_TipoCliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_Ventas_TipoCliente.xss">
+      <DependentUpon>DataSet_Ventas_TipoCliente.xsd</DependentUpon>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xsc">
+      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTraslado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xss">
+      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
+    </None>
+    <None Include="Vueltos\Vuelto\DataSetVuelto.xsc">
+      <DependentUpon>DataSetVuelto.xsd</DependentUpon>
+    </None>
+    <None Include="Vueltos\Vuelto\DataSetVuelto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVuelto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vueltos\Vuelto\DataSetVuelto.xss">
+      <DependentUpon>DataSetVuelto.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reportes\DataSetPrueba.xsc">
+      <DependentUpon>DataSetPrueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetPrueba.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrueba.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetPrueba.xss">
+      <DependentUpon>DataSetPrueba.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\486.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4861.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\075.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\community-users_48x48-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\community-users_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-remove_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-edit_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window-remove_32x32-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Log_Off_Icon_32.png" />
+    <None Include="Resources\salir-de-gnome-icono-8179-32.png" />
+    <None Include="Resources\salir-de-gnome-icono-7637-32.png" />
+    <None Include="Resources\salir-de-gnome-icono-5366-32.png" />
+    <None Include="Resources\listas-de-las-poblaciones-de-cartas-icono-5802-48.png" />
+    <None Include="Resources\liberar-icono-7141-32.png" />
+    <None Include="Resources\editores-de-paquetes-icono-8178-48.png" />
+    <None Include="Resources\dinero-icono-8797-48.png" />
+    <None Include="Resources\icontexto-webdev-ok-032x032.png" />
+    <None Include="Resources\icontexto-webdev-money-032x032.png" />
+    <None Include="Resources\icontexto-webdev-info-032x032.png" />
+    <None Include="Resources\icontexto-webdev-file-032x032.png" />
+    <None Include="Resources\icontexto-webdev-favorites-032x032.png" />
+    <None Include="Resources\icontexto-webdev-emoticon-smile-032x032.png" />
+    <None Include="Resources\icontexto-webdev-chat-032x032.png" />
+    <None Include="Resources\icontexto-webdev-cancel-032x032.png" />
+    <None Include="Resources\icontexto-webdev-alert-032x032.png" />
+    <None Include="Resources\icontexto-webdev-add-032x032.png" />
+    <None Include="Resources\mi_scare_report.png" />
+    <None Include="Resources\receipt.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\quote.png" />
+    <None Include="Resources\Ventas 2_mini.jpg" />
+    <None Include="Resources\venteas3.jpg" />
+    <None Include="Resources\money_transportation.png" />
+    <None Include="Resources\wallet.png" />
+    <None Include="Resources\whtarrow.bmp" />
+    <None Include="Resources\lock.jpg" />
+    <None Include="Resources\Seleccionar_C.jpg" />
+    <None Include="Resources\permisos.png" />
+    <None Include="Resources\pedido.png" />
+    <None Include="Resources\sesion.png" />
+    <None Include="Resources\salir.png" />
+    <None Include="Resources\entrar.png" />
+    <None Include="Resources\enter.png" />
+    <None Include="Resources\Logo final.jpg" />
+    <None Include="Resources\usurol.png" />
+    <None Include="Resources\rol.png" />
+    <None Include="Resources\MODULO.png" />
+    <None Include="Resources\SERIE.jpg" />
+    <None Include="Resources\tipodoc.png" />
+    <None Include="Resources\trasladar48.png" />
+    <None Include="Resources\report_check.png" />
+    <None Include="Resources\vuelto.png" />
+    <None Include="Resources\tipopago.png" />
+    <None Include="Resources\monedas.png" />
+    <None Include="Resources\dinero.png" />
+    <None Include="Resources\usuario.png" />
+    <None Include="Resources\marca.png" />
+    <None Include="Resources\printer64.png" />
+    <None Include="Resources\printer 48.png" />
+    <None Include="Resources\printer 32.png" />
+    <None Include="Resources\printer 24.png" />
+    <None Include="Resources\OK72.png" />
+    <None Include="Resources\OK48.png" />
+    <None Include="Resources\OK32.png" />
+    <None Include="Resources\OK24.png" />
+    <None Include="Resources\error48.png" />
+    <None Include="Resources\error 64.png" />
+    <None Include="Resources\error 32.png" />
+    <None Include="Resources\error 16.png" />
+    <None Include="Resources\Nuevo42.png" />
+    <None Include="Resources\Nuevo32.png" />
+    <None Include="Resources\Nuevo24.png" />
+    <None Include="Resources\proveedor.png" />
+    <None Include="Resources\tipoproveedor.png" />
+    <None Include="Resources\direcciones.png" />
+    <None Include="Resources\muni.jpg" />
+    <None Include="Resources\paises.jpg" />
+    <None Include="Resources\ingreso42.png" />
+    <None Include="Resources\pregunta.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\database-add_24x24-32.gif" />
+    <None Include="Resources\database-remove_24x24-32.gif" />
+    <None Include="Resources\database-process_24x24-32.gif" />
+    <None Include="Resources\database-process_16x16-32.gif" />
+    <None Include="Resources\database-remove_16x16-321.gif" />
+    <None Include="Resources\027-folder_search1.gif" />
+    <None Include="Resources\027-folder_search.gif" />
+    <None Include="Resources\chart-add_32x32-32.gif" />
+    <None Include="Resources\advertencia.png" />
+    <None Include="Resources\add_24x24-32.gif" />
+    <None Include="Resources\add_16x16-32.gif" />
+    <None Include="Resources\agregar32.png" />
+    <None Include="Resources\444424,1268489379,2.jpg" />
+    <None Include="Resources\ciudad.png" />
+    <None Include="Resources\Advertencia24.png" />
+    <None Include="Resources\Advertencia32.png" />
+    <None Include="Resources\Advertencia48.png" />
+    <None Include="Resources\Advertencia64.png" />
+    <None Include="Resources\bodega.jpg" />
+    <None Include="Resources\BODEGAV.png" />
+    <None Include="Resources\articulo.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\asignacion.jpg" />
+    <None Include="Resources\cajaregistra.png" />
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\clients%281%29.png" />
+    <None Include="Resources\balin_info_blue.png" />
+    <None Include="Resources\balin_info_green.png" />
+    <None Include="Resources\balin_info_red.png" />
+    <None Include="Resources\anadir-carrito-de-compras-de-comercio-electronico-icono-7472-32.png" />
+    <None Include="Resources\archivo-icono-4678-48.png" />
+    <None Include="Resources\carrito-de-compras-de-comercio-electronico-icono-6263-48.png" />
+    <Content Include="Resources\database-remove_16x16-32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Estado\TipoDoc\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

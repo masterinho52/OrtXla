@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_vueltos" targetNamespace="http://tempuri.org/ds_vueltos.xsd" xmlns:mstns="http://tempuri.org/ds_vueltos.xsd" xmlns="http://tempuri.org/ds_vueltos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vueltosTableAdapter" GeneratorDataComponentClassName="vueltosTableAdapter" Name="vueltos" UserDataComponentName="vueltosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_vueltos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODIGO, PEDIDO, VALE, CLIENTE, estadoid, monto_vuelto, fecha_pago, fecha_creacion, RECIBO, FACTURA, no_vuelto
+FROM            v_vueltos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="PEDIDO" DataSetColumn="PEDIDO" />
+              <Mapping SourceColumn="VALE" DataSetColumn="VALE" />
+              <Mapping SourceColumn="CLIENTE" DataSetColumn="CLIENTE" />
+              <Mapping SourceColumn="estadoid" DataSetColumn="estadoid" />
+              <Mapping SourceColumn="monto_vuelto" DataSetColumn="monto_vuelto" />
+              <Mapping SourceColumn="fecha_pago" DataSetColumn="fecha_pago" />
+              <Mapping SourceColumn="fecha_creacion" DataSetColumn="fecha_creacion" />
+              <Mapping SourceColumn="RECIBO" DataSetColumn="RECIBO" />
+              <Mapping SourceColumn="FACTURA" DataSetColumn="FACTURA" />
+              <Mapping SourceColumn="no_vuelto" DataSetColumn="no_vuelto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_vueltos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_vueltos" msprop:Generator_UserDSName="ds_vueltos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vueltos" msprop:Generator_TableClassName="vueltosDataTable" msprop:Generator_TableVarName="tablevueltos" msprop:Generator_TablePropName="vueltos" msprop:Generator_RowDeletingName="vueltosRowDeleting" msprop:Generator_UserTableName="vueltos" msprop:Generator_RowChangingName="vueltosRowChanging" msprop:Generator_RowEvHandlerName="vueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="vueltosRowDeleted" msprop:Generator_RowEvArgName="vueltosRowChangeEvent" msprop:Generator_RowChangedName="vueltosRowChanged" msprop:Generator_RowClassName="vueltosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" type="xs:unsignedInt" />
+              <xs:element name="PEDIDO" msprop:Generator_ColumnVarNameInTable="columnPEDIDO" msprop:Generator_ColumnPropNameInRow="PEDIDO" msprop:Generator_ColumnPropNameInTable="PEDIDOColumn" msprop:Generator_UserColumnName="PEDIDO" type="xs:int" />
+              <xs:element name="VALE" msprop:Generator_ColumnVarNameInTable="columnVALE" msprop:Generator_ColumnPropNameInRow="VALE" msprop:Generator_ColumnPropNameInTable="VALEColumn" msprop:Generator_UserColumnName="VALE" type="xs:int" />
+              <xs:element name="CLIENTE" msprop:Generator_ColumnVarNameInTable="columnCLIENTE" msprop:Generator_ColumnPropNameInRow="CLIENTE" msprop:Generator_ColumnPropNameInTable="CLIENTEColumn" msprop:Generator_UserColumnName="CLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estadoid" msprop:Generator_ColumnVarNameInTable="columnestadoid" msprop:Generator_ColumnPropNameInRow="estadoid" msprop:Generator_ColumnPropNameInTable="estadoidColumn" msprop:Generator_UserColumnName="estadoid" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="monto_vuelto" msprop:Generator_ColumnVarNameInTable="columnmonto_vuelto" msprop:Generator_ColumnPropNameInRow="monto_vuelto" msprop:Generator_ColumnPropNameInTable="monto_vueltoColumn" msprop:Generator_UserColumnName="monto_vuelto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_pago" msprop:Generator_ColumnVarNameInTable="columnfecha_pago" msprop:Generator_ColumnPropNameInRow="fecha_pago" msprop:Generator_ColumnPropNameInTable="fecha_pagoColumn" msprop:Generator_UserColumnName="fecha_pago" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RECIBO" msprop:Generator_ColumnVarNameInTable="columnRECIBO" msprop:Generator_ColumnPropNameInRow="RECIBO" msprop:Generator_ColumnPropNameInTable="RECIBOColumn" msprop:Generator_UserColumnName="RECIBO" type="xs:string" minOccurs="0" />
+              <xs:element name="FACTURA" msprop:Generator_ColumnVarNameInTable="columnFACTURA" msprop:Generator_ColumnPropNameInRow="FACTURA" msprop:Generator_ColumnPropNameInTable="FACTURAColumn" msprop:Generator_UserColumnName="FACTURA" type="xs:string" minOccurs="0" />
+              <xs:element name="no_vuelto" msprop:Generator_ColumnVarNameInTable="columnno_vuelto" msprop:Generator_ColumnPropNameInRow="no_vuelto" msprop:Generator_ColumnPropNameInTable="no_vueltoColumn" msprop:Generator_UserColumnName="no_vuelto" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vueltos" />
+      <xs:field xpath="mstns:CODIGO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

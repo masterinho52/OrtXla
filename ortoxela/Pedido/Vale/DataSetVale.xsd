@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetVale" targetNamespace="http://tempuri.org/DataSetVale.xsd" xmlns:mstns="http://tempuri.org/DataSetVale.xsd" xmlns="http://tempuri.org/DataSetVale.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EncabezadoTableAdapter" GeneratorDataComponentClassName="EncabezadoTableAdapter" Name="Encabezado" UserDataComponentName="EncabezadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        header_doctos_inv.id_documento, header_doctos_inv.fecha, clientes.nombre_cliente, clientes.nombre_paciente, clientes.nit, clientes.telefono_celular, 
+                         clientes.contacto
+FROM            header_doctos_inv INNER JOIN
+                         clientes ON header_doctos_inv.codigo_cliente = clientes.codigo_cliente</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nombre_paciente" DataSetColumn="nombre_paciente" />
+              <Mapping SourceColumn="nit" DataSetColumn="nit" />
+              <Mapping SourceColumn="telefono_celular" DataSetColumn="telefono_celular" />
+              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
+              <Mapping SourceColumn="contacto" DataSetColumn="contacto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalle_manualTableAdapter" GeneratorDataComponentClassName="detalle_manualTableAdapter" Name="detalle_manual" UserDataComponentName="detalle_manualTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.detalle_manual" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `detalle_manual` WHERE ((`id_documento` = @Original_id_documento) AND ((@IsNull_descripcion = 1 AND `descripcion` IS NULL) OR (`descripcion` = @Original_descripcion)) AND ((@IsNull_cantidad = 1 AND `cantidad` IS NULL) OR (`cantidad` = @Original_cantidad)) AND ((@IsNull_precio_unitario = 1 AND `precio_unitario` IS NULL) OR (`precio_unitario` = @Original_precio_unitario)) AND ((@IsNull_precio_total = 1 AND `precio_total` IS NULL) OR (`precio_total` = @Original_precio_total)) AND (`detman_id` = @Original_detman_id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@Original_id_documento" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="id_documento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcion" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio_unitario" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_precio_unitario" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio_total" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_precio_total" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@Original_detman_id" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="detman_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `detalle_manual` (`id_documento`, `descripcion`, `cantidad`, `precio_unitario`, `precio_total`) VALUES (@id_documento, @descripcion, @cantidad, @precio_unitario, @precio_total)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@id_documento" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="id_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@precio_unitario" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@precio_total" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_documento, descripcion, cantidad, precio_unitario, precio_total, detman_id FROM detalle_manual</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `detalle_manual` SET `id_documento` = @id_documento, `descripcion` = @descripcion, `cantidad` = @cantidad, `precio_unitario` = @precio_unitario, `precio_total` = @precio_total WHERE ((`id_documento` = @Original_id_documento) AND ((@IsNull_descripcion = 1 AND `descripcion` IS NULL) OR (`descripcion` = @Original_descripcion)) AND ((@IsNull_cantidad = 1 AND `cantidad` IS NULL) OR (`cantidad` = @Original_cantidad)) AND ((@IsNull_precio_unitario = 1 AND `precio_unitario` IS NULL) OR (`precio_unitario` = @Original_precio_unitario)) AND ((@IsNull_precio_total = 1 AND `precio_total` IS NULL) OR (`precio_total` = @Original_precio_total)) AND (`detman_id` = @Original_detman_id))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@id_documento" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="id_documento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cantidad" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@precio_unitario" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@precio_total" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@Original_id_documento" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="id_documento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descripcion" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cantidad" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cantidad" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="cantidad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio_unitario" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_precio_unitario" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_unitario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_precio_total" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_precio_total" Precision="0" ProviderType="NewDecimal" Scale="0" Size="0" SourceColumn="precio_total" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="UInt32" Direction="Input" ParameterName="@Original_detman_id" Precision="0" ProviderType="UInt32" Scale="0" Size="0" SourceColumn="detman_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
+              <Mapping SourceColumn="precio_total" DataSetColumn="precio_total" />
+              <Mapping SourceColumn="detman_id" DataSetColumn="detman_id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetVale" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetVale" msprop:Generator_UserDSName="DataSetVale">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowClassName="EncabezadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_paciente" msprop:Generator_ColumnVarNameInTable="columnnombre_paciente" msprop:Generator_ColumnPropNameInRow="nombre_paciente" msprop:Generator_ColumnPropNameInTable="nombre_pacienteColumn" msprop:Generator_UserColumnName="nombre_paciente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit" msprop:Generator_ColumnVarNameInTable="columnnit" msprop:Generator_ColumnPropNameInRow="nit" msprop:Generator_ColumnPropNameInTable="nitColumn" msprop:Generator_UserColumnName="nit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_celular" msprop:Generator_ColumnVarNameInTable="columntelefono_celular" msprop:Generator_ColumnPropNameInRow="telefono_celular" msprop:Generator_ColumnPropNameInTable="telefono_celularColumn" msprop:Generator_UserColumnName="telefono_celular" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
+              <xs:element name="contacto" msprop:Generator_ColumnVarNameInTable="columncontacto" msprop:Generator_ColumnPropNameInRow="contacto" msprop:Generator_ColumnPropNameInTable="contactoColumn" msprop:Generator_UserColumnName="contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalle_manual" msprop:Generator_TableClassName="detalle_manualDataTable" msprop:Generator_TableVarName="tabledetalle_manual" msprop:Generator_TablePropName="detalle_manual" msprop:Generator_RowDeletingName="detalle_manualRowDeleting" msprop:Generator_UserTableName="detalle_manual" msprop:Generator_RowChangingName="detalle_manualRowChanging" msprop:Generator_RowEvHandlerName="detalle_manualRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_manualRowDeleted" msprop:Generator_RowEvArgName="detalle_manualRowChangeEvent" msprop:Generator_RowChangedName="detalle_manualRowChanged" msprop:Generator_RowClassName="detalle_manualRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_UserColumnName="precio_unitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_total" msprop:Generator_ColumnVarNameInTable="columnprecio_total" msprop:Generator_ColumnPropNameInRow="precio_total" msprop:Generator_ColumnPropNameInTable="precio_totalColumn" msprop:Generator_UserColumnName="precio_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="detman_id" msprop:Generator_ColumnVarNameInTable="columndetman_id" msprop:Generator_ColumnPropNameInRow="detman_id" msprop:Generator_ColumnPropNameInTable="detman_idColumn" msprop:Generator_UserColumnName="detman_id" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Encabezado" />
+      <xs:field xpath="mstns:id_documento" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Encabezado_detalle_manual" msdata:parent="Encabezado" msdata:child="detalle_manual" msdata:parentkey="id_documento" msdata:childkey="id_documento" msprop:Generator_UserChildTable="detalle_manual" msprop:Generator_ChildPropName="Getdetalle_manualRows" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_UserRelationName="Encabezado_detalle_manual" msprop:Generator_RelationVarName="relationEncabezado_detalle_manual" msprop:Generator_UserParentTable="Encabezado" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

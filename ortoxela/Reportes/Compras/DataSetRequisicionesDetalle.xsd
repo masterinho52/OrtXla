@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRequisicionesDetalle" targetNamespace="http://tempuri.org/DataSetRequisicionesDetalle.xsd" xmlns:mstns="http://tempuri.org/DataSetRequisicionesDetalle.xsd" xmlns="http://tempuri.org/DataSetRequisicionesDetalle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_doctos_detalleTableAdapter" GeneratorDataComponentClassName="v_doctos_detalleTableAdapter" Name="v_doctos_detalle" UserDataComponentName="v_doctos_detalleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_doctos_detalle" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        codigo_articulo, Articulo, cantidad_enviada, costo_sin_iva, costo_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_proveedor, dias_credito, no_documento, 
+                         descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, codigo_tipo, codigo_serie, nombre_documento
+FROM            v_doctos_detalle
+WHERE        (codigo_tipo IN (8, 9))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codigo_articulo" DataSetColumn="codigo_articulo" />
+              <Mapping SourceColumn="Articulo" DataSetColumn="Articulo" />
+              <Mapping SourceColumn="cantidad_enviada" DataSetColumn="cantidad_enviada" />
+              <Mapping SourceColumn="costo_sin_iva" DataSetColumn="costo_sin_iva" />
+              <Mapping SourceColumn="costo_iva" DataSetColumn="costo_iva" />
+              <Mapping SourceColumn="nombre_bodega" DataSetColumn="nombre_bodega" />
+              <Mapping SourceColumn="fecha_compra" DataSetColumn="fecha_compra" />
+              <Mapping SourceColumn="Tipo_Pago" DataSetColumn="Tipo_Pago" />
+              <Mapping SourceColumn="nombre_proveedor" DataSetColumn="nombre_proveedor" />
+              <Mapping SourceColumn="dias_credito" DataSetColumn="dias_credito" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="descuentoPct" DataSetColumn="descuentoPct" />
+              <Mapping SourceColumn="DescuentoQ" DataSetColumn="DescuentoQ" />
+              <Mapping SourceColumn="total_iva" DataSetColumn="total_iva" />
+              <Mapping SourceColumn="Total_sin_iva" DataSetColumn="Total_sin_iva" />
+              <Mapping SourceColumn="refer_documento" DataSetColumn="refer_documento" />
+              <Mapping SourceColumn="codigo_tipo" DataSetColumn="codigo_tipo" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
+              <Mapping SourceColumn="nombre_documento" DataSetColumn="nombre_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRequisicionesDetalle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetRequisicionesDetalle" msprop:Generator_UserDSName="DataSetRequisicionesDetalle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_doctos_detalle" msprop:Generator_TableClassName="v_doctos_detalleDataTable" msprop:Generator_TableVarName="tablev_doctos_detalle" msprop:Generator_TablePropName="v_doctos_detalle" msprop:Generator_RowDeletingName="v_doctos_detalleRowDeleting" msprop:Generator_UserTableName="v_doctos_detalle" msprop:Generator_RowChangingName="v_doctos_detalleRowChanging" msprop:Generator_RowEvHandlerName="v_doctos_detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="v_doctos_detalleRowDeleted" msprop:Generator_RowEvArgName="v_doctos_detalleRowChangeEvent" msprop:Generator_RowChangedName="v_doctos_detalleRowChanged" msprop:Generator_RowClassName="v_doctos_detalleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Articulo" msprop:Generator_ColumnVarNameInTable="columnArticulo" msprop:Generator_ColumnPropNameInRow="Articulo" msprop:Generator_ColumnPropNameInTable="ArticuloColumn" msprop:Generator_UserColumnName="Articulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad_enviada" msprop:Generator_ColumnVarNameInTable="columncantidad_enviada" msprop:Generator_ColumnPropNameInRow="cantidad_enviada" msprop:Generator_ColumnPropNameInTable="cantidad_enviadaColumn" msprop:Generator_UserColumnName="cantidad_enviada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_sin_iva" msprop:Generator_ColumnVarNameInTable="columncosto_sin_iva" msprop:Generator_ColumnPropNameInRow="costo_sin_iva" msprop:Generator_ColumnPropNameInTable="costo_sin_ivaColumn" msprop:Generator_UserColumnName="costo_sin_iva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_iva" msprop:Generator_ColumnVarNameInTable="columncosto_iva" msprop:Generator_ColumnPropNameInRow="costo_iva" msprop:Generator_ColumnPropNameInTable="costo_ivaColumn" msprop:Generator_UserColumnName="costo_iva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nombre_bodega" msprop:Generator_ColumnVarNameInTable="columnnombre_bodega" msprop:Generator_ColumnPropNameInRow="nombre_bodega" msprop:Generator_ColumnPropNameInTable="nombre_bodegaColumn" msprop:Generator_UserColumnName="nombre_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_compra" msprop:Generator_ColumnVarNameInTable="columnfecha_compra" msprop:Generator_ColumnPropNameInRow="fecha_compra" msprop:Generator_ColumnPropNameInTable="fecha_compraColumn" msprop:Generator_UserColumnName="fecha_compra" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Tipo_Pago" msprop:Generator_ColumnVarNameInTable="columnTipo_Pago" msprop:Generator_ColumnPropNameInRow="Tipo_Pago" msprop:Generator_ColumnPropNameInTable="Tipo_PagoColumn" msprop:Generator_UserColumnName="Tipo_Pago" type="xs:unsignedLong" minOccurs="0" />
+              <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dias_credito" msprop:Generator_ColumnVarNameInTable="columndias_credito" msprop:Generator_ColumnPropNameInRow="dias_credito" msprop:Generator_ColumnPropNameInTable="dias_creditoColumn" msprop:Generator_UserColumnName="dias_credito" type="xs:int" minOccurs="0" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
+              <xs:element name="descuentoPct" msprop:Generator_ColumnVarNameInTable="columndescuentoPct" msprop:Generator_ColumnPropNameInRow="descuentoPct" msprop:Generator_ColumnPropNameInTable="descuentoPctColumn" msprop:Generator_UserColumnName="descuentoPct" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DescuentoQ" msprop:Generator_ColumnVarNameInTable="columnDescuentoQ" msprop:Generator_ColumnPropNameInRow="DescuentoQ" msprop:Generator_ColumnPropNameInTable="DescuentoQColumn" msprop:Generator_UserColumnName="DescuentoQ" type="xs:decimal" />
+              <xs:element name="total_iva" msprop:Generator_ColumnVarNameInTable="columntotal_iva" msprop:Generator_ColumnPropNameInRow="total_iva" msprop:Generator_ColumnPropNameInTable="total_ivaColumn" msprop:Generator_UserColumnName="total_iva" type="xs:decimal" />
+              <xs:element name="Total_sin_iva" msprop:Generator_ColumnVarNameInTable="columnTotal_sin_iva" msprop:Generator_ColumnPropNameInRow="Total_sin_iva" msprop:Generator_ColumnPropNameInTable="Total_sin_ivaColumn" msprop:Generator_UserColumnName="Total_sin_iva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="refer_documento" msprop:Generator_ColumnVarNameInTable="columnrefer_documento" msprop:Generator_ColumnPropNameInRow="refer_documento" msprop:Generator_ColumnPropNameInTable="refer_documentoColumn" msprop:Generator_UserColumnName="refer_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_tipo" msprop:Generator_ColumnVarNameInTable="columncodigo_tipo" msprop:Generator_ColumnPropNameInRow="codigo_tipo" msprop:Generator_ColumnPropNameInTable="codigo_tipoColumn" msprop:Generator_UserColumnName="codigo_tipo" type="xs:unsignedInt" />
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:unsignedInt" />
+              <xs:element name="nombre_documento" msprop:Generator_ColumnVarNameInTable="columnnombre_documento" msprop:Generator_ColumnPropNameInRow="nombre_documento" msprop:Generator_ColumnPropNameInTable="nombre_documentoColumn" msprop:Generator_UserColumnName="nombre_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_doctos_detalle" />
+      <xs:field xpath="mstns:codigo_tipo" />
+      <xs:field xpath="mstns:codigo_serie" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
