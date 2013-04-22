@@ -157,8 +157,8 @@ namespace ortoxela.Reimpresion
 
                             Pedido.Vale.XtraReportVale reporte = new Pedido.Vale.XtraReportVale();
                             reporte.Parameters["ID"].Value = gridView1.GetFocusedRowCellValue("id_documento");
-                            reporte.Parameters["RECIBO"].Value = " ";
-                            reporte.Parameters["SOCIO"].Value = ortoxela.Tabla("SELECT c.nombre_cliente FROM header_doctos_inv h INNER JOIN clientes c ON h.socio_comercial=c.codigo_cliente WHERE h.id_documento=" + gridView1.GetFocusedRowCellValue("id_documento")).Rows[0][0]; ;
+                            // reporte.Parameters["RECIBO"].Value = " ";
+                            // reporte.Parameters["SOCIO"].Value = ortoxela.Tabla("SELECT c.nombre_cliente FROM header_doctos_inv h INNER JOIN clientes c ON h.socio_comercial=c.codigo_cliente WHERE h.id_documento=" + gridView1.GetFocusedRowCellValue("id_documento")).Rows[0][0]; ;
                             reporte.RequestParameters = false;
                             reporte.ShowPreviewDialog();
                         }

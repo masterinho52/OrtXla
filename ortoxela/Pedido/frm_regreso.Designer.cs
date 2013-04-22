@@ -517,6 +517,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -607,7 +608,7 @@
             this.xtraTabPage1.Controls.Add(this.sbnuevo);
             this.xtraTabPage1.Controls.Add(this.sbAceptar);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1283, 501);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1285, 501);
             this.xtraTabPage1.Text = "DEVOLUCION";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
@@ -883,7 +884,7 @@
             this.checkEdit1.Location = new System.Drawing.Point(12, 130);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "DETALLE MANUAL";
-            this.checkEdit1.Size = new System.Drawing.Size(114, 18);
+            this.checkEdit1.Size = new System.Drawing.Size(114, 19);
             this.checkEdit1.TabIndex = 78;
             this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 

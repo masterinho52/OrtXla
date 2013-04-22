@@ -47,7 +47,8 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule16 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule17 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule18 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule19 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_pedido));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.gridLookBodega = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -97,6 +98,8 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.sbSinDeposito = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.SbNoterminado = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -274,7 +277,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookBodega.Properties.NullText = "SELECCIONE BODEGA";
             this.gridLookBodega.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookBodega.Size = new System.Drawing.Size(137, 20);
+            this.gridLookBodega.Size = new System.Drawing.Size(135, 20);
             this.gridLookBodega.TabIndex = 0;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "SELECCIONE LA BODEGA";
@@ -290,7 +293,7 @@
             // textVenta
             // 
             this.textVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textVenta.Location = new System.Drawing.Point(1096, 11);
+            this.textVenta.Location = new System.Drawing.Point(1094, 11);
             this.textVenta.Name = "textVenta";
             this.textVenta.Properties.Mask.EditMask = "c";
             this.textVenta.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -300,7 +303,7 @@
             // textCantidadArt
             // 
             this.textCantidadArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCantidadArt.Location = new System.Drawing.Point(919, 11);
+            this.textCantidadArt.Location = new System.Drawing.Point(917, 11);
             this.textCantidadArt.Name = "textCantidadArt";
             this.textCantidadArt.Properties.Mask.EditMask = "d";
             this.textCantidadArt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -313,7 +316,7 @@
             // textNombreArti
             // 
             this.textNombreArti.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNombreArti.Location = new System.Drawing.Point(525, 11);
+            this.textNombreArti.Location = new System.Drawing.Point(523, 11);
             this.textNombreArti.Name = "textNombreArti";
             this.textNombreArti.Size = new System.Drawing.Size(282, 20);
             this.textNombreArti.TabIndex = 2;
@@ -325,7 +328,7 @@
             // textCodigoArt
             // 
             this.textCodigoArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCodigoArt.Location = new System.Drawing.Point(311, 11);
+            this.textCodigoArt.Location = new System.Drawing.Point(309, 11);
             this.textCodigoArt.Name = "textCodigoArt";
             this.textCodigoArt.Size = new System.Drawing.Size(100, 20);
             this.textCodigoArt.TabIndex = 1;
@@ -337,7 +340,7 @@
             // textTotalDescuento
             // 
             this.textTotalDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalDescuento.Location = new System.Drawing.Point(1149, 92);
+            this.textTotalDescuento.Location = new System.Drawing.Point(1147, 92);
             this.textTotalDescuento.Name = "textTotalDescuento";
             this.textTotalDescuento.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalDescuento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,7 +355,7 @@
             // textTotalPedido
             // 
             this.textTotalPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalPedido.Location = new System.Drawing.Point(1159, 398);
+            this.textTotalPedido.Location = new System.Drawing.Point(1157, 398);
             this.textTotalPedido.Name = "textTotalPedido";
             this.textTotalPedido.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalPedido.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,7 +509,7 @@
             // textTotalVale
             // 
             this.textTotalVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalVale.Location = new System.Drawing.Point(898, 426);
+            this.textTotalVale.Location = new System.Drawing.Point(892, 426);
             this.textTotalVale.Name = "textTotalVale";
             this.textTotalVale.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalVale.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -521,7 +524,7 @@
             // textNumeroDocVale
             // 
             this.textNumeroDocVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNumeroDocVale.Location = new System.Drawing.Point(914, 52);
+            this.textNumeroDocVale.Location = new System.Drawing.Point(908, 52);
             this.textNumeroDocVale.Name = "textNumeroDocVale";
             this.textNumeroDocVale.Size = new System.Drawing.Size(104, 20);
             this.textNumeroDocVale.TabIndex = 2;
@@ -546,7 +549,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textDetalleVale.Location = new System.Drawing.Point(68, 13);
             this.textDetalleVale.Name = "textDetalleVale";
-            this.textDetalleVale.Size = new System.Drawing.Size(481, 20);
+            this.textDetalleVale.Size = new System.Drawing.Size(533, 20);
             this.textDetalleVale.TabIndex = 3;
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "CAMPO OBLIGATORIO";
@@ -555,7 +558,7 @@
             // textCantidadVale
             // 
             this.textCantidadVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCantidadVale.Location = new System.Drawing.Point(628, 12);
+            this.textCantidadVale.Location = new System.Drawing.Point(677, 12);
             this.textCantidadVale.Name = "textCantidadVale";
             this.textCantidadVale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadVale.Size = new System.Drawing.Size(67, 20);
@@ -567,20 +570,17 @@
             // textUnitarioVale
             // 
             this.textUnitarioVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textUnitarioVale.Location = new System.Drawing.Point(772, 12);
+            this.textUnitarioVale.Location = new System.Drawing.Point(824, 12);
             this.textUnitarioVale.Name = "textUnitarioVale";
             this.textUnitarioVale.Properties.Mask.EditMask = "c";
             this.textUnitarioVale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textUnitarioVale.Size = new System.Drawing.Size(94, 20);
             this.textUnitarioVale.TabIndex = 5;
-            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule13.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationDetalleVale.SetValidationRule(this.textUnitarioVale, conditionValidationRule13);
             // 
             // textDescuentoPorce
             // 
             this.textDescuentoPorce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDescuentoPorce.Location = new System.Drawing.Point(1149, 58);
+            this.textDescuentoPorce.Location = new System.Drawing.Point(1147, 58);
             this.textDescuentoPorce.Name = "textDescuentoPorce";
             this.textDescuentoPorce.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescuentoPorce.Properties.Appearance.Options.UseFont = true;
@@ -590,15 +590,15 @@
             this.textDescuentoPorce.TabIndex = 46;
             this.textDescuentoPorce.ToolTip = "Si ingresa % al final lo toma como porcentaje,  si no como Quetzales";
             this.textDescuentoPorce.ToolTipTitle = "Ingreso Pedido";
-            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule14.ErrorText = "INGRESE EL PRODUCTO";
-            this.dxValidationProvider1.SetValidationRule(this.textDescuentoPorce, conditionValidationRule14);
+            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule13.ErrorText = "INGRESE EL PRODUCTO";
+            this.dxValidationProvider1.SetValidationRule(this.textDescuentoPorce, conditionValidationRule13);
             this.textDescuentoPorce.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // gridLookSerieVale
             // 
             this.gridLookSerieVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLookSerieVale.Location = new System.Drawing.Point(664, 26);
+            this.gridLookSerieVale.Location = new System.Drawing.Point(658, 26);
             this.gridLookSerieVale.Name = "gridLookSerieVale";
             this.gridLookSerieVale.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -627,7 +627,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNitCliente.Location = new System.Drawing.Point(523, 30);
             this.textNitCliente.Name = "textNitCliente";
-            this.textNitCliente.Size = new System.Drawing.Size(93, 20);
+            this.textNitCliente.Size = new System.Drawing.Size(87, 20);
             this.textNitCliente.TabIndex = 84;
             this.textNitCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNitCliente_KeyPress);
             // 
@@ -637,12 +637,12 @@
             this.textNombreCliente.Name = "textNombreCliente";
             this.textNombreCliente.Size = new System.Drawing.Size(267, 20);
             this.textNombreCliente.TabIndex = 82;
+            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule14.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationImprimeVale.SetValidationRule(this.textNombreCliente, conditionValidationRule14);
             conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule15.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationImprimeVale.SetValidationRule(this.textNombreCliente, conditionValidationRule15);
-            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule16.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationPedido.SetValidationRule(this.textNombreCliente, conditionValidationRule16);
+            this.dxValidationPedido.SetValidationRule(this.textNombreCliente, conditionValidationRule15);
             this.textNombreCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
             // textTelefonoCliente
@@ -651,30 +651,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textTelefonoCliente.Location = new System.Drawing.Point(523, 56);
             this.textTelefonoCliente.Name = "textTelefonoCliente";
-            this.textTelefonoCliente.Size = new System.Drawing.Size(94, 20);
+            this.textTelefonoCliente.Size = new System.Drawing.Size(88, 20);
             this.textTelefonoCliente.TabIndex = 87;
             // 
             // gridLookTipoPago
             // 
             this.gridLookTipoPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLookTipoPago.Location = new System.Drawing.Point(814, 103);
+            this.gridLookTipoPago.Location = new System.Drawing.Point(808, 103);
             this.gridLookTipoPago.Name = "gridLookTipoPago";
             this.gridLookTipoPago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookTipoPago.Size = new System.Drawing.Size(168, 20);
             this.gridLookTipoPago.TabIndex = 90;
+            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule16.ErrorText = "TIPO PAGO VACIO";
+            conditionValidationRule16.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationImprimeVale.SetValidationRule(this.gridLookTipoPago, conditionValidationRule16);
             conditionValidationRule17.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule17.ErrorText = "SELECCION TIPO PAGO";
-            this.dxValidationImprimeVale.SetValidationRule(this.gridLookTipoPago, conditionValidationRule17);
-            conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule18.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationPedido.SetValidationRule(this.gridLookTipoPago, conditionValidationRule18);
+            conditionValidationRule17.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationPedido.SetValidationRule(this.gridLookTipoPago, conditionValidationRule17);
             this.gridLookTipoPago.EditValueChanged += new System.EventHandler(this.gridLookTipoPago_EditValueChanged);
             // 
             // radioGroup2
             // 
             this.radioGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroup2.Location = new System.Drawing.Point(813, 24);
+            this.radioGroup2.Location = new System.Drawing.Point(807, 24);
             this.radioGroup2.Name = "radioGroup2";
             this.radioGroup2.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "CONTADO"),
@@ -715,11 +716,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNoReciboVale.Location = new System.Drawing.Point(522, 108);
             this.textNoReciboVale.Name = "textNoReciboVale";
-            this.textNoReciboVale.Size = new System.Drawing.Size(94, 20);
+            this.textNoReciboVale.Size = new System.Drawing.Size(88, 20);
             this.textNoReciboVale.TabIndex = 93;
-            conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule19.ErrorText = "INGRESE NUMERO DE RECIBO";
-            this.dxValidationRecibo.SetValidationRule(this.textNoReciboVale, conditionValidationRule19);
+            conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule18.ErrorText = "INGRESE NUMERO DE RECIBO";
+            this.dxValidationRecibo.SetValidationRule(this.textNoReciboVale, conditionValidationRule18);
             // 
             // dateEdit1
             // 
@@ -732,13 +733,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(94, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(88, 20);
             this.dateEdit1.TabIndex = 95;
             // 
             // textDeposito
             // 
             this.textDeposito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDeposito.Location = new System.Drawing.Point(814, 76);
+            this.textDeposito.Location = new System.Drawing.Point(808, 76);
             this.textDeposito.Name = "textDeposito";
             this.textDeposito.Size = new System.Drawing.Size(204, 20);
             this.textDeposito.TabIndex = 97;
@@ -761,12 +762,44 @@
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.sbSinDeposito);
+            this.xtraTabPage3.Controls.Add(this.simpleButton11);
             this.xtraTabPage3.Controls.Add(this.SbNoterminado);
             this.xtraTabPage3.Controls.Add(this.simpleButton9);
             this.xtraTabPage3.Controls.Add(this.groupControl5);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1271, 474);
-            this.xtraTabPage3.Text = "VALE";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1273, 474);
+            this.xtraTabPage3.Text = "PEDIDO";
+            // 
+            // sbSinDeposito
+            // 
+            this.sbSinDeposito.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.sbSinDeposito.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbSinDeposito.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.sbSinDeposito.Appearance.Options.UseFont = true;
+            this.sbSinDeposito.Appearance.Options.UseForeColor = true;
+            this.sbSinDeposito.Image = ((System.Drawing.Image)(resources.GetObject("sbSinDeposito.Image")));
+            this.sbSinDeposito.Location = new System.Drawing.Point(1088, 320);
+            this.sbSinDeposito.Name = "sbSinDeposito";
+            this.sbSinDeposito.Size = new System.Drawing.Size(154, 90);
+            this.sbSinDeposito.TabIndex = 70;
+            this.sbSinDeposito.Text = "PEDIDOS \r\nSIN \r\nDEPOSITO";
+            this.sbSinDeposito.Click += new System.EventHandler(this.sbSinDeposito_Click);
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton11.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.simpleButton11.Appearance.Options.UseFont = true;
+            this.simpleButton11.Appearance.Options.UseForeColor = true;
+            this.simpleButton11.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.Image")));
+            this.simpleButton11.Location = new System.Drawing.Point(1088, 15);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(154, 91);
+            this.simpleButton11.TabIndex = 69;
+            this.simpleButton11.Text = "GUARDAR\r\n";
+            this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
             // 
             // SbNoterminado
             // 
@@ -776,9 +809,9 @@
             this.SbNoterminado.Appearance.Options.UseFont = true;
             this.SbNoterminado.Appearance.Options.UseForeColor = true;
             this.SbNoterminado.Image = global::ortoxela.Properties.Resources.database_process_24x24_32;
-            this.SbNoterminado.Location = new System.Drawing.Point(1094, 227);
+            this.SbNoterminado.Location = new System.Drawing.Point(1088, 217);
             this.SbNoterminado.Name = "SbNoterminado";
-            this.SbNoterminado.Size = new System.Drawing.Size(154, 99);
+            this.SbNoterminado.Size = new System.Drawing.Size(154, 90);
             this.SbNoterminado.TabIndex = 68;
             this.SbNoterminado.Text = "PROCESO NO \r\nTERMINADO";
             this.SbNoterminado.Click += new System.EventHandler(this.SbNoterminado_Click);
@@ -790,12 +823,13 @@
             this.simpleButton9.Appearance.ForeColor = System.Drawing.Color.Green;
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.Appearance.Options.UseForeColor = true;
+            this.simpleButton9.Enabled = false;
             this.simpleButton9.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.simpleButton9.Location = new System.Drawing.Point(1094, 96);
+            this.simpleButton9.Location = new System.Drawing.Point(1088, 117);
             this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(154, 101);
+            this.simpleButton9.Size = new System.Drawing.Size(154, 82);
             this.simpleButton9.TabIndex = 10;
-            this.simpleButton9.Text = "GUARDAR\r\nIMPRIMIR";
+            this.simpleButton9.Text = "IMPRIMIR";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // groupControl5
@@ -837,7 +871,7 @@
             this.groupControl5.Controls.Add(this.groupControl4);
             this.groupControl5.Location = new System.Drawing.Point(7, 14);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1054, 458);
+            this.groupControl5.Size = new System.Drawing.Size(1048, 458);
             this.groupControl5.TabIndex = 67;
             this.groupControl5.Text = "DATOS DEL VALE";
             // 
@@ -853,9 +887,9 @@
             this.panelControl2.Controls.Add(this.labelControl37);
             this.panelControl2.Controls.Add(this.textUnitarioVale);
             this.panelControl2.Controls.Add(this.labelControl38);
-            this.panelControl2.Location = new System.Drawing.Point(94, 134);
+            this.panelControl2.Location = new System.Drawing.Point(36, 134);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(923, 43);
+            this.panelControl2.Size = new System.Drawing.Size(975, 43);
             this.panelControl2.TabIndex = 99;
             // 
             // simpleButton10
@@ -863,7 +897,7 @@
             this.simpleButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton10.Image = global::ortoxela.Properties.Resources.agregar32;
             this.simpleButton10.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton10.Location = new System.Drawing.Point(872, 5);
+            this.simpleButton10.Location = new System.Drawing.Point(924, 5);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(44, 32);
             this.simpleButton10.TabIndex = 6;
@@ -880,7 +914,7 @@
             // labelControl37
             // 
             this.labelControl37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl37.Location = new System.Drawing.Point(566, 17);
+            this.labelControl37.Location = new System.Drawing.Point(615, 17);
             this.labelControl37.Name = "labelControl37";
             this.labelControl37.Size = new System.Drawing.Size(56, 13);
             this.labelControl37.TabIndex = 75;
@@ -889,16 +923,16 @@
             // labelControl38
             // 
             this.labelControl38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl38.Location = new System.Drawing.Point(712, 16);
+            this.labelControl38.Location = new System.Drawing.Point(758, 16);
             this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Size = new System.Drawing.Size(54, 13);
+            this.labelControl38.Size = new System.Drawing.Size(64, 13);
             this.labelControl38.TabIndex = 77;
-            this.labelControl38.Text = "UNITARIO:";
+            this.labelControl38.Text = "P.UNITARIO:";
             // 
             // labelControl14
             // 
             this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Location = new System.Drawing.Point(753, 79);
+            this.labelControl14.Location = new System.Drawing.Point(747, 79);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(55, 13);
             this.labelControl14.TabIndex = 98;
@@ -916,7 +950,7 @@
             // labelControl42
             // 
             this.labelControl42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl42.Location = new System.Drawing.Point(450, 111);
+            this.labelControl42.Location = new System.Drawing.Point(418, 111);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(62, 13);
             this.labelControl42.TabIndex = 94;
@@ -927,7 +961,7 @@
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Image = global::ortoxela.Properties.Resources.add_16x16_32;
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(994, 101);
+            this.simpleButton2.Location = new System.Drawing.Point(988, 101);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 22);
             this.simpleButton2.TabIndex = 91;
@@ -935,7 +969,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(747, 110);
+            this.labelControl1.Location = new System.Drawing.Point(741, 110);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 89;
@@ -1004,7 +1038,7 @@
             // labelControl39
             // 
             this.labelControl39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl39.Location = new System.Drawing.Point(625, 29);
+            this.labelControl39.Location = new System.Drawing.Point(619, 29);
             this.labelControl39.Name = "labelControl39";
             this.labelControl39.Size = new System.Drawing.Size(33, 13);
             this.labelControl39.TabIndex = 79;
@@ -1021,7 +1055,7 @@
             // labelControl33
             // 
             this.labelControl33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl33.Location = new System.Drawing.Point(814, 55);
+            this.labelControl33.Location = new System.Drawing.Point(808, 55);
             this.labelControl33.Name = "labelControl33";
             this.labelControl33.Size = new System.Drawing.Size(96, 13);
             this.labelControl33.TabIndex = 66;
@@ -1031,7 +1065,7 @@
             // 
             this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Location = new System.Drawing.Point(834, 430);
+            this.labelControl32.Location = new System.Drawing.Point(828, 430);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(57, 19);
             this.labelControl32.TabIndex = 63;
@@ -1043,19 +1077,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl4.Controls.Add(this.gridControl2);
-            this.groupControl4.Location = new System.Drawing.Point(90, 177);
+            this.groupControl4.Location = new System.Drawing.Point(36, 177);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(929, 247);
+            this.groupControl4.Size = new System.Drawing.Size(977, 247);
             this.groupControl4.TabIndex = 62;
             this.groupControl4.Text = "DETALLE DE VALE";
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(4, 19);
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(921, 223);
+            this.gridControl2.Size = new System.Drawing.Size(973, 224);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1072,7 +1109,7 @@
             this.xtraTabPage2.Controls.Add(this.sbPrintReciboCaja);
             this.xtraTabPage2.Controls.Add(this.groupControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1271, 474);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1273, 474);
             this.xtraTabPage2.Text = "RECIBO DE CAJA";
             // 
             // sbPrintReciboCaja
@@ -1265,14 +1302,14 @@
             this.xtraTabPage1.Controls.Add(this.textTotalPedido);
             this.xtraTabPage1.Controls.Add(this.labelControl11);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1271, 474);
-            this.xtraTabPage1.Text = "PEDIDO";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1273, 474);
+            this.xtraTabPage1.Text = "ENVIO";
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(902, 406);
+            this.label4.Location = new System.Drawing.Point(901, 406);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 81;
@@ -1282,7 +1319,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(902, 382);
+            this.label3.Location = new System.Drawing.Point(901, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 80;
@@ -1293,7 +1330,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(883, 406);
+            this.label2.Location = new System.Drawing.Point(882, 406);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 79;
@@ -1304,7 +1341,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(883, 382);
+            this.label1.Location = new System.Drawing.Point(882, 382);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 78;
@@ -1317,7 +1354,7 @@
             this.simplePrinter.Appearance.Options.UseFont = true;
             this.simplePrinter.Enabled = false;
             this.simplePrinter.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.simplePrinter.Location = new System.Drawing.Point(462, 381);
+            this.simplePrinter.Location = new System.Drawing.Point(461, 381);
             this.simplePrinter.Name = "simplePrinter";
             this.simplePrinter.Size = new System.Drawing.Size(177, 49);
             this.simplePrinter.TabIndex = 11;
@@ -1342,7 +1379,7 @@
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Location = new System.Drawing.Point(4, 156);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1263, 36);
+            this.panelControl1.Size = new System.Drawing.Size(1261, 36);
             this.panelControl1.TabIndex = 8;
             // 
             // simpleButton1
@@ -1350,7 +1387,7 @@
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Image = global::ortoxela.Properties.Resources.add_16x16_32;
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(813, 9);
+            this.simpleButton1.Location = new System.Drawing.Point(811, 9);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(26, 22);
             this.simpleButton1.TabIndex = 3;
@@ -1359,7 +1396,7 @@
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(1034, 14);
+            this.labelControl10.Location = new System.Drawing.Point(1032, 14);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(52, 13);
             this.labelControl10.TabIndex = 45;
@@ -1370,7 +1407,7 @@
             this.sbAgregaArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.sbAgregaArt.Image = global::ortoxela.Properties.Resources.agregar32;
             this.sbAgregaArt.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.sbAgregaArt.Location = new System.Drawing.Point(1203, 2);
+            this.sbAgregaArt.Location = new System.Drawing.Point(1201, 2);
             this.sbAgregaArt.Name = "sbAgregaArt";
             this.sbAgregaArt.Size = new System.Drawing.Size(44, 32);
             this.sbAgregaArt.TabIndex = 6;
@@ -1379,7 +1416,7 @@
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(857, 14);
+            this.labelControl8.Location = new System.Drawing.Point(855, 14);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(56, 13);
             this.labelControl8.TabIndex = 40;
@@ -1388,7 +1425,7 @@
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(418, 14);
+            this.labelControl7.Location = new System.Drawing.Point(416, 14);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(100, 13);
             this.labelControl7.TabIndex = 38;
@@ -1397,7 +1434,7 @@
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(201, 14);
+            this.labelControl6.Location = new System.Drawing.Point(199, 14);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(104, 13);
             this.labelControl6.TabIndex = 36;
@@ -1417,7 +1454,7 @@
             this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbCancelar.Appearance.Options.UseFont = true;
             this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
-            this.sbCancelar.Location = new System.Drawing.Point(685, 381);
+            this.sbCancelar.Location = new System.Drawing.Point(684, 381);
             this.sbCancelar.Name = "sbCancelar";
             this.sbCancelar.Size = new System.Drawing.Size(177, 49);
             this.sbCancelar.TabIndex = 12;
@@ -1430,7 +1467,7 @@
             this.sbAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAceptar.Appearance.Options.UseFont = true;
             this.sbAceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.sbAceptar.Location = new System.Drawing.Point(262, 381);
+            this.sbAceptar.Location = new System.Drawing.Point(261, 381);
             this.sbAceptar.Name = "sbAceptar";
             this.sbAceptar.Size = new System.Drawing.Size(172, 49);
             this.sbAceptar.TabIndex = 10;
@@ -1443,7 +1480,7 @@
             this.sbnuevo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbnuevo.Appearance.Options.UseFont = true;
             this.sbnuevo.Image = global::ortoxela.Properties.Resources.Nuevo42;
-            this.sbnuevo.Location = new System.Drawing.Point(23, 381);
+            this.sbnuevo.Location = new System.Drawing.Point(22, 381);
             this.sbnuevo.Name = "sbnuevo";
             this.sbnuevo.Size = new System.Drawing.Size(164, 49);
             this.sbnuevo.TabIndex = 13;
@@ -1458,17 +1495,17 @@
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Location = new System.Drawing.Point(5, 198);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1256, 181);
+            this.groupControl2.Size = new System.Drawing.Size(1254, 181);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Detalle";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(4, 19);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1248, 157);
+            this.gridControl1.Size = new System.Drawing.Size(1250, 158);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1512,7 +1549,7 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Location = new System.Drawing.Point(1, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1266, 148);
+            this.groupControl1.Size = new System.Drawing.Size(1264, 148);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Encabezado";
             // 
@@ -1524,7 +1561,7 @@
             this.simpleButton8.Appearance.Options.UseFont = true;
             this.simpleButton8.Appearance.Options.UseForeColor = true;
             this.simpleButton8.Image = global::ortoxela.Properties.Resources.database_process_24x24_32;
-            this.simpleButton8.Location = new System.Drawing.Point(1037, 17);
+            this.simpleButton8.Location = new System.Drawing.Point(1035, 17);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(212, 30);
             this.simpleButton8.TabIndex = 78;
@@ -1560,7 +1597,7 @@
             // 
             this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Location = new System.Drawing.Point(989, 95);
+            this.labelControl12.Location = new System.Drawing.Point(987, 95);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(154, 19);
             this.labelControl12.TabIndex = 66;
@@ -1571,7 +1608,7 @@
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.Image = global::ortoxela.Properties.Resources.whtarrow;
             this.simpleButton5.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(1215, 52);
+            this.simpleButton5.Location = new System.Drawing.Point(1213, 52);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(34, 31);
             this.simpleButton5.TabIndex = 9;
@@ -1591,7 +1628,7 @@
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton4.Image = global::ortoxela.Properties.Resources._lock;
             this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(1215, 52);
+            this.simpleButton4.Location = new System.Drawing.Point(1213, 52);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(34, 31);
             this.simpleButton4.TabIndex = 7;
@@ -1601,7 +1638,7 @@
             // labelControl16
             // 
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl16.Location = new System.Drawing.Point(1079, 67);
+            this.labelControl16.Location = new System.Drawing.Point(1077, 67);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(64, 13);
             this.labelControl16.TabIndex = 55;
@@ -1645,7 +1682,7 @@
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Location = new System.Drawing.Point(1033, 405);
+            this.labelControl11.Location = new System.Drawing.Point(1031, 405);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(120, 19);
             this.labelControl11.TabIndex = 45;
@@ -1885,5 +1922,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
+        private DevExpress.XtraEditors.SimpleButton sbSinDeposito;
     }
 }

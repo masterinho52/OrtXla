@@ -75,6 +75,7 @@ namespace ortoxela.Pedido
         {
             try
             {
+
                 DataTable tablatemporal = new DataTable();
                 cadena = "SELECT bodegas_header.codigo_bodega,bodegas_header.nombre_bodega,articulos.codigo_articulo,articulos.descripcion,detalle_doctos_inv.cantidad_enviada,detalle_doctos_inv.precio_unitario,detalle_doctos_inv.precio_total FROM detalle_doctos_inv INNER JOIN articulos ON detalle_doctos_inv.codigo_articulo=articulos.codigo_articulo INNER JOIN bodegas_header ON detalle_doctos_inv.codigo_bodega=bodegas_header.codigo_bodega WHERE detalle_doctos_inv.id_documento=" + id_pedido;
                 tablatemporal = logicaorto.Tabla(cadena);
@@ -612,6 +613,11 @@ namespace ortoxela.Pedido
         private void textPor_EditValueChanged(object sender, EventArgs e)
         {
             textCantidadDe.Text = logicaorto.enletras(textPor.Text.Replace("Q", ""))+" QUETZALES EXACTOS";
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         

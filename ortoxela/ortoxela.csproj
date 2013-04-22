@@ -604,11 +604,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetVale.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\Vale\DataSet_vales_detalle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_vales_detalle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pedido\Vale\XtraReportVale.cs">
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Pedido\Vale\XtraReportVale.Designer.cs">
       <DependentUpon>XtraReportVale.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Permisos\Permisos.cs">
       <SubType>Form</SubType>
@@ -1283,6 +1290,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedido\Vale\XtraReportVale.resx">
       <DependentUpon>XtraReportVale.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Permisos\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
@@ -1648,6 +1656,17 @@
     </None>
     <None Include="Pedido\Vale\DataSetVale.xss">
       <DependentUpon>DataSetVale.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Vale\DataSet_vales_detalle.xsc">
+      <DependentUpon>DataSet_vales_detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Vale\DataSet_vales_detalle.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_vales_detalle.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pedido\Vale\DataSet_vales_detalle.xss">
+      <DependentUpon>DataSet_vales_detalle.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

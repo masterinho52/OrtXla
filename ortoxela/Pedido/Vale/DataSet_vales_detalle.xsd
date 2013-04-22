@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_vales_detalle" targetNamespace="http://tempuri.org/DataSet_vales_detalle.xsd" xmlns:mstns="http://tempuri.org/DataSet_vales_detalle.xsd" xmlns="http://tempuri.org/DataSet_vales_detalle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_vales_detalle_manualTableAdapter" GeneratorDataComponentClassName="v_vales_detalle_manualTableAdapter" Name="v_vales_detalle_manual" UserDataComponentName="v_vales_detalle_manualTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_vales_detalle_manual" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_documento, no_documento, refer_documento, fecha, nombre_cliente, nombre_paciente, nit, telefono_celular, contacto, monto, monto_neto, tipo_pago, 
+                         contado_credito, estadoid, nombre_status, descripcion, cantidad, precio_unitario, precio_total
+FROM            v_vales_detalle_manual</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="refer_documento" DataSetColumn="refer_documento" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
+              <Mapping SourceColumn="nombre_paciente" DataSetColumn="nombre_paciente" />
+              <Mapping SourceColumn="nit" DataSetColumn="nit" />
+              <Mapping SourceColumn="telefono_celular" DataSetColumn="telefono_celular" />
+              <Mapping SourceColumn="contacto" DataSetColumn="contacto" />
+              <Mapping SourceColumn="monto" DataSetColumn="monto" />
+              <Mapping SourceColumn="monto_neto" DataSetColumn="monto_neto" />
+              <Mapping SourceColumn="tipo_pago" DataSetColumn="tipo_pago" />
+              <Mapping SourceColumn="contado_credito" DataSetColumn="contado_credito" />
+              <Mapping SourceColumn="estadoid" DataSetColumn="estadoid" />
+              <Mapping SourceColumn="nombre_status" DataSetColumn="nombre_status" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
+              <Mapping SourceColumn="precio_total" DataSetColumn="precio_total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_vales_detalle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_vales_detalle" msprop:Generator_UserDSName="DataSet_vales_detalle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_vales_detalle_manual" msprop:Generator_TableClassName="v_vales_detalle_manualDataTable" msprop:Generator_TableVarName="tablev_vales_detalle_manual" msprop:Generator_TablePropName="v_vales_detalle_manual" msprop:Generator_RowDeletingName="v_vales_detalle_manualRowDeleting" msprop:Generator_UserTableName="v_vales_detalle_manual" msprop:Generator_RowChangingName="v_vales_detalle_manualRowChanging" msprop:Generator_RowEvHandlerName="v_vales_detalle_manualRowChangeEventHandler" msprop:Generator_RowDeletedName="v_vales_detalle_manualRowDeleted" msprop:Generator_RowEvArgName="v_vales_detalle_manualRowChangeEvent" msprop:Generator_RowChangedName="v_vales_detalle_manualRowChanged" msprop:Generator_RowClassName="v_vales_detalle_manualRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
+              <xs:element name="refer_documento" msprop:Generator_ColumnVarNameInTable="columnrefer_documento" msprop:Generator_ColumnPropNameInRow="refer_documento" msprop:Generator_ColumnPropNameInTable="refer_documentoColumn" msprop:Generator_UserColumnName="refer_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_paciente" msprop:Generator_ColumnVarNameInTable="columnnombre_paciente" msprop:Generator_ColumnPropNameInRow="nombre_paciente" msprop:Generator_ColumnPropNameInTable="nombre_pacienteColumn" msprop:Generator_UserColumnName="nombre_paciente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit" msprop:Generator_ColumnVarNameInTable="columnnit" msprop:Generator_ColumnPropNameInRow="nit" msprop:Generator_ColumnPropNameInTable="nitColumn" msprop:Generator_UserColumnName="nit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_celular" msprop:Generator_ColumnVarNameInTable="columntelefono_celular" msprop:Generator_ColumnPropNameInRow="telefono_celular" msprop:Generator_ColumnPropNameInTable="telefono_celularColumn" msprop:Generator_UserColumnName="telefono_celular" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contacto" msprop:Generator_ColumnVarNameInTable="columncontacto" msprop:Generator_ColumnPropNameInRow="contacto" msprop:Generator_ColumnPropNameInTable="contactoColumn" msprop:Generator_UserColumnName="contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" />
+              <xs:element name="monto_neto" msprop:Generator_ColumnVarNameInTable="columnmonto_neto" msprop:Generator_ColumnPropNameInRow="monto_neto" msprop:Generator_ColumnPropNameInTable="monto_netoColumn" msprop:Generator_UserColumnName="monto_neto" type="xs:decimal" />
+              <xs:element name="tipo_pago" msprop:Generator_ColumnVarNameInTable="columntipo_pago" msprop:Generator_ColumnPropNameInRow="tipo_pago" msprop:Generator_ColumnPropNameInTable="tipo_pagoColumn" msprop:Generator_UserColumnName="tipo_pago" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="contado_credito" msprop:Generator_ColumnVarNameInTable="columncontado_credito" msprop:Generator_ColumnPropNameInRow="contado_credito" msprop:Generator_ColumnPropNameInTable="contado_creditoColumn" msprop:Generator_UserColumnName="contado_credito" type="xs:unsignedLong" minOccurs="0" />
+              <xs:element name="estadoid" msprop:Generator_ColumnVarNameInTable="columnestadoid" msprop:Generator_ColumnPropNameInRow="estadoid" msprop:Generator_ColumnPropNameInTable="estadoidColumn" msprop:Generator_UserColumnName="estadoid" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="nombre_status" msprop:Generator_ColumnVarNameInTable="columnnombre_status" msprop:Generator_ColumnPropNameInRow="nombre_status" msprop:Generator_ColumnPropNameInTable="nombre_statusColumn" msprop:Generator_UserColumnName="nombre_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_UserColumnName="precio_unitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_total" msprop:Generator_ColumnVarNameInTable="columnprecio_total" msprop:Generator_ColumnPropNameInRow="precio_total" msprop:Generator_ColumnPropNameInTable="precio_totalColumn" msprop:Generator_UserColumnName="precio_total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_vales_detalle_manual" />
+      <xs:field xpath="mstns:id_documento" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
