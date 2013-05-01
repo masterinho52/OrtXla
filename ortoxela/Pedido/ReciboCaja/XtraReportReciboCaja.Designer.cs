@@ -29,6 +29,10 @@ namespace ortoxela.Pedido.ReciboCaja
         private void InitializeComponent()
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SaldoActual = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SaldoAnterior = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
@@ -49,15 +53,14 @@ namespace ortoxela.Pedido.ReciboCaja
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.dataSetReciboCaja1 = new ortoxela.Pedido.ReciboCaja.DataSetReciboCaja();
             this.recibosTableAdapter = new ortoxela.Pedido.ReciboCaja.DataSetReciboCajaTableAdapters.recibosTableAdapter();
-            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReciboCaja1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel17,
-            this.xrLabel16,
+            this.xrLabel19,
+            this.xrLabel18,
             this.xrLabel15,
             this.xrLabel14,
             this.xrLabel13,
@@ -73,16 +76,58 @@ namespace ortoxela.Pedido.ReciboCaja
             this.xrLabel3,
             this.xrLabel2,
             this.xrLabel1});
-            this.Detail.HeightF = 302F;
+            this.Detail.HeightF = 346.7917F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // xrLabel19
+            // 
+            this.xrLabel19.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.SaldoActual, "Text", "")});
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(230.2083F, 313.7917F);
+            this.xrLabel19.Name = "xrLabel19";
+            this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel19.Text = "xrLabel19";
+            // 
+            // SaldoActual
+            // 
+            this.SaldoActual.Description = "Saldo Actual";
+            this.SaldoActual.Name = "SaldoActual";
+            this.SaldoActual.Type = typeof(decimal);
+            this.SaldoActual.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // xrLabel18
+            // 
+            this.xrLabel18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.SaldoAnterior, "Text", "")});
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(230.2083F, 241.625F);
+            this.xrLabel18.Name = "xrLabel18";
+            this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel18.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel18.Text = "xrLabel18";
+            // 
+            // SaldoAnterior
+            // 
+            this.SaldoAnterior.Description = "Saldo Anterior";
+            this.SaldoAnterior.Name = "SaldoAnterior";
+            this.SaldoAnterior.Type = typeof(decimal);
+            this.SaldoAnterior.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
             // xrLabel16
             // 
             this.xrLabel16.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.id_recibos")});
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(658.3333F, 0F);
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.no_recibo")});
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(605.6667F, 36.79166F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel16.SizeF = new System.Drawing.SizeF(72.33331F, 23F);
@@ -103,7 +148,7 @@ namespace ortoxela.Pedido.ReciboCaja
             // xrLabel14
             // 
             this.xrLabel14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.valor", "{0:c2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.valor", "{0:#,#}")});
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(614F, 193.7083F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -195,7 +240,7 @@ namespace ortoxela.Pedido.ReciboCaja
             // xrLabel5
             // 
             this.xrLabel5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.monto", "{0:c2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.monto", "{0:#,#}")});
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(230.2083F, 279F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -205,7 +250,7 @@ namespace ortoxela.Pedido.ReciboCaja
             // xrLabel4
             // 
             this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.monto", "{0:c2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "recibos.monto", "{0:#,#}")});
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(605.6667F, 39.45832F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -244,7 +289,9 @@ namespace ortoxela.Pedido.ReciboCaja
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 64.99999F;
+            this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel16});
+            this.TopMargin.HeightF = 59.79166F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -264,16 +311,6 @@ namespace ortoxela.Pedido.ReciboCaja
             // 
             this.recibosTableAdapter.ClearBeforeFill = true;
             // 
-            // xrLabel17
-            // 
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(614.0001F, 0F);
-            this.xrLabel17.Name = "xrLabel17";
-            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel17.SizeF = new System.Drawing.SizeF(44.33325F, 23F);
-            this.xrLabel17.StylePriority.UseTextAlignment = false;
-            this.xrLabel17.Text = "No:";
-            this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
             // XtraReportReciboCaja
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -283,8 +320,11 @@ namespace ortoxela.Pedido.ReciboCaja
             this.DataAdapter = this.recibosTableAdapter;
             this.DataMember = "recibos";
             this.DataSource = this.dataSetReciboCaja1;
-            this.Margins = new System.Drawing.Printing.Margins(49, 52, 65, 100);
-            this.Version = "11.2";
+            this.Margins = new System.Drawing.Printing.Margins(49, 52, 60, 100);
+            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+            this.SaldoAnterior,
+            this.SaldoActual});
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReciboCaja1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -313,6 +353,9 @@ namespace ortoxela.Pedido.ReciboCaja
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRLabel xrLabel16;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel17;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel19;
+        private DevExpress.XtraReports.Parameters.Parameter SaldoActual;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel18;
+        private DevExpress.XtraReports.Parameters.Parameter SaldoAnterior;
     }
 }

@@ -98,6 +98,7 @@ namespace ortoxela.Pedido
             TotalDescuento = TempTotalPedido = TotalPedido = 0;
             textTotalDescuento.Text = TotalPedido.ToString("C");
             textTotalPedido.Text = TotalPedido.ToString("C");
+            textPor.Text = TotalPedido.ToString("C");
             id_usuario_descuento = "0";
             id_socioComercial = "";
             gridLookSerieRecibo.EditValue = 3;
@@ -178,10 +179,11 @@ namespace ortoxela.Pedido
             if (Convert.ToInt16(gridLookTipoPago.EditValue) == 1)
             {
                 textEfectivo.Enabled=true;
-                textEfectivo.Text = textTotalPedido.Text;
+                textEfectivo.Text = textTotalVale.Text;
                 textCheque.Enabled = false;
                 textBanco.Enabled = false;
-                textValor.Text = textTotalPedido.Text;
+                // textValor.Text = textTotalPedido.Text;
+                textValor.Text = textTotalVale.Text;
             }
             else
             {
@@ -189,7 +191,9 @@ namespace ortoxela.Pedido
                 textEfectivo.Text = "";
                 textCheque.Enabled = true;
                 textBanco.Enabled = true;
-                textValor.Text = textTotalPedido.Text;
+                textBanco.Text =  textTotalVale.Text;
+                // textValor.Text = textTotalPedido.Text;
+                textValor.Text =  textTotalVale.Text;
             }
         }
         private void sbAceptar_Click(object sender, EventArgs e)
@@ -540,7 +544,7 @@ namespace ortoxela.Pedido
             textDescuentoPorce.Text = "0";
             textTotalDescuento.Text = TotalPedido.ToString("C");
             textTotalPedido.Text = TotalPedido.ToString("C");
-            sbPrintReciboCaja.Enabled = true;
+            sbSaveReciboCaja.Enabled = true;
             llenaVale();
             CreaColumnas();
         }
@@ -670,16 +674,16 @@ namespace ortoxela.Pedido
                         comando.Transaction = transa;
                         comando.ExecuteNonQuery();
                         transa.Commit();
-                        ReciboCaja.DataSetReciboCaja dataset = new ReciboCaja.DataSetReciboCaja();
-                        dataset.Tables["recibos"].Rows.Add(textNoRecibo.Text, dateFechaRecibo.DateTime, 1, textPor.Text.Replace("Q", ""), clases.ClassVariables.id_usuario, 1, textFacturas.Text, textCheque.Text, textBanco.Text, textValor.Text, abono, cancelacion, otro, textCantidadDe.Text, textRecibimosDe.Text, id_cliente, textEfectivo.Text);
-                        ReciboCaja.XtraReportReciboCaja reporte = new ReciboCaja.XtraReportReciboCaja();
-                        reporte.DataSource = dataset;
-                        reporte.DataMember = dataset.Tables["recibos"].TableName;
-                        reporte.RequestParameters = false;
-                        reporte.ShowPreviewDialog();
+                        //ReciboCaja.DataSetReciboCaja dataset = new ReciboCaja.DataSetReciboCaja();
+                        //dataset.Tables["recibos"].Rows.Add(textNoRecibo.Text, dateFechaRecibo.DateTime, 1, textPor.Text.Replace("Q", ""), clases.ClassVariables.id_usuario, 1, textFacturas.Text, textCheque.Text, textBanco.Text, textValor.Text, abono, cancelacion, otro, textCantidadDe.Text, textRecibimosDe.Text, id_cliente, textEfectivo.Text);
+                        //ReciboCaja.XtraReportReciboCaja reporte = new ReciboCaja.XtraReportReciboCaja();
+                        //reporte.DataSource = dataset;
+                        //reporte.DataMember = dataset.Tables["recibos"].TableName;
+                        //reporte.RequestParameters = false;
+                        //reporte.ShowPreviewDialog();
                         xtraTabPage1.PageEnabled = true;
                         llenaPedido();
-                        sbPrintReciboCaja.Enabled = false;
+                        sbSaveReciboCaja.Enabled = false;
                     }
                     catch
                     {
@@ -928,6 +932,7 @@ namespace ortoxela.Pedido
                     comando.ExecuteNonQuery();
                 }
                 int tipo_pago= Convert.ToInt32(gridLookTipoDocumento.EditValue);
+                string desc="";
                 string depo = textDeposito.Text;
                 if (depo.Length > 0 )
                         tipo_pago = 3;
@@ -935,12 +940,14 @@ namespace ortoxela.Pedido
                          "VALUES (" + gridLookSerieVale.EditValue + ","+tipo_pago+", '" + textNumeroDocVale.Text+ "', " + id_cliente+ ", '" +dateEdit1.DateTime.ToString("yyyy-MM-dd") + "', " + totalVale+ ",0, " + totalVale+ ", " + clases.ClassVariables.id_usuario+ ",'" +id_socioComercial+ "',8,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"');SELECT LAST_INSERT_ID();";
                 comando = new MySqlCommand(cadena,conexion);
                 comando.Transaction = transa;
-                id_nuevo_vale = comando.ExecuteScalar().ToString();
+                id_nuevo_vale = comando.ExecuteScalar().ToString();                
                 cadena = "";
                 for (int x = 0; x < gridView3.DataRowCount; x++)
                 {
+                    desc = gridView3.GetRowCellValue(x, "DESCRIPCION").ToString().Replace("'", " "); ;                    
                     cadena =cadena+ "INSERT INTO ortoxela.detalle_manual(id_documento, descripcion, cantidad, precio_unitario, precio_total) " +
-                                "VALUES (" + id_nuevo_vale + ",'" + gridView3.GetRowCellValue(x, "DESCRIPCION") + "', " + gridView3.GetRowCellValue(x, "CANTIDAD") + ", " + gridView3.GetRowCellValue(x, "PRECIO UNITARIO") + ", " + gridView3.GetRowCellValue(x, "TOTAL") + ");";
+                                "VALUES (" + id_nuevo_vale + ",'" + desc + "', " + gridView3.GetRowCellValue(x, "CANTIDAD") + ", " + gridView3.GetRowCellValue(x, "PRECIO UNITARIO") + ", " + gridView3.GetRowCellValue(x, "TOTAL") + ");";
+                    desc="" ;
                 }
                 
                 comando = new MySqlCommand(cadena,conexion);
@@ -956,7 +963,17 @@ namespace ortoxela.Pedido
                 groupControl5.Enabled = false;
                 clases.ClassMensajes.INSERTO(this);
                 textValor.Text = totalVale.ToString();
-                simpleButton9.Enabled = true;
+                simpleButton9.Enabled = true;                
+                if (radioGroup2.SelectedIndex == 0)
+                {
+                    LlenaDatosRecibo();
+                    xtraTabPage2.PageEnabled = true;
+                }
+                else
+                {
+                    xtraTabPage1.PageEnabled = true;
+                    llenaPedido();
+                }
             }
             catch
             {
@@ -1029,6 +1046,9 @@ namespace ortoxela.Pedido
         {
             try
             {
+                gridView3.SelectAll();
+                gridView3.DeleteSelectedRows();
+
                 DataTable tablatemporal = new DataTable();
                 cadena = "SELECT	* FROM detalle_manual WHERE detalle_manual.id_documento=" + id_nuevo_vale;
                 tablatemporal = logicaorto.Tabla(cadena);
@@ -1048,13 +1068,38 @@ namespace ortoxela.Pedido
             catch
             { }
         }
+        //private void limpiarGrid()
+        //(     
+        
+            
+            
+
+        //        foreach (DataRow fila in tablatemp.Rows)
+        //        {
+        //            gridView3.AddNewRow();                    
+        //            gridView3.SetRowCellValue(gridView3.FocusedRowHandle, "DESCRIPCION", fila["descripcion"]);
+        //            gridView3.SetRowCellValue(gridView3.FocusedRowHandle, "CANTIDAD", Convert.ToInt32(fila["cantidad"]));
+        //            gridView3.SetRowCellValue(gridView3.FocusedRowHandle, "PRECIO UNITARIO", fila["precio_unitario"]);
+        //            gridView3.SetRowCellValue(gridView3.FocusedRowHandle, "TOTAL", fila["precio_total"]);
+        //            totalVale = totalVale+ Convert.ToDouble(fila["precio_total"]);
+        //            gridView3.UpdateCurrentRow();
+        //        }
+        
+        //);
+
         private void CargaDatosValeSeguir()
         {
             try
-            {                
+            {
+                // limpiarGrid();
+                gridView3.SelectAll();
+                gridView3.DeleteSelectedRows();
+                
                 DataTable tablatemporal = new DataTable();
                 cadena = "SELECT	* FROM detalle_manual WHERE detalle_manual.id_documento=" + id_nuevo_vale;
                 tablatemporal = logicaorto.Tabla(cadena);
+                
+
                 foreach (DataRow fila in tablatemporal.Rows)
                 {
                     gridView3.AddNewRow();                    
@@ -1107,7 +1152,9 @@ namespace ortoxela.Pedido
                 dateEdit1.DateTime = Convert.ToDateTime(tempLlena.Rows[0]["fecha"]);
                 textTotalDescuento.Text = Convert.ToDouble(tempLlena.Rows[0]["descuento"]).ToString("C");
                 textTotalPedido.Text = Convert.ToDouble(tempLlena.Rows[0]["monto_neto"]).ToString("C");
+                textTotalVale.Text = Convert.ToDouble(tempLlena.Rows[0]["monto_neto"]).ToString("C");
                 radioGroup1.SelectedIndex = Convert.ToInt16(Convert.ToBoolean(tempLlena.Rows[0]["contado_credito"]));
+                textNumeroDocVale.Text = tempLlena.Rows[0]["no_documento"].ToString();
                 cadena = "SELECT clientes.codigo_cliente AS CODIGO,clientes.nombre_cliente AS 'NOMBRE CLIENTE',clientes.nit,clientes.socio_comercial FROM clientes WHERE clientes.codigo_cliente=" + id_socioComercial;
                 try
                 {
@@ -1126,7 +1173,7 @@ namespace ortoxela.Pedido
                     textNoReciboVale = textNoRecibo;
                     llenaPedido();
                     xtraTabPage1.PageEnabled = true;
-                    sbPrintReciboCaja.Enabled = false;
+                    sbSaveReciboCaja.Enabled = false;
                     
                 }               
             }
@@ -1228,10 +1275,6 @@ namespace ortoxela.Pedido
             }
         }
 
-        private void xtraTabControl1_Click(object sender, EventArgs e)
-        {
-
-        }
         string id_cotizacion;
         private void simpleButton8_Click_1(object sender, EventArgs e)
         {
@@ -1291,16 +1334,7 @@ namespace ortoxela.Pedido
             // reporte.Parameters["SOCIO"].Value = textSocioComercial.Text;
             reporte.RequestParameters = false;
             reporte.ShowPreviewDialog();
-            if (radioGroup2.SelectedIndex == 0)
-            {
-                LlenaDatosRecibo();
-                xtraTabPage2.PageEnabled = true;
-            }
-            else
-            {
-                xtraTabPage1.PageEnabled = true;
-                llenaPedido();
-            }
+           
             /**/
         }
 
@@ -1419,9 +1453,23 @@ namespace ortoxela.Pedido
             tieneDeposito = 1;
             if (string.IsNullOrEmpty(id_nuevo_vale) != true)
                 simpleButton9.Enabled = true;
+            simpleButton11.Enabled = true;
+            xtraTabPage2.PageEnabled = false;
+            xtraTabPage1.PageEnabled = false;
             Cursor.Current = Cursors.Default;
             gridLookTipoDocumento.EditValue = 6;
 
+        }
+
+        private void sbPrintReciboCaja_Click(object sender, EventArgs e)
+        {
+            ReciboCaja.DataSetReciboCaja dataset = new ReciboCaja.DataSetReciboCaja();
+            dataset.Tables["recibos"].Rows.Add(textNoRecibo.Text, dateFechaRecibo.DateTime, 1, textPor.Text.Replace("Q", ""), clases.ClassVariables.id_usuario, 1, textFacturas.Text, textCheque.Text.Replace("Q", ""), textBanco.Text.Replace("Q", ""), textValor.Text.Replace("Q", ""), abono, cancelacion, otro, textCantidadDe.Text, textRecibimosDe.Text, id_cliente, textEfectivo.Text.Replace("Q", ""));
+            ReciboCaja.XtraReportReciboCaja reporte = new ReciboCaja.XtraReportReciboCaja();
+            reporte.DataSource = dataset;
+            reporte.DataMember = dataset.Tables["recibos"].TableName;
+            reporte.RequestParameters = false;
+            reporte.ShowPreviewDialog();
         }
 
 

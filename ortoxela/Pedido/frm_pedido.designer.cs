@@ -129,6 +129,7 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.sbPrintReciboCaja = new DevExpress.XtraEditors.SimpleButton();
+            this.sbSaveReciboCaja = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookSerieRecibo = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -551,6 +552,7 @@
             this.textDetalleVale.Name = "textDetalleVale";
             this.textDetalleVale.Size = new System.Drawing.Size(533, 20);
             this.textDetalleVale.TabIndex = 3;
+            this.textDetalleVale.ToolTip = "Descripción del Pedido";
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "CAMPO OBLIGATORIO";
             this.dxValidationDetalleVale.SetValidationRule(this.textDetalleVale, conditionValidationRule11);
@@ -758,7 +760,6 @@
             this.xtraTabPage3,
             this.xtraTabPage2,
             this.xtraTabPage1});
-            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // xtraTabPage3
             // 
@@ -779,7 +780,7 @@
             this.sbSinDeposito.Appearance.Options.UseFont = true;
             this.sbSinDeposito.Appearance.Options.UseForeColor = true;
             this.sbSinDeposito.Image = ((System.Drawing.Image)(resources.GetObject("sbSinDeposito.Image")));
-            this.sbSinDeposito.Location = new System.Drawing.Point(1088, 320);
+            this.sbSinDeposito.Location = new System.Drawing.Point(1088, 312);
             this.sbSinDeposito.Name = "sbSinDeposito";
             this.sbSinDeposito.Size = new System.Drawing.Size(154, 90);
             this.sbSinDeposito.TabIndex = 70;
@@ -809,7 +810,7 @@
             this.SbNoterminado.Appearance.Options.UseFont = true;
             this.SbNoterminado.Appearance.Options.UseForeColor = true;
             this.SbNoterminado.Image = global::ortoxela.Properties.Resources.database_process_24x24_32;
-            this.SbNoterminado.Location = new System.Drawing.Point(1088, 217);
+            this.SbNoterminado.Location = new System.Drawing.Point(1088, 210);
             this.SbNoterminado.Name = "SbNoterminado";
             this.SbNoterminado.Size = new System.Drawing.Size(154, 90);
             this.SbNoterminado.TabIndex = 68;
@@ -1107,6 +1108,7 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.sbPrintReciboCaja);
+            this.xtraTabPage2.Controls.Add(this.sbSaveReciboCaja);
             this.xtraTabPage2.Controls.Add(this.groupControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1273, 474);
@@ -1118,12 +1120,25 @@
             this.sbPrintReciboCaja.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbPrintReciboCaja.Appearance.Options.UseFont = true;
             this.sbPrintReciboCaja.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.sbPrintReciboCaja.Location = new System.Drawing.Point(531, 341);
+            this.sbPrintReciboCaja.Location = new System.Drawing.Point(680, 344);
             this.sbPrintReciboCaja.Name = "sbPrintReciboCaja";
             this.sbPrintReciboCaja.Size = new System.Drawing.Size(282, 49);
-            this.sbPrintReciboCaja.TabIndex = 66;
-            this.sbPrintReciboCaja.Text = "GUARDAR/IMPRIMIR";
-            this.sbPrintReciboCaja.Click += new System.EventHandler(this.simpleButton8_Click);
+            this.sbPrintReciboCaja.TabIndex = 67;
+            this.sbPrintReciboCaja.Text = "IMPRIMIR";
+            this.sbPrintReciboCaja.Click += new System.EventHandler(this.sbPrintReciboCaja_Click);
+            // 
+            // sbSaveReciboCaja
+            // 
+            this.sbSaveReciboCaja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sbSaveReciboCaja.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbSaveReciboCaja.Appearance.Options.UseFont = true;
+            this.sbSaveReciboCaja.Image = ((System.Drawing.Image)(resources.GetObject("sbSaveReciboCaja.Image")));
+            this.sbSaveReciboCaja.Location = new System.Drawing.Point(320, 344);
+            this.sbSaveReciboCaja.Name = "sbSaveReciboCaja";
+            this.sbSaveReciboCaja.Size = new System.Drawing.Size(282, 49);
+            this.sbSaveReciboCaja.TabIndex = 66;
+            this.sbSaveReciboCaja.Text = "GUARDAR";
+            this.sbSaveReciboCaja.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
             // groupControl3
             // 
@@ -1843,7 +1858,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.TextEdit textRecibimosDe;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.SimpleButton sbPrintReciboCaja;
+        private DevExpress.XtraEditors.SimpleButton sbSaveReciboCaja;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.TextEdit textNoRecibo;
         private DevExpress.XtraEditors.LabelControl labelControl29;
@@ -1924,5 +1939,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton sbSinDeposito;
+        private DevExpress.XtraEditors.SimpleButton sbPrintReciboCaja;
     }
 }
