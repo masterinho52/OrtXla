@@ -118,19 +118,21 @@ namespace ortoxela.Principal
 
         private void Principal_Load(object sender, EventArgs e)
         {           
-            //registrando los skins
-            DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.UserSkins.BonusSkins.Register();
-            defaultLookAndFeel2.LookAndFeel.SkinName = "Office 2010 Silver";
+            /* registrando los skins*/
+             DevExpress.Skins.SkinManager.EnableFormSkins();
+             DevExpress.UserSkins.BonusSkins.Register();
+             defaultLookAndFeel2.LookAndFeel.SkinName = "Office 2010 Silver";
             
-            //registrando los skins
+            /* registrando los skins */
             BarLocalizer.Active = new MyBarLocalizer();
             SkinHelper.InitSkinGallery(ribbonGalleryBarItem2, true);
             SkinHelper.InitSkinPopupMenu(popupMenu1);
+            /* 
             //ribbonPageCategory1.Color = Color.Coral;
             //ribbonPageCategory2.Color = Color.Green;
             //ribbonPageCategory3.Color = Color.Blue;
             //Ribbon.SelectedPage = FACTURACION.Pages[0];
+             */
             ValidaBotones();
             barStaticItem1.Caption = "USUARIO: "+clases.ClassVariables.NombreComple ;
             //frm_datos_inicio nuevo = new frm_datos_inicio();

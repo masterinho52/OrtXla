@@ -44,7 +44,9 @@ namespace ortoxela.Pedido
             { }
             try
             {
-                cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                /* cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2"; */
+                /*jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE  FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodega.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -54,7 +56,10 @@ namespace ortoxela.Pedido
             { }
             try
             {
-                cadena = "SELECT codigo_serie CODIGO,serie_documento AS 'SERIE DOCUMENTO' FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=5";
+                /* VALE */
+                /* cadena = "SELECT codigo_serie CODIGO,serie_documento AS 'SERIE DOCUMENTO' FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=5"; */
+                /*jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS 'SERIE DOCUMENTO'  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=5 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookTipoDocumento.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoDocumento.Properties.DisplayMember = "SERIE DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
@@ -65,6 +70,7 @@ namespace ortoxela.Pedido
             { }
             try
             {
+                /* RECIBO - No afecta inventario*/
                 cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=2";
                 gridLookSerieRecibo.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookSerieRecibo.Properties.DisplayMember = "DOCUMENTO";
@@ -115,9 +121,18 @@ namespace ortoxela.Pedido
                 if (logicaorto.ExisteRegistro(cadena))
                     textNoDocumento.Text = (Convert.ToInt32(textNoDocumento.Text) + 1).ToString();
                 conexion.Open();                
-                transa = conexion.BeginTransaction();                
-                cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie, tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial, descripcion, estadoid,contado_credito) " +
-                        "VALUES (" + gridLookTipoDocumento.EditValue + ", " + gridLookTipoPago.EditValue + ", '" + textNoDocumento.Text + "', " + id_cliente + ", '" + dateFechaPedido.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TempTotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + id_usuario_descuento + ",'"+id_socioComercial+"', '"+memoDescripcion.Text+"', 8,"+radioGroup2.SelectedIndex+");select last_insert_id();";
+                transa = conexion.BeginTransaction();
+                if (textDeposito.Text != "")
+                {
+                    /* jramirez 2013.07.04 se agregó a la inserción el número de depósito del pedido (vale) */
+                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial, descripcion, estadoid,contado_credito,refer_documento) " +
+                        "VALUES (" + gridLookTipoDocumento.EditValue + ", " + gridLookTipoPago.EditValue + ", '" + textNoDocumento.Text + "', " + id_cliente + ", '" + dateFechaPedido.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TempTotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + id_usuario_descuento + ",'" + id_socioComercial + "', '" + memoDescripcion.Text + "', 8," + radioGroup2.SelectedIndex + ",'" + textDeposito.Text + "');select last_insert_id();";
+                }
+                else
+                {
+                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial, descripcion, estadoid,contado_credito) " +
+                        "VALUES (" + gridLookTipoDocumento.EditValue + ", " + gridLookTipoPago.EditValue + ", '" + textNoDocumento.Text + "', " + id_cliente + ", '" + dateFechaPedido.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TempTotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + id_usuario_descuento + ",'" + id_socioComercial + "', '" + memoDescripcion.Text + "', 8," + radioGroup2.SelectedIndex + ");select last_insert_id();";
+                }
                 comando = new MySqlCommand(cadena,conexion);
                 comando.Transaction = transa;
                 id_nuevo_pedido = comando.ExecuteScalar().ToString();
@@ -360,12 +375,15 @@ namespace ortoxela.Pedido
                 if (dxValidationProvider1.Validate())
                 {
                     DataTable TempoPadre = new DataTable();
-                    cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='"+id_articulo+"'";
+                    /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='"+id_articulo+"'";
+                    jramirez 2013.07.04 */                    
+                    cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
                     string compuesto = logicaorto.Tabla(cadena).Rows[0]["compuesto"].ToString();
                     if (Convert.ToBoolean(logicaorto.Tabla(cadena).Rows[0]["compuesto"]))
                     {
                         
-                        cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo,articulos.minimo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
+                        /* cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo,articulos.minimo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue; */
+                        cadena = "CALL sp_devuelve_sistema ('" + id_articulo + "'," + gridLookBodega.EditValue + ")";
                         TempoPadre = logicaorto.Tabla(cadena);
                         int ExistenciaHijo;
                         int ExistenciaFija;
@@ -1369,7 +1387,8 @@ namespace ortoxela.Pedido
             {            
                 conexion.Open();
                 transa = conexion.BeginTransaction();
-                cadena = "UPDATE header_doctos_inv SET header_doctos_inv.refer_documento='" + textDeposito.Text + "', tipo_pago=3  WHERE header_doctos_inv.id_documento=" + id_nuevo_vale;
+                /* jramirez 2013.07.04 Se actualizan todos los documentos relacionados con el número de depósito */
+                cadena = "UPDATE header_doctos_inv SET header_doctos_inv.refer_documento='No. Deposito: " + textDeposito.Text + "', tipo_pago=3  WHERE codigo_cliente=" + id_cliente.ToString() + " and header_doctos_inv.id_documento IN (SELECT id_documento FROM ortoxela.relacion_venta WHERE id_vale=" + id_nuevo_vale.ToString() + " AND id_documento<>id_vale ) ";
                 comando = new MySqlCommand(cadena, conexion);
                 comando.Transaction = transa;
                 comando.ExecuteNonQuery();
@@ -1470,6 +1489,11 @@ namespace ortoxela.Pedido
             reporte.DataMember = dataset.Tables["recibos"].TableName;
             reporte.RequestParameters = false;
             reporte.ShowPreviewDialog();
+        }
+
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
 

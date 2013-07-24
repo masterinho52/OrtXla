@@ -38,7 +38,9 @@ namespace ortoxela.FacturaTemporal
             catch { }
             try
             {
-                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1";
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodega.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -50,7 +52,9 @@ namespace ortoxela.FacturaTemporal
             try
             {
                 //gridLookTipoDocumento = new GridLookUpEdit();
-                ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo AND t.codigo_tipo IN (1);";
+                /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo AND t.codigo_tipo IN (1);"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO   FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "codigo_serie";
@@ -154,7 +158,10 @@ namespace ortoxela.FacturaTemporal
                 {         
 
                         DataTable TempoPadre = new DataTable();
-                        cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
+                        /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
+                         jramirez 2013.07.04
+                         */
+                        cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
                         string compuesto = logicaxela.Tabla(cadena).Rows[0]["compuesto"].ToString();
                         if (Convert.ToBoolean(logicaxela.Tabla(cadena).Rows[0]["compuesto"]))
                         {

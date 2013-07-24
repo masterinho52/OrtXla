@@ -19,7 +19,6 @@ namespace ortoxela.AnulaFactura
             InitializeComponent();
         }
         classortoxela logicaxela = new classortoxela();
-        string ssql;
         public static string id_usuario_mod;
         private void CargaDatos()
         {

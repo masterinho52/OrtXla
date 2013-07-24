@@ -117,6 +117,7 @@ namespace ortoxela.Reportes.Ventas
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+           
             Cursor.Current = Cursors.WaitCursor;
             XtraReport_VentasTotalesPorMes reportef = new XtraReport_VentasTotalesPorMes();
             reportef.Parameters["Fecha_inicio"].Value = dateEdit6.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
@@ -164,12 +165,19 @@ namespace ortoxela.Reportes.Ventas
 
             try
             {
-                string ssql = "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
+                string ssql;
+                /* = "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
                             " union all  " +
-                            " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1";
+                            " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1"; */
+                /* jramirez 2013.07.24 */
+                ssql  = "SELECT codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 bodegas.DataSource = logicaxela.Tabla(ssql);
                 bodegas.DisplayMember = "nombre_bodega";
                 bodegas.ValueMember = "codigo_bodega";
+
+                listBoxBodegas.DataSource = logicaxela.Tabla(ssql);
+                listBoxBodegas.DisplayMember = "nombre_bodega";
+                listBoxBodegas.ValueMember = "codigo_bodega";
 
             }
             catch

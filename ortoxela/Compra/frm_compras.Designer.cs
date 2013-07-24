@@ -271,7 +271,7 @@
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Location = new System.Drawing.Point(1045, 90);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(154, 19);
+            this.labelControl14.Size = new System.Drawing.Size(151, 19);
             this.labelControl14.TabIndex = 72;
             this.labelControl14.Text = "TOTAL DESCUENTO:";
             // 
@@ -488,7 +488,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(1111, 409);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(120, 19);
+            this.labelControl12.Size = new System.Drawing.Size(118, 19);
             this.labelControl12.TabIndex = 46;
             this.labelControl12.Text = "TOTAL SIN IVA:";
             // 
@@ -498,7 +498,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(1111, 438);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(118, 19);
+            this.labelControl11.Size = new System.Drawing.Size(116, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "PRECIO TOTAL:";
             // 
@@ -785,7 +785,7 @@
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Location = new System.Drawing.Point(897, 419);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(89, 19);
+            this.labelControl15.Size = new System.Drawing.Size(87, 19);
             this.labelControl15.TabIndex = 49;
             this.labelControl15.Text = "TOTAL IVA:";
             // 

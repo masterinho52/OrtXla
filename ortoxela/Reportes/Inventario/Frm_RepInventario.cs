@@ -16,73 +16,43 @@ namespace ortoxela.Reportes.Inventario
             InitializeComponent();
         }
 
+        /* TRASLADOS DE BODEGA */       
         private void simpleButton1_Click(object sender, EventArgs e)
-        {
+        {                
                 this.Cursor = Cursors.WaitCursor;
-                Int32 bodega1 = 0;
-                Int32 bodega2 = 100;
-                string botittle = "Todas";
-                string consulta = "SELECT codigo_articulo, articulo, Ult_compra, Ult_venta, Ult_precio, nombre_bodega, categoria, codigo_categoria, existencia_articulo, codigo_bodega  " +
-                                   " FROM ortoxela.v_inventario where 1=1 ";
-                if (bodegas.SelectedValue.ToString() != "0")
+                if ((dateEdit1.EditValue == null) || (dateEdit2.EditValue == null))
                 {
-                    consulta = "SELECT `a`.`codigo_articulo` AS `codigo_articulo`,REPLACE(a.descripcion,'\"','') AS articulo,SUM(COALESCE(`b`.`existencia_articulo`,0)) AS `existencia_articulo`, " +
-                    " DATE_FORMAT((SELECT f_ultima_compra(b.codigo_articulo) FROM DUAL),'%d-%m-%Y') AS Ult_compra, " +
-                    " DATE_FORMAT((SELECT f_ultima_venta(b.codigo_articulo) FROM DUAL),'%d-%m-%Y') AS Ult_venta, " +
-                    " (`a`.`costo` / 1.12) AS `Ult_precio`, "+
-                    // " (SUM(COALESCE(`b`.`existencia_articulo`,0))*(`a`.`costo` / 1.12)) AS costo_total, "
-                    " `bh`.`codigo_bodega` AS `codigo_bodega`,`bh`.`nombre_bodega` AS `nombre_bodega`,`a`.`codigo_categoria` AS `codigo_categoria`,`s`.`nombre_subcategoria` AS `categoria`  " +                    
-                    " FROM `bodegas_header` `bh` JOIN `bodegas` `b` ON(`bh`.`codigo_bodega` = `b`.`codigo_bodega` ) " +
-                    " JOIN `articulos` `a` ON(`b`.`codigo_articulo` = `a`.`codigo_articulo`) " +
-                    " JOIN `sub_categorias` `s` ON (`a`.`codigo_categoria` = `s`.`codigo_subcat`) " +
-                    " WHERE bh.codigo_bodega= " + bodegas.SelectedValue.ToString();
-                    if (comboBoxCategorias.SelectedValue.ToString() != "0")
-                    {
-                        consulta = consulta + "  and a.codigo_categoria = " + comboBoxCategorias.SelectedValue;
-                    }
-                    consulta = consulta + " GROUP BY b.codigo_articulo ORDER BY a.descripcion";
-                    // consulta = consulta + " and codigo_bodega =" + bodegas.SelectedValue.ToString();
-                    bodega1 = Int32.Parse(bodegas.SelectedValue.ToString());
-                    bodega2 = Int32.Parse(bodegas.SelectedValue.ToString());
-                    botittle = bodegas.Text;
+                    MessageBox.Show("Faltan Fechas", "Error");
+                    this.Cursor = Cursors.Default;
+                    return;
                 }
-                else
-                {
-                    if (comboBoxCategorias.SelectedValue.ToString() != "0")
-                    {
-                        consulta = consulta + "  and a.codigo_categoria = " + comboBoxCategorias.SelectedValue;
-                    }
-                };
+                Int32 Bodega_origen_int,Bodega_destino_int ;                
+                string consulta = "";
+                Bodega_origen_int = Int32.Parse(BodegaOrigen.SelectedValue.ToString());
+                Bodega_destino_int = Int32.Parse(BodegaDestino.SelectedValue.ToString());       
+                consulta = "CALL sp_traslados_bodegas('" + dateEdit1.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + dateEdit2.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + Bodega_origen_int + ","+ Bodega_destino_int +"); ";
+                
                 MySqlDataAdapter adaptadori = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
-                DataSet_Inventario dataseti = new DataSet_Inventario();
-                adaptadori.Fill(dataseti, "v_inventario");                
-                XtraReport_Inventario1 reportei = new XtraReport_Inventario1();
+                // DataSet_TrasladosBodega dataseti = new DataSet_TrasladosBodega();
+                DataSet dataseti = new DataSet();
+                adaptadori.Fill(dataseti, "v_traslados");
+                XtraReport_Traslados reportei = new XtraReport_Traslados();
+                // XtraReport_Inventario1 reportei = new XtraReport_Inventario1();
                 //  XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();            
                 reportei.DataSource = dataseti;
-                reportei.DataMember = dataseti.Tables["v_inventario"].TableName;
-                reportei.Parameters["Fecha_inicio"].Value = dateEdit1.EditValue;
-                reportei.Parameters["Fecha_fin"].Value = dateEdit2.EditValue;
-                reportei.Parameters["existencia"].Value = 0;
-                reportei.Parameters["codigo_bodega1"].Value = bodega1;
-                reportei.Parameters["codigo_bodega2"].Value = bodega2;
-                reportei.Parameters["bodega"].Value = botittle;
+                reportei.DataMember = dataseti.Tables["v_traslados"].TableName;
+                reportei.Parameters["Fecha_inicial"].Value = dateEdit1.EditValue;
+                reportei.Parameters["Fecha_final"].Value = dateEdit2.EditValue;
+                reportei.Parameters["Texto_bodega"].Value = bodegas.Text.ToString();
+                reportei.Parameters["codigo_bodegai"].Value = Bodega_origen_int;
+                reportei.Parameters["codigo_bodegaf"].Value = Bodega_destino_int;                
                 reportei.RequestParameters = false;
                 reportei.ShowPreview();
                 this.Cursor = Cursors.Default ;
-                    // ShowPreviewDialog();
-            /*}
-            else
-            {
 
-                XtraReport_Inventario1 reporteI = new XtraReport_Inventario1();
-                reporteI.Parameters["Fecha_inicio"].Value = dateEdit1.EditValue;
-                reporteI.Parameters["Fecha_fin"].Value = dateEdit2.EditValue;                
-                reporteI.Parameters["existencia"].Value = 0;
-                reporteI.RequestParameters = false;
-                reporteI.ShowPreview();
-            }; */
+
         }
-        
+        /* TOMA INVENTARIO EXISTENCIA */
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -144,7 +114,7 @@ namespace ortoxela.Reportes.Inventario
 
         }
 
-      
+        /* KARDEX */
         classortoxela ortoxela = new classortoxela();
         private void simpleButton4_Click(object sender, EventArgs e)
         {
@@ -234,6 +204,16 @@ namespace ortoxela.Reportes.Inventario
                 bodegas.DataSource = logicaxela.Tabla(ssql);
                 bodegas.DisplayMember = "nombre_bodega";
                 bodegas.ValueMember = "codigo_bodega";
+                //
+                BodegaOrigen.DataSource = logicaxela.Tabla(ssql);
+                BodegaOrigen.DisplayMember = "nombre_bodega";
+                BodegaOrigen.ValueMember = "codigo_bodega";
+                //
+                
+                BodegaDestino.DataSource = logicaxela.Tabla(ssql);
+                BodegaDestino.DisplayMember = "nombre_bodega";
+                BodegaDestino.ValueMember = "codigo_bodega";
+                 
 
             }
             catch
@@ -250,7 +230,7 @@ namespace ortoxela.Reportes.Inventario
             catch
             { }
         }
-
+        /* TOMA INVENTARIO */
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -297,115 +277,6 @@ namespace ortoxela.Reportes.Inventario
             reportet.RequestParameters = false;
             reportet.ShowPreviewDialog();
         }
-
-        private void panelControl3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateEdit3_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateEdit4_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-
-            XtraReport_InventarioResumen reporte = new XtraReport_InventarioResumen();
-            reporte.Parameters["Fecha_inicio"].Value = dateEdit6.EditValue;
-            reporte.Parameters["Fecha_fin"].Value = dateEdit5.EditValue;
-            reporte.RequestParameters = false;
-            reporte.ShowPreview();
-        
-            this.Cursor = Cursors.Default;
-        }
-
-        private void panelControl2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void simpleButton6_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            Int32 bodega1 = 0;
-            Int32 bodega2 = 100;
-            string botittle = "Todas";
-            string consulta = "SELECT precio_venta,codigo_articulo, articulo, Ult_compra, Ult_venta, Ult_precio, nombre_bodega, categoria, codigo_categoria, existencia_articulo, codigo_bodega  " +
-                               " FROM ortoxela.v_inventario2h where 1=1 ";
-            if (bodegas.SelectedValue.ToString() != "0")
-            {
-                consulta = "SELECT `a`.`precio_venta` AS `precio_venta`,`a`.`codigo_articulo` AS `codigo_articulo`,REPLACE(a.descripcion,'\"','') AS articulo,SUM(COALESCE(`b`.`existencia_articulo`,0)) AS `existencia_articulo`, " +
-                " DATE_FORMAT((SELECT f_ultima_compra(b.codigo_articulo) FROM DUAL),'%d-%m-%Y') AS Ult_compra, " +
-                " DATE_FORMAT((SELECT f_ultima_venta(b.codigo_articulo) FROM DUAL),'%d-%m-%Y') AS Ult_venta, " +
-                " (`a`.`costo` / 1.12) AS `Ult_precio`, " +
-                    // " (SUM(COALESCE(`b`.`existencia_articulo`,0))*(`a`.`costo` / 1.12)) AS costo_total, "
-                " `bh`.`codigo_bodega` AS `codigo_bodega`,`bh`.`nombre_bodega` AS `nombre_bodega`,`a`.`codigo_categoria` AS `codigo_categoria`,`s`.`nombre_subcategoria` AS `categoria`  " +
-                " FROM `bodegas_header` `bh` JOIN `bodegas` `b` ON(`bh`.`codigo_bodega` = `b`.`codigo_bodega` ) " +
-                " JOIN `articulos` `a` ON(`b`.`codigo_articulo` = `a`.`codigo_articulo`) " +
-                " JOIN `sub_categorias` `s` ON (`a`.`codigo_categoria` = `s`.`codigo_subcat`) " +
-                " WHERE bh.codigo_bodega= " + bodegas.SelectedValue.ToString();
-                if (comboBoxCategorias.SelectedValue.ToString() != "0")
-                {
-                    consulta = consulta + "  and a.codigo_categoria = " + comboBoxCategorias.SelectedValue;
-                }
-                consulta = consulta + " GROUP BY b.codigo_articulo ORDER BY a.descripcion";
-                // consulta = consulta + " and codigo_bodega =" + bodegas.SelectedValue.ToString();
-                bodega1 = Int32.Parse(bodegas.SelectedValue.ToString());
-                bodega2 = Int32.Parse(bodegas.SelectedValue.ToString());
-                botittle = bodegas.Text;
-            }
-            else
-            {
-                if (comboBoxCategorias.SelectedValue.ToString() != "0")
-                {
-                    consulta = consulta + "  and a.codigo_categoria = " + comboBoxCategorias.SelectedValue;
-                }
-            };
-            MySqlDataAdapter adaptadori = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
-            DataSet_Inventario2H dataseti = new DataSet_Inventario2H();
-            adaptadori.Fill(dataseti, "v_inventario2h");
-            XtraReport_Inventario2H reportei = new XtraReport_Inventario2H();
-            //  XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();            
-            reportei.DataSource = dataseti;
-            reportei.DataMember = dataseti.Tables["v_inventario2h"].TableName;
-            reportei.Parameters["Fecha_inicio"].Value = dateEdit8.EditValue;
-            reportei.Parameters["Fecha_fin"].Value = dateEdit7.EditValue;
-            reportei.Parameters["existencia"].Value = 0;
-            reportei.Parameters["codigo_bodega1"].Value = bodega1;
-            reportei.Parameters["codigo_bodega2"].Value = bodega2;
-            reportei.Parameters["bodega"].Value = botittle;
-            reportei.RequestParameters = false;
-            reportei.ShowPreview();
-            this.Cursor = Cursors.Default;
-            // ShowPreviewDialog();
-            /*}
-            else
-            {
-
-                XtraReport_Inventario1 reporteI = new XtraReport_Inventario1();
-                reporteI.Parameters["Fecha_inicio"].Value = dateEdit1.EditValue;
-                reporteI.Parameters["Fecha_fin"].Value = dateEdit2.EditValue;                
-                reporteI.Parameters["existencia"].Value = 0;
-                reporteI.RequestParameters = false;
-                reporteI.ShowPreview();
-            }; */
-        }
-
-
-                                           
+                                                   
     }
 }

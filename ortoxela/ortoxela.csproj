@@ -491,39 +491,39 @@
     <Compile Include="ModCobranza\TipoDocs\TipoDoc.Designer.cs">
       <DependentUpon>TipoDoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_condicion_conta.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_condicion_conta.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.Designer.cs">
       <DependentUpon>frm_condicion_conta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_config_partida.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_config_partida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_config_partida.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_config_partida.Designer.cs">
       <DependentUpon>frm_config_partida.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_partida_manual.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_partida_manual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModContabilidad\Partidas\frm_partida_manual.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_partida_manual.Designer.cs">
       <DependentUpon>frm_partida_manual.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Reportes\DataSetPartidas.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Reportes\DataSetPartidas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPartidas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Reportes\frm_partidas.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Reportes\frm_partidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModContabilidad\Reportes\frm_partidas.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Reportes\frm_partidas.Designer.cs">
       <DependentUpon>frm_partidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModContabilidad\Reportes\XtraReportPartidas.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Reportes\XtraReportPartidas.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ModContabilidad\Reportes\XtraReportPartidas.Designer.cs">
+    <Compile Include="Reimpresion\ModContabilidad\Reportes\XtraReportPartidas.Designer.cs">
       <DependentUpon>XtraReportPartidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido\EnvioDetallado\DataSetEnvioDetallado.cs">
@@ -738,6 +738,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Inventario2H.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_TrasladosBodega.cs">
+      <DependentUpon>DataSet_TrasladosBodega.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\DataSet_TrasladosBodega.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_TrasladosBodega.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Inventario\Frm_RepInventarioAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -809,6 +817,12 @@
     </Compile>
     <Compile Include="Reportes\Inventario\XtraReport_TomaInventario.designer.cs">
       <DependentUpon>XtraReport_TomaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Traslados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\XtraReport_Traslados.Designer.cs">
+      <DependentUpon>XtraReport_Traslados.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Pedidos\ClassPedidos.cs" />
     <Compile Include="Reportes\Pedidos\DataSet_Pedidos.Designer.cs">
@@ -1255,19 +1269,19 @@
     <EmbeddedResource Include="ModCobranza\TipoDocs\TipoDoc.resx">
       <DependentUpon>TipoDoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModContabilidad\Partidas\frm_condicion_conta.resx">
+    <EmbeddedResource Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.resx">
       <DependentUpon>frm_condicion_conta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModContabilidad\Partidas\frm_config_partida.resx">
+    <EmbeddedResource Include="Reimpresion\ModContabilidad\Partidas\frm_config_partida.resx">
       <DependentUpon>frm_config_partida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModContabilidad\Partidas\frm_partida_manual.resx">
+    <EmbeddedResource Include="Reimpresion\ModContabilidad\Partidas\frm_partida_manual.resx">
       <DependentUpon>frm_partida_manual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModContabilidad\Reportes\frm_partidas.resx">
+    <EmbeddedResource Include="Reimpresion\ModContabilidad\Reportes\frm_partidas.resx">
       <DependentUpon>frm_partidas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModContabilidad\Reportes\XtraReportPartidas.resx">
+    <EmbeddedResource Include="Reimpresion\ModContabilidad\Reportes\XtraReportPartidas.resx">
       <DependentUpon>XtraReportPartidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedido\EnvioDetallado\XtraReportEnvioDetallado.resx">
@@ -1366,6 +1380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Inventario\XtraReport_TomaInventario.resx">
       <DependentUpon>XtraReport_TomaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\XtraReport_Traslados.resx">
+      <DependentUpon>XtraReport_Traslados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Pedidos\frm_ReportePedidos.resx">
       <DependentUpon>frm_ReportePedidos.cs</DependentUpon>
@@ -1580,15 +1597,15 @@
     <None Include="ModCobranza\Reporte\Proveedores\DataSet_Facturas_Pendientes_Proveedores.xss">
       <DependentUpon>DataSet_Facturas_Pendientes_Proveedores.xsd</DependentUpon>
     </None>
-    <None Include="ModContabilidad\Reportes\DataSetPartidas.xsc">
+    <None Include="Reimpresion\ModContabilidad\Reportes\DataSetPartidas.xsc">
       <DependentUpon>DataSetPartidas.xsd</DependentUpon>
     </None>
-    <None Include="ModContabilidad\Reportes\DataSetPartidas.xsd">
+    <None Include="Reimpresion\ModContabilidad\Reportes\DataSetPartidas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetPartidas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ModContabilidad\Reportes\DataSetPartidas.xss">
+    <None Include="Reimpresion\ModContabilidad\Reportes\DataSetPartidas.xss">
       <DependentUpon>DataSetPartidas.xsd</DependentUpon>
     </None>
     <None Include="ortoxelaDataSet.xsc">
@@ -1786,6 +1803,17 @@
     </None>
     <None Include="Reportes\Inventario\DataSet_Kardex.xss">
       <DependentUpon>DataSet_Kardex.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_TrasladosBodega.xsc">
+      <DependentUpon>DataSet_TrasladosBodega.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_TrasladosBodega.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_TrasladosBodega.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Inventario\DataSet_TrasladosBodega.xss">
+      <DependentUpon>DataSet_TrasladosBodega.xsd</DependentUpon>
     </None>
     <None Include="Reportes\Pedidos\DataSet_Pedidos.xsc">
       <DependentUpon>DataSet_Pedidos.xsd</DependentUpon>

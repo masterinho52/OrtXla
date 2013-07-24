@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.textEditpmax = new DevExpress.XtraEditors.TextEdit();
             this.texteditpcosto = new DevExpress.XtraEditors.TextEdit();
             this.textEditpmin = new DevExpress.XtraEditors.TextEdit();
@@ -119,9 +119,9 @@
             this.textEditpmax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpmax.Size = new System.Drawing.Size(86, 20);
             this.textEditpmax.TabIndex = 11;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Ingrese existencia mayor";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpmax, conditionValidationRule5);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Ingrese existencia mayor";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpmax, conditionValidationRule1);
             // 
             // texteditpcosto
             // 
@@ -131,9 +131,9 @@
             this.texteditpcosto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.texteditpcosto.Size = new System.Drawing.Size(85, 20);
             this.texteditpcosto.TabIndex = 8;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Ingrese el precio costo";
-            this.dxValidationProvider1.SetValidationRule(this.texteditpcosto, conditionValidationRule6);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Ingrese el precio costo";
+            this.dxValidationProvider1.SetValidationRule(this.texteditpcosto, conditionValidationRule2);
             // 
             // textEditpmin
             // 
@@ -143,9 +143,9 @@
             this.textEditpmin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpmin.Size = new System.Drawing.Size(85, 20);
             this.textEditpmin.TabIndex = 10;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Ingrese existencia menor";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpmin, conditionValidationRule7);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Ingrese existencia menor";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpmin, conditionValidationRule3);
             // 
             // textEditpventa
             // 
@@ -155,9 +155,9 @@
             this.textEditpventa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpventa.Size = new System.Drawing.Size(86, 20);
             this.textEditpventa.TabIndex = 9;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "INGRESE PRECIO VENTA";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpventa, conditionValidationRule8);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "INGRESE PRECIO VENTA";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpventa, conditionValidationRule4);
             // 
             // groupControl1
             // 
@@ -221,9 +221,9 @@
             this.gridLooksubcategoria.Properties.View = this.gridView5;
             this.gridLooksubcategoria.Size = new System.Drawing.Size(275, 20);
             this.gridLooksubcategoria.TabIndex = 5;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Seleccione la categoria";
-            this.dxValidationProvider1.SetValidationRule(this.gridLooksubcategoria, conditionValidationRule9);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Seleccione la categoria";
+            this.dxValidationProvider1.SetValidationRule(this.gridLooksubcategoria, conditionValidationRule5);
             // 
             // gridView5
             // 
@@ -306,9 +306,9 @@
             this.memoEditdescripcion.Name = "memoEditdescripcion";
             this.memoEditdescripcion.Size = new System.Drawing.Size(306, 51);
             this.memoEditdescripcion.TabIndex = 7;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "Ingrese el nombre del articulo";
-            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule10);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Ingrese el nombre del articulo";
+            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule6);
             this.memoEditdescripcion.EditValueChanged += new System.EventHandler(this.memoEditdescripcion_EditValueChanged);
             // 
             // labelControl3
@@ -338,9 +338,9 @@
             this.gridLookcategoria.Properties.View = this.gridView4;
             this.gridLookcategoria.Size = new System.Drawing.Size(275, 20);
             this.gridLookcategoria.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Seleccione la categoria";
-            this.dxValidationProvider1.SetValidationRule(this.gridLookcategoria, conditionValidationRule1);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Seleccione la categoria";
+            this.dxValidationProvider1.SetValidationRule(this.gridLookcategoria, conditionValidationRule7);
             this.gridLookcategoria.EditValueChanged += new System.EventHandler(this.gridLookcategoria_EditValueChanged);
             // 
             // gridView4
@@ -392,9 +392,9 @@
             this.textEditcodigo.Name = "textEditcodigo";
             this.textEditcodigo.Size = new System.Drawing.Size(275, 20);
             this.textEditcodigo.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Ingrese el codigo del producto";
-            this.dxValidationProvider1.SetValidationRule(this.textEditcodigo, conditionValidationRule2);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "Ingrese el codigo del producto";
+            this.dxValidationProvider1.SetValidationRule(this.textEditcodigo, conditionValidationRule8);
             // 
             // labelControl7
             // 
@@ -449,9 +449,9 @@
             this.gridLookUpEstado.Properties.View = this.gridView1;
             this.gridLookUpEstado.Size = new System.Drawing.Size(323, 20);
             this.gridLookUpEstado.TabIndex = 17;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Seleccione el estado";
-            this.dxValidationProvider1.SetValidationRule(this.gridLookUpEstado, conditionValidationRule3);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "Seleccione el estado";
+            this.dxValidationProvider1.SetValidationRule(this.gridLookUpEstado, conditionValidationRule9);
             // 
             // gridView1
             // 

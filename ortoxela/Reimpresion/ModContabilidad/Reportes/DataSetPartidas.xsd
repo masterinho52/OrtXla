@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPartidas" targetNamespace="http://tempuri.org/DataSetPartidas.xsd" xmlns:mstns="http://tempuri.org/DataSetPartidas.xsd" xmlns="http://tempuri.org/DataSetPartidas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partidasTableAdapter" GeneratorDataComponentClassName="partidasTableAdapter" Name="partidas" UserDataComponentName="partidasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        partidas_header.*, partidas_detalle.*, catalogo_cuentas_nivel3.*
+FROM            partidas_detalle INNER JOIN
+                         partidas_header ON partidas_detalle.id_partidas_header = partidas_header.idpartidas_header INNER JOIN
+                         catalogo_cuentas_nivel3 ON partidas_detalle.id_cuenta = catalogo_cuentas_nivel3.idcatalogo_cuentas_nivel3</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idpartidas_header" DataSetColumn="idpartidas_header" />
+              <Mapping SourceColumn="no_partida" DataSetColumn="no_partida" />
+              <Mapping SourceColumn="folio" DataSetColumn="folio" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="monto_debe" DataSetColumn="monto_debe" />
+              <Mapping SourceColumn="monto_haber" DataSetColumn="monto_haber" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
+              <Mapping SourceColumn="id_docto" DataSetColumn="id_docto" />
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+              <Mapping SourceColumn="fecha_anulacion" DataSetColumn="fecha_anulacion" />
+              <Mapping SourceColumn="idpartidas_detalle" DataSetColumn="idpartidas_detalle" />
+              <Mapping SourceColumn="id_partidas_header" DataSetColumn="id_partidas_header" />
+              <Mapping SourceColumn="id_cuenta" DataSetColumn="id_cuenta" />
+              <Mapping SourceColumn="monto_debe1" DataSetColumn="monto_debe1" />
+              <Mapping SourceColumn="monto_haber1" DataSetColumn="monto_haber1" />
+              <Mapping SourceColumn="descripcion_documento" DataSetColumn="descripcion_documento" />
+              <Mapping SourceColumn="numero_documento" DataSetColumn="numero_documento" />
+              <Mapping SourceColumn="activo" DataSetColumn="activo" />
+              <Mapping SourceColumn="idcatalogo_cuentas_nivel3" DataSetColumn="idcatalogo_cuentas_nivel3" />
+              <Mapping SourceColumn="id_2" DataSetColumn="id_2" />
+              <Mapping SourceColumn="codigo_cuenta" DataSetColumn="codigo_cuenta" />
+              <Mapping SourceColumn="descripcion1" DataSetColumn="descripcion1" />
+              <Mapping SourceColumn="activo1" DataSetColumn="activo1" />
+              <Mapping SourceColumn="fecha_creacion" DataSetColumn="fecha_creacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPartidas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPartidas" msprop:Generator_UserDSName="DataSetPartidas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="partidas" msprop:Generator_TableClassName="partidasDataTable" msprop:Generator_TableVarName="tablepartidas" msprop:Generator_TablePropName="partidas" msprop:Generator_RowDeletingName="partidasRowDeleting" msprop:Generator_UserTableName="partidas" msprop:Generator_RowChangingName="partidasRowChanging" msprop:Generator_RowEvHandlerName="partidasRowChangeEventHandler" msprop:Generator_RowDeletedName="partidasRowDeleted" msprop:Generator_RowEvArgName="partidasRowChangeEvent" msprop:Generator_RowChangedName="partidasRowChanged" msprop:Generator_RowClassName="partidasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idpartidas_header" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidpartidas_header" msprop:Generator_ColumnPropNameInRow="idpartidas_header" msprop:Generator_ColumnPropNameInTable="idpartidas_headerColumn" msprop:Generator_UserColumnName="idpartidas_header" type="xs:int" />
+              <xs:element name="no_partida" msprop:Generator_ColumnVarNameInTable="columnno_partida" msprop:Generator_ColumnPropNameInRow="no_partida" msprop:Generator_ColumnPropNameInTable="no_partidaColumn" msprop:Generator_UserColumnName="no_partida" type="xs:int" minOccurs="0" />
+              <xs:element name="folio" msprop:Generator_ColumnVarNameInTable="columnfolio" msprop:Generator_ColumnPropNameInRow="folio" msprop:Generator_ColumnPropNameInTable="folioColumn" msprop:Generator_UserColumnName="folio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="monto_debe" msprop:Generator_ColumnVarNameInTable="columnmonto_debe" msprop:Generator_ColumnPropNameInRow="monto_debe" msprop:Generator_ColumnPropNameInTable="monto_debeColumn" msprop:Generator_UserColumnName="monto_debe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="monto_haber" msprop:Generator_ColumnVarNameInTable="columnmonto_haber" msprop:Generator_ColumnPropNameInRow="monto_haber" msprop:Generator_ColumnPropNameInTable="monto_haberColumn" msprop:Generator_UserColumnName="monto_haber" type="xs:decimal" minOccurs="0" />
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:int" minOccurs="0" />
+              <xs:element name="id_docto" msprop:Generator_ColumnVarNameInTable="columnid_docto" msprop:Generator_ColumnPropNameInRow="id_docto" msprop:Generator_ColumnPropNameInTable="id_doctoColumn" msprop:Generator_UserColumnName="id_docto" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:int" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_anulacion" msprop:Generator_ColumnVarNameInTable="columnfecha_anulacion" msprop:Generator_ColumnPropNameInRow="fecha_anulacion" msprop:Generator_ColumnPropNameInTable="fecha_anulacionColumn" msprop:Generator_UserColumnName="fecha_anulacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idpartidas_detalle" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidpartidas_detalle" msprop:Generator_ColumnPropNameInRow="idpartidas_detalle" msprop:Generator_ColumnPropNameInTable="idpartidas_detalleColumn" msprop:Generator_UserColumnName="idpartidas_detalle" type="xs:int" />
+              <xs:element name="id_partidas_header" msprop:Generator_ColumnVarNameInTable="columnid_partidas_header" msprop:Generator_ColumnPropNameInRow="id_partidas_header" msprop:Generator_ColumnPropNameInTable="id_partidas_headerColumn" msprop:Generator_UserColumnName="id_partidas_header" type="xs:int" minOccurs="0" />
+              <xs:element name="id_cuenta" msprop:Generator_ColumnVarNameInTable="columnid_cuenta" msprop:Generator_ColumnPropNameInRow="id_cuenta" msprop:Generator_ColumnPropNameInTable="id_cuentaColumn" msprop:Generator_UserColumnName="id_cuenta" type="xs:int" minOccurs="0" />
+              <xs:element name="monto_debe1" msprop:Generator_ColumnVarNameInTable="columnmonto_debe1" msprop:Generator_ColumnPropNameInRow="monto_debe1" msprop:Generator_ColumnPropNameInTable="monto_debe1Column" msprop:Generator_UserColumnName="monto_debe1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="monto_haber1" msprop:Generator_ColumnVarNameInTable="columnmonto_haber1" msprop:Generator_ColumnPropNameInRow="monto_haber1" msprop:Generator_ColumnPropNameInTable="monto_haber1Column" msprop:Generator_UserColumnName="monto_haber1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="descripcion_documento" msprop:Generator_ColumnVarNameInTable="columndescripcion_documento" msprop:Generator_ColumnPropNameInRow="descripcion_documento" msprop:Generator_ColumnPropNameInTable="descripcion_documentoColumn" msprop:Generator_UserColumnName="descripcion_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numero_documento" msprop:Generator_ColumnVarNameInTable="columnnumero_documento" msprop:Generator_ColumnPropNameInRow="numero_documento" msprop:Generator_ColumnPropNameInTable="numero_documentoColumn" msprop:Generator_UserColumnName="numero_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:unsignedLong" minOccurs="0" />
+              <xs:element name="idcatalogo_cuentas_nivel3" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidcatalogo_cuentas_nivel3" msprop:Generator_ColumnPropNameInRow="idcatalogo_cuentas_nivel3" msprop:Generator_ColumnPropNameInTable="idcatalogo_cuentas_nivel3Column" msprop:Generator_UserColumnName="idcatalogo_cuentas_nivel3" type="xs:int" />
+              <xs:element name="id_2" msprop:Generator_ColumnVarNameInTable="columnid_2" msprop:Generator_ColumnPropNameInRow="id_2" msprop:Generator_ColumnPropNameInTable="id_2Column" msprop:Generator_UserColumnName="id_2" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_cuenta" msprop:Generator_ColumnVarNameInTable="columncodigo_cuenta" msprop:Generator_ColumnPropNameInRow="codigo_cuenta" msprop:Generator_ColumnPropNameInTable="codigo_cuentaColumn" msprop:Generator_UserColumnName="codigo_cuenta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion1" msprop:Generator_ColumnVarNameInTable="columndescripcion1" msprop:Generator_ColumnPropNameInRow="descripcion1" msprop:Generator_ColumnPropNameInTable="descripcion1Column" msprop:Generator_UserColumnName="descripcion1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="activo1" msprop:Generator_ColumnVarNameInTable="columnactivo1" msprop:Generator_ColumnPropNameInRow="activo1" msprop:Generator_ColumnPropNameInTable="activo1Column" msprop:Generator_UserColumnName="activo1" type="xs:boolean" minOccurs="0" />
+              <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

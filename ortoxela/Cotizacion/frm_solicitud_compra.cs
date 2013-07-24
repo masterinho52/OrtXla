@@ -51,7 +51,9 @@ namespace ortoxela.Cotizacion
             { }
             try
             {
-                cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                /* cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2"; */
+                /* jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodega.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -96,6 +98,7 @@ namespace ortoxela.Cotizacion
                     tempTabla = logicaorto.Tabla(cadena);
                     if (tempTabla.Rows.Count > 0)
                     {
+                        id_articulo = tempTabla.Rows[0]["CODIGO"].ToString();
                         textNombreArti.Text = tempTabla.Rows[0]["NOMBRE ARTICULO"].ToString();
                         ExistenciaProd = Convert.ToInt32(tempTabla.Rows[0]["EXISTENCIA"]);
                         existencia_minima = Convert.ToInt32(tempTabla.Rows[0]["minimo"]);
@@ -144,12 +147,16 @@ namespace ortoxela.Cotizacion
                 if (dxValidationProvider1.Validate())
                 {
                     DataTable TempoPadre = new DataTable();
-                    cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
+                    /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'"; 
+                     jramirez 2013.07.04 
+                     */
+                    cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
                     string compuesto = logicaorto.Tabla(cadena).Rows[0]["compuesto"].ToString();
                     if (Convert.ToBoolean(logicaorto.Tabla(cadena).Rows[0]["compuesto"]))
                     {
 
-                        cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo,articulos.minimo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
+                        /* cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo,articulos.minimo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;*/
+                        cadena = "CALL sp_devuelve_sistema ('" + id_articulo + "'," + gridLookBodega.EditValue + ")";
                         TempoPadre = logicaorto.Tabla(cadena);
                         int ExistenciaHijo;
                         int ExistenciaFija;
@@ -167,6 +174,7 @@ namespace ortoxela.Cotizacion
                                 ExistenciaHijo = Convert.ToInt32(TempoPadre.Rows[x]["EXISTENCIA"]);
                                 //if(ExistenciaHijo!=0)
                                 //{
+                                
                                 if (Convert.ToInt32(textCantidadArt.Text) <= ExistenciaHijo)
                                 {
                                     ExistenciaFija = Convert.ToInt32(textCantidadArt.Text);
@@ -451,6 +459,11 @@ namespace ortoxela.Cotizacion
             textEmail.Text = dt.Rows[0]["email"].ToString();
             textTelefono.Text = dt.Rows[0]["telefono_principal"].ToString();
             textNit.Text = dt.Rows[0]["nit"].ToString();
+        }
+
+        private void textNombreArti_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridLookProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -126,8 +126,8 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.gridLookProveedor);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textTelefono);
@@ -162,9 +162,9 @@
             this.gridLookProveedor.Properties.View = this.gridView2;
             this.gridLookProveedor.Size = new System.Drawing.Size(314, 20);
             this.gridLookProveedor.TabIndex = 95;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "SELECCIONE UN PROVEEDOR";
-            this.dxValidationPedido.SetValidationRule(this.gridLookProveedor, conditionValidationRule7);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "SELECCIONE UN PROVEEDOR";
+            this.dxValidationPedido.SetValidationRule(this.gridLookProveedor, conditionValidationRule1);
             this.gridLookProveedor.EditValueChanged += new System.EventHandler(this.gridLookProveedor_EditValueChanged);
             // 
             // gridView2
@@ -271,7 +271,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelControl1.Location = new System.Drawing.Point(1083, 22);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(117, 19);
+            this.labelControl1.Size = new System.Drawing.Size(116, 19);
             this.labelControl1.TabIndex = 78;
             this.labelControl1.Text = "SOLICITUD NO:";
             // 
@@ -297,9 +297,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateFechaCotizacion.Size = new System.Drawing.Size(147, 20);
             this.dateFechaCotizacion.TabIndex = 6;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "FECHA COTIZACION";
-            this.dxValidationPedido.SetValidationRule(this.dateFechaCotizacion, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "FECHA COTIZACION";
+            this.dxValidationPedido.SetValidationRule(this.dateFechaCotizacion, conditionValidationRule2);
             this.dateFechaCotizacion.EditValueChanged += new System.EventHandler(this.dateFechaCotizacion_EditValueChanged);
             // 
             // textDireccion
@@ -334,8 +334,8 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.textVenta);
@@ -412,9 +412,9 @@
             this.textCantidadArt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadArt.Size = new System.Drawing.Size(101, 20);
             this.textCantidadArt.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule3);
             // 
             // labelControl7
             // 
@@ -432,9 +432,10 @@
             this.textNombreArti.Name = "textNombreArti";
             this.textNombreArti.Size = new System.Drawing.Size(282, 20);
             this.textNombreArti.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule4);
+            this.textNombreArti.EditValueChanged += new System.EventHandler(this.textNombreArti_EditValueChanged);
             this.textNombreArti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombreArti_KeyPress);
             // 
             // labelControl6
@@ -453,15 +454,15 @@
             this.textCodigoArt.Name = "textCodigoArt";
             this.textCodigoArt.Size = new System.Drawing.Size(100, 20);
             this.textCodigoArt.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule5);
             this.textCodigoArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoArt_KeyPress);
             // 
             // gridLookBodega
             // 
-            this.gridLookBodega.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridLookBodega.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLookBodega.EditValue = "SELECCIONE BODEGA";
             this.gridLookBodega.Location = new System.Drawing.Point(58, 11);
             this.gridLookBodega.Name = "gridLookBodega";
@@ -471,9 +472,9 @@
             this.gridLookBodega.Properties.View = this.gridLookUpEdit1View;
             this.gridLookBodega.Size = new System.Drawing.Size(134, 20);
             this.gridLookBodega.TabIndex = 0;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "SELECCIONE LA BODEGA";
-            this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "SELECCIONE LA BODEGA";
+            this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule6);
             // 
             // gridLookUpEdit1View
             // 
@@ -492,9 +493,9 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Location = new System.Drawing.Point(12, 174);
             this.groupControl2.Name = "groupControl2";
@@ -505,10 +506,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(4, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1254, 216);
+            this.gridControl1.Size = new System.Drawing.Size(1250, 215);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -527,8 +528,8 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.textTiempoEntrega);
             this.panelControl2.Controls.Add(this.labelControl14);
             this.panelControl2.Controls.Add(this.textMarcas);
@@ -558,8 +559,8 @@
             // 
             // textMarcas
             // 
-            this.textMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textMarcas.Location = new System.Drawing.Point(692, 18);
             this.textMarcas.Name = "textMarcas";
             this.textMarcas.Size = new System.Drawing.Size(552, 20);
@@ -590,8 +591,8 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl3.Controls.Add(this.textTotalPedido);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.simplePrinter);
@@ -626,7 +627,7 @@
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Location = new System.Drawing.Point(1083, 21);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(57, 19);
+            this.labelControl15.Size = new System.Drawing.Size(55, 19);
             this.labelControl15.TabIndex = 82;
             this.labelControl15.Text = "TOTAL:";
             // 

@@ -33,7 +33,9 @@ namespace ortoxela.Pedido
             { }       
             try
             {
-                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo";
+                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo";*/
+                /* jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE userid=" + clases.ClassVariables.id_usuario;
                 gridLookTipoDocumento.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
@@ -44,7 +46,9 @@ namespace ortoxela.Pedido
             { }
             try
             {
-                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1";
+                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1"; */
+                /* jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 and userid=" + clases.ClassVariables.id_usuario;
                 gridLookDocFactura.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookDocFactura.Properties.DisplayMember = "DOCUMENTO";
                 gridLookDocFactura.Properties.ValueMember = "CODIGO";
@@ -158,7 +162,8 @@ namespace ortoxela.Pedido
         private void sbnuevo_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            cadena = "SELECT header_doctos_inv.id_documento AS 'CODIGO',header_doctos_inv.fecha AS 'FECHA PEDIDO',header_doctos_inv.no_documento 'NUMERO DOCUMENTO',clientes.nombre_cliente AS 'NOMBRE CLIENTE',header_doctos_inv.descripcion AS 'DESCRIPCION',header_doctos_inv.monto_neto AS 'TOTAL PEDIDO' FROM header_doctos_inv INNER JOIN series_documentos ON series_documentos.codigo_serie=header_doctos_inv.codigo_serie INNER JOIN clientes ON header_doctos_inv.codigo_cliente=clientes.codigo_cliente WHERE series_documentos.codigo_tipo=5 AND (header_doctos_inv.estadoid=8 OR header_doctos_inv.estadoid=5)";
+            /* Carga pedidos con status pendiente */
+            cadena = "SELECT header_doctos_inv.id_documento AS 'CODIGO',header_doctos_inv.fecha AS 'FECHA PEDIDO',header_doctos_inv.no_documento 'NUMERO DOCUMENTO',clientes.nombre_cliente AS 'NOMBRE CLIENTE',header_doctos_inv.descripcion AS 'DESCRIPCION',header_doctos_inv.refer_documento AS 'DEPOSITO',header_doctos_inv.monto_neto AS 'TOTAL PEDIDO' FROM header_doctos_inv INNER JOIN series_documentos ON series_documentos.codigo_serie=header_doctos_inv.codigo_serie INNER JOIN clientes ON header_doctos_inv.codigo_cliente=clientes.codigo_cliente WHERE series_documentos.codigo_tipo=5 AND (header_doctos_inv.estadoid=8 OR header_doctos_inv.estadoid=5)";
             clases.ClassVariables.cadenabusca = cadena;
             Form nuevo = new Buscador.Buscador();
             nuevo.ShowDialog();
@@ -167,7 +172,7 @@ namespace ortoxela.Pedido
                
                 id_pedido = clases.ClassVariables.id_busca;
                 DataTable tempLlena = new DataTable();
-                cadena = "SELECT cli.nombre_cliente,cli.codigo_cliente,cli.nit,cab.codigo_serie,cab.tipo_pago,cab.no_documento,cab.descripcion,cab.razon_ajuste,cab.descuento,cab.monto_neto,cab.contado_credito,cab.socio_comercial FROM header_doctos_inv cab INNER JOIN clientes cli ON cab.codigo_cliente=cli.codigo_cliente WHERE cab.id_documento=" + id_pedido;
+                cadena = "SELECT cli.nombre_cliente,cli.codigo_cliente,cli.nit,cab.codigo_serie,cab.tipo_pago,cab.no_documento,cab.descripcion,cab.razon_ajuste,cab.descuento,cab.monto_neto,cab.contado_credito,cab.socio_comercial,refer_documento FROM header_doctos_inv cab INNER JOIN clientes cli ON cab.codigo_cliente=cli.codigo_cliente WHERE cab.id_documento=" + id_pedido;
                 
                     tempLlena = logicaorto.Tabla(cadena);
                     textNombreCliente.Text = tempLlena.Rows[0]["nombre_cliente"].ToString();
@@ -176,6 +181,7 @@ namespace ortoxela.Pedido
                     gridLookTipoDocumento.EditValue = tempLlena.Rows[0]["codigo_serie"].ToString();
                     gridLookTipoPago.EditValue = tempLlena.Rows[0]["tipo_pago"].ToString();
                     textNoDocumento.Text = tempLlena.Rows[0]["no_documento"].ToString();
+                    textDeposito.Text = tempLlena.Rows[0]["refer_documento"].ToString();
                     try
                     { id_socio_comercial = tempLlena.Rows[0]["socio_comercial"].ToString(); }
                     catch { }

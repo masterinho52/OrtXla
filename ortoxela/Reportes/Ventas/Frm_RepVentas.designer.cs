@@ -73,6 +73,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bodegas = new System.Windows.Forms.ComboBox();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.listBoxBodegas = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -525,6 +526,16 @@
             this.labelControl17.TabIndex = 22;
             this.labelControl17.Text = "Bodega:";
             // 
+            // listBoxBodegas
+            // 
+            this.listBoxBodegas.FormattingEnabled = true;
+            this.listBoxBodegas.ItemHeight = 15;
+            this.listBoxBodegas.Location = new System.Drawing.Point(146, 379);
+            this.listBoxBodegas.Name = "listBoxBodegas";
+            this.listBoxBodegas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxBodegas.Size = new System.Drawing.Size(120, 94);
+            this.listBoxBodegas.TabIndex = 23;
+            // 
             // Frm_RepVentas
             // 
             this.Appearance.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -532,6 +543,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 489);
+            this.Controls.Add(this.listBoxBodegas);
             this.Controls.Add(this.bodegas);
             this.Controls.Add(this.labelControl17);
             this.Controls.Add(this.label4);
@@ -638,5 +650,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox bodegas;
         private DevExpress.XtraEditors.LabelControl labelControl17;
+        private System.Windows.Forms.ListBox listBoxBodegas;
     }
 }

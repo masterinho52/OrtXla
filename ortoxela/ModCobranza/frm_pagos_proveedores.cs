@@ -130,7 +130,7 @@ namespace ortoxela.ModCobranza
         private void gridLookTipoDoc_EditValueChanged(object sender, EventArgs e)
         {
             xtraTabPage2.PageEnabled = false;
-            if ((gridLookTipoDoc.EditValue != "0") && (gridLookTipoDoc.EditValue != null) && ((gridLookTipoDoc.EditValue != string.Empty)))
+            if ((gridLookTipoDoc.EditValue.ToString() != "0") && (gridLookTipoDoc.EditValue != null) && ((gridLookTipoDoc.EditValue != string.Empty)))
                 textTotal.Enabled = true;
         }
 

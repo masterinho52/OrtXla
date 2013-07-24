@@ -28,7 +28,9 @@ namespace ortoxela.TrasladoBodega
         {
             try
             {
-                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodegaOrigen.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookBodegaOrigen.Properties.DisplayMember = "NOMBRE";
                 gridLookBodegaOrigen.Properties.ValueMember = "CODIGO";
@@ -40,7 +42,9 @@ namespace ortoxela.TrasladoBodega
             { }
             try
             {
-                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodegaDestino.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookBodegaDestino.Properties.DisplayMember = "NOMBRE";
                 gridLookBodegaDestino.Properties.ValueMember = "CODIGO";
@@ -52,7 +56,9 @@ namespace ortoxela.TrasladoBodega
             { }
             try
             {
-                ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo where series_documentos.codigo_tipo=4";
+                /* ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo where series_documentos.codigo_tipo=4"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
@@ -90,6 +96,7 @@ namespace ortoxela.TrasladoBodega
                     tempTabla = logicaxela.Tabla(ssql);
                     if (tempTabla.Rows.Count > 0)
                     {
+                        id_articulo = tempTabla.Rows[0]["CODIGO"].ToString();
                         textNombreArti.Text = tempTabla.Rows[0]["NOMBRE ARTICULO"].ToString();
                         ExistenciaProd = Convert.ToInt32(tempTabla.Rows[0]["EXISTENCIA"]);
                         textCantidadArt.Focus();
@@ -149,12 +156,16 @@ namespace ortoxela.TrasladoBodega
                     if (dxValidationProvider1.Validate())
                     {
                         DataTable TempoPadre = new DataTable();
-                        cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
+                        /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'"; 
+                        jramirez 2013.07.04 
+                        */
+                        cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
                         string compuesto = logicaorto.Tabla(cadena).Rows[0]["compuesto"].ToString();
                         if (Convert.ToBoolean(logicaorto.Tabla(cadena).Rows[0]["compuesto"]))
                         {
 
-                            cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodegaOrigen.EditValue;
+                            /* cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodegaOrigen.EditValue; */
+                            cadena = "CALL sp_devuelve_sistema ('" + id_articulo + "'," + gridLookBodegaOrigen.EditValue + ")";
                             TempoPadre = logicaorto.Tabla(cadena);
                             int ExistenciaHijo;
                             int ExistenciaFija;

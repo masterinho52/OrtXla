@@ -99,6 +99,7 @@
             this.simpleButton5.Size = new System.Drawing.Size(112, 35);
             this.simpleButton5.TabIndex = 2;
             this.simpleButton5.Text = "Consultar";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // dateEdit6
             // 
@@ -224,6 +225,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(112, 35);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Consultar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // dateEdit1
             // 

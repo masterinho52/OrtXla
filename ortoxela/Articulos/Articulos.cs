@@ -67,11 +67,7 @@ namespace ortoxela.Articulos
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT  articulos.codigo_articulo as CODIGO, articulos.descripcion as DESCRIPCION,articulos.costo,articulos.precio_venta,existencia_articulo AS EXISTENCIA, " +
-                                                "categorias.nombre_categoria as CATEGORIA,sub_categorias.nombre_subcategoria as SUBCATEGORIA,compuesto AS COMPUESTO,codigo_padre AS PADRE "+
-                                                "FROM ortoxela.articulos inner join sub_categorias on articulos.codigo_categoria= sub_categorias.codigo_subcat INNER JOIN bodegas bh ON articulos.codigo_articulo=bh.codigo_articulo " +
-                                                "inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria "+
-                                                "WHERE articulos.estadoid<>2 AND bh.codigo_bodega=1";
+            clases.ClassVariables.cadenabusca = "SELECT * FROM ortoxela.v_articulos_cat_lbod ";
                                                          
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
@@ -80,12 +76,7 @@ namespace ortoxela.Articulos
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT articulos.codigo_articulo, articulos.codigo_marca, sub_categorias.codigo_subcat, articulos.descripcion, "+
-                            "articulos.costo, articulos.precio_venta, articulos.minimo, articulos.maximo, articulos.numero_serie, "+
-                            "articulos.modelo, articulos.comentario, articulos.estadoid,articulos.compuesto, articulos.codigo_padre,categorias.codigo_categoria "+
-                            "FROM ortoxela.articulos inner join sub_categorias "+
-                            "on articulos.codigo_categoria= sub_categorias.codigo_subcat inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria "+
-                            "WHERE codigo_articulo='"+ clases.ClassVariables.id_busca+"'";
+                cadena = "CALL sp_obtener_articulo_categoria('" + clases.ClassVariables.id_busca + "');";
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
