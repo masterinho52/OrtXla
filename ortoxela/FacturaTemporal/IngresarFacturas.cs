@@ -54,17 +54,20 @@ namespace ortoxela.FacturaTemporal
                 //gridLookTipoDocumento = new GridLookUpEdit();
                 /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo AND t.codigo_tipo IN (1);"; */
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO   FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario;
+                //ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO   FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_serie, CONCAT(nombre_documento,' [', serie_documento,']')  AS DOCUMENTO  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodega.EditValue;
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "codigo_serie";
                 gridLookTipoDocumento.EditValue = 2;
-                gridLookTipoDocumento.Properties.View.Columns["codigo_serie"].Visible = false;                
+                //gridLookTipoDocumento.Properties.View.Columns["codigo_serie"].Visible = false;                
                 gridLookTipoDocumento.EditValue = 1;
                 
             }
             catch
-            { }
+            {
+                //MessageBox.Show("error");
+            }
             try
             {
                 cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM ortoxela.tipo_pago where estadoid<>2";
@@ -470,7 +473,7 @@ namespace ortoxela.FacturaTemporal
         }
         private void sbAceptar_Click(object sender, EventArgs e)
         {
-            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0)
+            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0 & gridLookTipoDocumento.SelectedText != "")
             {
                 
                     registraIngreso(); 
@@ -690,8 +693,12 @@ namespace ortoxela.FacturaTemporal
         {           
             cadena = "SELECT tipos_documento.actualiza_precios,tipos_documento.signo FROM tipos_documento INNER JOIN series_documentos ON tipos_documento.codigo_tipo=series_documentos.codigo_tipo WHERE series_documentos.codigo_serie=" + gridLookTipoDocumento.EditValue;
             tempTabla = logicaxela.Tabla(cadena);
-            bandera_actualiza_precio=tempTabla.Rows[0][0].ToString();
-            bandera_ingreso_egreso=tempTabla.Rows[0][1].ToString();
+            if (tempTabla.Rows.Count > 0)
+            {
+                bandera_actualiza_precio = tempTabla.Rows[0][0].ToString();
+                bandera_ingreso_egreso = tempTabla.Rows[0][1].ToString();
+            }
+
             CreaColumnas();
             TotalIngresoCosto = 0;
             TotalDescuento = 0;
@@ -922,6 +929,18 @@ namespace ortoxela.FacturaTemporal
             {
                 gridLookTipoPago.EditValue = 0;
             }
+        }
+
+        private void gridLookBodega_EditValueChanged(object sender, EventArgs e)
+        {
+            ssql = "SELECT distinct codigo_serie, CONCAT(nombre_documento,' [', serie_documento,']')  AS DOCUMENTO  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodega.EditValue;
+            gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
+            gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
+            gridLookTipoDocumento.Properties.ValueMember = "codigo_serie";
+            gridLookTipoDocumento.EditValue = 2;
+            //gridLookTipoDocumento.Properties.View.Columns["codigo_serie"].Visible = false;
+            gridLookTipoDocumento.EditValue = 1;
+            
         }
 
       

@@ -391,7 +391,7 @@
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Location = new System.Drawing.Point(1030, 90);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(151, 19);
+            this.labelControl14.Size = new System.Drawing.Size(154, 19);
             this.labelControl14.TabIndex = 72;
             this.labelControl14.Text = "TOTAL DESCUENTO:";
             this.labelControl14.Visible = false;
@@ -473,9 +473,11 @@
             this.gridLookTipoDocumento.TabIndex = 5;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "SELECCIONE EL TIPO DE DOCUMENTO";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationEncabezado.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule4);
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "SELECCIONE UN REGISTRO";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationProvider2.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule5);
             this.gridLookTipoDocumento.EditValueChanged += new System.EventHandler(this.gridLookTipoDocumento_EditValueChanged);
             // 
@@ -561,7 +563,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(861, 405);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(118, 19);
+            this.labelControl12.Size = new System.Drawing.Size(120, 19);
             this.labelControl12.TabIndex = 46;
             this.labelControl12.Text = "TOTAL SIN IVA:";
             this.labelControl12.Visible = false;
@@ -572,7 +574,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(1094, 419);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(116, 19);
+            this.labelControl11.Size = new System.Drawing.Size(118, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "PRECIO TOTAL:";
             // 
@@ -591,10 +593,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(4, 19);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1303, 198);
+            this.gridControl1.Size = new System.Drawing.Size(1307, 199);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -792,6 +794,7 @@
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "SELECCIONE UN REGISTRO";
             this.dxValidationProvider2.SetValidationRule(this.gridLookBodega, conditionValidationRule11);
+            this.gridLookBodega.EditValueChanged += new System.EventHandler(this.gridLookBodega_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -836,7 +839,7 @@
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Location = new System.Drawing.Point(882, 419);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(87, 19);
+            this.labelControl15.Size = new System.Drawing.Size(89, 19);
             this.labelControl15.TabIndex = 49;
             this.labelControl15.Text = "TOTAL IVA:";
             this.labelControl15.Visible = false;
