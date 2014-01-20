@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
@@ -140,9 +140,9 @@
             this.textNoDocumento.Name = "textNoDocumento";
             this.textNoDocumento.Size = new System.Drawing.Size(175, 20);
             this.textNoDocumento.TabIndex = 3;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "INGRESE NUMERO DOCUMENTO";
-            this.dxValidationProvider2.SetValidationRule(this.textNoDocumento, conditionValidationRule6);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "INGRESE NUMERO DOCUMENTO";
+            this.dxValidationProvider2.SetValidationRule(this.textNoDocumento, conditionValidationRule1);
             // 
             // labelControl1
             // 
@@ -206,9 +206,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookBodegaOrigen.Size = new System.Drawing.Size(174, 20);
             this.gridLookBodegaOrigen.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "SELECCIONE UNA BODEGA PARA SACAR PRODUCTO";
-            this.dxValidationProvider3.SetValidationRule(this.gridLookBodegaOrigen, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "SELECCIONE UNA BODEGA PARA SACAR PRODUCTO";
+            this.dxValidationProvider3.SetValidationRule(this.gridLookBodegaOrigen, conditionValidationRule2);
+            this.gridLookBodegaOrigen.EditValueChanged += new System.EventHandler(this.gridLookBodegaOrigen_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -310,9 +311,9 @@
             this.textCantidadArt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadArt.Size = new System.Drawing.Size(101, 20);
             this.textCantidadArt.TabIndex = 2;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule3);
             // 
             // labelControl7
             // 
@@ -328,9 +329,9 @@
             this.textNombreArti.Name = "textNombreArti";
             this.textNombreArti.Size = new System.Drawing.Size(313, 20);
             this.textNombreArti.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule4);
             this.textNombreArti.EditValueChanged += new System.EventHandler(this.textNombreArti_EditValueChanged);
             this.textNombreArti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombreArti_KeyPress);
             // 
@@ -348,9 +349,9 @@
             this.textCodigoArt.Name = "textCodigoArt";
             this.textCodigoArt.Size = new System.Drawing.Size(113, 20);
             this.textCodigoArt.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule5);
             this.textCodigoArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoArt_KeyPress);
             // 
             // simplePrinter

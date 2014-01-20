@@ -610,8 +610,8 @@
       <DependentUpon>DataSet_vales_detalle.xsd</DependentUpon>
     </Compile>
     <Compile Include="Pedido\Vale\XtraReportVale.cs">
-      <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Pedido\Vale\XtraReportVale.Designer.cs">
       <DependentUpon>XtraReportVale.cs</DependentUpon>

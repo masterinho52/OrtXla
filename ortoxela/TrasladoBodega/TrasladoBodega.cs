@@ -58,7 +58,7 @@ namespace ortoxela.TrasladoBodega
             {
                 /* ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo where series_documentos.codigo_tipo=4"; */
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodegaOrigen.EditValue.ToString();
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
@@ -421,6 +421,20 @@ namespace ortoxela.TrasladoBodega
         private void textNombreArti_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridLookBodegaOrigen_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodegaOrigen.EditValue.ToString();
+                gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
+                gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
+                gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
+                gridLookTipoDocumento.Text = "";
+                gridLookTipoDocumento.EditValue = 5;
+            }
+            catch {  }
         }
     }
 }

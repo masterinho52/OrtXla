@@ -1070,7 +1070,7 @@
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Location = new System.Drawing.Point(822, 430);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(55, 19);
+            this.labelControl32.Size = new System.Drawing.Size(57, 19);
             this.labelControl32.TabIndex = 63;
             this.labelControl32.Text = "TOTAL:";
             // 
@@ -1321,6 +1321,7 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1273, 474);
             this.xtraTabPage1.Text = "ENVIO";
+            this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
             // label4
             // 
@@ -1569,6 +1570,7 @@
             this.groupControl1.Size = new System.Drawing.Size(1264, 148);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Encabezado";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint_1);
             // 
             // simpleButton8
             // 
@@ -1616,7 +1618,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(987, 95);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(151, 19);
+            this.labelControl12.Size = new System.Drawing.Size(154, 19);
             this.labelControl12.TabIndex = 66;
             this.labelControl12.Text = "TOTAL DESCUENTO:";
             // 
@@ -1701,7 +1703,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(1031, 405);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(118, 19);
+            this.labelControl11.Size = new System.Drawing.Size(120, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "TOTAL PEDIDO:";
             // 
