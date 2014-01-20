@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -46,8 +49,8 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.dateEdit5 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit6 = new DevExpress.XtraEditors.DateEdit();
+            this.FechaFin = new DevExpress.XtraEditors.DateEdit();
+            this.FechaInicio = new DevExpress.XtraEditors.DateEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
@@ -71,13 +74,11 @@
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.bodegas = new System.Windows.Forms.ComboBox();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxBodegas = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.listBoxSeries = new System.Windows.Forms.ListBox();
+            this.dxValidationFechas = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -87,10 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
@@ -102,13 +103,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationFechas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Location = new System.Drawing.Point(405, 75);
+            this.panelControl1.Location = new System.Drawing.Point(477, 60);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(770, 39);
             this.panelControl1.TabIndex = 8;
@@ -137,7 +139,7 @@
             this.panelControl2.Controls.Add(this.comboBox3);
             this.panelControl2.Controls.Add(this.labelControl5);
             this.panelControl2.Controls.Add(this.simpleButton2);
-            this.panelControl2.Location = new System.Drawing.Point(405, 121);
+            this.panelControl2.Location = new System.Drawing.Point(477, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(770, 38);
             this.panelControl2.TabIndex = 9;
@@ -165,10 +167,9 @@
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Location = new System.Drawing.Point(6, 6);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(172, 20);
+            this.labelControl5.Size = new System.Drawing.Size(273, 20);
             this.labelControl5.TabIndex = 3;
-            this.labelControl5.Text = "Rep. General (Facturas)";
-            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
+            this.labelControl5.Text = "Reporte de Ventas General (Facturas)";
             // 
             // simpleButton2
             // 
@@ -187,11 +188,10 @@
             this.panelControl3.Controls.Add(this.comboBox4);
             this.panelControl3.Controls.Add(this.labelControl8);
             this.panelControl3.Controls.Add(this.simpleButton3);
-            this.panelControl3.Location = new System.Drawing.Point(405, 165);
+            this.panelControl3.Location = new System.Drawing.Point(477, 150);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(770, 39);
             this.panelControl3.TabIndex = 10;
-            this.panelControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl3_Paint);
             // 
             // label5
             // 
@@ -249,7 +249,7 @@
             // 
             this.panelControl4.Controls.Add(this.labelControl11);
             this.panelControl4.Controls.Add(this.simpleButton4);
-            this.panelControl4.Location = new System.Drawing.Point(405, 27);
+            this.panelControl4.Location = new System.Drawing.Point(477, 12);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(770, 40);
             this.panelControl4.TabIndex = 11;
@@ -262,7 +262,6 @@
             this.labelControl11.Size = new System.Drawing.Size(191, 20);
             this.labelControl11.TabIndex = 3;
             this.labelControl11.Text = "Reporte de Ventas Totales";
-            this.labelControl11.Click += new System.EventHandler(this.labelControl11_Click);
             // 
             // simpleButton4
             // 
@@ -273,29 +272,41 @@
             this.simpleButton4.Text = "Consultar";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
-            // dateEdit5
+            // FechaFin
             // 
-            this.dateEdit5.EditValue = "";
-            this.dateEdit5.Location = new System.Drawing.Point(223, 126);
-            this.dateEdit5.Name = "dateEdit5";
-            this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.FechaFin.EditValue = null;
+            this.FechaFin.Location = new System.Drawing.Point(223, 126);
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.FechaFin.Properties.Mask.EditMask = "dd-mm-yyyy";
+            this.FechaFin.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit5.Size = new System.Drawing.Size(103, 20);
-            this.dateEdit5.TabIndex = 11;
+            this.FechaFin.Size = new System.Drawing.Size(103, 20);
+            this.FechaFin.TabIndex = 11;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule1.Value1 = new System.DateTime(2009, 1, 1, 13, 16, 17, 0);
+            this.dxValidationFechas.SetValidationRule(this.FechaFin, conditionValidationRule1);
             // 
-            // dateEdit6
+            // FechaInicio
             // 
-            this.dateEdit6.EditValue = null;
-            this.dateEdit6.Location = new System.Drawing.Point(61, 126);
-            this.dateEdit6.Name = "dateEdit6";
-            this.dateEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.FechaInicio.EditValue = null;
+            this.FechaInicio.Location = new System.Drawing.Point(61, 126);
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit6.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.FechaInicio.Properties.Mask.EditMask = "dd-mm-yyyy";
+            this.FechaInicio.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit6.Size = new System.Drawing.Size(103, 20);
-            this.dateEdit6.TabIndex = 10;
+            this.FechaInicio.Size = new System.Drawing.Size(103, 20);
+            this.FechaInicio.TabIndex = 10;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule2.Value1 = "01/01/0001";
+            this.dxValidationFechas.SetValidationRule(this.FechaInicio, conditionValidationRule2);
             // 
             // labelControl10
             // 
@@ -321,7 +332,7 @@
             // 
             this.panelControl7.Controls.Add(this.labelControl21);
             this.panelControl7.Controls.Add(this.simpleButton7);
-            this.panelControl7.Location = new System.Drawing.Point(405, 258);
+            this.panelControl7.Location = new System.Drawing.Point(477, 243);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(770, 51);
             this.panelControl7.TabIndex = 14;
@@ -334,7 +345,6 @@
             this.labelControl21.Size = new System.Drawing.Size(249, 20);
             this.labelControl21.TabIndex = 3;
             this.labelControl21.Text = "Reporte de Ventas por Tipo Cliente";
-            this.labelControl21.Click += new System.EventHandler(this.labelControl21_Click);
             // 
             // simpleButton7
             // 
@@ -351,7 +361,7 @@
             this.panelControl8.Controls.Add(this.comboBox5);
             this.panelControl8.Controls.Add(this.labelControl24);
             this.panelControl8.Controls.Add(this.simpleButton8);
-            this.panelControl8.Location = new System.Drawing.Point(405, 316);
+            this.panelControl8.Location = new System.Drawing.Point(477, 301);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(770, 51);
             this.panelControl8.TabIndex = 15;
@@ -396,7 +406,7 @@
             // 
             this.panelControl9.Controls.Add(this.labelControl28);
             this.panelControl9.Controls.Add(this.simpleButton9);
-            this.panelControl9.Location = new System.Drawing.Point(405, 440);
+            this.panelControl9.Location = new System.Drawing.Point(477, 425);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(770, 51);
             this.panelControl9.TabIndex = 16;
@@ -425,7 +435,7 @@
             this.panelControl10.Controls.Add(this.textEdit1);
             this.panelControl10.Controls.Add(this.labelControl32);
             this.panelControl10.Controls.Add(this.simpleButton10);
-            this.panelControl10.Location = new System.Drawing.Point(405, 213);
+            this.panelControl10.Location = new System.Drawing.Point(477, 198);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(770, 39);
             this.panelControl10.TabIndex = 17;
@@ -456,7 +466,6 @@
             this.labelControl32.Size = new System.Drawing.Size(250, 20);
             this.labelControl32.TabIndex = 3;
             this.labelControl32.Text = "Reporte de Articulos Mas Vendidos";
-            this.labelControl32.Click += new System.EventHandler(this.labelControl32_Click);
             // 
             // simpleButton10
             // 
@@ -471,7 +480,7 @@
             // 
             this.panelControl5.Controls.Add(this.labelControl15);
             this.panelControl5.Controls.Add(this.simpleButton5);
-            this.panelControl5.Location = new System.Drawing.Point(405, 378);
+            this.panelControl5.Location = new System.Drawing.Point(477, 363);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(770, 51);
             this.panelControl5.TabIndex = 18;
@@ -513,14 +522,6 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Para todos los reportes";
             // 
-            // bodegas
-            // 
-            this.bodegas.FormattingEnabled = true;
-            this.bodegas.Location = new System.Drawing.Point(245, 193);
-            this.bodegas.Name = "bodegas";
-            this.bodegas.Size = new System.Drawing.Size(125, 23);
-            this.bodegas.TabIndex = 21;
-            // 
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -534,47 +535,31 @@
             // 
             this.listBoxBodegas.FormattingEnabled = true;
             this.listBoxBodegas.ItemHeight = 15;
-            this.listBoxBodegas.Location = new System.Drawing.Point(119, 193);
+            this.listBoxBodegas.Location = new System.Drawing.Point(20, 219);
             this.listBoxBodegas.Name = "listBoxBodegas";
             this.listBoxBodegas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxBodegas.Size = new System.Drawing.Size(120, 94);
             this.listBoxBodegas.TabIndex = 23;
+            this.listBoxBodegas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBoxBodegas_MouseUp);
             // 
-            // label6
+            // labelControl2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 351);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 16);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Seleccione Serie";
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(210, 193);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(123, 20);
+            this.labelControl2.TabIndex = 27;
+            this.labelControl2.Text = "Seleccione Serie:";
             // 
-            // comboBox1
+            // listBoxSeries
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 344);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 23);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 414);
-            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 15);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Estado Facturas";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(119, 411);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 26;
+            this.listBoxSeries.FormattingEnabled = true;
+            this.listBoxSeries.ItemHeight = 15;
+            this.listBoxSeries.Location = new System.Drawing.Point(183, 219);
+            this.listBoxSeries.Name = "listBoxSeries";
+            this.listBoxSeries.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBoxSeries.Size = new System.Drawing.Size(188, 94);
+            this.listBoxSeries.TabIndex = 28;
             // 
             // Frm_RepVentas
             // 
@@ -582,18 +567,15 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 489);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(1294, 489);
+            this.Controls.Add(this.listBoxSeries);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.listBoxBodegas);
-            this.Controls.Add(this.bodegas);
             this.Controls.Add(this.labelControl17);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateEdit5);
-            this.Controls.Add(this.dateEdit6);
+            this.Controls.Add(this.FechaFin);
+            this.Controls.Add(this.FechaInicio);
             this.Controls.Add(this.panelControl5);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.panelControl10);
@@ -622,10 +604,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panelControl7.PerformLayout();
@@ -642,6 +624,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationFechas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,8 +644,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.DateEdit dateEdit5;
-        private DevExpress.XtraEditors.DateEdit dateEdit6;
+        private DevExpress.XtraEditors.DateEdit FechaFin;
+        private DevExpress.XtraEditors.DateEdit FechaInicio;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -692,12 +675,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox bodegas;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private System.Windows.Forms.ListBox listBoxBodegas;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.ListBox listBoxSeries;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationFechas;
     }
 }

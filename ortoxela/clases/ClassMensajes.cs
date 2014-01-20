@@ -69,19 +69,25 @@ namespace ortoxela.clases
         public static void FaltanDatosEnCampos(Form ventana)
         {
                 AlertControl ControlAlerta = new AlertControl();                        
-                ControlAlerta.Show(ventana, "INFORMACION", "FALTAN DATOS NECESARIO EN LOS CAMPOS", Properties.Resources.Advertencia64);
+                ControlAlerta.Show(ventana, "INFORMACION", "FALTAN DATOS NECESARIOS EN LOS CAMPOS", Properties.Resources.Advertencia64);
          
+        }
+        public static void FaltanDatosEnCamposNombre(Form ventana,string campo)
+        {
+            AlertControl ControlAlerta = new AlertControl();
+            ControlAlerta.Show(ventana, "INFORMACION", "FALTAN DATOS NECESARIOS EN EL(LOS) CAMPO(S) :"+campo, Properties.Resources.Advertencia64);
+
         }
         public static void NoHayExistenciaProd(Form ventana)
         {
             AlertControl ControlAlerta = new AlertControl();
-            ControlAlerta.Show(ventana, "INFORMACION", "NO HAY PRODUCTO EN EXISTENCIA, VERIFIQUE PORFAVOR", Properties.Resources.Advertencia64);
+            ControlAlerta.Show(ventana, "INFORMACION", "NO HAY PRODUCTO EN EXISTENCIA, VERIFIQUE POR FAVOR", Properties.Resources.Advertencia64);
 
         }
         public static void ProdYaExisteEnListado(Form ventana)
         {
             AlertControl ControlAlerta = new AlertControl();
-            ControlAlerta.Show(ventana, "INFORMACION", "PRODUCTO EXISTE EN EL LISTADO, VERIFIQUE PORFAVOR", Properties.Resources.Advertencia64);
+            ControlAlerta.Show(ventana, "INFORMACION", "PRODUCTO EXISTE EN EL LISTADO, VERIFIQUE POR FAVOR", Properties.Resources.Advertencia64);
 
         }
 
