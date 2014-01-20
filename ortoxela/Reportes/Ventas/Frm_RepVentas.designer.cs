@@ -74,6 +74,10 @@
             this.bodegas = new System.Windows.Forms.ComboBox();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxBodegas = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -272,7 +276,7 @@
             // dateEdit5
             // 
             this.dateEdit5.EditValue = "";
-            this.dateEdit5.Location = new System.Drawing.Point(220, 255);
+            this.dateEdit5.Location = new System.Drawing.Point(223, 126);
             this.dateEdit5.Name = "dateEdit5";
             this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -284,7 +288,7 @@
             // dateEdit6
             // 
             this.dateEdit6.EditValue = null;
-            this.dateEdit6.Location = new System.Drawing.Point(58, 255);
+            this.dateEdit6.Location = new System.Drawing.Point(61, 126);
             this.dateEdit6.Name = "dateEdit6";
             this.dateEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -296,7 +300,7 @@
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Location = new System.Drawing.Point(17, 254);
+            this.labelControl10.Location = new System.Drawing.Point(20, 125);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(29, 23);
@@ -306,7 +310,7 @@
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Location = new System.Drawing.Point(180, 254);
+            this.labelControl12.Location = new System.Drawing.Point(183, 125);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(20, 23);
@@ -494,7 +498,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 171);
+            this.label3.Location = new System.Drawing.Point(96, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 25);
             this.label3.TabIndex = 19;
@@ -503,7 +507,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 196);
+            this.label4.Location = new System.Drawing.Point(116, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 20;
@@ -512,7 +516,7 @@
             // bodegas
             // 
             this.bodegas.FormattingEnabled = true;
-            this.bodegas.Location = new System.Drawing.Point(146, 349);
+            this.bodegas.Location = new System.Drawing.Point(245, 193);
             this.bodegas.Name = "bodegas";
             this.bodegas.Size = new System.Drawing.Size(125, 23);
             this.bodegas.TabIndex = 21;
@@ -520,7 +524,7 @@
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Location = new System.Drawing.Point(72, 347);
+            this.labelControl17.Location = new System.Drawing.Point(20, 193);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(60, 20);
             this.labelControl17.TabIndex = 22;
@@ -530,11 +534,47 @@
             // 
             this.listBoxBodegas.FormattingEnabled = true;
             this.listBoxBodegas.ItemHeight = 15;
-            this.listBoxBodegas.Location = new System.Drawing.Point(146, 379);
+            this.listBoxBodegas.Location = new System.Drawing.Point(119, 193);
             this.listBoxBodegas.Name = "listBoxBodegas";
             this.listBoxBodegas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxBodegas.Size = new System.Drawing.Size(120, 94);
             this.listBoxBodegas.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 351);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 16);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Seleccione Serie";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(119, 344);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(179, 23);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 414);
+            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Estado Facturas";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(119, 411);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.TabIndex = 26;
             // 
             // Frm_RepVentas
             // 
@@ -543,6 +583,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 489);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.listBoxBodegas);
             this.Controls.Add(this.bodegas);
             this.Controls.Add(this.labelControl17);
@@ -651,5 +695,9 @@
         private System.Windows.Forms.ComboBox bodegas;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private System.Windows.Forms.ListBox listBoxBodegas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

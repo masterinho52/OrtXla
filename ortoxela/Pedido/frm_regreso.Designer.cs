@@ -303,7 +303,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(958, 74);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(100, 19);
+            this.labelControl11.Size = new System.Drawing.Size(98, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "TOTAL VALE:";
             // 
@@ -384,7 +384,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(904, 42);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(154, 19);
+            this.labelControl12.Size = new System.Drawing.Size(151, 19);
             this.labelControl12.TabIndex = 66;
             this.labelControl12.Text = "TOTAL DESCUENTO:";
             // 
@@ -428,7 +428,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Location = new System.Drawing.Point(676, 464);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(157, 19);
+            this.labelControl4.Size = new System.Drawing.Size(155, 19);
             this.labelControl4.TabIndex = 70;
             this.labelControl4.Text = "TOTAL A DEVOLVER:";
             // 
@@ -503,17 +503,17 @@
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Location = new System.Drawing.Point(962, 464);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(133, 19);
+            this.labelControl6.Size = new System.Drawing.Size(130, 19);
             this.labelControl6.TabIndex = 72;
             this.labelControl6.Text = "TOTAL FACTURA:";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(4, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1183, 228);
+            this.gridControl1.Size = new System.Drawing.Size(1179, 227);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -608,7 +608,7 @@
             this.xtraTabPage1.Controls.Add(this.sbnuevo);
             this.xtraTabPage1.Controls.Add(this.sbAceptar);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage1.Text = "DEVOLUCION";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
@@ -619,7 +619,7 @@
             this.xtraTabPage2.Controls.Add(this.simpleButton9);
             this.xtraTabPage2.Controls.Add(this.groupControl5);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage2.Text = "FACTURA";
             this.xtraTabPage2.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage2_Paint);
             // 
@@ -884,7 +884,7 @@
             this.checkEdit1.Location = new System.Drawing.Point(12, 130);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "DETALLE MANUAL";
-            this.checkEdit1.Size = new System.Drawing.Size(114, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(114, 18);
             this.checkEdit1.TabIndex = 78;
             this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
@@ -963,7 +963,7 @@
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Location = new System.Drawing.Point(924, 80);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(57, 19);
+            this.labelControl32.Size = new System.Drawing.Size(55, 19);
             this.labelControl32.TabIndex = 63;
             this.labelControl32.Text = "TOTAL:";
             // 
@@ -982,10 +982,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 21);
+            this.gridControl2.Location = new System.Drawing.Point(4, 19);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1068, 313);
+            this.gridControl2.Size = new System.Drawing.Size(1064, 312);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1002,7 +1002,7 @@
             this.xtraTabPage3.Controls.Add(this.sbPrintReciboCaja);
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage3.Text = "RECIBO DE CAJA";
             // 
             // sbPrintReciboCaja

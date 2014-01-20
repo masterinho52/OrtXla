@@ -36,6 +36,8 @@ namespace ortoxela.FacturaTemporal
                 gridLookSocioComercial.Properties.View.Columns["CODIGO"].Visible = false;
             }
             catch { }
+            /*Carga Bodegas*/
+            CargaBodega(0);
             try
             {
                 /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
@@ -73,6 +75,29 @@ namespace ortoxela.FacturaTemporal
                 gridLookTipoPago.Properties.ValueMember = "CODIGO";
                 gridLookTipoPago.EditValue = 1;
 
+            }
+            catch
+            { }
+        }
+        private void CargaBodega(int serie)
+        {            
+            try
+            {
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
+                if (serie != 0)
+                    ssql = ssql + " and codigo_serie="+serie.ToString();
+                ssql = ssql + " order by codigo_bodega asc ";
+                DataTable tempTabla = new DataTable();
+                tempTabla = logicaxela.Tabla(ssql);
+                gridLookBodega.Properties.DataSource = tempTabla;
+                gridLookBodega.Properties.DisplayMember = "NOMBRE";
+                gridLookBodega.Properties.ValueMember = "CODIGO";
+                gridLookBodega.EditValue = int.Parse(tempTabla.Rows[0]["CODIGO"].ToString());
+
+                // 
+                
             }
             catch
             { }
@@ -684,11 +709,13 @@ namespace ortoxela.FacturaTemporal
         {
             CalculaDescuento();
         }
+        /*cambio de serie*/
         string bandera_actualiza_precio,bandera_ingreso_egreso;
         string cadena;
         private void gridLookTipoDocumento_EditValueChanged(object sender, EventArgs e)
         {           
             cadena = "SELECT tipos_documento.actualiza_precios,tipos_documento.signo FROM tipos_documento INNER JOIN series_documentos ON tipos_documento.codigo_tipo=series_documentos.codigo_tipo WHERE series_documentos.codigo_serie=" + gridLookTipoDocumento.EditValue;
+            
             tempTabla = logicaxela.Tabla(cadena);
             bandera_actualiza_precio=tempTabla.Rows[0][0].ToString();
             bandera_ingreso_egreso=tempTabla.Rows[0][1].ToString();
@@ -709,6 +736,7 @@ namespace ortoxela.FacturaTemporal
             {
                 textNoDocumento.Text = "1";
             }
+            CargaBodega(int.Parse(gridLookTipoDocumento.EditValue.ToString()));
         }     
         double cant_devolucion, preciounitario, total_devuelta;// solo me sirve para calcular el total de devolucion
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
@@ -923,6 +951,8 @@ namespace ortoxela.FacturaTemporal
                 gridLookTipoPago.EditValue = 0;
             }
         }
+
+    
 
       
     }

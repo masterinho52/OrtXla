@@ -18,6 +18,28 @@ namespace ortoxela.Compra
         {
             InitializeComponent();
         }
+        private void CargaBodega(int serie)
+        {
+            try
+            {
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* jramirez 2013.07.24 */
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
+                if (serie != 0)
+                    ssql = ssql + " and codigo_serie=" + serie.ToString();
+                ssql = ssql + " order by codigo_bodega asc ";
+                DataTable tempTabla = new DataTable();
+                tempTabla = logicaxela.Tabla(ssql);
+                gridLookBodega.Properties.DataSource = tempTabla;
+                gridLookBodega.Properties.DisplayMember = "NOMBRE";
+                gridLookBodega.Properties.ValueMember = "CODIGO";
+                gridLookBodega.EditValue = int.Parse(tempTabla.Rows[0]["CODIGO"].ToString());
+                // 
+            }
+            catch
+            { }
+        }
+
         classortoxela logicaxela = new classortoxela();
         string ssql;
         double TotalIngresoCosto = 0;
@@ -34,19 +56,9 @@ namespace ortoxela.Compra
             }
             catch
             { }
-            try
-            {
-                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
-                /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
-                gridLookBodega.Properties.DataSource = logicaxela.Tabla(ssql);
-                gridLookBodega.Properties.DisplayMember = "NOMBRE";
-                gridLookBodega.Properties.ValueMember = "CODIGO";
-                gridLookBodega.EditValue = 1;
-               
-            }
-            catch
-            { }
+            /*Carga Combo Bodegas*/
+            CargaBodega(0);
+            
             try
             {
                 if (clases.ClassVariables.id_rol == "1")
@@ -810,6 +822,7 @@ namespace ortoxela.Compra
             {
                 sb_solicitud_compra.Enabled = false;
             }
+            CargaBodega(int.Parse(gridLookTipoDocumento.EditValue.ToString()));
         }
 
         private void gridLookProveedor_EditValueChanged(object sender, EventArgs e)

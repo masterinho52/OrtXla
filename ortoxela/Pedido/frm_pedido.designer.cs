@@ -283,6 +283,7 @@
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "SELECCIONE LA BODEGA";
             this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule1);
+            this.gridLookBodega.EditValueChanged += new System.EventHandler(this.gridLookBodega_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -510,7 +511,7 @@
             // textTotalVale
             // 
             this.textTotalVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalVale.Location = new System.Drawing.Point(890, 426);
+            this.textTotalVale.Location = new System.Drawing.Point(886, 426);
             this.textTotalVale.Name = "textTotalVale";
             this.textTotalVale.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalVale.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -525,7 +526,7 @@
             // textNumeroDocVale
             // 
             this.textNumeroDocVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNumeroDocVale.Location = new System.Drawing.Point(906, 52);
+            this.textNumeroDocVale.Location = new System.Drawing.Point(902, 52);
             this.textNumeroDocVale.Name = "textNumeroDocVale";
             this.textNumeroDocVale.Size = new System.Drawing.Size(104, 20);
             this.textNumeroDocVale.TabIndex = 2;
@@ -550,7 +551,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textDetalleVale.Location = new System.Drawing.Point(68, 13);
             this.textDetalleVale.Name = "textDetalleVale";
-            this.textDetalleVale.Size = new System.Drawing.Size(531, 20);
+            this.textDetalleVale.Size = new System.Drawing.Size(527, 20);
             this.textDetalleVale.TabIndex = 3;
             this.textDetalleVale.ToolTip = "Descripción del Pedido";
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -560,7 +561,7 @@
             // textCantidadVale
             // 
             this.textCantidadVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCantidadVale.Location = new System.Drawing.Point(675, 12);
+            this.textCantidadVale.Location = new System.Drawing.Point(671, 12);
             this.textCantidadVale.Name = "textCantidadVale";
             this.textCantidadVale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadVale.Size = new System.Drawing.Size(67, 20);
@@ -572,7 +573,7 @@
             // textUnitarioVale
             // 
             this.textUnitarioVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textUnitarioVale.Location = new System.Drawing.Point(822, 12);
+            this.textUnitarioVale.Location = new System.Drawing.Point(818, 12);
             this.textUnitarioVale.Name = "textUnitarioVale";
             this.textUnitarioVale.Properties.Mask.EditMask = "c";
             this.textUnitarioVale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -600,7 +601,7 @@
             // gridLookSerieVale
             // 
             this.gridLookSerieVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLookSerieVale.Location = new System.Drawing.Point(656, 26);
+            this.gridLookSerieVale.Location = new System.Drawing.Point(652, 26);
             this.gridLookSerieVale.Name = "gridLookSerieVale";
             this.gridLookSerieVale.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -629,7 +630,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNitCliente.Location = new System.Drawing.Point(523, 30);
             this.textNitCliente.Name = "textNitCliente";
-            this.textNitCliente.Size = new System.Drawing.Size(85, 20);
+            this.textNitCliente.Size = new System.Drawing.Size(81, 20);
             this.textNitCliente.TabIndex = 84;
             this.textNitCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNitCliente_KeyPress);
             // 
@@ -653,13 +654,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textTelefonoCliente.Location = new System.Drawing.Point(523, 56);
             this.textTelefonoCliente.Name = "textTelefonoCliente";
-            this.textTelefonoCliente.Size = new System.Drawing.Size(86, 20);
+            this.textTelefonoCliente.Size = new System.Drawing.Size(82, 20);
             this.textTelefonoCliente.TabIndex = 87;
             // 
             // gridLookTipoPago
             // 
             this.gridLookTipoPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLookTipoPago.Location = new System.Drawing.Point(806, 103);
+            this.gridLookTipoPago.Location = new System.Drawing.Point(802, 103);
             this.gridLookTipoPago.Name = "gridLookTipoPago";
             this.gridLookTipoPago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -677,7 +678,7 @@
             // radioGroup2
             // 
             this.radioGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroup2.Location = new System.Drawing.Point(805, 24);
+            this.radioGroup2.Location = new System.Drawing.Point(801, 24);
             this.radioGroup2.Name = "radioGroup2";
             this.radioGroup2.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "CONTADO"),
@@ -718,7 +719,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNoReciboVale.Location = new System.Drawing.Point(522, 108);
             this.textNoReciboVale.Name = "textNoReciboVale";
-            this.textNoReciboVale.Size = new System.Drawing.Size(86, 20);
+            this.textNoReciboVale.Size = new System.Drawing.Size(82, 20);
             this.textNoReciboVale.TabIndex = 93;
             conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule18.ErrorText = "INGRESE NUMERO DE RECIBO";
@@ -735,13 +736,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(86, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(82, 20);
             this.dateEdit1.TabIndex = 95;
             // 
             // textDeposito
             // 
             this.textDeposito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDeposito.Location = new System.Drawing.Point(806, 76);
+            this.textDeposito.Location = new System.Drawing.Point(802, 76);
             this.textDeposito.Name = "textDeposito";
             this.textDeposito.Size = new System.Drawing.Size(204, 20);
             this.textDeposito.TabIndex = 97;
@@ -781,7 +782,7 @@
             this.sbSinDeposito.Appearance.Options.UseFont = true;
             this.sbSinDeposito.Appearance.Options.UseForeColor = true;
             this.sbSinDeposito.Image = ((System.Drawing.Image)(resources.GetObject("sbSinDeposito.Image")));
-            this.sbSinDeposito.Location = new System.Drawing.Point(1086, 312);
+            this.sbSinDeposito.Location = new System.Drawing.Point(1082, 312);
             this.sbSinDeposito.Name = "sbSinDeposito";
             this.sbSinDeposito.Size = new System.Drawing.Size(154, 90);
             this.sbSinDeposito.TabIndex = 70;
@@ -796,7 +797,7 @@
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.Appearance.Options.UseForeColor = true;
             this.simpleButton11.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(1086, 15);
+            this.simpleButton11.Location = new System.Drawing.Point(1082, 15);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(154, 91);
             this.simpleButton11.TabIndex = 69;
@@ -811,7 +812,7 @@
             this.SbNoterminado.Appearance.Options.UseFont = true;
             this.SbNoterminado.Appearance.Options.UseForeColor = true;
             this.SbNoterminado.Image = global::ortoxela.Properties.Resources.database_process_24x24_32;
-            this.SbNoterminado.Location = new System.Drawing.Point(1086, 210);
+            this.SbNoterminado.Location = new System.Drawing.Point(1082, 210);
             this.SbNoterminado.Name = "SbNoterminado";
             this.SbNoterminado.Size = new System.Drawing.Size(154, 90);
             this.SbNoterminado.TabIndex = 68;
@@ -827,7 +828,7 @@
             this.simpleButton9.Appearance.Options.UseForeColor = true;
             this.simpleButton9.Enabled = false;
             this.simpleButton9.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.simpleButton9.Location = new System.Drawing.Point(1086, 117);
+            this.simpleButton9.Location = new System.Drawing.Point(1082, 117);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(154, 82);
             this.simpleButton9.TabIndex = 10;
@@ -873,7 +874,7 @@
             this.groupControl5.Controls.Add(this.groupControl4);
             this.groupControl5.Location = new System.Drawing.Point(7, 14);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1046, 458);
+            this.groupControl5.Size = new System.Drawing.Size(1042, 458);
             this.groupControl5.TabIndex = 67;
             this.groupControl5.Text = "DATOS DEL VALE";
             // 
@@ -891,7 +892,7 @@
             this.panelControl2.Controls.Add(this.labelControl38);
             this.panelControl2.Location = new System.Drawing.Point(36, 134);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(973, 43);
+            this.panelControl2.Size = new System.Drawing.Size(969, 43);
             this.panelControl2.TabIndex = 99;
             // 
             // simpleButton10
@@ -899,7 +900,7 @@
             this.simpleButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton10.Image = global::ortoxela.Properties.Resources.agregar32;
             this.simpleButton10.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton10.Location = new System.Drawing.Point(922, 5);
+            this.simpleButton10.Location = new System.Drawing.Point(918, 5);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(44, 32);
             this.simpleButton10.TabIndex = 6;
@@ -916,7 +917,7 @@
             // labelControl37
             // 
             this.labelControl37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl37.Location = new System.Drawing.Point(613, 17);
+            this.labelControl37.Location = new System.Drawing.Point(609, 17);
             this.labelControl37.Name = "labelControl37";
             this.labelControl37.Size = new System.Drawing.Size(56, 13);
             this.labelControl37.TabIndex = 75;
@@ -925,7 +926,7 @@
             // labelControl38
             // 
             this.labelControl38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl38.Location = new System.Drawing.Point(756, 16);
+            this.labelControl38.Location = new System.Drawing.Point(752, 16);
             this.labelControl38.Name = "labelControl38";
             this.labelControl38.Size = new System.Drawing.Size(64, 13);
             this.labelControl38.TabIndex = 77;
@@ -934,7 +935,7 @@
             // labelControl14
             // 
             this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Location = new System.Drawing.Point(745, 79);
+            this.labelControl14.Location = new System.Drawing.Point(741, 79);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(55, 13);
             this.labelControl14.TabIndex = 98;
@@ -952,7 +953,7 @@
             // labelControl42
             // 
             this.labelControl42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl42.Location = new System.Drawing.Point(416, 111);
+            this.labelControl42.Location = new System.Drawing.Point(412, 111);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(62, 13);
             this.labelControl42.TabIndex = 94;
@@ -963,7 +964,7 @@
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Image = global::ortoxela.Properties.Resources.add_16x16_32;
             this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(986, 101);
+            this.simpleButton2.Location = new System.Drawing.Point(982, 101);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 22);
             this.simpleButton2.TabIndex = 91;
@@ -971,7 +972,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(739, 110);
+            this.labelControl1.Location = new System.Drawing.Point(735, 110);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 89;
@@ -1040,7 +1041,7 @@
             // labelControl39
             // 
             this.labelControl39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl39.Location = new System.Drawing.Point(617, 29);
+            this.labelControl39.Location = new System.Drawing.Point(613, 29);
             this.labelControl39.Name = "labelControl39";
             this.labelControl39.Size = new System.Drawing.Size(33, 13);
             this.labelControl39.TabIndex = 79;
@@ -1057,7 +1058,7 @@
             // labelControl33
             // 
             this.labelControl33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl33.Location = new System.Drawing.Point(806, 55);
+            this.labelControl33.Location = new System.Drawing.Point(802, 55);
             this.labelControl33.Name = "labelControl33";
             this.labelControl33.Size = new System.Drawing.Size(96, 13);
             this.labelControl33.TabIndex = 66;
@@ -1067,7 +1068,7 @@
             // 
             this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Location = new System.Drawing.Point(826, 430);
+            this.labelControl32.Location = new System.Drawing.Point(822, 430);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(55, 19);
             this.labelControl32.TabIndex = 63;
@@ -1081,7 +1082,7 @@
             this.groupControl4.Controls.Add(this.gridControl2);
             this.groupControl4.Location = new System.Drawing.Point(36, 177);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(975, 247);
+            this.groupControl4.Size = new System.Drawing.Size(971, 247);
             this.groupControl4.TabIndex = 62;
             this.groupControl4.Text = "DETALLE DE VALE";
             // 
@@ -1091,10 +1092,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl2.Location = new System.Drawing.Point(4, 19);
+            this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(967, 223);
+            this.gridControl2.Size = new System.Drawing.Size(967, 224);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1112,7 +1113,7 @@
             this.xtraTabPage2.Controls.Add(this.sbSaveReciboCaja);
             this.xtraTabPage2.Controls.Add(this.groupControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1271, 474);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1273, 474);
             this.xtraTabPage2.Text = "RECIBO DE CAJA";
             // 
             // sbPrintReciboCaja
@@ -1318,7 +1319,7 @@
             this.xtraTabPage1.Controls.Add(this.textTotalPedido);
             this.xtraTabPage1.Controls.Add(this.labelControl11);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1271, 474);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1273, 474);
             this.xtraTabPage1.Text = "ENVIO";
             // 
             // label4
@@ -1518,10 +1519,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(4, 19);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1246, 157);
+            this.gridControl1.Size = new System.Drawing.Size(1250, 158);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -29,6 +29,27 @@ namespace ortoxela.Pedido
         {
 
         }
+        private void CargaBodega(int serie)
+        {
+            try
+            {
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
+                if (serie != 0)
+                    cadena = cadena + " and codigo_serie=" + serie.ToString();
+                cadena = cadena + " order by codigo_bodega asc ";
+                DataTable tempTabla = new DataTable();
+                tempTabla = logicaorto.Tabla(cadena);
+                gridLookBodega.Properties.DataSource = tempTabla;
+                gridLookBodega.Properties.DisplayMember = "NOMBRE";
+                gridLookBodega.Properties.ValueMember = "CODIGO";
+                gridLookBodega.EditValue = int.Parse(tempTabla.Rows[0]["CODIGO"].ToString());
+                // 
+            }
+            catch
+            { }
+        }
         private void CargaDatosCombos()
         {
             try
@@ -50,24 +71,11 @@ namespace ortoxela.Pedido
                 gridLookBodega.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
-                gridLookBodega.EditValue = 1;  
+                // gridLookBodega.EditValue = 1;  
             }
             catch
             { }
-            try
-            {
-                /* VALE */
-                /* cadena = "SELECT codigo_serie CODIGO,serie_documento AS 'SERIE DOCUMENTO' FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=5"; */
-                /*jramirez 2013.07.24 */
-                cadena = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS 'SERIE DOCUMENTO'  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=5 AND userid=" + clases.ClassVariables.id_usuario;
-                gridLookTipoDocumento.Properties.DataSource = logicaorto.Tabla(cadena);
-                gridLookTipoDocumento.Properties.DisplayMember = "SERIE DOCUMENTO";
-                gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
-                gridLookTipoDocumento.EditValue = 6;
-                //gridLookTipoDocumento.Text = "";
-            }
-            catch
-            { }
+            
             try
             {
                 /* RECIBO - No afecta inventario*/
@@ -949,7 +957,7 @@ namespace ortoxela.Pedido
                     comando.Transaction = transa;
                     comando.ExecuteNonQuery();
                 }
-                int tipo_pago= Convert.ToInt32(gridLookTipoDocumento.EditValue);
+                int tipo_pago= Convert.ToInt32(gridLookTipoPago.EditValue);
                 string desc="";
                 string depo = textDeposito.Text;
                 if (depo.Length > 0 )
@@ -1046,13 +1054,17 @@ namespace ortoxela.Pedido
         {
             try
             {
-                cadena = "SELECT (header_doctos_inv.no_documento+1)AS 'NODOC' FROM header_doctos_inv INNER JOIN series_documentos ON header_doctos_inv.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_tipo=5 AND series_documentos.codigo_serie=" + gridLookTipoDocumento.EditValue + " ORDER BY header_doctos_inv.no_documento DESC LIMIT 1";
+                cadena = "SELECT (header_doctos_inv.no_documento+1)AS 'NODOC',header_doctos_inv.codigo_serie FROM header_doctos_inv INNER JOIN series_documentos ON header_doctos_inv.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_tipo=5 AND series_documentos.codigo_serie=" + gridLookTipoDocumento.EditValue + " ORDER BY header_doctos_inv.no_documento DESC LIMIT 1";
                 textNoDocumento.Text = logicaorto.Tabla(cadena).Rows[0][0].ToString();
+                // CargaBodega(int.Parse(gridLookTipoDocumento.EditValue.ToString()));
+                CargaBodega(int.Parse(logicaorto.Tabla(cadena).Rows[0][1].ToString()));
+                
             }
             catch
             {
                 textNoDocumento.Text = "1";
             }
+            
         }
 
         private void textNumeroDocVale_EditValueChanged(object sender, EventArgs e)
@@ -1494,6 +1506,24 @@ namespace ortoxela.Pedido
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridLookBodega_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                /* VALE */
+                /* cadena = "SELECT codigo_serie CODIGO,serie_documento AS 'SERIE DOCUMENTO' FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=5"; */
+                /*jramirez 2013.07.24 */
+                cadena = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS 'SERIE DOCUMENTO'  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=5 AND userid=" + clases.ClassVariables.id_usuario + " codigo_bodega= " + gridLookBodega.EditValue;
+                gridLookTipoDocumento.Properties.DataSource = logicaorto.Tabla(cadena);
+                gridLookTipoDocumento.Properties.DisplayMember = "SERIE DOCUMENTO";
+                gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
+                gridLookTipoDocumento.EditValue = 6;
+                //gridLookTipoDocumento.Text = "";
+            }
+            catch
+            { }
         }
 
 

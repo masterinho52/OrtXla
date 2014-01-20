@@ -44,6 +44,20 @@ namespace ortoxela.Reportes.Ventas
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+
+            //foreach (listb item in listBoxBodegas.Items)
+            //{
+            //    MessageBox.Show(item.ToString());
+            //}
+
+            for (int c = 0; c < listBoxBodegas.SelectedItems.Count; c++)
+            {
+                string bode = listBoxBodegas.SelectedItems[c].ToString();
+                    MessageBox.Show(bode, "items");
+            }
+            MessageBox.Show(listBoxBodegas.Items.Count.ToString(), " items "  );
+            return;
+
             Cursor.Current = Cursors.WaitCursor;
 
             string consulta = "select  fecha, Tipo_Pago, nombre_cliente, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, no_documento, refer_documento, nombre_tipo_pago, documento,  "+
@@ -170,7 +184,7 @@ namespace ortoxela.Reportes.Ventas
                             " union all  " +
                             " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1"; */
                 /* jramirez 2013.07.24 */
-                ssql  = "SELECT codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql  ="SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 bodegas.DataSource = logicaxela.Tabla(ssql);
                 bodegas.DisplayMember = "nombre_bodega";
                 bodegas.ValueMember = "codigo_bodega";
@@ -338,6 +352,8 @@ namespace ortoxela.Reportes.Ventas
             reported.ShowPreview();
             Cursor.Current = Cursors.Default;
         }
+
+
 
                       
         
