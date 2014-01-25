@@ -471,17 +471,23 @@
             this.gridLookTipoDocumento.Properties.View = this.gridView3;
             this.gridLookTipoDocumento.Size = new System.Drawing.Size(251, 20);
             this.gridLookTipoDocumento.TabIndex = 5;
+<<<<<<< HEAD
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "SELECCIONE EL TIPO DE DOCUMENTO";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationEncabezado.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule2);
             conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule12.ErrorText = "SELECCIONE UN REGISTRO";
             this.dxValidationProvider2.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule12);
+=======
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "SELECCIONE EL TIPO DE DOCUMENTO";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationEncabezado.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule4);
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "SELECCIONE UN REGISTRO";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationProvider2.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule5);
+>>>>>>> dd0829e71862c224e568bcb9f13e6c797d9556d4
             this.gridLookTipoDocumento.EditValueChanged += new System.EventHandler(this.gridLookTipoDocumento_EditValueChanged);
             // 
             // gridView3
@@ -508,9 +514,6 @@
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "INGRESE NUMERO DOCUMENTO";
             this.dxValidationProvider2.SetValidationRule(this.textNoDocumento, conditionValidationRule3);
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "INGRESE NUMERO DOCUMENTO";
-            this.dxValidationProvider2.SetValidationRule(this.textNoDocumento, conditionValidationRule6);
             // 
             // labelControl2
             // 
@@ -797,10 +800,16 @@
             this.gridLookBodega.Properties.View = this.gridLookUpEdit1View;
             this.gridLookBodega.Size = new System.Drawing.Size(153, 20);
             this.gridLookBodega.TabIndex = 0;
+<<<<<<< HEAD
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "SELECCIONE UN REGISTRO";
             this.dxValidationProvider2.SetValidationRule(this.gridLookBodega, conditionValidationRule8);
+=======
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule11.ErrorText = "SELECCIONE UN REGISTRO";
+            this.dxValidationProvider2.SetValidationRule(this.gridLookBodega, conditionValidationRule11);
             this.gridLookBodega.EditValueChanged += new System.EventHandler(this.gridLookBodega_EditValueChanged);
+>>>>>>> dd0829e71862c224e568bcb9f13e6c797d9556d4
             // 
             // gridLookUpEdit1View
             // 

@@ -176,6 +176,7 @@ namespace ortoxela.Permisos
                 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             CheckEdit check;
             try
             {
@@ -265,6 +266,7 @@ namespace ortoxela.Permisos
             {
                 clases.ClassMensajes.NoINSERTO(this);
             }
+            Cursor.Current = Cursors.Default;
         }
 
         

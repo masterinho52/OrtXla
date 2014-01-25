@@ -9,11 +9,11 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ventas_generalTableAdapter" GeneratorDataComponentClassName="v_ventas_generalTableAdapter" Name="v_ventas_general" UserDataComponentName="v_ventas_generalTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_ventas_general" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_ventas_general" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        fecha, Tipo_Pago, nombre_cliente, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, no_documento, refer_documento, nombre_tipo_pago, documento, 
-                         nombre_estado, fecha_anula, usuario_anula, tipo_cliente, nitCliente, codigo_cliente
+                         nombre_estado, fecha_anula, usuario_anula, Socio_Comercial, tipo_cliente, nitCliente, codigo_cliente, codigo_serie
 FROM            v_ventas_general</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -35,9 +35,11 @@ FROM            v_ventas_general</CommandText>
               <Mapping SourceColumn="nombre_estado" DataSetColumn="nombre_estado" />
               <Mapping SourceColumn="fecha_anula" DataSetColumn="fecha_anula" />
               <Mapping SourceColumn="usuario_anula" DataSetColumn="usuario_anula" />
+              <Mapping SourceColumn="Socio_Comercial" DataSetColumn="Socio_Comercial" />
               <Mapping SourceColumn="tipo_cliente" DataSetColumn="tipo_cliente" />
               <Mapping SourceColumn="nitCliente" DataSetColumn="nitCliente" />
               <Mapping SourceColumn="codigo_cliente" DataSetColumn="codigo_cliente" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -49,7 +51,7 @@ FROM            v_ventas_general</CommandText>
   <xs:element name="DataSet_VentasGeneral" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_VentasGeneral" msprop:Generator_UserDSName="DataSet_VentasGeneral">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_ventas_general" msprop:Generator_TableClassName="v_ventas_generalDataTable" msprop:Generator_TableVarName="tablev_ventas_general" msprop:Generator_TablePropName="v_ventas_general" msprop:Generator_RowDeletingName="v_ventas_generalRowDeleting" msprop:Generator_UserTableName="v_ventas_general" msprop:Generator_RowChangingName="v_ventas_generalRowChanging" msprop:Generator_RowEvHandlerName="v_ventas_generalRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ventas_generalRowDeleted" msprop:Generator_RowEvArgName="v_ventas_generalRowChangeEvent" msprop:Generator_RowChangedName="v_ventas_generalRowChanged" msprop:Generator_RowClassName="v_ventas_generalRow">
+        <xs:element name="v_ventas_general" msprop:Generator_TableClassName="v_ventas_generalDataTable" msprop:Generator_TableVarName="tablev_ventas_general" msprop:Generator_TablePropName="v_ventas_general" msprop:Generator_RowDeletingName="v_ventas_generalRowDeleting" msprop:Generator_RowChangingName="v_ventas_generalRowChanging" msprop:Generator_RowEvHandlerName="v_ventas_generalRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ventas_generalRowDeleted" msprop:Generator_UserTableName="v_ventas_general" msprop:Generator_RowChangedName="v_ventas_generalRowChanged" msprop:Generator_RowEvArgName="v_ventas_generalRowChangeEvent" msprop:Generator_RowClassName="v_ventas_generalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
@@ -102,6 +104,13 @@ FROM            v_ventas_general</CommandText>
               </xs:element>
               <xs:element name="fecha_anula" msprop:Generator_ColumnVarNameInTable="columnfecha_anula" msprop:Generator_ColumnPropNameInRow="fecha_anula" msprop:Generator_ColumnPropNameInTable="fecha_anulaColumn" msprop:Generator_UserColumnName="fecha_anula" type="xs:dateTime" minOccurs="0" />
               <xs:element name="usuario_anula" msprop:Generator_ColumnVarNameInTable="columnusuario_anula" msprop:Generator_ColumnPropNameInRow="usuario_anula" msprop:Generator_ColumnPropNameInTable="usuario_anulaColumn" msprop:Generator_UserColumnName="usuario_anula" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="Socio_Comercial" msprop:Generator_ColumnVarNameInTable="columnSocio_Comercial" msprop:Generator_ColumnPropNameInRow="Socio_Comercial" msprop:Generator_ColumnPropNameInTable="Socio_ComercialColumn" msprop:Generator_UserColumnName="Socio_Comercial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="tipo_cliente" msprop:Generator_ColumnVarNameInTable="columntipo_cliente" msprop:Generator_ColumnPropNameInRow="tipo_cliente" msprop:Generator_ColumnPropNameInTable="tipo_clienteColumn" msprop:Generator_UserColumnName="tipo_cliente" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -116,11 +125,16 @@ FROM            v_ventas_general</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="codigo_cliente" msprop:Generator_ColumnVarNameInTable="columncodigo_cliente" msprop:Generator_ColumnPropNameInRow="codigo_cliente" msprop:Generator_ColumnPropNameInTable="codigo_clienteColumn" msprop:Generator_UserColumnName="codigo_cliente" type="xs:int" />
+              <xs:element name="codigo_cliente" msprop:Generator_ColumnVarNameInTable="columncodigo_cliente" msprop:Generator_ColumnPropNameInRow="codigo_cliente" msprop:Generator_ColumnPropNameInTable="codigo_clienteColumn" msprop:Generator_UserColumnName="codigo_cliente" type="xs:unsignedInt" />
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_ventas_general" />
+      <xs:field xpath="mstns:codigo_cliente" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

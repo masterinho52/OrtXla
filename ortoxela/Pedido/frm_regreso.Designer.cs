@@ -303,7 +303,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(958, 74);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(100, 19);
+            this.labelControl11.Size = new System.Drawing.Size(98, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "TOTAL VALE:";
             // 
@@ -384,7 +384,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(904, 42);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(154, 19);
+            this.labelControl12.Size = new System.Drawing.Size(151, 19);
             this.labelControl12.TabIndex = 66;
             this.labelControl12.Text = "TOTAL DESCUENTO:";
             // 
@@ -428,7 +428,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Location = new System.Drawing.Point(676, 464);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(157, 19);
+            this.labelControl4.Size = new System.Drawing.Size(155, 19);
             this.labelControl4.TabIndex = 70;
             this.labelControl4.Text = "TOTAL A DEVOLVER:";
             // 
@@ -503,7 +503,7 @@
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Location = new System.Drawing.Point(962, 464);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(133, 19);
+            this.labelControl6.Size = new System.Drawing.Size(130, 19);
             this.labelControl6.TabIndex = 72;
             this.labelControl6.Text = "TOTAL FACTURA:";
             // 
@@ -963,7 +963,7 @@
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Location = new System.Drawing.Point(924, 80);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(57, 19);
+            this.labelControl32.Size = new System.Drawing.Size(55, 19);
             this.labelControl32.TabIndex = 63;
             this.labelControl32.Text = "TOTAL:";
             // 

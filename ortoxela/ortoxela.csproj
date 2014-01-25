@@ -930,19 +930,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_VentasArticuloMas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Ventas\DataSet_VentasGeneral.cs">
-      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Ventas\DataSet_VentasGeneral1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventas\DataSet_VentasGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Ventas\DataSet_ventas_cliente_categoria1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1921,17 +1917,6 @@
     <None Include="Reportes\Ventas\DataSet_VentasArticuloMas.xss">
       <DependentUpon>DataSet_VentasArticuloMas.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsc">
-      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_VentasGeneral1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xss">
-      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
-    </None>
     <None Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.xsc">
       <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
     </None>
@@ -1942,6 +1927,17 @@
     </None>
     <None Include="Reportes\Ventas\Clientes\DataSet_Ventas_Clientes.xss">
       <DependentUpon>DataSet_Ventas_Clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsc">
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_VentasGeneral.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ventas\DataSet_VentasGeneral.xss">
+      <DependentUpon>DataSet_VentasGeneral.xsd</DependentUpon>
     </None>
     <None Include="Reportes\Ventas\DataSet_ventas_cliente_categoria.xsc">
       <DependentUpon>DataSet_ventas_cliente_categoria.xsd</DependentUpon>
