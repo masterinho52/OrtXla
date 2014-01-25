@@ -80,7 +80,7 @@
             this.xrPageInfo3,
             this.xrPageInfo4,
             this.xrLabel15});
-            this.TopMargin.HeightF = 53.125F;
+            this.TopMargin.HeightF = 52.08333F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -426,11 +426,11 @@
             this.DataMember = "v_compras_detalle_proveedor_categoria";
             this.DataSource = this.dataSet_v_compras_detalle_proveedor_categoria1;
             this.FilterString = "[fecha_compra] Between(?Fecha_inicio, ?Fecha_fin)";
-            this.Margins = new System.Drawing.Printing.Margins(50, 52, 53, 100);
+            this.Margins = new System.Drawing.Printing.Margins(50, 52, 52, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
             this.Fecha_fin});
-            this.Version = "11.2";
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_v_compras_detalle_proveedor_categoria1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

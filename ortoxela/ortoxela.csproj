@@ -678,6 +678,10 @@
     <Compile Include="Reportes\Admin\XtraReport_ReporteConsumo.Designer.cs">
       <DependentUpon>XtraReport_ReporteConsumo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Compras\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Compras\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -692,6 +696,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_ComprasGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.cs">
+      <DependentUpon>DataSet_v_compras_detalle_proveedor_categoria.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\Compras\DataSet_v_compras_detalle_proveedor_categoria.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -863,10 +871,10 @@
     <Compile Include="Reportes\Pedidos\xtr_vueltos.Designer.cs">
       <DependentUpon>xtr_vueltos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Producto\frm_Existencias.cs">
+    <Compile Include="TrasladoBodega\Producto\frm_Existencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Producto\frm_Existencias.designer.cs">
+    <Compile Include="TrasladoBodega\Producto\frm_Existencias.designer.cs">
       <DependentUpon>frm_Existencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Proveedores\DataSet_RepProveedores.Designer.cs">
@@ -1396,7 +1404,7 @@
     <EmbeddedResource Include="Reportes\Pedidos\xtr_vueltos.resx">
       <DependentUpon>xtr_vueltos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Producto\frm_Existencias.resx">
+    <EmbeddedResource Include="TrasladoBodega\Producto\frm_Existencias.resx">
       <DependentUpon>frm_Existencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Proveedores\Frm_RepProveedores.resx">
