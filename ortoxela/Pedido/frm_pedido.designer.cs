@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule19 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -42,14 +42,13 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule13 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule20 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule14 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule15 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule16 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule17 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule18 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_pedido));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.gridLookBodega = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textVenta = new DevExpress.XtraEditors.TextEdit();
@@ -95,7 +94,7 @@
             this.textNoReciboVale = new DevExpress.XtraEditors.TextEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.textDeposito = new DevExpress.XtraEditors.TextEdit();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.sbSinDeposito = new DevExpress.XtraEditors.SimpleButton();
@@ -181,11 +180,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.dxValidationRecibo = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.dxValidationPedido = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.dxValidationDetalleVale = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
-            this.dxValidationImprimeVale = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxValidationRecibo = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationPedido = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationDetalleVale = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl();
+            this.dxValidationImprimeVale = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookBodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
@@ -280,9 +279,9 @@
             this.gridLookBodega.Properties.View = this.gridLookUpEdit1View;
             this.gridLookBodega.Size = new System.Drawing.Size(135, 20);
             this.gridLookBodega.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "SELECCIONE LA BODEGA";
-            this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule1);
+            conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule19.ErrorText = "SELECCIONE LA BODEGA";
+            this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule19);
             this.gridLookBodega.EditValueChanged += new System.EventHandler(this.gridLookBodega_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -311,9 +310,9 @@
             this.textCantidadArt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadArt.Size = new System.Drawing.Size(101, 20);
             this.textCantidadArt.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "INGRESE LA CANTIDAD DE PRODUCTO";
-            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "INGRESE LA CANTIDAD DE PRODUCTO";
+            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule1);
             // 
             // textNombreArti
             // 
@@ -322,9 +321,9 @@
             this.textNombreArti.Name = "textNombreArti";
             this.textNombreArti.Size = new System.Drawing.Size(282, 20);
             this.textNombreArti.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "INGRESE EL PRODUCTO";
-            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "INGRESE EL PRODUCTO";
+            this.dxValidationProvider1.SetValidationRule(this.textNombreArti, conditionValidationRule2);
             this.textNombreArti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombreArti_KeyPress);
             // 
             // textCodigoArt
@@ -334,9 +333,9 @@
             this.textCodigoArt.Name = "textCodigoArt";
             this.textCodigoArt.Size = new System.Drawing.Size(100, 20);
             this.textCodigoArt.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "INGRESE EL CODIGO DE PRODUCTO";
-            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "INGRESE EL CODIGO DE PRODUCTO";
+            this.dxValidationProvider1.SetValidationRule(this.textCodigoArt, conditionValidationRule3);
             this.textCodigoArt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoArt_KeyPress);
             // 
             // textTotalDescuento
@@ -357,7 +356,7 @@
             // textTotalPedido
             // 
             this.textTotalPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalPedido.Location = new System.Drawing.Point(1157, 398);
+            this.textTotalPedido.Location = new System.Drawing.Point(1157, 402);
             this.textTotalPedido.Name = "textTotalPedido";
             this.textTotalPedido.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalPedido.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -386,9 +385,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookTipoDocumento.Size = new System.Drawing.Size(251, 20);
             this.gridLookTipoDocumento.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationPedido.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationPedido.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule4);
             this.gridLookTipoDocumento.EditValueChanged += new System.EventHandler(this.gridLookTipoDocumento_EditValueChanged);
             // 
             // textNoDocumento
@@ -404,9 +403,9 @@
             this.textRecibimosDe.Name = "textRecibimosDe";
             this.textRecibimosDe.Size = new System.Drawing.Size(604, 20);
             this.textRecibimosDe.TabIndex = 51;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationRecibo.SetValidationRule(this.textRecibimosDe, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationRecibo.SetValidationRule(this.textRecibimosDe, conditionValidationRule5);
             // 
             // textCantidadDe
             // 
@@ -440,9 +439,9 @@
             this.textPor.Name = "textPor";
             this.textPor.Size = new System.Drawing.Size(148, 20);
             this.textPor.TabIndex = 59;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationRecibo.SetValidationRule(this.textPor, conditionValidationRule7);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationRecibo.SetValidationRule(this.textPor, conditionValidationRule6);
             this.textPor.EditValueChanged += new System.EventHandler(this.textPor_EditValueChanged);
             // 
             // radioGroup1
@@ -497,9 +496,9 @@
             this.textNoRecibo.Name = "textNoRecibo";
             this.textNoRecibo.Size = new System.Drawing.Size(114, 20);
             this.textNoRecibo.TabIndex = 74;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "INGRESE NUMERO DE RECIBO";
-            this.dxValidationRecibo.SetValidationRule(this.textNoRecibo, conditionValidationRule8);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "INGRESE NUMERO DE RECIBO";
+            this.dxValidationRecibo.SetValidationRule(this.textNoRecibo, conditionValidationRule7);
             // 
             // textAtencionDr
             // 
@@ -511,7 +510,7 @@
             // textTotalVale
             // 
             this.textTotalVale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalVale.Location = new System.Drawing.Point(886, 426);
+            this.textTotalVale.Location = new System.Drawing.Point(886, 430);
             this.textTotalVale.Name = "textTotalVale";
             this.textTotalVale.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalVale.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -530,9 +529,9 @@
             this.textNumeroDocVale.Name = "textNumeroDocVale";
             this.textNumeroDocVale.Size = new System.Drawing.Size(104, 20);
             this.textNumeroDocVale.TabIndex = 2;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationImprimeVale.SetValidationRule(this.textNumeroDocVale, conditionValidationRule9);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationImprimeVale.SetValidationRule(this.textNumeroDocVale, conditionValidationRule8);
             this.textNumeroDocVale.EditValueChanged += new System.EventHandler(this.textNumeroDocVale_EditValueChanged);
             // 
             // textUtilizadoPaciente
@@ -541,9 +540,9 @@
             this.textUtilizadoPaciente.Name = "textUtilizadoPaciente";
             this.textUtilizadoPaciente.Size = new System.Drawing.Size(267, 20);
             this.textUtilizadoPaciente.TabIndex = 7;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationImprimeVale.SetValidationRule(this.textUtilizadoPaciente, conditionValidationRule10);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationImprimeVale.SetValidationRule(this.textUtilizadoPaciente, conditionValidationRule9);
             // 
             // textDetalleVale
             // 
@@ -554,9 +553,9 @@
             this.textDetalleVale.Size = new System.Drawing.Size(527, 20);
             this.textDetalleVale.TabIndex = 3;
             this.textDetalleVale.ToolTip = "Descripción del Pedido";
-            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule11.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationDetalleVale.SetValidationRule(this.textDetalleVale, conditionValidationRule11);
+            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule10.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationDetalleVale.SetValidationRule(this.textDetalleVale, conditionValidationRule10);
             // 
             // textCantidadVale
             // 
@@ -566,9 +565,9 @@
             this.textCantidadVale.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadVale.Size = new System.Drawing.Size(67, 20);
             this.textCantidadVale.TabIndex = 4;
-            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule12.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationDetalleVale.SetValidationRule(this.textCantidadVale, conditionValidationRule12);
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule11.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationDetalleVale.SetValidationRule(this.textCantidadVale, conditionValidationRule11);
             // 
             // textUnitarioVale
             // 
@@ -593,9 +592,9 @@
             this.textDescuentoPorce.TabIndex = 46;
             this.textDescuentoPorce.ToolTip = "Si ingresa % al final lo toma como porcentaje,  si no como Quetzales";
             this.textDescuentoPorce.ToolTipTitle = "Ingreso Pedido";
-            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule13.ErrorText = "INGRESE EL PRODUCTO";
-            this.dxValidationProvider1.SetValidationRule(this.textDescuentoPorce, conditionValidationRule13);
+            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule12.ErrorText = "INGRESE EL PRODUCTO";
+            this.dxValidationProvider1.SetValidationRule(this.textDescuentoPorce, conditionValidationRule12);
             this.textDescuentoPorce.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // gridLookSerieVale
@@ -640,12 +639,12 @@
             this.textNombreCliente.Name = "textNombreCliente";
             this.textNombreCliente.Size = new System.Drawing.Size(267, 20);
             this.textNombreCliente.TabIndex = 82;
-            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule14.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationImprimeVale.SetValidationRule(this.textNombreCliente, conditionValidationRule14);
-            conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule15.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationPedido.SetValidationRule(this.textNombreCliente, conditionValidationRule15);
+            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule13.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationImprimeVale.SetValidationRule(this.textNombreCliente, conditionValidationRule13);
+            conditionValidationRule20.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule20.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationPedido.SetValidationRule(this.textNombreCliente, conditionValidationRule20);
             this.textNombreCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
             // textTelefonoCliente
@@ -666,13 +665,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookTipoPago.Size = new System.Drawing.Size(168, 20);
             this.gridLookTipoPago.TabIndex = 90;
-            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule16.ErrorText = "TIPO PAGO VACIO";
-            conditionValidationRule16.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationImprimeVale.SetValidationRule(this.gridLookTipoPago, conditionValidationRule16);
-            conditionValidationRule17.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule17.ErrorText = "CAMPO OBLIGATORIO";
-            this.dxValidationPedido.SetValidationRule(this.gridLookTipoPago, conditionValidationRule17);
+            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule14.ErrorText = "TIPO PAGO VACIO";
+            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationImprimeVale.SetValidationRule(this.gridLookTipoPago, conditionValidationRule14);
+            conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule15.ErrorText = "CAMPO OBLIGATORIO";
+            this.dxValidationPedido.SetValidationRule(this.gridLookTipoPago, conditionValidationRule15);
             this.gridLookTipoPago.EditValueChanged += new System.EventHandler(this.gridLookTipoPago_EditValueChanged);
             // 
             // radioGroup2
@@ -721,9 +720,9 @@
             this.textNoReciboVale.Name = "textNoReciboVale";
             this.textNoReciboVale.Size = new System.Drawing.Size(82, 20);
             this.textNoReciboVale.TabIndex = 93;
-            conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule18.ErrorText = "INGRESE NUMERO DE RECIBO";
-            this.dxValidationRecibo.SetValidationRule(this.textNoReciboVale, conditionValidationRule18);
+            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule16.ErrorText = "INGRESE NUMERO DE RECIBO";
+            this.dxValidationRecibo.SetValidationRule(this.textNoReciboVale, conditionValidationRule16);
             // 
             // dateEdit1
             // 
@@ -752,10 +751,10 @@
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl1.Location = new System.Drawing.Point(3, 3);
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1279, 502);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1279, 506);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -771,7 +770,7 @@
             this.xtraTabPage3.Controls.Add(this.simpleButton9);
             this.xtraTabPage3.Controls.Add(this.groupControl5);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1271, 474);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1273, 478);
             this.xtraTabPage3.Text = "PEDIDO";
             // 
             // sbSinDeposito
@@ -782,7 +781,7 @@
             this.sbSinDeposito.Appearance.Options.UseFont = true;
             this.sbSinDeposito.Appearance.Options.UseForeColor = true;
             this.sbSinDeposito.Image = ((System.Drawing.Image)(resources.GetObject("sbSinDeposito.Image")));
-            this.sbSinDeposito.Location = new System.Drawing.Point(1082, 312);
+            this.sbSinDeposito.Location = new System.Drawing.Point(1082, 314);
             this.sbSinDeposito.Name = "sbSinDeposito";
             this.sbSinDeposito.Size = new System.Drawing.Size(154, 90);
             this.sbSinDeposito.TabIndex = 70;
@@ -797,7 +796,7 @@
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.Appearance.Options.UseForeColor = true;
             this.simpleButton11.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(1082, 15);
+            this.simpleButton11.Location = new System.Drawing.Point(1082, 17);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(154, 91);
             this.simpleButton11.TabIndex = 69;
@@ -812,7 +811,7 @@
             this.SbNoterminado.Appearance.Options.UseFont = true;
             this.SbNoterminado.Appearance.Options.UseForeColor = true;
             this.SbNoterminado.Image = global::ortoxela.Properties.Resources.database_process_24x24_32;
-            this.SbNoterminado.Location = new System.Drawing.Point(1082, 210);
+            this.SbNoterminado.Location = new System.Drawing.Point(1082, 212);
             this.SbNoterminado.Name = "SbNoterminado";
             this.SbNoterminado.Size = new System.Drawing.Size(154, 90);
             this.SbNoterminado.TabIndex = 68;
@@ -828,7 +827,7 @@
             this.simpleButton9.Appearance.Options.UseForeColor = true;
             this.simpleButton9.Enabled = false;
             this.simpleButton9.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.simpleButton9.Location = new System.Drawing.Point(1082, 117);
+            this.simpleButton9.Location = new System.Drawing.Point(1082, 119);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(154, 82);
             this.simpleButton9.TabIndex = 10;
@@ -874,7 +873,7 @@
             this.groupControl5.Controls.Add(this.groupControl4);
             this.groupControl5.Location = new System.Drawing.Point(7, 14);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1042, 458);
+            this.groupControl5.Size = new System.Drawing.Size(1042, 462);
             this.groupControl5.TabIndex = 67;
             this.groupControl5.Text = "DATOS DEL VALE";
             // 
@@ -1068,7 +1067,7 @@
             // 
             this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl32.Location = new System.Drawing.Point(822, 430);
+            this.labelControl32.Location = new System.Drawing.Point(822, 434);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(57, 19);
             this.labelControl32.TabIndex = 63;
@@ -1082,20 +1081,20 @@
             this.groupControl4.Controls.Add(this.gridControl2);
             this.groupControl4.Location = new System.Drawing.Point(36, 177);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(971, 247);
+            this.groupControl4.Size = new System.Drawing.Size(971, 251);
             this.groupControl4.TabIndex = 62;
             this.groupControl4.Text = "DETALLE DE VALE";
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(967, 224);
+            this.gridControl2.Size = new System.Drawing.Size(967, 228);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1113,7 +1112,7 @@
             this.xtraTabPage2.Controls.Add(this.sbSaveReciboCaja);
             this.xtraTabPage2.Controls.Add(this.groupControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1273, 474);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1273, 478);
             this.xtraTabPage2.Text = "RECIBO DE CAJA";
             // 
             // sbPrintReciboCaja
@@ -1122,7 +1121,7 @@
             this.sbPrintReciboCaja.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbPrintReciboCaja.Appearance.Options.UseFont = true;
             this.sbPrintReciboCaja.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.sbPrintReciboCaja.Location = new System.Drawing.Point(680, 344);
+            this.sbPrintReciboCaja.Location = new System.Drawing.Point(680, 346);
             this.sbPrintReciboCaja.Name = "sbPrintReciboCaja";
             this.sbPrintReciboCaja.Size = new System.Drawing.Size(282, 49);
             this.sbPrintReciboCaja.TabIndex = 67;
@@ -1135,7 +1134,7 @@
             this.sbSaveReciboCaja.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbSaveReciboCaja.Appearance.Options.UseFont = true;
             this.sbSaveReciboCaja.Image = ((System.Drawing.Image)(resources.GetObject("sbSaveReciboCaja.Image")));
-            this.sbSaveReciboCaja.Location = new System.Drawing.Point(320, 344);
+            this.sbSaveReciboCaja.Location = new System.Drawing.Point(320, 346);
             this.sbSaveReciboCaja.Name = "sbSaveReciboCaja";
             this.sbSaveReciboCaja.Size = new System.Drawing.Size(282, 49);
             this.sbSaveReciboCaja.TabIndex = 66;
@@ -1171,7 +1170,7 @@
             this.groupControl3.Controls.Add(this.labelControl21);
             this.groupControl3.Controls.Add(this.dateFechaRecibo);
             this.groupControl3.Controls.Add(this.labelControl20);
-            this.groupControl3.Location = new System.Drawing.Point(228, 45);
+            this.groupControl3.Location = new System.Drawing.Point(228, 47);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(852, 271);
             this.groupControl3.TabIndex = 65;
@@ -1319,7 +1318,7 @@
             this.xtraTabPage1.Controls.Add(this.textTotalPedido);
             this.xtraTabPage1.Controls.Add(this.labelControl11);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1273, 474);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1273, 478);
             this.xtraTabPage1.Text = "ENVIO";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
@@ -1327,7 +1326,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(901, 406);
+            this.label4.Location = new System.Drawing.Point(901, 410);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 81;
@@ -1337,7 +1336,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(901, 382);
+            this.label3.Location = new System.Drawing.Point(901, 386);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 80;
@@ -1348,7 +1347,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(882, 406);
+            this.label2.Location = new System.Drawing.Point(882, 410);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 79;
@@ -1359,7 +1358,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(882, 382);
+            this.label1.Location = new System.Drawing.Point(882, 386);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 78;
@@ -1372,7 +1371,7 @@
             this.simplePrinter.Appearance.Options.UseFont = true;
             this.simplePrinter.Enabled = false;
             this.simplePrinter.Image = global::ortoxela.Properties.Resources.printer_48;
-            this.simplePrinter.Location = new System.Drawing.Point(461, 381);
+            this.simplePrinter.Location = new System.Drawing.Point(461, 385);
             this.simplePrinter.Name = "simplePrinter";
             this.simplePrinter.Size = new System.Drawing.Size(177, 49);
             this.simplePrinter.TabIndex = 11;
@@ -1472,7 +1471,7 @@
             this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbCancelar.Appearance.Options.UseFont = true;
             this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
-            this.sbCancelar.Location = new System.Drawing.Point(684, 381);
+            this.sbCancelar.Location = new System.Drawing.Point(684, 385);
             this.sbCancelar.Name = "sbCancelar";
             this.sbCancelar.Size = new System.Drawing.Size(177, 49);
             this.sbCancelar.TabIndex = 12;
@@ -1485,7 +1484,7 @@
             this.sbAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAceptar.Appearance.Options.UseFont = true;
             this.sbAceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.sbAceptar.Location = new System.Drawing.Point(261, 381);
+            this.sbAceptar.Location = new System.Drawing.Point(261, 385);
             this.sbAceptar.Name = "sbAceptar";
             this.sbAceptar.Size = new System.Drawing.Size(172, 49);
             this.sbAceptar.TabIndex = 10;
@@ -1498,7 +1497,7 @@
             this.sbnuevo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbnuevo.Appearance.Options.UseFont = true;
             this.sbnuevo.Image = global::ortoxela.Properties.Resources.Nuevo42;
-            this.sbnuevo.Location = new System.Drawing.Point(22, 381);
+            this.sbnuevo.Location = new System.Drawing.Point(22, 385);
             this.sbnuevo.Name = "sbnuevo";
             this.sbnuevo.Size = new System.Drawing.Size(164, 49);
             this.sbnuevo.TabIndex = 13;
@@ -1513,7 +1512,7 @@
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Location = new System.Drawing.Point(5, 198);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1254, 181);
+            this.groupControl2.Size = new System.Drawing.Size(1254, 185);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Detalle";
             // 
@@ -1523,7 +1522,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1250, 158);
+            this.gridControl1.Size = new System.Drawing.Size(1250, 162);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1701,7 +1700,7 @@
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Location = new System.Drawing.Point(1031, 405);
+            this.labelControl11.Location = new System.Drawing.Point(1031, 409);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(120, 19);
             this.labelControl11.TabIndex = 45;
