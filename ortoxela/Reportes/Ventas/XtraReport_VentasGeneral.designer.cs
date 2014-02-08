@@ -90,6 +90,9 @@ namespace ortoxela.Reportes.Ventas
             this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.nombre_estado = new DevExpress.XtraReports.Parameters.Parameter();
+            this.series = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_VentasGeneral1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -327,12 +330,14 @@ namespace ortoxela.Reportes.Ventas
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel29,
+            this.xrLabel28,
             this.xrLabel9,
             this.xrLabel10,
             this.xrLabel12,
             this.xrLabel14,
             this.xrLabel13});
-            this.PageHeader.HeightF = 82.33337F;
+            this.PageHeader.HeightF = 93.79172F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrLabel9
@@ -724,6 +729,36 @@ namespace ortoxela.Reportes.Ventas
             this.nombre_estado.Value = "";
             this.nombre_estado.Visible = false;
             // 
+            // series
+            // 
+            this.series.Name = "series";
+            this.series.Value = "";
+            this.series.Visible = false;
+            // 
+            // xrLabel28
+            // 
+            this.xrLabel28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.series, "Text", "")});
+            this.xrLabel28.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(87.5F, 62.04166F);
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(612.4999F, 31.75005F);
+            this.xrLabel28.StylePriority.UseFont = false;
+            this.xrLabel28.Text = "xrLabel28";
+            // 
+            // xrLabel29
+            // 
+            this.xrLabel29.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(0F, 62.04166F);
+            this.xrLabel29.Name = "xrLabel29";
+            this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel29.SizeF = new System.Drawing.SizeF(73.95834F, 31.75005F);
+            this.xrLabel29.StylePriority.UseFont = false;
+            this.xrLabel29.StylePriority.UseTextAlignment = false;
+            this.xrLabel29.Text = "Series:";
+            this.xrLabel29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // XtraReport_VentasGeneral
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -746,8 +781,9 @@ namespace ortoxela.Reportes.Ventas
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
             this.Fecha_fin,
-            this.nombre_estado});
-            this.Version = "11.2";
+            this.nombre_estado,
+            this.series});
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_VentasGeneral1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -815,5 +851,8 @@ namespace ortoxela.Reportes.Ventas
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
         private DevExpress.XtraReports.UI.XRLabel xrLabel18;
         private DevExpress.XtraReports.UI.XRLabel xrLabel27;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel29;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel28;
+        private DevExpress.XtraReports.Parameters.Parameter series;
     }
 }

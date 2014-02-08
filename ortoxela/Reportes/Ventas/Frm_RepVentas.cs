@@ -40,18 +40,7 @@ namespace ortoxela.Reportes.Ventas
              }
              catch
              { }
-
-             /* SERIES FACTURAS -- ELIMINAR */
-             try
-             {
-                 string ssql = "select codigo_serie,concat(nombre_documento,'[',serie_documento,']') as documento from v_tipos_documentos where codigo_tipo=1";
-                 comboBox4.DataSource = logicaxela.Tabla(ssql);
-                 comboBox4.DisplayMember = "documento";
-                 comboBox4.ValueMember = "codigo_serie";
-
-             }
-             catch
-             { }
+            
 
              /* CATEGORIAS */
              try
@@ -152,7 +141,6 @@ namespace ortoxela.Reportes.Ventas
                              FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'";
 
                      MySqlDataAdapter adaptadorx = new MySqlDataAdapter(QueryVtas, Properties.Settings.Default.ortoxelaConnectionString);
-                     // DataSet_VentasGeneral dataset = new DataSet_VentasGeneral();
                      DataSet datasetx = new DataSet();
                      adaptadorx.Fill(datasetx, "v_ventas_general");
                      //
@@ -209,55 +197,59 @@ namespace ortoxela.Reportes.Ventas
         /* ********************************************** */
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
-            {
-                    //foreach (listb item in listBoxBodegas.Items)
-                    //{
-                    //    MessageBox.Show(item.ToString());
-                    //}
+             {
 
-                    for (int c = 0; c < listBoxBodegas.SelectedItems.Count; c++)
-                    {
-                        string bode = listBoxBodegas.SelectedItems[c].ToString();
-                        MessageBox.Show(bode, "items");
-                    }
-                    MessageBox.Show(listBoxBodegas.Items.Count.ToString(), " items ");
-                    return;
+                 if (validarSeries())
+                 {
 
-                    Cursor.Current = Cursors.WaitCursor;
+                     ListaSeries = "0";
+                     ListaNombresSeries = "";
+                     for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                     {
+                         DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                         ListaSeries += "," + srs["codigo_serie"].ToString();
+                         ListaNombresSeries += srs["documento"].ToString() + " ,";
+                     }
 
-                    string consulta = "select  fecha, Tipo_Pago, nombre_cliente, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, no_documento, refer_documento, nombre_tipo_pago, documento,  " +
-                                 "nombre_estado, fecha_anula, usuario_anula, tipo_cliente, nitCliente, codigo_cliente from ortoxela.v_ventas_general where 1=1 " +
-                        " and fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' ";
 
-                    string estadoid = comboBox3.Text;
-                    string estado = "";
-                    if (estadoid == "Activas")
-                    {
-                        consulta = consulta + " and nombre_estado='Activo' ";
-                        estado = "Activo";
-                    }
-                    else
-                    {
-                        if (estadoid == "Anuladas")
-                        {
-                            consulta = consulta + " and nombre_estado = 'Anulado' ";
-                            estado = "Anulado";
-                        }
-                    }
 
-                    MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
-                    // DataSet_VentasGeneral dataset = new DataSet_VentasGeneral();
-                    DataSet dataset1 = new DataSet();
-                    adaptador1.Fill(dataset1, "v_ventas_general");
-                    XtraReport_VentasGeneral reportev = new XtraReport_VentasGeneral();
-                    reportev.DataSource = dataset1;
-                    reportev.DataMember = dataset1.Tables["v_ventas_general"].TableName;
-                    reportev.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
-                    reportev.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-                    reportev.Parameters["nombre_estado"].Value = estado;
-                    reportev.RequestParameters = false;
-                    reportev.ShowPreviewDialog();
+                     string consulta = "select  fecha, Tipo_Pago, nombre_cliente, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, no_documento, refer_documento, nombre_tipo_pago, documento,  " +
+                                  "nombre_estado, fecha_anula, usuario_anula, tipo_cliente, nitCliente, codigo_cliente from ortoxela.v_ventas_general where 1=1 " +
+                                 " and fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' " +
+                                 " and codigo_serie in (" + ListaSeries + ") ";
+
+                     string estadoid = comboBox3.Text;
+                     string estado = "";
+                     if (estadoid == "Activas")
+                     {
+                         consulta = consulta + " and nombre_estado='Activo' ";
+                         estado = "Activo";
+                     }
+                     else
+                     {
+                         if (estadoid == "Anuladas")
+                         {
+                             consulta = consulta + " and nombre_estado = 'Anulado' ";
+                             estado = "Anulado";
+                         }
+                     }
+
+                     MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
+
+                     DataSet dataset1 = new DataSet();
+                     adaptador1.Fill(dataset1, "v_ventas_general");
+                     XtraReport_VentasGeneral reportev = new XtraReport_VentasGeneral();
+                     reportev.DataSource = dataset1;
+                     reportev.DataMember = dataset1.Tables["v_ventas_general"].TableName;
+                     reportev.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
+                     reportev.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                     reportev.Parameters["nombre_estado"].Value = estado;
+                     reportev.Parameters["Series"].Value = ListaNombresSeries;
+                     reportev.RequestParameters = false;
+                     reportev.ShowPreviewDialog();
+                 }
 
             }
             
@@ -273,13 +265,31 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
-                if (textEditNo.Text.Trim() != "")
+
+                if (validarSeries())
                 {
-                    string consultax = "select codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, no_documento, descuentoPct, "+
-                    "DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago from v_ventas_de_costo where documento = '" + comboBox4.Text.ToString() + "' and no_documento =" + textEditNo.EditValue.ToString();
+
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+
+                    string consultax = "select codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, no_documento, descuentoPct, " +
+                            "DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago,codigo_serie from v_ventas_de_costo " +
+                            " where  fecha_compra between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' " +
+                            " and codigo_serie in (" + ListaSeries + ") ";
+
+                    if (textEditNo.Text.Trim() != "")
+                    {
+                        consultax += " and no_documento =" + textEditNo.EditValue.ToString();
+                    }
 
                     MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consultax, Properties.Settings.Default.ortoxelaConnectionString);
-                    // DataSet_VentasGeneral dataset = new DataSet_VentasGeneral();
+
                     DataSet datasetx = new DataSet();
                     adaptadorx.Fill(datasetx, "v_ventas_de_costo");
                     XtraReport_Ventas_Detalle reported = new XtraReport_Ventas_Detalle();
@@ -287,15 +297,7 @@ namespace ortoxela.Reportes.Ventas
                     reported.DataMember = datasetx.Tables["v_ventas_de_costo"].TableName;
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-                    reported.RequestParameters = false;
-                    reported.ShowPreview();
-                }
-                else
-                {
-
-                    XtraReport_Ventas_Detalle reported = new XtraReport_Ventas_Detalle();
-                    reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
-                    reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reported.Parameters["Series"].Value = ListaNombresSeries;
                     reported.RequestParameters = false;
                     reported.ShowPreview();
                 }
@@ -313,15 +315,19 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
-                    if (textEdit1.Text.Trim() != "")
-                    {
-                        string consultax = "SELECT        codigo_articulo, Articulo, nombre_bodega, cantidad_enviada, precio_maximo_sin_iva, precio_maximo_iva, precio_minimo_sin_iva, precio_minimo_iva,  " +
-                                        " precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, costo_sin_iva,  " +
-                                        " categoria, fecha, fecha_1era_venta, fecha_ultima_venta  " +
-                                        " FROM    ortoxela.v_ventas_articulo_mas where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' limit " + textEdit1.Text;
 
+                string consultax = "SELECT        codigo_articulo, Articulo, nombre_bodega, cantidad_enviada, precio_maximo_sin_iva, precio_maximo_iva, precio_minimo_sin_iva, precio_minimo_iva, " +
+                 " precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, costo_sin_iva, " +
+                 " categoria, fecha, fecha_1era_venta, fecha_ultima_venta,codigo_serie  " +
+                 " FROM    ortoxela.v_ventas_articulo_mas where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' ";
+                        
+
+                        if (textEdit1.Text.Trim() != "")
+                        {
+                                       consultax += " limit " + textEdit1.Text;
+                        }
                         MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consultax, Properties.Settings.Default.ortoxelaConnectionString);
-                        // DataSet_VentasGeneral dataset = new DataSet_VentasGeneral();
+
                         DataSet datasetx = new DataSet();
                         adaptadorx.Fill(datasetx, "v_ventas_articulo_mas");
                         XtraReport_ProductosMasVendidos reported = new XtraReport_ProductosMasVendidos();
@@ -331,16 +337,16 @@ namespace ortoxela.Reportes.Ventas
                         reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
                         reported.RequestParameters = false;
                         reported.ShowPreview();
-                    }
-                    else
-                    {
+                    //}
+                    //else
+                    //{
 
-                        XtraReport_ProductosMasVendidos reported = new XtraReport_ProductosMasVendidos();
-                        reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
-                        reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
-                        reported.RequestParameters = false;
-                        reported.ShowPreview();
-                    }
+                    //    XtraReport_ProductosMasVendidos reported = new XtraReport_ProductosMasVendidos();
+                    //    reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
+                    //    reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
+                    //    reported.RequestParameters = false;
+                    //    reported.ShowPreview();
+                    //}
             }
           
             Cursor.Current = Cursors.Default;
@@ -354,13 +360,38 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
-                
-                XtraReport_VentasPorTipoCliente reported = new XtraReport_VentasPorTipoCliente();
-                // XtraReport_Ventas_por_Cliente reported = new XtraReport_Ventas_por_Cliente();
-                reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
-                reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-                reported.RequestParameters = false;
-                reported.ShowPreview();
+
+                if (validarSeries())
+                {
+
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+
+                    string consultax = "SELECT        fecha, tipo_cliente, Total_sin_iva " +
+                            " FROM         v_ventas_general " +
+                            " where  fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' " +
+                            " and codigo_serie in (" + ListaSeries + ") ";
+
+                    MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consultax, Properties.Settings.Default.ortoxelaConnectionString);
+
+                    DataSet datasetx = new DataSet();
+                    adaptadorx.Fill(datasetx, "v_ventas_general");
+                    XtraReport_VentasPorTipoCliente reported = new XtraReport_VentasPorTipoCliente();
+                    reported.DataSource = datasetx;
+                    reported.DataMember = datasetx.Tables["v_ventas_general"].TableName;
+
+                    reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
+                    reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.RequestParameters = false;
+                    reported.ShowPreview();
+                }
             }
             
             Cursor.Current = Cursors.Default;
@@ -374,7 +405,38 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
+
+                if (validarSeries())
+                {
+
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+
+                    string consulta = "SELECT codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, codigo_tipoc, nombre_cliente1,  " +
+                            " no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago, codigo_subcat,  " +
+                            " nombre_subcategoria,codigo_serie " +
+                            " FROM v_ventas_detalle_socio_categoria where fecha_compra between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                            " and codigo_serie in (" + ListaSeries + ") ";
+                    if (comboBox5.SelectedValue.ToString() != "0")
+                    {
+                        consulta += " and codigo_subcat = " + comboBox5.SelectedValue;
+                    }
+
+                    MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
+                    DataSet datasetx = new DataSet();
+                    adaptadorx.Fill(datasetx, "v_ventas_detalle_cliente_categoria");
                     XtraReport_Ventas_por_cliente_sc reported = new XtraReport_Ventas_por_cliente_sc();
+                    reported.DataSource = datasetx;
+                    reported.DataMember = datasetx.Tables["v_ventas_detalle_cliente_categoria"].TableName;
+
+
+
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
                     if (comboBox5.SelectedValue.ToString() == "0")
@@ -387,32 +449,11 @@ namespace ortoxela.Reportes.Ventas
                         reported.Parameters["codigo_subcat"].Value = comboBox5.SelectedValue;
                         reported.Parameters["codigo_subcat2"].Value = comboBox5.SelectedValue;
                     }
-
+                    reported.Parameters["Series"].Value = ListaNombresSeries;
                     reported.RequestParameters = false;
                     reported.ShowPreview();
 
-
-                    //string consultax = " select codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, codigo_tipoc, nombre_cliente1, " +
-                    //         "no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago, codigo_subcat, " +
-                    //         "nombre_subcategoria, tipo_cliente from v_ventas_detalle_cliente_categoria where fecha_compra between '" + dateEdit64.DateTime.ToString("yyyy-MM-dd") + "' and '" + dateEdit63.DateTime.ToString("yyyy-MM-dd") + "' ";
-                    //if (comboBox5.SelectedValue.ToString() != "0")
-                    //{
-                    //    consultax = consultax + " and codigo_subcat = " + comboBox5.SelectedValue.ToString();
-                    //}
-
-                    //MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consultax, Properties.Settings.Default.ortoxelaConnectionString);                
-                    //DataSet datasetx = new DataSet();
-                    //adaptadorx.Fill(datasetx, "v_ventas_detalle_cliente_categoria");
-                    //XtraReport_Ventas_por_cliente_sc reported = new XtraReport_Ventas_por_cliente_sc();
-                    //reported.DataSource = datasetx;
-                    //reported.DataMember = datasetx.Tables["v_ventas_detalle_cliente_categoria"].TableName;
-                    //reported.Parameters["Fecha_inicio"].Value = dateEdit64.EditValue;
-                    //reported.Parameters["Fecha_fin"].Value = dateEdit63.EditValue;
-                    ////reported.Parameters["codigo_subcat"].Value = 0;
-                    //reported.RequestParameters = false;
-                    //reported.ShowPreview();
-
-                    // }
+                }
             }
            
             Cursor.Current = Cursors.Default;
@@ -428,12 +469,38 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
-                XtraReport_Ventas_por_SocioComercial reported = new XtraReport_Ventas_por_SocioComercial();
-                reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
-                reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
+                if (validarSeries())
+                {
 
-                reported.RequestParameters = false;
-                reported.ShowPreview();
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+
+                    string consulta = "SELECT        codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, codigo_tipoc, " +
+                   " nombre_cliente1, no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago, " +
+                   " codigo_subcat, nombre_subcategoria, codigo_serie FROM            v_ventas_detalle_socio_categoria " +
+                   " where fecha_compra between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                   " and codigo_serie in (" + ListaSeries + ") ";
+
+                    MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
+                    DataSet datasetx = new DataSet();
+                    adaptadorx.Fill(datasetx, "v_ventas_detalle_cliente_categoria");
+                    XtraReport_Ventas_por_SocioComercial reported = new XtraReport_Ventas_por_SocioComercial();
+                    reported.DataSource = datasetx;
+                    reported.DataMember = datasetx.Tables["v_ventas_detalle_cliente_categoria"].TableName;
+
+                    reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
+                    reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
+                    reported.Parameters["Series"].Value = ListaNombresSeries;
+
+                    reported.RequestParameters = false;
+                    reported.ShowPreview();
+                }
             }
            
             Cursor.Current = Cursors.Default;
@@ -446,12 +513,40 @@ namespace ortoxela.Reportes.Ventas
         {
             if (this.validarFechas())
             {
-                Cursor.Current = Cursors.WaitCursor; 
-                XtraReport_Ventas_categoria reported = new XtraReport_Ventas_categoria();
-                reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
-                reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
-                reported.RequestParameters = false;
-                reported.ShowPreview();
+
+                if (validarSeries())
+                {
+
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+
+                    string consulta = "SELECT        codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, codigo_tipoc, " +
+                   " nombre_cliente1, no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago, " +
+                   " codigo_subcat, nombre_subcategoria, codigo_serie FROM            v_ventas_detalle_socio_categoria " +
+                   " where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                   " and codigo_serie in (" + ListaSeries + ") ";
+
+                    MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
+                    DataSet datasetx = new DataSet();
+                    adaptadorx.Fill(datasetx, "v_ventas_detalle_cliente_categoria");
+                    XtraReport_Ventas_categoria reported = new XtraReport_Ventas_categoria();
+                    reported.DataSource = datasetx;
+                    reported.DataMember = datasetx.Tables["v_ventas_detalle_cliente_categoria"].TableName;
+
+
+                    reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
+                    reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reported.Parameters["Series"].Value = ListaNombresSeries;
+
+                    reported.RequestParameters = false;
+                    reported.ShowPreview();
+                }
             }
            
             Cursor.Current = Cursors.Default;

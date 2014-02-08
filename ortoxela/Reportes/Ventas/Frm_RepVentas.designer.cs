@@ -40,10 +40,8 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.label5 = new System.Windows.Forms.Label();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.textEditNo = new DevExpress.XtraEditors.TextEdit();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -182,26 +180,14 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.label5);
             this.panelControl3.Controls.Add(this.labelControl25);
             this.panelControl3.Controls.Add(this.textEditNo);
-            this.panelControl3.Controls.Add(this.comboBox4);
             this.panelControl3.Controls.Add(this.labelControl8);
             this.panelControl3.Controls.Add(this.simpleButton3);
             this.panelControl3.Location = new System.Drawing.Point(477, 150);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(770, 39);
             this.panelControl3.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(226, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Seleccione Serie";
             // 
             // labelControl25
             // 
@@ -218,14 +204,6 @@
             this.textEditNo.Name = "textEditNo";
             this.textEditNo.Size = new System.Drawing.Size(68, 20);
             this.textEditNo.TabIndex = 14;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(340, 7);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(97, 23);
-            this.comboBox4.TabIndex = 13;
             // 
             // labelControl8
             // 
@@ -656,7 +634,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.TextEdit textEditNo;
-        private System.Windows.Forms.ComboBox comboBox4;
         private DevExpress.XtraEditors.LabelControl labelControl25;
         private System.Windows.Forms.ComboBox comboBox5;
         private DevExpress.XtraEditors.PanelControl panelControl9;
@@ -674,7 +651,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private System.Windows.Forms.ListBox listBoxBodegas;
         private DevExpress.XtraEditors.LabelControl labelControl2;

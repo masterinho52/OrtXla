@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ortoxela.Reportes.Ventas {
+namespace ortoxela {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace ortoxela.Reportes.Ventas {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_VentasArticuloMas")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_Estadistica")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet_VentasArticuloMas : global::System.Data.DataSet {
+    public partial class DataSet_Estadistica : global::System.Data.DataSet {
         
-        private v_ventas_articulo_masDataTable tablev_ventas_articulo_mas;
+        private v_ventas_detalle_socio_categoria2DataTable tablev_ventas_detalle_socio_categoria2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSet_VentasArticuloMas() {
+        public DataSet_Estadistica() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ortoxela.Reportes.Ventas {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSet_VentasArticuloMas(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet_Estadistica(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ortoxela.Reportes.Ventas {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["v_ventas_articulo_mas"] != null)) {
-                    base.Tables.Add(new v_ventas_articulo_masDataTable(ds.Tables["v_ventas_articulo_mas"]));
+                if ((ds.Tables["v_ventas_detalle_socio_categoria2"] != null)) {
+                    base.Tables.Add(new v_ventas_detalle_socio_categoria2DataTable(ds.Tables["v_ventas_detalle_socio_categoria2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ortoxela.Reportes.Ventas {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public v_ventas_articulo_masDataTable v_ventas_articulo_mas {
+        public v_ventas_detalle_socio_categoria2DataTable v_ventas_detalle_socio_categoria2 {
             get {
-                return this.tablev_ventas_articulo_mas;
+                return this.tablev_ventas_detalle_socio_categoria2;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ortoxela.Reportes.Ventas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet_VentasArticuloMas cln = ((DataSet_VentasArticuloMas)(base.Clone()));
+            DataSet_Estadistica cln = ((DataSet_Estadistica)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ortoxela.Reportes.Ventas {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["v_ventas_articulo_mas"] != null)) {
-                    base.Tables.Add(new v_ventas_articulo_masDataTable(ds.Tables["v_ventas_articulo_mas"]));
+                if ((ds.Tables["v_ventas_detalle_socio_categoria2"] != null)) {
+                    base.Tables.Add(new v_ventas_detalle_socio_categoria2DataTable(ds.Tables["v_ventas_detalle_socio_categoria2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ortoxela.Reportes.Ventas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablev_ventas_articulo_mas = ((v_ventas_articulo_masDataTable)(base.Tables["v_ventas_articulo_mas"]));
+            this.tablev_ventas_detalle_socio_categoria2 = ((v_ventas_detalle_socio_categoria2DataTable)(base.Tables["v_ventas_detalle_socio_categoria2"]));
             if ((initTable == true)) {
-                if ((this.tablev_ventas_articulo_mas != null)) {
-                    this.tablev_ventas_articulo_mas.InitVars();
+                if ((this.tablev_ventas_detalle_socio_categoria2 != null)) {
+                    this.tablev_ventas_detalle_socio_categoria2.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ortoxela.Reportes.Ventas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet_VentasArticuloMas";
+            this.DataSetName = "DataSet_Estadistica";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet_VentasArticuloMas.xsd";
+            this.Namespace = "http://tempuri.org/DataSet_Estadistica.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablev_ventas_articulo_mas = new v_ventas_articulo_masDataTable();
-            base.Tables.Add(this.tablev_ventas_articulo_mas);
+            this.tablev_ventas_detalle_socio_categoria2 = new v_ventas_detalle_socio_categoria2DataTable();
+            base.Tables.Add(this.tablev_ventas_detalle_socio_categoria2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializev_ventas_articulo_mas() {
+        private bool ShouldSerializev_ventas_detalle_socio_categoria2() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ortoxela.Reportes.Ventas {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet_VentasArticuloMas ds = new DataSet_VentasArticuloMas();
+            DataSet_Estadistica ds = new DataSet_Estadistica();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,42 +270,52 @@ namespace ortoxela.Reportes.Ventas {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void v_ventas_articulo_masRowChangeEventHandler(object sender, v_ventas_articulo_masRowChangeEvent e);
+        public delegate void v_ventas_detalle_socio_categoria2RowChangeEventHandler(object sender, v_ventas_detalle_socio_categoria2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class v_ventas_articulo_masDataTable : global::System.Data.TypedTableBase<v_ventas_articulo_masRow> {
+        public partial class v_ventas_detalle_socio_categoria2DataTable : global::System.Data.TypedTableBase<v_ventas_detalle_socio_categoria2Row> {
             
             private global::System.Data.DataColumn columncodigo_articulo;
             
             private global::System.Data.DataColumn columnArticulo;
             
-            private global::System.Data.DataColumn columnnombre_bodega;
-            
             private global::System.Data.DataColumn columncantidad_enviada;
             
-            private global::System.Data.DataColumn columnprecio_maximo_sin_iva;
+            private global::System.Data.DataColumn columnprecio_sin_iva;
             
-            private global::System.Data.DataColumn columnprecio_maximo_iva;
+            private global::System.Data.DataColumn columnMonto_total;
             
-            private global::System.Data.DataColumn columnprecio_minimo_sin_iva;
+            private global::System.Data.DataColumn columnprecio_iva;
             
-            private global::System.Data.DataColumn columnprecio_minimo_iva;
+            private global::System.Data.DataColumn columnnombre_bodega;
             
-            private global::System.Data.DataColumn columnprecio_promedio_iva;
+            private global::System.Data.DataColumn columnfecha_compra;
             
-            private global::System.Data.DataColumn columnprecio_promedio_sin_iva;
+            private global::System.Data.DataColumn columnTipo_Pago;
             
-            private global::System.Data.DataColumn columntotal_facturado_iva;
+            private global::System.Data.DataColumn columnnombre_cliente;
             
-            private global::System.Data.DataColumn columnTotal_facturado_sin_iva;
+            private global::System.Data.DataColumn columncodigo_tipoc;
+            
+            private global::System.Data.DataColumn columnSocio_Comercial;
+            
+            private global::System.Data.DataColumn columnno_documento;
             
             private global::System.Data.DataColumn columndescuentoPct;
             
             private global::System.Data.DataColumn columnDescuentoQ;
+            
+            private global::System.Data.DataColumn columntotal_iva;
+            
+            private global::System.Data.DataColumn columnTotal_sin_iva;
+            
+            private global::System.Data.DataColumn columnrefer_documento;
+            
+            private global::System.Data.DataColumn columncodigo_serie;
             
             private global::System.Data.DataColumn columndocumento;
             
@@ -313,20 +323,16 @@ namespace ortoxela.Reportes.Ventas {
             
             private global::System.Data.DataColumn columncosto_sin_iva;
             
-            private global::System.Data.DataColumn columncategoria;
+            private global::System.Data.DataColumn columnforma_pago;
             
-            private global::System.Data.DataColumn columnfecha_1era_venta;
+            private global::System.Data.DataColumn columncodigo_subcat;
             
-            private global::System.Data.DataColumn columnfecha_ultima_venta;
-            
-            private global::System.Data.DataColumn columnfecha;
-            
-            private global::System.Data.DataColumn columncodigo_serie;
+            private global::System.Data.DataColumn columnnombre_subcategoria;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masDataTable() {
-                this.TableName = "v_ventas_articulo_mas";
+            public v_ventas_detalle_socio_categoria2DataTable() {
+                this.TableName = "v_ventas_detalle_socio_categoria2";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -334,7 +340,7 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal v_ventas_articulo_masDataTable(global::System.Data.DataTable table) {
+            internal v_ventas_detalle_socio_categoria2DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -351,7 +357,7 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected v_ventas_articulo_masDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected v_ventas_detalle_socio_categoria2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -374,14 +380,6 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombre_bodegaColumn {
-                get {
-                    return this.columnnombre_bodega;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn cantidad_enviadaColumn {
                 get {
                     return this.columncantidad_enviada;
@@ -390,65 +388,81 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_maximo_sin_ivaColumn {
+            public global::System.Data.DataColumn precio_sin_ivaColumn {
                 get {
-                    return this.columnprecio_maximo_sin_iva;
+                    return this.columnprecio_sin_iva;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_maximo_ivaColumn {
+            public global::System.Data.DataColumn Monto_totalColumn {
                 get {
-                    return this.columnprecio_maximo_iva;
+                    return this.columnMonto_total;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_minimo_sin_ivaColumn {
+            public global::System.Data.DataColumn precio_ivaColumn {
                 get {
-                    return this.columnprecio_minimo_sin_iva;
+                    return this.columnprecio_iva;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_minimo_ivaColumn {
+            public global::System.Data.DataColumn nombre_bodegaColumn {
                 get {
-                    return this.columnprecio_minimo_iva;
+                    return this.columnnombre_bodega;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_promedio_ivaColumn {
+            public global::System.Data.DataColumn fecha_compraColumn {
                 get {
-                    return this.columnprecio_promedio_iva;
+                    return this.columnfecha_compra;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn precio_promedio_sin_ivaColumn {
+            public global::System.Data.DataColumn Tipo_PagoColumn {
                 get {
-                    return this.columnprecio_promedio_sin_iva;
+                    return this.columnTipo_Pago;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn total_facturado_ivaColumn {
+            public global::System.Data.DataColumn nombre_clienteColumn {
                 get {
-                    return this.columntotal_facturado_iva;
+                    return this.columnnombre_cliente;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Total_facturado_sin_ivaColumn {
+            public global::System.Data.DataColumn codigo_tipocColumn {
                 get {
-                    return this.columnTotal_facturado_sin_iva;
+                    return this.columncodigo_tipoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Socio_ComercialColumn {
+                get {
+                    return this.columnSocio_Comercial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn no_documentoColumn {
+                get {
+                    return this.columnno_documento;
                 }
             }
             
@@ -465,6 +479,38 @@ namespace ortoxela.Reportes.Ventas {
             public global::System.Data.DataColumn DescuentoQColumn {
                 get {
                     return this.columnDescuentoQ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn total_ivaColumn {
+                get {
+                    return this.columntotal_iva;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Total_sin_ivaColumn {
+                get {
+                    return this.columnTotal_sin_iva;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn refer_documentoColumn {
+                get {
+                    return this.columnrefer_documento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn codigo_serieColumn {
+                get {
+                    return this.columncodigo_serie;
                 }
             }
             
@@ -494,41 +540,25 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn categoriaColumn {
+            public global::System.Data.DataColumn forma_pagoColumn {
                 get {
-                    return this.columncategoria;
+                    return this.columnforma_pago;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_1era_ventaColumn {
+            public global::System.Data.DataColumn codigo_subcatColumn {
                 get {
-                    return this.columnfecha_1era_venta;
+                    return this.columncodigo_subcat;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_ultima_ventaColumn {
+            public global::System.Data.DataColumn nombre_subcategoriaColumn {
                 get {
-                    return this.columnfecha_ultima_venta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechaColumn {
-                get {
-                    return this.columnfecha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn codigo_serieColumn {
-                get {
-                    return this.columncodigo_serie;
+                    return this.columnnombre_subcategoria;
                 }
             }
             
@@ -543,88 +573,101 @@ namespace ortoxela.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masRow this[int index] {
+            public v_ventas_detalle_socio_categoria2Row this[int index] {
                 get {
-                    return ((v_ventas_articulo_masRow)(this.Rows[index]));
+                    return ((v_ventas_detalle_socio_categoria2Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event v_ventas_articulo_masRowChangeEventHandler v_ventas_articulo_masRowChanging;
+            public event v_ventas_detalle_socio_categoria2RowChangeEventHandler v_ventas_detalle_socio_categoria2RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event v_ventas_articulo_masRowChangeEventHandler v_ventas_articulo_masRowChanged;
+            public event v_ventas_detalle_socio_categoria2RowChangeEventHandler v_ventas_detalle_socio_categoria2RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event v_ventas_articulo_masRowChangeEventHandler v_ventas_articulo_masRowDeleting;
+            public event v_ventas_detalle_socio_categoria2RowChangeEventHandler v_ventas_detalle_socio_categoria2RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event v_ventas_articulo_masRowChangeEventHandler v_ventas_articulo_masRowDeleted;
+            public event v_ventas_detalle_socio_categoria2RowChangeEventHandler v_ventas_detalle_socio_categoria2RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addv_ventas_articulo_masRow(v_ventas_articulo_masRow row) {
+            public void Addv_ventas_detalle_socio_categoria2Row(v_ventas_detalle_socio_categoria2Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masRow Addv_ventas_articulo_masRow(
+            public v_ventas_detalle_socio_categoria2Row Addv_ventas_detalle_socio_categoria2Row(
                         string codigo_articulo, 
                         string Articulo, 
-                        string nombre_bodega, 
                         decimal cantidad_enviada, 
-                        decimal precio_maximo_sin_iva, 
-                        decimal precio_maximo_iva, 
-                        decimal precio_minimo_sin_iva, 
-                        decimal precio_minimo_iva, 
-                        decimal precio_promedio_iva, 
-                        decimal precio_promedio_sin_iva, 
-                        decimal total_facturado_iva, 
-                        decimal Total_facturado_sin_iva, 
+                        decimal precio_sin_iva, 
+                        decimal Monto_total, 
+                        decimal precio_iva, 
+                        string nombre_bodega, 
+                        System.DateTime fecha_compra, 
+                        string Tipo_Pago, 
+                        string nombre_cliente, 
+                        uint codigo_tipoc, 
+                        string Socio_Comercial, 
+                        int no_documento, 
                         decimal descuentoPct, 
                         decimal DescuentoQ, 
+                        decimal total_iva, 
+                        decimal Total_sin_iva, 
+                        string refer_documento, 
+                        uint codigo_serie, 
                         string documento, 
                         decimal costo_iva, 
                         decimal costo_sin_iva, 
-                        string categoria, 
-                        System.DateTime fecha_1era_venta, 
-                        System.DateTime fecha_ultima_venta, 
-                        System.DateTime fecha, 
-                        uint codigo_serie) {
-                v_ventas_articulo_masRow rowv_ventas_articulo_masRow = ((v_ventas_articulo_masRow)(this.NewRow()));
+                        string forma_pago, 
+                        uint codigo_subcat, 
+                        string nombre_subcategoria) {
+                v_ventas_detalle_socio_categoria2Row rowv_ventas_detalle_socio_categoria2Row = ((v_ventas_detalle_socio_categoria2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo_articulo,
                         Articulo,
-                        nombre_bodega,
                         cantidad_enviada,
-                        precio_maximo_sin_iva,
-                        precio_maximo_iva,
-                        precio_minimo_sin_iva,
-                        precio_minimo_iva,
-                        precio_promedio_iva,
-                        precio_promedio_sin_iva,
-                        total_facturado_iva,
-                        Total_facturado_sin_iva,
+                        precio_sin_iva,
+                        Monto_total,
+                        precio_iva,
+                        nombre_bodega,
+                        fecha_compra,
+                        Tipo_Pago,
+                        nombre_cliente,
+                        codigo_tipoc,
+                        Socio_Comercial,
+                        no_documento,
                         descuentoPct,
                         DescuentoQ,
+                        total_iva,
+                        Total_sin_iva,
+                        refer_documento,
+                        codigo_serie,
                         documento,
                         costo_iva,
                         costo_sin_iva,
-                        categoria,
-                        fecha_1era_venta,
-                        fecha_ultima_venta,
-                        fecha,
-                        codigo_serie};
-                rowv_ventas_articulo_masRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowv_ventas_articulo_masRow);
-                return rowv_ventas_articulo_masRow;
+                        forma_pago,
+                        codigo_subcat,
+                        nombre_subcategoria};
+                rowv_ventas_detalle_socio_categoria2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowv_ventas_detalle_socio_categoria2Row);
+                return rowv_ventas_detalle_socio_categoria2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public v_ventas_detalle_socio_categoria2Row FindBycodigo_subcat(uint codigo_subcat) {
+                return ((v_ventas_detalle_socio_categoria2Row)(this.Rows.Find(new object[] {
+                            codigo_subcat})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                v_ventas_articulo_masDataTable cln = ((v_ventas_articulo_masDataTable)(base.Clone()));
+                v_ventas_detalle_socio_categoria2DataTable cln = ((v_ventas_detalle_socio_categoria2DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -632,7 +675,7 @@ namespace ortoxela.Reportes.Ventas {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new v_ventas_articulo_masDataTable();
+                return new v_ventas_detalle_socio_categoria2DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -640,26 +683,29 @@ namespace ortoxela.Reportes.Ventas {
             internal void InitVars() {
                 this.columncodigo_articulo = base.Columns["codigo_articulo"];
                 this.columnArticulo = base.Columns["Articulo"];
-                this.columnnombre_bodega = base.Columns["nombre_bodega"];
                 this.columncantidad_enviada = base.Columns["cantidad_enviada"];
-                this.columnprecio_maximo_sin_iva = base.Columns["precio_maximo_sin_iva"];
-                this.columnprecio_maximo_iva = base.Columns["precio_maximo_iva"];
-                this.columnprecio_minimo_sin_iva = base.Columns["precio_minimo_sin_iva"];
-                this.columnprecio_minimo_iva = base.Columns["precio_minimo_iva"];
-                this.columnprecio_promedio_iva = base.Columns["precio_promedio_iva"];
-                this.columnprecio_promedio_sin_iva = base.Columns["precio_promedio_sin_iva"];
-                this.columntotal_facturado_iva = base.Columns["total_facturado_iva"];
-                this.columnTotal_facturado_sin_iva = base.Columns["Total_facturado_sin_iva"];
+                this.columnprecio_sin_iva = base.Columns["precio_sin_iva"];
+                this.columnMonto_total = base.Columns["Monto_total"];
+                this.columnprecio_iva = base.Columns["precio_iva"];
+                this.columnnombre_bodega = base.Columns["nombre_bodega"];
+                this.columnfecha_compra = base.Columns["fecha_compra"];
+                this.columnTipo_Pago = base.Columns["Tipo_Pago"];
+                this.columnnombre_cliente = base.Columns["nombre_cliente"];
+                this.columncodigo_tipoc = base.Columns["codigo_tipoc"];
+                this.columnSocio_Comercial = base.Columns["Socio_Comercial"];
+                this.columnno_documento = base.Columns["no_documento"];
                 this.columndescuentoPct = base.Columns["descuentoPct"];
                 this.columnDescuentoQ = base.Columns["DescuentoQ"];
+                this.columntotal_iva = base.Columns["total_iva"];
+                this.columnTotal_sin_iva = base.Columns["Total_sin_iva"];
+                this.columnrefer_documento = base.Columns["refer_documento"];
+                this.columncodigo_serie = base.Columns["codigo_serie"];
                 this.columndocumento = base.Columns["documento"];
                 this.columncosto_iva = base.Columns["costo_iva"];
                 this.columncosto_sin_iva = base.Columns["costo_sin_iva"];
-                this.columncategoria = base.Columns["categoria"];
-                this.columnfecha_1era_venta = base.Columns["fecha_1era_venta"];
-                this.columnfecha_ultima_venta = base.Columns["fecha_ultima_venta"];
-                this.columnfecha = base.Columns["fecha"];
-                this.columncodigo_serie = base.Columns["codigo_serie"];
+                this.columnforma_pago = base.Columns["forma_pago"];
+                this.columncodigo_subcat = base.Columns["codigo_subcat"];
+                this.columnnombre_subcategoria = base.Columns["nombre_subcategoria"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -669,78 +715,96 @@ namespace ortoxela.Reportes.Ventas {
                 base.Columns.Add(this.columncodigo_articulo);
                 this.columnArticulo = new global::System.Data.DataColumn("Articulo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArticulo);
-                this.columnnombre_bodega = new global::System.Data.DataColumn("nombre_bodega", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_bodega);
                 this.columncantidad_enviada = new global::System.Data.DataColumn("cantidad_enviada", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad_enviada);
-                this.columnprecio_maximo_sin_iva = new global::System.Data.DataColumn("precio_maximo_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_maximo_sin_iva);
-                this.columnprecio_maximo_iva = new global::System.Data.DataColumn("precio_maximo_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_maximo_iva);
-                this.columnprecio_minimo_sin_iva = new global::System.Data.DataColumn("precio_minimo_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_minimo_sin_iva);
-                this.columnprecio_minimo_iva = new global::System.Data.DataColumn("precio_minimo_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_minimo_iva);
-                this.columnprecio_promedio_iva = new global::System.Data.DataColumn("precio_promedio_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_promedio_iva);
-                this.columnprecio_promedio_sin_iva = new global::System.Data.DataColumn("precio_promedio_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio_promedio_sin_iva);
-                this.columntotal_facturado_iva = new global::System.Data.DataColumn("total_facturado_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal_facturado_iva);
-                this.columnTotal_facturado_sin_iva = new global::System.Data.DataColumn("Total_facturado_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_facturado_sin_iva);
+                this.columnprecio_sin_iva = new global::System.Data.DataColumn("precio_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio_sin_iva);
+                this.columnMonto_total = new global::System.Data.DataColumn("Monto_total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonto_total);
+                this.columnprecio_iva = new global::System.Data.DataColumn("precio_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio_iva);
+                this.columnnombre_bodega = new global::System.Data.DataColumn("nombre_bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_bodega);
+                this.columnfecha_compra = new global::System.Data.DataColumn("fecha_compra", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_compra);
+                this.columnTipo_Pago = new global::System.Data.DataColumn("Tipo_Pago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo_Pago);
+                this.columnnombre_cliente = new global::System.Data.DataColumn("nombre_cliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_cliente);
+                this.columncodigo_tipoc = new global::System.Data.DataColumn("codigo_tipoc", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_tipoc);
+                this.columnSocio_Comercial = new global::System.Data.DataColumn("Socio_Comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSocio_Comercial);
+                this.columnno_documento = new global::System.Data.DataColumn("no_documento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnno_documento);
                 this.columndescuentoPct = new global::System.Data.DataColumn("descuentoPct", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescuentoPct);
                 this.columnDescuentoQ = new global::System.Data.DataColumn("DescuentoQ", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescuentoQ);
+                this.columntotal_iva = new global::System.Data.DataColumn("total_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_iva);
+                this.columnTotal_sin_iva = new global::System.Data.DataColumn("Total_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_sin_iva);
+                this.columnrefer_documento = new global::System.Data.DataColumn("refer_documento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrefer_documento);
+                this.columncodigo_serie = new global::System.Data.DataColumn("codigo_serie", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_serie);
                 this.columndocumento = new global::System.Data.DataColumn("documento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndocumento);
                 this.columncosto_iva = new global::System.Data.DataColumn("costo_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncosto_iva);
                 this.columncosto_sin_iva = new global::System.Data.DataColumn("costo_sin_iva", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncosto_sin_iva);
-                this.columncategoria = new global::System.Data.DataColumn("categoria", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncategoria);
-                this.columnfecha_1era_venta = new global::System.Data.DataColumn("fecha_1era_venta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_1era_venta);
-                this.columnfecha_ultima_venta = new global::System.Data.DataColumn("fecha_ultima_venta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_ultima_venta);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha);
-                this.columncodigo_serie = new global::System.Data.DataColumn("codigo_serie", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo_serie);
+                this.columnforma_pago = new global::System.Data.DataColumn("forma_pago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnforma_pago);
+                this.columncodigo_subcat = new global::System.Data.DataColumn("codigo_subcat", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_subcat);
+                this.columnnombre_subcategoria = new global::System.Data.DataColumn("nombre_subcategoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_subcategoria);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncodigo_subcat}, true));
                 this.columncodigo_articulo.MaxLength = 50;
                 this.columnArticulo.MaxLength = 250;
                 this.columnnombre_bodega.MaxLength = 200;
+                this.columnTipo_Pago.AllowDBNull = false;
+                this.columnTipo_Pago.MaxLength = 7;
+                this.columnnombre_cliente.MaxLength = 200;
+                this.columnSocio_Comercial.MaxLength = 200;
+                this.columnno_documento.AllowDBNull = false;
                 this.columnDescuentoQ.AllowDBNull = false;
+                this.columntotal_iva.AllowDBNull = false;
+                this.columnrefer_documento.MaxLength = 50;
                 this.columndocumento.MaxLength = 152;
-                this.columncategoria.MaxLength = 200;
+                this.columnforma_pago.MaxLength = 50;
+                this.columncodigo_subcat.AllowDBNull = false;
+                this.columncodigo_subcat.Unique = true;
+                this.columnnombre_subcategoria.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masRow Newv_ventas_articulo_masRow() {
-                return ((v_ventas_articulo_masRow)(this.NewRow()));
+            public v_ventas_detalle_socio_categoria2Row Newv_ventas_detalle_socio_categoria2Row() {
+                return ((v_ventas_detalle_socio_categoria2Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new v_ventas_articulo_masRow(builder);
+                return new v_ventas_detalle_socio_categoria2Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(v_ventas_articulo_masRow);
+                return typeof(v_ventas_detalle_socio_categoria2Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.v_ventas_articulo_masRowChanged != null)) {
-                    this.v_ventas_articulo_masRowChanged(this, new v_ventas_articulo_masRowChangeEvent(((v_ventas_articulo_masRow)(e.Row)), e.Action));
+                if ((this.v_ventas_detalle_socio_categoria2RowChanged != null)) {
+                    this.v_ventas_detalle_socio_categoria2RowChanged(this, new v_ventas_detalle_socio_categoria2RowChangeEvent(((v_ventas_detalle_socio_categoria2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -748,8 +812,8 @@ namespace ortoxela.Reportes.Ventas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.v_ventas_articulo_masRowChanging != null)) {
-                    this.v_ventas_articulo_masRowChanging(this, new v_ventas_articulo_masRowChangeEvent(((v_ventas_articulo_masRow)(e.Row)), e.Action));
+                if ((this.v_ventas_detalle_socio_categoria2RowChanging != null)) {
+                    this.v_ventas_detalle_socio_categoria2RowChanging(this, new v_ventas_detalle_socio_categoria2RowChangeEvent(((v_ventas_detalle_socio_categoria2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -757,8 +821,8 @@ namespace ortoxela.Reportes.Ventas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.v_ventas_articulo_masRowDeleted != null)) {
-                    this.v_ventas_articulo_masRowDeleted(this, new v_ventas_articulo_masRowChangeEvent(((v_ventas_articulo_masRow)(e.Row)), e.Action));
+                if ((this.v_ventas_detalle_socio_categoria2RowDeleted != null)) {
+                    this.v_ventas_detalle_socio_categoria2RowDeleted(this, new v_ventas_detalle_socio_categoria2RowChangeEvent(((v_ventas_detalle_socio_categoria2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -766,14 +830,14 @@ namespace ortoxela.Reportes.Ventas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.v_ventas_articulo_masRowDeleting != null)) {
-                    this.v_ventas_articulo_masRowDeleting(this, new v_ventas_articulo_masRowChangeEvent(((v_ventas_articulo_masRow)(e.Row)), e.Action));
+                if ((this.v_ventas_detalle_socio_categoria2RowDeleting != null)) {
+                    this.v_ventas_detalle_socio_categoria2RowDeleting(this, new v_ventas_detalle_socio_categoria2RowChangeEvent(((v_ventas_detalle_socio_categoria2Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removev_ventas_articulo_masRow(v_ventas_articulo_masRow row) {
+            public void Removev_ventas_detalle_socio_categoria2Row(v_ventas_detalle_socio_categoria2Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -782,7 +846,7 @@ namespace ortoxela.Reportes.Ventas {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet_VentasArticuloMas ds = new DataSet_VentasArticuloMas();
+                DataSet_Estadistica ds = new DataSet_Estadistica();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -800,7 +864,7 @@ namespace ortoxela.Reportes.Ventas {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "v_ventas_articulo_masDataTable";
+                attribute2.FixedValue = "v_ventas_detalle_socio_categoria2DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -844,15 +908,15 @@ namespace ortoxela.Reportes.Ventas {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class v_ventas_articulo_masRow : global::System.Data.DataRow {
+        public partial class v_ventas_detalle_socio_categoria2Row : global::System.Data.DataRow {
             
-            private v_ventas_articulo_masDataTable tablev_ventas_articulo_mas;
+            private v_ventas_detalle_socio_categoria2DataTable tablev_ventas_detalle_socio_categoria2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal v_ventas_articulo_masRow(global::System.Data.DataRowBuilder rb) : 
+            internal v_ventas_detalle_socio_categoria2Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablev_ventas_articulo_mas = ((v_ventas_articulo_masDataTable)(this.Table));
+                this.tablev_ventas_detalle_socio_categoria2 = ((v_ventas_detalle_socio_categoria2DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -860,15 +924,15 @@ namespace ortoxela.Reportes.Ventas {
             public string codigo_articulo {
                 get {
                     try {
-                        return ((string)(this[this.tablev_ventas_articulo_mas.codigo_articuloColumn]));
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.codigo_articuloColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_articulo\' in table \'v_ventas_articulo_mas\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_articulo\' in table \'v_ventas_detalle_socio_categoria" +
+                                "2\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.codigo_articuloColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.codigo_articuloColumn] = value;
                 }
             }
             
@@ -877,30 +941,15 @@ namespace ortoxela.Reportes.Ventas {
             public string Articulo {
                 get {
                     try {
-                        return ((string)(this[this.tablev_ventas_articulo_mas.ArticuloColumn]));
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.ArticuloColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Articulo\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Articulo\' in table \'v_ventas_detalle_socio_categoria2\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.ArticuloColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre_bodega {
-                get {
-                    try {
-                        return ((string)(this[this.tablev_ventas_articulo_mas.nombre_bodegaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombre_bodega\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.nombre_bodegaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.ArticuloColumn] = value;
                 }
             }
             
@@ -909,151 +958,173 @@ namespace ortoxela.Reportes.Ventas {
             public decimal cantidad_enviada {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.cantidad_enviadaColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.cantidad_enviadaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad_enviada\' in table \'v_ventas_articulo_mas\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad_enviada\' in table \'v_ventas_detalle_socio_categori" +
+                                "a2\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.cantidad_enviadaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.cantidad_enviadaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_maximo_sin_iva {
+            public decimal precio_sin_iva {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_maximo_sin_ivaColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.precio_sin_ivaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_maximo_sin_iva\' in table \'v_ventas_articulo_mas\' is " +
-                                "DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'precio_sin_iva\' in table \'v_ventas_detalle_socio_categoria2" +
+                                "\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.precio_maximo_sin_ivaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.precio_sin_ivaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_maximo_iva {
+            public decimal Monto_total {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_maximo_ivaColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.Monto_totalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_maximo_iva\' in table \'v_ventas_articulo_mas\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.precio_maximo_ivaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_minimo_sin_iva {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_minimo_sin_ivaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_minimo_sin_iva\' in table \'v_ventas_articulo_mas\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.precio_minimo_sin_ivaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_minimo_iva {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_minimo_ivaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_minimo_iva\' in table \'v_ventas_articulo_mas\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.precio_minimo_ivaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_promedio_iva {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_promedio_ivaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_promedio_iva\' in table \'v_ventas_articulo_mas\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.precio_promedio_ivaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal precio_promedio_sin_iva {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.precio_promedio_sin_ivaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio_promedio_sin_iva\' in table \'v_ventas_articulo_mas\' i" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'Monto_total\' in table \'v_ventas_detalle_socio_categoria2\' i" +
                                 "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.precio_promedio_sin_ivaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.Monto_totalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal total_facturado_iva {
+            public decimal precio_iva {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.total_facturado_ivaColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.precio_ivaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'total_facturado_iva\' in table \'v_ventas_articulo_mas\' is DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'precio_iva\' in table \'v_ventas_detalle_socio_categoria2\' is" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.total_facturado_ivaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.precio_ivaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Total_facturado_sin_iva {
+            public string nombre_bodega {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.Total_facturado_sin_ivaColumn]));
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.nombre_bodegaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total_facturado_sin_iva\' in table \'v_ventas_articulo_mas\' i" +
-                                "s DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre_bodega\' in table \'v_ventas_detalle_socio_categoria2\'" +
+                                " is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.Total_facturado_sin_ivaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.nombre_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_compra {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablev_ventas_detalle_socio_categoria2.fecha_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_compra\' in table \'v_ventas_detalle_socio_categoria2\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.fecha_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tipo_Pago {
+                get {
+                    return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.Tipo_PagoColumn]));
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.Tipo_PagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_cliente {
+                get {
+                    try {
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.nombre_clienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre_cliente\' in table \'v_ventas_detalle_socio_categoria2" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.nombre_clienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uint codigo_tipoc {
+                get {
+                    try {
+                        return ((uint)(this[this.tablev_ventas_detalle_socio_categoria2.codigo_tipocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_tipoc\' in table \'v_ventas_detalle_socio_categoria2\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.codigo_tipocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Socio_Comercial {
+                get {
+                    try {
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.Socio_ComercialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Socio_Comercial\' in table \'v_ventas_detalle_socio_categoria" +
+                                "2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.Socio_ComercialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int no_documento {
+                get {
+                    return ((int)(this[this.tablev_ventas_detalle_socio_categoria2.no_documentoColumn]));
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.no_documentoColumn] = value;
                 }
             }
             
@@ -1062,14 +1133,15 @@ namespace ortoxela.Reportes.Ventas {
             public decimal descuentoPct {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.descuentoPctColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.descuentoPctColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descuentoPct\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'descuentoPct\' in table \'v_ventas_detalle_socio_categoria2\' " +
+                                "is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.descuentoPctColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.descuentoPctColumn] = value;
                 }
             }
             
@@ -1077,124 +1149,55 @@ namespace ortoxela.Reportes.Ventas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal DescuentoQ {
                 get {
-                    return ((decimal)(this[this.tablev_ventas_articulo_mas.DescuentoQColumn]));
+                    return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.DescuentoQColumn]));
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.DescuentoQColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.DescuentoQColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string documento {
+            public decimal total_iva {
                 get {
-                    try {
-                        return ((string)(this[this.tablev_ventas_articulo_mas.documentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'documento\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.total_ivaColumn]));
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.documentoColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.total_ivaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal costo_iva {
+            public decimal Total_sin_iva {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.costo_ivaColumn]));
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.Total_sin_ivaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'costo_iva\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total_sin_iva\' in table \'v_ventas_detalle_socio_categoria2\'" +
+                                " is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.costo_ivaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.Total_sin_ivaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal costo_sin_iva {
+            public string refer_documento {
                 get {
                     try {
-                        return ((decimal)(this[this.tablev_ventas_articulo_mas.costo_sin_ivaColumn]));
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.refer_documentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'costo_sin_iva\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'refer_documento\' in table \'v_ventas_detalle_socio_categoria" +
+                                "2\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.costo_sin_ivaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string categoria {
-                get {
-                    try {
-                        return ((string)(this[this.tablev_ventas_articulo_mas.categoriaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'categoria\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.categoriaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_1era_venta {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablev_ventas_articulo_mas.fecha_1era_ventaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_1era_venta\' in table \'v_ventas_articulo_mas\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.fecha_1era_ventaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_ultima_venta {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablev_ventas_articulo_mas.fecha_ultima_ventaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_ultima_venta\' in table \'v_ventas_articulo_mas\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.fecha_ultima_ventaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablev_ventas_articulo_mas.fechaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablev_ventas_articulo_mas.fechaColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.refer_documentoColumn] = value;
                 }
             }
             
@@ -1203,267 +1206,352 @@ namespace ortoxela.Reportes.Ventas {
             public uint codigo_serie {
                 get {
                     try {
-                        return ((uint)(this[this.tablev_ventas_articulo_mas.codigo_serieColumn]));
+                        return ((uint)(this[this.tablev_ventas_detalle_socio_categoria2.codigo_serieColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_serie\' in table \'v_ventas_articulo_mas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_serie\' in table \'v_ventas_detalle_socio_categoria2\' " +
+                                "is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablev_ventas_articulo_mas.codigo_serieColumn] = value;
+                    this[this.tablev_ventas_detalle_socio_categoria2.codigo_serieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string documento {
+                get {
+                    try {
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.documentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'documento\' in table \'v_ventas_detalle_socio_categoria2\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.documentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal costo_iva {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.costo_ivaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'costo_iva\' in table \'v_ventas_detalle_socio_categoria2\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.costo_ivaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal costo_sin_iva {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablev_ventas_detalle_socio_categoria2.costo_sin_ivaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'costo_sin_iva\' in table \'v_ventas_detalle_socio_categoria2\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.costo_sin_ivaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string forma_pago {
+                get {
+                    try {
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.forma_pagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'forma_pago\' in table \'v_ventas_detalle_socio_categoria2\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.forma_pagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uint codigo_subcat {
+                get {
+                    return ((uint)(this[this.tablev_ventas_detalle_socio_categoria2.codigo_subcatColumn]));
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.codigo_subcatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_subcategoria {
+                get {
+                    try {
+                        return ((string)(this[this.tablev_ventas_detalle_socio_categoria2.nombre_subcategoriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre_subcategoria\' in table \'v_ventas_detalle_socio_categ" +
+                                "oria2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablev_ventas_detalle_socio_categoria2.nombre_subcategoriaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscodigo_articuloNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.codigo_articuloColumn);
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.codigo_articuloColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcodigo_articuloNull() {
-                this[this.tablev_ventas_articulo_mas.codigo_articuloColumn] = global::System.Convert.DBNull;
+                this[this.tablev_ventas_detalle_socio_categoria2.codigo_articuloColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsArticuloNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.ArticuloColumn);
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.ArticuloColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetArticuloNull() {
-                this[this.tablev_ventas_articulo_mas.ArticuloColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isnombre_bodegaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.nombre_bodegaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setnombre_bodegaNull() {
-                this[this.tablev_ventas_articulo_mas.nombre_bodegaColumn] = global::System.Convert.DBNull;
+                this[this.tablev_ventas_detalle_socio_categoria2.ArticuloColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscantidad_enviadaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.cantidad_enviadaColumn);
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.cantidad_enviadaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcantidad_enviadaNull() {
-                this[this.tablev_ventas_articulo_mas.cantidad_enviadaColumn] = global::System.Convert.DBNull;
+                this[this.tablev_ventas_detalle_socio_categoria2.cantidad_enviadaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_maximo_sin_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_maximo_sin_ivaColumn);
+            public bool Isprecio_sin_ivaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.precio_sin_ivaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_maximo_sin_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_maximo_sin_ivaColumn] = global::System.Convert.DBNull;
+            public void Setprecio_sin_ivaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.precio_sin_ivaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_maximo_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_maximo_ivaColumn);
+            public bool IsMonto_totalNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.Monto_totalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_maximo_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_maximo_ivaColumn] = global::System.Convert.DBNull;
+            public void SetMonto_totalNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.Monto_totalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_minimo_sin_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_minimo_sin_ivaColumn);
+            public bool Isprecio_ivaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.precio_ivaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_minimo_sin_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_minimo_sin_ivaColumn] = global::System.Convert.DBNull;
+            public void Setprecio_ivaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.precio_ivaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_minimo_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_minimo_ivaColumn);
+            public bool Isnombre_bodegaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.nombre_bodegaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_minimo_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_minimo_ivaColumn] = global::System.Convert.DBNull;
+            public void Setnombre_bodegaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.nombre_bodegaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_promedio_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_promedio_ivaColumn);
+            public bool Isfecha_compraNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.fecha_compraColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_promedio_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_promedio_ivaColumn] = global::System.Convert.DBNull;
+            public void Setfecha_compraNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.fecha_compraColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprecio_promedio_sin_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.precio_promedio_sin_ivaColumn);
+            public bool Isnombre_clienteNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.nombre_clienteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprecio_promedio_sin_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.precio_promedio_sin_ivaColumn] = global::System.Convert.DBNull;
+            public void Setnombre_clienteNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.nombre_clienteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istotal_facturado_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.total_facturado_ivaColumn);
+            public bool Iscodigo_tipocNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.codigo_tipocColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settotal_facturado_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.total_facturado_ivaColumn] = global::System.Convert.DBNull;
+            public void Setcodigo_tipocNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.codigo_tipocColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTotal_facturado_sin_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.Total_facturado_sin_ivaColumn);
+            public bool IsSocio_ComercialNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.Socio_ComercialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTotal_facturado_sin_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.Total_facturado_sin_ivaColumn] = global::System.Convert.DBNull;
+            public void SetSocio_ComercialNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.Socio_ComercialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdescuentoPctNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.descuentoPctColumn);
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.descuentoPctColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdescuentoPctNull() {
-                this[this.tablev_ventas_articulo_mas.descuentoPctColumn] = global::System.Convert.DBNull;
+                this[this.tablev_ventas_detalle_socio_categoria2.descuentoPctColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdocumentoNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.documentoColumn);
+            public bool IsTotal_sin_ivaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.Total_sin_ivaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdocumentoNull() {
-                this[this.tablev_ventas_articulo_mas.documentoColumn] = global::System.Convert.DBNull;
+            public void SetTotal_sin_ivaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.Total_sin_ivaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscosto_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.costo_ivaColumn);
+            public bool Isrefer_documentoNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.refer_documentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcosto_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.costo_ivaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscosto_sin_ivaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.costo_sin_ivaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcosto_sin_ivaNull() {
-                this[this.tablev_ventas_articulo_mas.costo_sin_ivaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscategoriaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.categoriaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcategoriaNull() {
-                this[this.tablev_ventas_articulo_mas.categoriaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_1era_ventaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.fecha_1era_ventaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_1era_ventaNull() {
-                this[this.tablev_ventas_articulo_mas.fecha_1era_ventaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_ultima_ventaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.fecha_ultima_ventaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_ultima_ventaNull() {
-                this[this.tablev_ventas_articulo_mas.fecha_ultima_ventaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsfechaNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.fechaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetfechaNull() {
-                this[this.tablev_ventas_articulo_mas.fechaColumn] = global::System.Convert.DBNull;
+            public void Setrefer_documentoNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.refer_documentoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscodigo_serieNull() {
-                return this.IsNull(this.tablev_ventas_articulo_mas.codigo_serieColumn);
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.codigo_serieColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcodigo_serieNull() {
-                this[this.tablev_ventas_articulo_mas.codigo_serieColumn] = global::System.Convert.DBNull;
+                this[this.tablev_ventas_detalle_socio_categoria2.codigo_serieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdocumentoNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.documentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdocumentoNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.documentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscosto_ivaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.costo_ivaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcosto_ivaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.costo_ivaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscosto_sin_ivaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.costo_sin_ivaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcosto_sin_ivaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.costo_sin_ivaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isforma_pagoNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.forma_pagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setforma_pagoNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.forma_pagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_subcategoriaNull() {
+                return this.IsNull(this.tablev_ventas_detalle_socio_categoria2.nombre_subcategoriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_subcategoriaNull() {
+                this[this.tablev_ventas_detalle_socio_categoria2.nombre_subcategoriaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1471,22 +1559,22 @@ namespace ortoxela.Reportes.Ventas {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class v_ventas_articulo_masRowChangeEvent : global::System.EventArgs {
+        public class v_ventas_detalle_socio_categoria2RowChangeEvent : global::System.EventArgs {
             
-            private v_ventas_articulo_masRow eventRow;
+            private v_ventas_detalle_socio_categoria2Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masRowChangeEvent(v_ventas_articulo_masRow row, global::System.Data.DataRowAction action) {
+            public v_ventas_detalle_socio_categoria2RowChangeEvent(v_ventas_detalle_socio_categoria2Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public v_ventas_articulo_masRow Row {
+            public v_ventas_detalle_socio_categoria2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -1502,7 +1590,7 @@ namespace ortoxela.Reportes.Ventas {
         }
     }
 }
-namespace ortoxela.Reportes.Ventas.DataSet_VentasArticuloMasTableAdapters {
+namespace ortoxela.DataSet_EstadisticaTableAdapters {
     
     
     /// <summary>
@@ -1514,7 +1602,7 @@ namespace ortoxela.Reportes.Ventas.DataSet_VentasArticuloMasTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class v_ventas_articulo_masTableAdapter : global::System.ComponentModel.Component {
+    public partial class v_ventas_detalle_socio_categoria2TableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
@@ -1528,7 +1616,7 @@ namespace ortoxela.Reportes.Ventas.DataSet_VentasArticuloMasTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public v_ventas_articulo_masTableAdapter() {
+        public v_ventas_detalle_socio_categoria2TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1625,29 +1713,32 @@ namespace ortoxela.Reportes.Ventas.DataSet_VentasArticuloMasTableAdapters {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "v_ventas_articulo_mas";
+            tableMapping.DataSetTable = "v_ventas_detalle_socio_categoria2";
             tableMapping.ColumnMappings.Add("codigo_articulo", "codigo_articulo");
             tableMapping.ColumnMappings.Add("Articulo", "Articulo");
-            tableMapping.ColumnMappings.Add("nombre_bodega", "nombre_bodega");
             tableMapping.ColumnMappings.Add("cantidad_enviada", "cantidad_enviada");
-            tableMapping.ColumnMappings.Add("precio_maximo_sin_iva", "precio_maximo_sin_iva");
-            tableMapping.ColumnMappings.Add("precio_maximo_iva", "precio_maximo_iva");
-            tableMapping.ColumnMappings.Add("precio_minimo_sin_iva", "precio_minimo_sin_iva");
-            tableMapping.ColumnMappings.Add("precio_minimo_iva", "precio_minimo_iva");
-            tableMapping.ColumnMappings.Add("precio_promedio_iva", "precio_promedio_iva");
-            tableMapping.ColumnMappings.Add("precio_promedio_sin_iva", "precio_promedio_sin_iva");
-            tableMapping.ColumnMappings.Add("total_facturado_iva", "total_facturado_iva");
-            tableMapping.ColumnMappings.Add("Total_facturado_sin_iva", "Total_facturado_sin_iva");
+            tableMapping.ColumnMappings.Add("precio_sin_iva", "precio_sin_iva");
+            tableMapping.ColumnMappings.Add("Monto_total", "Monto_total");
+            tableMapping.ColumnMappings.Add("precio_iva", "precio_iva");
+            tableMapping.ColumnMappings.Add("nombre_bodega", "nombre_bodega");
+            tableMapping.ColumnMappings.Add("fecha_compra", "fecha_compra");
+            tableMapping.ColumnMappings.Add("Tipo_Pago", "Tipo_Pago");
+            tableMapping.ColumnMappings.Add("nombre_cliente", "nombre_cliente");
+            tableMapping.ColumnMappings.Add("codigo_tipoc", "codigo_tipoc");
+            tableMapping.ColumnMappings.Add("Socio_Comercial", "Socio_Comercial");
+            tableMapping.ColumnMappings.Add("no_documento", "no_documento");
             tableMapping.ColumnMappings.Add("descuentoPct", "descuentoPct");
             tableMapping.ColumnMappings.Add("DescuentoQ", "DescuentoQ");
+            tableMapping.ColumnMappings.Add("total_iva", "total_iva");
+            tableMapping.ColumnMappings.Add("Total_sin_iva", "Total_sin_iva");
+            tableMapping.ColumnMappings.Add("refer_documento", "refer_documento");
+            tableMapping.ColumnMappings.Add("codigo_serie", "codigo_serie");
             tableMapping.ColumnMappings.Add("documento", "documento");
             tableMapping.ColumnMappings.Add("costo_iva", "costo_iva");
             tableMapping.ColumnMappings.Add("costo_sin_iva", "costo_sin_iva");
-            tableMapping.ColumnMappings.Add("categoria", "categoria");
-            tableMapping.ColumnMappings.Add("fecha_1era_venta", "fecha_1era_venta");
-            tableMapping.ColumnMappings.Add("fecha_ultima_venta", "fecha_ultima_venta");
-            tableMapping.ColumnMappings.Add("fecha", "fecha");
-            tableMapping.ColumnMappings.Add("codigo_serie", "codigo_serie");
+            tableMapping.ColumnMappings.Add("forma_pago", "forma_pago");
+            tableMapping.ColumnMappings.Add("codigo_subcat", "codigo_subcat");
+            tableMapping.ColumnMappings.Add("nombre_subcategoria", "nombre_subcategoria");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1664,10 +1755,10 @@ namespace ortoxela.Reportes.Ventas.DataSet_VentasArticuloMasTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        codigo_articulo, Articulo, nombre_bodega, cantidad_enviada, precio_maximo_sin_iva, precio_maximo_iva, precio_minimo_sin_iva, precio_minimo_iva, 
-                         precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, 
-                         costo_sin_iva, categoria, fecha, fecha_1era_venta, fecha_ultima_venta, codigo_serie
-FROM            v_ventas_articulo_mas";
+            this._commandCollection[0].CommandText = @"SELECT        codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, Monto_total, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, 
+                         codigo_tipoc, nombre_cliente1 AS Socio_Comercial, no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, codigo_serie, 
+                         documento, costo_iva, costo_sin_iva, forma_pago, codigo_subcat, nombre_subcategoria
+FROM            v_ventas_detalle_socio_categoria2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1675,7 +1766,7 @@ FROM            v_ventas_articulo_mas";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet_VentasArticuloMas.v_ventas_articulo_masDataTable dataTable) {
+        public virtual int Fill(DataSet_Estadistica.v_ventas_detalle_socio_categoria2DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1688,9 +1779,9 @@ FROM            v_ventas_articulo_mas";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet_VentasArticuloMas.v_ventas_articulo_masDataTable GetData() {
+        public virtual DataSet_Estadistica.v_ventas_detalle_socio_categoria2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet_VentasArticuloMas.v_ventas_articulo_masDataTable dataTable = new DataSet_VentasArticuloMas.v_ventas_articulo_masDataTable();
+            DataSet_Estadistica.v_ventas_detalle_socio_categoria2DataTable dataTable = new DataSet_Estadistica.v_ventas_detalle_socio_categoria2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1764,7 +1855,7 @@ FROM            v_ventas_articulo_mas";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSet_VentasArticuloMas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet_Estadistica dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1774,7 +1865,7 @@ FROM            v_ventas_articulo_mas";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSet_VentasArticuloMas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet_Estadistica dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1784,7 +1875,7 @@ FROM            v_ventas_articulo_mas";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSet_VentasArticuloMas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet_Estadistica dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1818,7 +1909,7 @@ FROM            v_ventas_articulo_mas";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSet_VentasArticuloMas dataSet) {
+        public virtual int UpdateAll(DataSet_Estadistica dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

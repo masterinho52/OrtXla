@@ -76,6 +76,7 @@ namespace ortoxela.Reportes.Ventas
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.dataSet_Estadistica_mes1 = new ortoxela.Reportes.Ventas.DataSet_Estadistica_mes();
             this.v_estadisticas_mesTableAdapter = new ortoxela.Reportes.Ventas.DataSet_Estadistica_mesTableAdapters.v_estadisticas_mesTableAdapter();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
@@ -128,6 +129,9 @@ namespace ortoxela.Reportes.Ventas
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel49 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Bodega = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel48 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.winControlContainer2 = new DevExpress.XtraReports.UI.WinControlContainer();
@@ -136,10 +140,6 @@ namespace ortoxela.Reportes.Ventas
             this.label1 = new System.Windows.Forms.Label();
             this.dataSet_Estadistica1 = new ortoxela.Reportes.Ventas.DataSet_Estadistica();
             this.sp_estadistica_mes_fechas_nbTableAdapter = new ortoxela.Reportes.Ventas.DataSet_EstadisticaTableAdapters.sp_estadistica_mes_fechas_nbTableAdapter();
-            this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
-            this.Bodega = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel48 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel49 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Estadistica_mes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Estadistica1)).BeginInit();
@@ -565,6 +565,18 @@ namespace ortoxela.Reportes.Ventas
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel21
+            // 
+            this.xrLabel21.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(537.5F, 0F);
+            this.xrLabel21.Name = "xrLabel21";
+            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel21.SizeF = new System.Drawing.SizeF(393.7919F, 23.00001F);
+            this.xrLabel21.StylePriority.UseFont = false;
+            this.xrLabel21.StylePriority.UseTextAlignment = false;
+            this.xrLabel21.Text = "REP. DE ESTADISTICA POR SOCIO COMERCIAL POR LINEA (Categoria)";
+            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // dataSet_Estadistica_mes1
             // 
@@ -1169,6 +1181,37 @@ namespace ortoxela.Reportes.Ventas
             this.ReportHeader.HeightF = 73F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrLabel49
+            // 
+            this.xrLabel49.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Bodega, "Text", "")});
+            this.xrLabel49.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Bold);
+            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(85.45853F, 49.99998F);
+            this.xrLabel49.Name = "xrLabel49";
+            this.xrLabel49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel49.SizeF = new System.Drawing.SizeF(126.8332F, 23F);
+            this.xrLabel49.StylePriority.UseFont = false;
+            this.xrLabel49.Text = "xrLabel49";
+            // 
+            // Bodega
+            // 
+            this.Bodega.Description = "Bodega";
+            this.Bodega.Name = "Bodega";
+            this.Bodega.Value = "Toddas";
+            this.Bodega.Visible = false;
+            // 
+            // xrLabel48
+            // 
+            this.xrLabel48.Font = new System.Drawing.Font("Arial Narrow", 14F);
+            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0F, 49.99998F);
+            this.xrLabel48.Name = "xrLabel48";
+            this.xrLabel48.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel48.SizeF = new System.Drawing.SizeF(85.45853F, 23.00002F);
+            this.xrLabel48.StylePriority.UseFont = false;
+            this.xrLabel48.StylePriority.UseTextAlignment = false;
+            this.xrLabel48.Text = "BODEGA:";
+            this.xrLabel48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // xrLabel20
             // 
             this.xrLabel20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
@@ -1212,7 +1255,7 @@ namespace ortoxela.Reportes.Ventas
             // 
             // winControlContainer1
             // 
-            this.winControlContainer1.LocationFloat = new DevExpress.Utils.PointFloat(437.5F, 32F);
+            this.winControlContainer1.LocationFloat = new DevExpress.Utils.PointFloat(435.0001F, 33.00002F);
             this.winControlContainer1.Name = "winControlContainer1";
             this.winControlContainer1.SizeF = new System.Drawing.SizeF(127F, 24F);
             this.winControlContainer1.WinControl = this.label1;
@@ -1235,49 +1278,6 @@ namespace ortoxela.Reportes.Ventas
             // sp_estadistica_mes_fechas_nbTableAdapter
             // 
             this.sp_estadistica_mes_fechas_nbTableAdapter.ClearBeforeFill = true;
-            // 
-            // xrLabel21
-            // 
-            this.xrLabel21.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(537.5F, 0F);
-            this.xrLabel21.Name = "xrLabel21";
-            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel21.SizeF = new System.Drawing.SizeF(393.7919F, 23.00001F);
-            this.xrLabel21.StylePriority.UseFont = false;
-            this.xrLabel21.StylePriority.UseTextAlignment = false;
-            this.xrLabel21.Text = "REP. DE ESTADISTICA POR SOCIO COMERCIAL POR LINEA (Categoria)";
-            this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // Bodega
-            // 
-            this.Bodega.Description = "Bodega";
-            this.Bodega.Name = "Bodega";
-            this.Bodega.Value = "Toddas";
-            this.Bodega.Visible = false;
-            // 
-            // xrLabel48
-            // 
-            this.xrLabel48.Font = new System.Drawing.Font("Arial Narrow", 14F);
-            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0F, 49.99998F);
-            this.xrLabel48.Name = "xrLabel48";
-            this.xrLabel48.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel48.SizeF = new System.Drawing.SizeF(85.45853F, 23.00002F);
-            this.xrLabel48.StylePriority.UseFont = false;
-            this.xrLabel48.StylePriority.UseTextAlignment = false;
-            this.xrLabel48.Text = "BODEGA:";
-            this.xrLabel48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel49
-            // 
-            this.xrLabel49.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding(this.Bodega, "Text", "")});
-            this.xrLabel49.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Bold);
-            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(85.45853F, 49.99998F);
-            this.xrLabel49.Name = "xrLabel49";
-            this.xrLabel49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel49.SizeF = new System.Drawing.SizeF(126.8332F, 23F);
-            this.xrLabel49.StylePriority.UseFont = false;
-            this.xrLabel49.Text = "xrLabel49";
             // 
             // XtraReport_Estadistica_Mes
             // 
