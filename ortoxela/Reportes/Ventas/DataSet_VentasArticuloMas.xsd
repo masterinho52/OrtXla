@@ -13,8 +13,8 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        codigo_articulo, Articulo, nombre_bodega, cantidad_enviada, precio_maximo_sin_iva, precio_maximo_iva, precio_minimo_sin_iva, precio_minimo_iva, 
-                         precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, costo_sin_iva, 
-                         categoria, fecha, fecha_1era_venta, fecha_ultima_venta
+                         precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, 
+                         costo_sin_iva, categoria, fecha, fecha_1era_venta, fecha_ultima_venta, codigo_serie
 FROM            v_ventas_articulo_mas</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -43,6 +43,7 @@ FROM            v_ventas_articulo_mas</CommandText>
               <Mapping SourceColumn="fecha_1era_venta" DataSetColumn="fecha_1era_venta" />
               <Mapping SourceColumn="fecha_ultima_venta" DataSetColumn="fecha_ultima_venta" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -54,7 +55,7 @@ FROM            v_ventas_articulo_mas</CommandText>
   <xs:element name="DataSet_VentasArticuloMas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_VentasArticuloMas" msprop:Generator_UserDSName="DataSet_VentasArticuloMas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_ventas_articulo_mas" msprop:Generator_TableClassName="v_ventas_articulo_masDataTable" msprop:Generator_TableVarName="tablev_ventas_articulo_mas" msprop:Generator_TablePropName="v_ventas_articulo_mas" msprop:Generator_RowDeletingName="v_ventas_articulo_masRowDeleting" msprop:Generator_UserTableName="v_ventas_articulo_mas" msprop:Generator_RowChangingName="v_ventas_articulo_masRowChanging" msprop:Generator_RowEvHandlerName="v_ventas_articulo_masRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ventas_articulo_masRowDeleted" msprop:Generator_RowEvArgName="v_ventas_articulo_masRowChangeEvent" msprop:Generator_RowChangedName="v_ventas_articulo_masRowChanged" msprop:Generator_RowClassName="v_ventas_articulo_masRow">
+        <xs:element name="v_ventas_articulo_mas" msprop:Generator_TableClassName="v_ventas_articulo_masDataTable" msprop:Generator_TableVarName="tablev_ventas_articulo_mas" msprop:Generator_RowChangedName="v_ventas_articulo_masRowChanged" msprop:Generator_TablePropName="v_ventas_articulo_mas" msprop:Generator_RowDeletingName="v_ventas_articulo_masRowDeleting" msprop:Generator_RowChangingName="v_ventas_articulo_masRowChanging" msprop:Generator_RowEvHandlerName="v_ventas_articulo_masRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ventas_articulo_masRowDeleted" msprop:Generator_RowClassName="v_ventas_articulo_masRow" msprop:Generator_UserTableName="v_ventas_articulo_mas" msprop:Generator_RowEvArgName="v_ventas_articulo_masRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
@@ -108,6 +109,7 @@ FROM            v_ventas_articulo_mas</CommandText>
               <xs:element name="fecha_1era_venta" msprop:Generator_ColumnVarNameInTable="columnfecha_1era_venta" msprop:Generator_ColumnPropNameInRow="fecha_1era_venta" msprop:Generator_ColumnPropNameInTable="fecha_1era_ventaColumn" msprop:Generator_UserColumnName="fecha_1era_venta" type="xs:dateTime" minOccurs="0" />
               <xs:element name="fecha_ultima_venta" msprop:Generator_ColumnVarNameInTable="columnfecha_ultima_venta" msprop:Generator_ColumnPropNameInRow="fecha_ultima_venta" msprop:Generator_ColumnPropNameInTable="fecha_ultima_ventaColumn" msprop:Generator_UserColumnName="fecha_ultima_venta" type="xs:dateTime" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

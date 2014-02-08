@@ -60,6 +60,9 @@ namespace ortoxela.Reportes.Ventas
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.venta_unidades = new DevExpress.XtraReports.UI.CalculatedField();
+            this.Series = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_ventas_cliente_categoria1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -148,6 +151,8 @@ namespace ortoxela.Reportes.Ventas
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel8,
+            this.xrLabel4,
             this.xrTable1,
             this.xrLabel12,
             this.xrLabel1,
@@ -164,11 +169,11 @@ namespace ortoxela.Reportes.Ventas
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 90.33334F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 100.3333F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(739F, 31.66666F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(739F, 21.66666F);
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
@@ -185,7 +190,7 @@ namespace ortoxela.Reportes.Ventas
             // xrTableCell5
             // 
             this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.Text = "Lineaa (Categoria)";
+            this.xrTableCell5.Text = "Linea (Categoria)";
             this.xrTableCell5.Weight = 1.9999998105815657D;
             // 
             // xrTableCell1
@@ -200,7 +205,7 @@ namespace ortoxela.Reportes.Ventas
             this.xrLabel12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.Fecha_inicio, "Text", "{0:dd/MM/yyyy}")});
             this.xrLabel12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(136.4583F, 43.75F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(136.4583F, 32.375F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel12.SizeF = new System.Drawing.SizeF(100F, 23F);
@@ -218,7 +223,7 @@ namespace ortoxela.Reportes.Ventas
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 43.75F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 32.375F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(79.16666F, 23F);
@@ -232,7 +237,7 @@ namespace ortoxela.Reportes.Ventas
             this.xrLabel10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.Fecha_fin, "Text", "{0:dd/MM/yyyy}")});
             this.xrLabel10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(288.5416F, 43.75F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(288.5416F, 32.375F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel10.SizeF = new System.Drawing.SizeF(100F, 23F);
@@ -262,7 +267,7 @@ namespace ortoxela.Reportes.Ventas
             // xrLabel13
             // 
             this.xrLabel13.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(79.16666F, 43.75F);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(79.16666F, 32.375F);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel13.SizeF = new System.Drawing.SizeF(57.29162F, 23F);
@@ -275,7 +280,7 @@ namespace ortoxela.Reportes.Ventas
             // 
             this.xrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel14.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(236.4583F, 43.75F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(236.4583F, 32.375F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel14.SizeF = new System.Drawing.SizeF(52.08333F, 23F);
@@ -385,6 +390,36 @@ namespace ortoxela.Reportes.Ventas
             this.venta_unidades.Expression = "[cantidad_enviada] * [precio_sin_iva]";
             this.venta_unidades.Name = "venta_unidades";
             // 
+            // Series
+            // 
+            this.Series.Name = "Series";
+            this.Series.Value = "";
+            this.Series.Visible = false;
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Series, "Text", "")});
+            this.xrLabel4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(79.16665F, 66.62499F);
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(611.4584F, 23F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.Text = "xrLabel4";
+            // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0F, 66.62499F);
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(79.16666F, 23F);
+            this.xrLabel8.StylePriority.UseFont = false;
+            this.xrLabel8.StylePriority.UseTextAlignment = false;
+            this.xrLabel8.Text = "Serie(s):";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // XtraReport_Ventas_categoria
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -404,8 +439,9 @@ namespace ortoxela.Reportes.Ventas
             this.Margins = new System.Drawing.Printing.Margins(40, 49, 61, 43);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
-            this.Fecha_fin});
-            this.Version = "11.2";
+            this.Fecha_fin,
+            this.Series});
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_ventas_cliente_categoria1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -444,5 +480,8 @@ namespace ortoxela.Reportes.Ventas
         private DevExpress.XtraReports.Parameters.Parameter Fecha_inicio;
         private DevExpress.XtraReports.Parameters.Parameter Fecha_fin;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.Parameters.Parameter Series;
     }
 }
