@@ -33,50 +33,38 @@ namespace ortoxela.FacturaTemporal
                 gridLookSocioComercial.Properties.DisplayMember = "NOMBRE SOCIO COMERCIAL";
                 gridLookSocioComercial.Properties.ValueMember = "CODIGO";
                 gridLookSocioComercial.Properties.NullText = "SELECCIONE SOCIO COMERCIAL";
-                gridLookSocioComercial.Properties.View.Columns["CODIGO"].Visible = false;
+                gridLookSocioComercial.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
             }
             catch { }
-            /*Carga Bodegas*/
-            CargaBodega(0);
+                      
             try
             {
-                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
-                gridLookBodega.Properties.DataSource = logicaxela.Tabla(ssql);
-                gridLookBodega.Properties.DisplayMember = "NOMBRE";
-                gridLookBodega.Properties.ValueMember = "CODIGO";
-                gridLookBodega.EditValue = 1;
-               
-            }
-            catch
-            { }
-            try
-            {
-                //gridLookTipoDocumento = new GridLookUpEdit();
-                /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo AND t.codigo_tipo IN (1);"; */
-                /* jramirez 2013.07.24 */
-                //ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO   FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario;
-                ssql = "SELECT distinct codigo_serie, CONCAT(nombre_documento,' [', serie_documento,']')  AS DOCUMENTO  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodega.EditValue;
+                ssql = "SELECT distinct codigo_serie, CONCAT(nombre_documento,' [', serie_documento,']')  AS DOCUMENTO  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario ;
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "codigo_serie";
-                gridLookTipoDocumento.EditValue = 2;
-                //gridLookTipoDocumento.Properties.View.Columns["codigo_serie"].Visible = false;                
-                gridLookTipoDocumento.EditValue = 1;
+                gridLookTipoDocumento.EditValue = logicaorto.Tabla(ssql).Rows[0][0].ToString();
+
+                gridLookTipoDocumento.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
                 
             }
             catch
             {
                 //MessageBox.Show("error");
             }
+
+            /*Carga Bodegas*/
+            CargaBodega(int.Parse(gridLookTipoDocumento.EditValue.ToString()));
+
             try
             {
                 cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM ortoxela.tipo_pago where estadoid<>2";
                 gridLookTipoPago.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoPago.Properties.DisplayMember = "TIPO PAGO";
                 gridLookTipoPago.Properties.ValueMember = "CODIGO";
-                gridLookTipoPago.EditValue = 1;
+                gridLookTipoPago.EditValue = logicaorto.Tabla(cadena).Rows[0][0].ToString();
+                gridLookTipoPago.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
 
             }
             catch
@@ -98,7 +86,7 @@ namespace ortoxela.FacturaTemporal
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
                 gridLookBodega.EditValue = int.Parse(tempTabla.Rows[0]["CODIGO"].ToString());
-
+                gridLookBodega.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
                 // 
                 
             }
@@ -959,18 +947,7 @@ namespace ortoxela.FacturaTemporal
             }
         }
 
-        private void gridLookBodega_EditValueChanged(object sender, EventArgs e)
-        {
-            ssql = "SELECT distinct codigo_serie, CONCAT(nombre_documento,' [', serie_documento,']')  AS DOCUMENTO  FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodega.EditValue;
-            gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
-            gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
-            gridLookTipoDocumento.Properties.ValueMember = "codigo_serie";
-            gridLookTipoDocumento.EditValue = 2;
-            //gridLookTipoDocumento.Properties.View.Columns["codigo_serie"].Visible = false;
-            gridLookTipoDocumento.EditValue = 1;
-            
-        }
-
+       
     
 
       

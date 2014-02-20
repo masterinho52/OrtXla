@@ -282,7 +282,6 @@
             conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule19.ErrorText = "SELECCIONE LA BODEGA";
             this.dxValidationProvider3.SetValidationRule(this.gridLookBodega, conditionValidationRule19);
-            this.gridLookBodega.EditValueChanged += new System.EventHandler(this.gridLookBodega_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
