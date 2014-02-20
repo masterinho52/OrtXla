@@ -577,10 +577,6 @@ namespace ortoxela.Reportes.Ventas
             this.listBoxSeries.ValueMember = "codigo_serie";
         }
 
-        
-       
-
-
                       
         
     }
