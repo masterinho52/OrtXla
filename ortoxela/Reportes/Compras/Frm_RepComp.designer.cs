@@ -72,6 +72,11 @@
             this.dateEdit11 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit12 = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).BeginInit();
@@ -614,6 +619,56 @@
             this.simpleButton6.Text = "Consultar";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(793, 415);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox1.Size = new System.Drawing.Size(150, 64);
+            this.listBox1.TabIndex = 14;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl19.Location = new System.Drawing.Point(33, 420);
+            this.labelControl19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(149, 20);
+            this.labelControl19.TabIndex = 15;
+            this.labelControl19.Text = "Opciones Generales:";
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl20.Location = new System.Drawing.Point(738, 423);
+            this.labelControl20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(41, 20);
+            this.labelControl20.TabIndex = 16;
+            this.labelControl20.Text = "Serie:";
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl21.Location = new System.Drawing.Point(495, 423);
+            this.labelControl21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(60, 20);
+            this.labelControl21.TabIndex = 18;
+            this.labelControl21.Text = "Bodega:";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(568, 415);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox2.Size = new System.Drawing.Size(150, 64);
+            this.listBox2.TabIndex = 19;
+            // 
             // Frm_RepComp
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
@@ -622,7 +677,12 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 502);
+            this.ClientSize = new System.Drawing.Size(1194, 490);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.labelControl21);
+            this.Controls.Add(this.labelControl20);
+            this.Controls.Add(this.labelControl19);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panelControl6);
             this.Controls.Add(this.panelControl5);
             this.Controls.Add(this.panelControl4);
@@ -678,6 +738,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -727,5 +788,10 @@
         private DevExpress.XtraEditors.DateEdit dateEdit11;
         private DevExpress.XtraEditors.DateEdit dateEdit12;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private System.Windows.Forms.ListBox listBox1;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraEditors.LabelControl labelControl21;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }

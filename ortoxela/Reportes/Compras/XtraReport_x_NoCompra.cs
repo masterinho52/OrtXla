@@ -13,5 +13,10 @@ namespace ortoxela.Reportes.Compras
             InitializeComponent();
         }
 
+        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+
+        }
+
     }
 }

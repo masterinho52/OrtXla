@@ -399,6 +399,7 @@ namespace ortoxela.Reportes.Compras
             this.xrLabel20});
             this.PageHeader.HeightF = 93F;
             this.PageHeader.Name = "PageHeader";
+            this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
             // xrLabel22
             // 
@@ -559,7 +560,7 @@ namespace ortoxela.Reportes.Compras
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
             this.Fecha_fin});
-            this.Version = "11.2";
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
