@@ -246,7 +246,7 @@ namespace ortoxela.Reportes.Ventas
                      reportev.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                      reportev.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                      reportev.Parameters["nombre_estado"].Value = estado;
-                     reportev.Parameters["Series"].Value = ListaNombresSeries;
+                     //reportev.Parameters["Series"].Value = ListaNombresSeries;
                      reportev.RequestParameters = false;
                      reportev.ShowPreviewDialog();
                  }
@@ -529,7 +529,7 @@ namespace ortoxela.Reportes.Ventas
                     string consulta = "SELECT        codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, nombre_bodega, fecha_compra, Tipo_Pago, nombre_cliente, codigo_tipoc, " +
                    " nombre_cliente1, no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, costo_sin_iva, forma_pago, " +
                    " codigo_subcat, nombre_subcategoria, codigo_serie FROM            v_ventas_detalle_socio_categoria " +
-                   " where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' " +
+                   " where fecha_compra between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' " +
                    " and codigo_serie in (" + ListaSeries + ") ";
 
                     MySqlDataAdapter adaptadorx = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
