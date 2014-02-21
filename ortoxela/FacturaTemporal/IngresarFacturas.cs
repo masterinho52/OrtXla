@@ -971,6 +971,11 @@ namespace ortoxela.FacturaTemporal
             
         }
 
+        private void textCodigoArt_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
     
 
       

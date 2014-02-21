@@ -111,7 +111,7 @@ namespace ortoxela.Pedido
         private void frm_pedido_Load(object sender, EventArgs e)
         {
             tieneDeposito = 0;
-            cadena = "SELECT (MAX(recibos.no_recibo)+1)AS 'NORECIBO' FROM recibos";
+            cadena = "SELECT (COALESCE(MAX(recibos.no_recibo),0)+1)AS 'NORECIBO' FROM recibos";
             textNoReciboVale.Text= logicaorto.Tabla(cadena).Rows[0]["NORECIBO"].ToString();
             //HijoPadre();
             NumeroDocu();
@@ -1549,6 +1549,11 @@ namespace ortoxela.Pedido
             }
             catch
             { }
+        }
+
+        private void textDetalleVale_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
 
 

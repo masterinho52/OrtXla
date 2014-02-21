@@ -218,11 +218,17 @@ namespace ortoxela
       
         public DataTable Tabla(string consulta)
         {
-                      
+            try
+            {
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, conexion);
                 DataTable tabla = new DataTable();
                 adaptador.Fill(tabla);
-                return tabla;          
+                return tabla;
+            }
+            catch
+            {
+                return null;
+            }
 
         }
         public bool ExisteRegistro(string consulta)
