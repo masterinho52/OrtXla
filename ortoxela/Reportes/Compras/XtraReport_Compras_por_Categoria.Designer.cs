@@ -36,7 +36,6 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.xrPageInfo3 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo4 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
@@ -63,6 +62,8 @@
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Empresa = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_v_compras_detalle_proveedor_categoria1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -77,9 +78,9 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel11,
             this.xrPageInfo3,
-            this.xrPageInfo4,
-            this.xrLabel15});
+            this.xrPageInfo4});
             this.TopMargin.HeightF = 52.08333F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -109,18 +110,6 @@
             this.xrPageInfo4.StylePriority.UseFont = false;
             this.xrPageInfo4.StylePriority.UseTextAlignment = false;
             this.xrPageInfo4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // xrLabel15
-            // 
-            this.xrLabel15.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(325F, 25F);
-            this.xrLabel15.Name = "xrLabel15";
-            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel15.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel15.StylePriority.UseFont = false;
-            this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "OrtoXela, S.A.";
-            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // BottomMargin
             // 
@@ -413,6 +402,22 @@
             this.xrLabel6.Text = "Total";
             this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
+            // Empresa
+            // 
+            this.Empresa.Description = "Parameter1";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Value = "";
+            // 
+            // xrLabel11
+            // 
+            this.xrLabel11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Empresa, "Text", "")});
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(312.5F, 19.08332F);
+            this.xrLabel11.Name = "xrLabel11";
+            this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel11.SizeF = new System.Drawing.SizeF(137.5F, 23F);
+            this.xrLabel11.Text = "xrLabel11";
+            // 
             // XtraReport_Compras_por_Categoria
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -429,7 +434,8 @@
             this.Margins = new System.Drawing.Printing.Margins(50, 52, 52, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
-            this.Fecha_fin});
+            this.Fecha_fin,
+            this.Empresa});
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_v_compras_detalle_proveedor_categoria1)).EndInit();
@@ -445,7 +451,6 @@
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo3;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
@@ -470,5 +475,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        private DevExpress.XtraReports.Parameters.Parameter Empresa;
     }
 }

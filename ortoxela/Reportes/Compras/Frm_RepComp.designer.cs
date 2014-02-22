@@ -142,6 +142,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit2.Size = new System.Drawing.Size(150, 20);
             this.dateEdit2.TabIndex = 6;
+            this.dateEdit2.EditValueChanged += new System.EventHandler(this.dateEdit2_EditValueChanged);
             // 
             // simpleButton1
             // 

@@ -37,7 +37,6 @@ namespace ortoxela.Reportes.Compras
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo4 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo3 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -66,6 +65,8 @@ namespace ortoxela.Reportes.Compras
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Empresa = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_ComprasGeneral1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -174,18 +175,6 @@ namespace ortoxela.Reportes.Compras
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.TopMargin.Visible = false;
-            // 
-            // xrLabel15
-            // 
-            this.xrLabel15.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(337.5F, 0F);
-            this.xrLabel15.Name = "xrLabel15";
-            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel15.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel15.StylePriority.UseFont = false;
-            this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "OrtoXela";
-            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrPageInfo4
             // 
@@ -448,6 +437,22 @@ namespace ortoxela.Reportes.Compras
             this.xrLabel8.Text = "xrLabel8";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
+            // Empresa
+            // 
+            this.Empresa.Description = "Parameter1";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Value = "";
+            // 
+            // xrLabel15
+            // 
+            this.xrLabel15.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Empresa, "Text", "")});
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(300.8331F, 0F);
+            this.xrLabel15.Name = "xrLabel15";
+            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel15.SizeF = new System.Drawing.SizeF(187.5001F, 23F);
+            this.xrLabel15.Text = "xrLabel15";
+            // 
             // XtraReport_x_Compra_X_Arti
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -466,8 +471,9 @@ namespace ortoxela.Reportes.Compras
             this.Margins = new System.Drawing.Printing.Margins(40, 29, 24, 56);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
-            this.Fecha_fin});
-            this.Version = "11.2";
+            this.Fecha_fin,
+            this.Empresa});
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_ComprasGeneral1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -495,7 +501,6 @@ namespace ortoxela.Reportes.Compras
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo4;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
@@ -513,5 +518,7 @@ namespace ortoxela.Reportes.Compras
         private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
+        private DevExpress.XtraReports.Parameters.Parameter Empresa;
     }
 }

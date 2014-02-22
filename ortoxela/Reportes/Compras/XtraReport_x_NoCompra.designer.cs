@@ -41,7 +41,6 @@ namespace ortoxela.Reportes.Compras
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.xrPageInfo5 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo3 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.dataSet11 = new ortoxela.Reportes.Compras.DataSet1();
@@ -73,6 +72,8 @@ namespace ortoxela.Reportes.Compras
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Empresa = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -192,9 +193,9 @@ namespace ortoxela.Reportes.Compras
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel12,
             this.xrPageInfo5,
-            this.xrPageInfo3,
-            this.xrLabel17});
+            this.xrPageInfo3});
             this.TopMargin.HeightF = 36.41666F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -225,18 +226,6 @@ namespace ortoxela.Reportes.Compras
             this.xrPageInfo3.StylePriority.UseFont = false;
             this.xrPageInfo3.StylePriority.UseTextAlignment = false;
             this.xrPageInfo3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // xrLabel17
-            // 
-            this.xrLabel17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(300F, 13.41666F);
-            this.xrLabel17.Name = "xrLabel17";
-            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel17.SizeF = new System.Drawing.SizeF(178.125F, 23F);
-            this.xrLabel17.StylePriority.UseFont = false;
-            this.xrLabel17.StylePriority.UseTextAlignment = false;
-            this.xrLabel17.Text = "OrtoXela S.A.";
-            this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // BottomMargin
             // 
@@ -538,6 +527,22 @@ namespace ortoxela.Reportes.Compras
             this.xrLabel4.Text = "xrLabel4";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
+            // Empresa
+            // 
+            this.Empresa.Description = "Parameter1";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Value = "";
+            // 
+            // xrLabel12
+            // 
+            this.xrLabel12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Empresa, "Text", "")});
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(329.1667F, 10.00001F);
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel12.SizeF = new System.Drawing.SizeF(148.7498F, 23F);
+            this.xrLabel12.Text = "xrLabel12";
+            // 
             // XtraReport_x_NoCompra
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -559,7 +564,8 @@ namespace ortoxela.Reportes.Compras
             this.Margins = new System.Drawing.Printing.Margins(38, 29, 36, 35);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
-            this.Fecha_fin});
+            this.Fecha_fin,
+            this.Empresa});
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -596,7 +602,6 @@ namespace ortoxela.Reportes.Compras
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo3;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel17;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo5;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
@@ -612,5 +617,7 @@ namespace ortoxela.Reportes.Compras
         private DevExpress.XtraReports.UI.XRLabel xrLabel21;
         private DevExpress.XtraReports.UI.XRLabel xrLabel19;
         private DevExpress.XtraReports.UI.XRLabel xrLabel20;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        private DevExpress.XtraReports.Parameters.Parameter Empresa;
     }
 }
