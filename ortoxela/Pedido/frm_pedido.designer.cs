@@ -74,7 +74,6 @@
             this.textCheque = new DevExpress.XtraEditors.TextEdit();
             this.textBanco = new DevExpress.XtraEditors.TextEdit();
             this.textNoRecibo = new DevExpress.XtraEditors.TextEdit();
-            this.textAtencionDr = new DevExpress.XtraEditors.TextEdit();
             this.textTotalVale = new DevExpress.XtraEditors.TextEdit();
             this.textNumeroDocVale = new DevExpress.XtraEditors.TextEdit();
             this.textUtilizadoPaciente = new DevExpress.XtraEditors.TextEdit();
@@ -860,7 +859,6 @@
             this.groupControl5.Controls.Add(this.labelControl13);
             this.groupControl5.Controls.Add(this.labelControl30);
             this.groupControl5.Controls.Add(this.simpleButton6);
-            this.groupControl5.Controls.Add(this.textAtencionDr);
             this.groupControl5.Controls.Add(this.gridLookSerieVale);
             this.groupControl5.Controls.Add(this.labelControl39);
             this.groupControl5.Controls.Add(this.textUtilizadoPaciente);

@@ -73,12 +73,11 @@ namespace ortoxela.FacturaTemporal
 
             try
             {
-                cadena = "SELECT username,userid FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                cadena = "SELECT userid,username FROM ortoxela.usuarios WHERE mostrar_ventas=1";
                 gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookUpEdit1.Properties.DisplayMember = "username";
                 gridLookUpEdit1.Properties.ValueMember = "userid";
-                gridLookUpEdit1.EditValue = 0;
-                gridLookUpEdit1.Text = "";
+                gridLookUpEdit1.EditValue = 0;                
             }
             catch
             { }  
@@ -581,7 +580,7 @@ namespace ortoxela.FacturaTemporal
             {
                 Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
                 reporte.Parameters["ID"].Value = id_nuevoIngreso;
-                reporte.Parameters["LETRAS"].Value =logicaorto.enletras(textPrecioTotal.Text.Replace("Q",""));
+                reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency).ToString());                   
                 reporte.Parameters["Vende"].Value = gridLookUpEdit1.Text;
                 reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
                 reporte.RequestParameters = false;

@@ -30,6 +30,8 @@ namespace ortoxela.Pedido.Factura
         {
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Vende = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
@@ -61,11 +63,9 @@ namespace ortoxela.Pedido.Factura
             this.contados = new DevExpress.XtraReports.UI.CalculatedField();
             this.creditos = new DevExpress.XtraReports.UI.CalculatedField();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.vueltosTableAdapter = new ortoxela.Vueltos.Vuelto.DataSetVueltoTableAdapters.VueltosTableAdapter();
-            this.Vende = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
-            this.SM_PC_FO = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SM_PC_FO = new DevExpress.XtraReports.Parameters.Parameter();
+            this.vueltosTableAdapter = new ortoxela.Vueltos.Vuelto.DataSetVueltoTableAdapters.VueltosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFactura1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -83,6 +83,22 @@ namespace ortoxela.Pedido.Factura
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel20
+            // 
+            this.xrLabel20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.Vende, "Text", "")});
+            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(558.92F, 18.00003F);
+            this.xrLabel20.Name = "xrLabel20";
+            this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel20.SizeF = new System.Drawing.SizeF(100F, 17.99998F);
+            this.xrLabel20.Text = "xrLabel20";
+            // 
+            // Vende
+            // 
+            this.Vende.Description = "Vendedor";
+            this.Vende.Name = "Vende";
+            this.Vende.Value = "";
             // 
             // xrLabel15
             // 
@@ -211,7 +227,7 @@ namespace ortoxela.Pedido.Factura
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 2.124977F;
+            this.BottomMargin.HeightF = 0.04164378F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -330,7 +346,7 @@ namespace ortoxela.Pedido.Factura
             // 
             this.xrLabel12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Encabezado.Encabezado_Detalle.precio_total")});
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(703F, 32.04168F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(703F, 22.99999F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel12.SizeF = new System.Drawing.SizeF(100F, 23F);
@@ -343,7 +359,7 @@ namespace ortoxela.Pedido.Factura
             // 
             this.xrLabel11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.LETRAS, "Text", "")});
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(98.33336F, 32.04168F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(112.4982F, 22.99999F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel11.SizeF = new System.Drawing.SizeF(468.75F, 23F);
@@ -379,28 +395,20 @@ namespace ortoxela.Pedido.Factura
             this.xrLabel12,
             this.xrLabel11,
             this.xrLabel13});
-            this.PageFooter.HeightF = 81.20836F;
+            this.PageFooter.HeightF = 543.7084F;
             this.PageFooter.Name = "PageFooter";
             // 
-            // vueltosTableAdapter
+            // xrLabel21
             // 
-            this.vueltosTableAdapter.ClearBeforeFill = true;
-            // 
-            // Vende
-            // 
-            this.Vende.Description = "Vendedor";
-            this.Vende.Name = "Vende";
-            this.Vende.Value = "";
-            // 
-            // xrLabel20
-            // 
-            this.xrLabel20.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding(this.Vende, "Text", "")});
-            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(558.92F, 18.00003F);
-            this.xrLabel20.Name = "xrLabel20";
-            this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel20.SizeF = new System.Drawing.SizeF(100F, 17.99998F);
-            this.xrLabel20.Text = "xrLabel20";
+            this.xrLabel21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.SM_PC_FO, "Text", "")});
+            this.xrLabel21.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 45.99997F);
+            this.xrLabel21.Name = "xrLabel21";
+            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel21.SizeF = new System.Drawing.SizeF(754.588F, 16.16666F);
+            this.xrLabel21.StylePriority.UseFont = false;
+            this.xrLabel21.Text = "xrLabel21";
             // 
             // SM_PC_FO
             // 
@@ -408,17 +416,9 @@ namespace ortoxela.Pedido.Factura
             this.SM_PC_FO.Name = "SM_PC_FO";
             this.SM_PC_FO.Value = "";
             // 
-            // xrLabel21
+            // vueltosTableAdapter
             // 
-            this.xrLabel21.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding(this.SM_PC_FO, "Text", "")});
-            this.xrLabel21.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(0F, 55.04169F);
-            this.xrLabel21.Name = "xrLabel21";
-            this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel21.SizeF = new System.Drawing.SizeF(803.0001F, 16.16666F);
-            this.xrLabel21.StylePriority.UseFont = false;
-            this.xrLabel21.Text = "xrLabel21";
+            this.vueltosTableAdapter.ClearBeforeFill = true;
             // 
             // XtraReportFactura
             // 
@@ -435,7 +435,7 @@ namespace ortoxela.Pedido.Factura
             this.DataMember = "Encabezado";
             this.DataSource = this.dataSetFactura1;
             this.FilterString = "[id_documento] = ?ID";
-            this.Margins = new System.Drawing.Printing.Margins(38, 9, 84, 2);
+            this.Margins = new System.Drawing.Printing.Margins(38, 9, 84, 0);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ID,
             this.LETRAS,

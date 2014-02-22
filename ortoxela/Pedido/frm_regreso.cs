@@ -60,7 +60,7 @@ namespace ortoxela.Pedido
 
             try
             {
-                cadena = "SELECT username,userid FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                cadena = "SELECT userid,username FROM ortoxela.usuarios WHERE mostrar_ventas=1";
                 gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookUpEdit1.Properties.DisplayMember = "username";
                 gridLookUpEdit1.Properties.ValueMember = "userid";
@@ -204,6 +204,7 @@ namespace ortoxela.Pedido
                     textTotalPedido.Text = Convert.ToDouble(tempLlena.Rows[0]["monto_neto"]).ToString("C");
                     radioGroup1.SelectedIndex = Convert.ToInt16(Convert.ToBoolean(tempLlena.Rows[0]["contado_credito"]));
                     cadena = "SELECT cli.codigo_cliente,cli.nombre_cliente FROM header_doctos_inv cab INNER JOIN clientes cli ON cli.codigo_cliente=cab.socio_comercial WHERE cab.id_documento=" + id_pedido;
+                    tempLlena = logicaorto.Tabla(cadena);
                     textSocioComercial.Text = tempLlena.Rows[0]["nombre_cliente"].ToString();
                     cadena = "SELECT header_doctos_inv.estadoid FROM header_doctos_inv WHERE header_doctos_inv.id_documento="+id_pedido;
                     tempLlena = logicaorto.Tabla(cadena);
@@ -274,6 +275,7 @@ namespace ortoxela.Pedido
 
         private void sbAceptar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (dxValidationAceptaDev.Validate() & gridView1.DataRowCount > 0)
             {
                 if (MessageBox.Show("¿ESTA SEGURO DE CONTINUAR, AL HACER ESTO NO HAY VUELTA ATRAS?", "INFORMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -298,10 +300,11 @@ namespace ortoxela.Pedido
                             
                         }
                         string tempoValor = textTotalDevuelta.Text.Replace(",", "");
-                        if (Convert.ToDouble(tempoValor.Replace("Q","")) > 0)
+
+                        if (double.Parse(tempoValor.ToString(), NumberStyles.Currency) > 0)
                         {
                             cadena = "INSERT INTO ortoxela.vueltos(codigo_cliente, id_vale,id_recibo,id_pedido, monto_vuelto, fecha_creacion, estadoid) " +
-                                        "VALUES (" + id_cliente + ", " + id_vale + "," + id_recibo + "," + id_pedido + ", " + tempoValor.Replace("Q", "") + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "',4)";
+                                        "VALUES (" + id_cliente + ", " + id_vale + "," + id_recibo + "," + id_pedido + ", " + double.Parse(tempoValor.ToString(), NumberStyles.Currency) + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "',4)";
                             comando = new MySqlCommand(cadena, conexion);
                             comando.Transaction = transa;
                             comando.ExecuteNonQuery();
@@ -332,6 +335,7 @@ namespace ortoxela.Pedido
             {
                 clases.ClassMensajes.FaltanDatosEnCampos(this);
             }
+            Cursor.Current = Cursors.Default ;
         }
 
         private void xtraTabPage1_Paint(object sender, PaintEventArgs e)
@@ -385,7 +389,7 @@ namespace ortoxela.Pedido
             catch
             { }
             textEditVENDEDOR.Text = clases.ClassVariables.NombreComple;
-            gridLookUpEdit1.Text = clases.ClassVariables.NombreComple;
+            // gridLookUpEdit1.Text = clases.ClassVariables.NombreComple;
             
                 DataTable tempoFactura = new DataTable();
             tempoFactura.Columns.Add("CODIGO");
@@ -434,10 +438,11 @@ namespace ortoxela.Pedido
             }
             
             textTotalFactura.Text = TotalFactura.ToString("C");
-            textTotalDevuelta.Text = total_devuelta.ToString("C");            
-            if (((Convert.ToDouble(textTotalFactura.Text.Replace("Q", "")) - total_devuelta))>=0)
-                textTotalFactura.Text = (Convert.ToDouble(textTotalFactura.Text.Replace("Q", "")) - total_devuelta).ToString("C");
-            total_devuelta =  Convert.ToDouble(textTotalPedido.Text.Replace("Q", ""))-Convert.ToDouble(textTotalFactura.Text.Replace("Q",""));
+            textTotalDevuelta.Text = total_devuelta.ToString("C");
+
+            if (((double.Parse(textTotalFactura.Text.ToString(), NumberStyles.Currency) - total_devuelta)) >= 0)
+                textTotalFactura.Text = (double.Parse(textTotalFactura.Text.ToString(), NumberStyles.Currency) - total_devuelta).ToString("C");
+            total_devuelta =  double.Parse(textTotalPedido.Text.ToString(), NumberStyles.Currency)   - double.Parse(textTotalFactura.Text.ToString(), NumberStyles.Currency);
             textTotalDevuelta.Text = total_devuelta.ToString("C");
         }
 
@@ -479,8 +484,8 @@ namespace ortoxela.Pedido
                     conexion.Open();
                     transa = conexion.BeginTransaction();
                     string tempoTotalFactura = textTotalFactura.Text.Replace(",", "");
-                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento) " +
-                            "VALUES (" + gridLookDocFactura.EditValue + ","+gridLookTipoPago.EditValue+", '" + textNumeroDocFactura.Text + "', " + id_cliente + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + tempoTotalFactura.Replace("Q", "") + ",0," + tempoTotalFactura.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ","+id_socio_comercial+",4," + radioGroup1.SelectedIndex + ",'"+textDeposito.Text+"');select last_insert_id();";
+                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento,vendedor) " +
+                            "VALUES (" + gridLookDocFactura.EditValue + "," + gridLookTipoPago.EditValue + ", '" + textNumeroDocFactura.Text + "', " + id_cliente + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ",0," + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ", " + clases.ClassVariables.id_usuario + "," + id_socio_comercial + ",4," + radioGroup1.SelectedIndex + ",'" + textDeposito.Text + "'," + gridLookUpEdit1.EditValue + ");select last_insert_id();";
                     comando = new MySqlCommand(cadena, conexion);
                     comando.Transaction = transa;
                     id_nuevo_factura = comando.ExecuteScalar().ToString();
@@ -518,7 +523,8 @@ namespace ortoxela.Pedido
                     {
                         Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
                         reporte.Parameters["ID"].Value = id_nuevo_factura;
-                        reporte.Parameters["LETRAS"].Value = logicaorto.enletras(textTotalDeFactura.Text.Replace("Q",""));
+                        reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency).ToString());
+                        
                         reporte.Parameters["Vende"].Value = textEditVENDEDOR.Text;
                         reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + textSocioComercial.Text + " - Operado: " + textEdit4.Text;
                         reporte.RequestParameters = false;

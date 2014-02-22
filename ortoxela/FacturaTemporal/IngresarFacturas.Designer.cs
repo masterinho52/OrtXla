@@ -205,6 +205,7 @@
             // 
             // gridLookUpEdit1
             // 
+            this.gridLookUpEdit1.EditValue = "Seleccione Vendedor";
             this.gridLookUpEdit1.Location = new System.Drawing.Point(1008, 52);
             this.gridLookUpEdit1.Name = "gridLookUpEdit1";
             this.gridLookUpEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
@@ -490,7 +491,7 @@
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Location = new System.Drawing.Point(1041, 89);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(154, 19);
+            this.labelControl14.Size = new System.Drawing.Size(151, 19);
             this.labelControl14.TabIndex = 72;
             this.labelControl14.Text = "TOTAL DESCUENTO:";
             this.labelControl14.Visible = false;
@@ -573,11 +574,11 @@
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "CAMPO OBLIGATORIO";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationEncabezado.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule4);
+            this.dxValidationProvider2.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule4);
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "CAMPO OBLIGATORIO";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider2.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule5);
+            this.dxValidationEncabezado.SetValidationRule(this.gridLookTipoDocumento, conditionValidationRule5);
             this.gridLookTipoDocumento.EditValueChanged += new System.EventHandler(this.gridLookTipoDocumento_EditValueChanged);
             // 
             // gridView3
@@ -662,7 +663,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Location = new System.Drawing.Point(861, 405);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(120, 19);
+            this.labelControl12.Size = new System.Drawing.Size(118, 19);
             this.labelControl12.TabIndex = 46;
             this.labelControl12.Text = "TOTAL SIN IVA:";
             this.labelControl12.Visible = false;
@@ -673,7 +674,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Location = new System.Drawing.Point(1094, 419);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(118, 19);
+            this.labelControl11.Size = new System.Drawing.Size(116, 19);
             this.labelControl11.TabIndex = 45;
             this.labelControl11.Text = "PRECIO TOTAL:";
             // 
@@ -801,7 +802,7 @@
             this.textVenta.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textVenta.Size = new System.Drawing.Size(85, 20);
             this.textVenta.TabIndex = 7;
-            this.dxValidationProvider1.SetValidationRule(this.textVenta, conditionValidationRule4);
+            this.dxValidationProvider1.SetValidationRule(this.textVenta, conditionValidationRule5);
             // 
             // sbAgregaArt
             // 
@@ -829,7 +830,7 @@
             this.textCantidadArt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCantidadArt.Size = new System.Drawing.Size(74, 20);
             this.textCantidadArt.TabIndex = 5;
-            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule5);
+            this.dxValidationProvider1.SetValidationRule(this.textCantidadArt, conditionValidationRule4);
             // 
             // labelControl7
             // 
@@ -934,7 +935,7 @@
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Location = new System.Drawing.Point(892, 437);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(89, 19);
+            this.labelControl15.Size = new System.Drawing.Size(87, 19);
             this.labelControl15.TabIndex = 49;
             this.labelControl15.Text = "TOTAL IVA:";
             this.labelControl15.Visible = false;
