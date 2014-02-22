@@ -103,11 +103,22 @@ namespace ortoxela.Pedido
                 gridLookSerieRecibo.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookSerieRecibo.Properties.DisplayMember = "DOCUMENTO";
                 gridLookSerieRecibo.Properties.ValueMember = "CODIGO";
-                gridLookSerieRecibo.EditValue = 1;
-                gridLookBodega.EditValue = logicaorto.Tabla(cadena).Rows[0][0].ToString();
+                gridLookSerieRecibo.EditValue = logicaorto.Tabla(cadena).Rows[0][0].ToString();
+                gridLookSerieRecibo.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
             }
             catch
             { }
+
+            try {
+                cadena = "SELECT codigo_cliente AS codigodoc,nombre_cliente AS nombreDoctor FROM clientes WHERE clientes.`codigo_tipoc` =7";
+                gridLookDoctores.Properties.DataSource = logicaorto.Tabla(cadena);
+                gridLookDoctores.Properties.DisplayMember = "nombreDoctor";
+                gridLookDoctores.Properties.ValueMember = "codigodoc";
+                gridLookDoctores.Properties.NullText = "SELECCIONE DOCTOR";
+                gridLookDoctores.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            }
+            catch
+            {}
 
         }
 
@@ -154,8 +165,8 @@ namespace ortoxela.Pedido
                 if (textDeposito.Text != "")
                 {
                     /* jramirez 2013.07.04 se agregó a la inserción el número de depósito del pedido (vale) */
-                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial, descripcion, estadoid,contado_credito,refer_documento) " +
-                        "VALUES (" + gridLookTipoDocumento.EditValue + ", " + gridLookTipoPago.EditValue + ", '" + textNoDocumento.Text + "', " + id_cliente + ", '" + dateFechaPedido.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TempTotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + id_usuario_descuento + ",'" + id_socioComercial + "', '" + memoDescripcion.Text + "', 8," + radioGroup2.SelectedIndex + ",'" + textDeposito.Text + "');select last_insert_id();";
+                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial, descripcion, estadoid,contado_credito,refer_documento,doctor) " +
+                        "VALUES (" + gridLookTipoDocumento.EditValue + ", " + gridLookTipoPago.EditValue + ", '" + textNoDocumento.Text + "', " + id_cliente + ", '" + dateFechaPedido.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TempTotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + id_usuario_descuento + ",'" + id_socioComercial + "', '" + memoDescripcion.Text + "', 8," + radioGroup2.SelectedIndex + ",'" + textDeposito.Text + "',"+ gridLookDoctores.EditValue +");select last_insert_id();";
                 }
                 else
                 {
@@ -756,7 +767,7 @@ namespace ortoxela.Pedido
         private void llenaPedido()
         {
             textPacientePedido.Text = textUtilizadoPaciente.Text;
-            textDoctorPedido.Text = textAtencionDr.Text;
+            textDoctorPedido.Text = gridLookDoctores.Text;
             textHospital.Text = textSocioComercial.Text;
             dateFechaPedido.DateTime = DateTime.Now;
         }
@@ -984,8 +995,8 @@ namespace ortoxela.Pedido
                 string depo = textDeposito.Text;
                 if (depo.Length > 0 )
                         tipo_pago = 3;
-                cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, socio_comercial, estadoid, contado_credito,refer_documento) "+
-                         "VALUES (" + gridLookSerieVale.EditValue + ","+tipo_pago+", '" + textNumeroDocVale.Text+ "', " + id_cliente+ ", '" +dateEdit1.DateTime.ToString("yyyy-MM-dd") + "', " + totalVale+ ",0, " + totalVale+ ", " + clases.ClassVariables.id_usuario+ ",'" +id_socioComercial+ "',8,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"');SELECT LAST_INSERT_ID();";
+                cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago, no_documento, codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, socio_comercial, estadoid, contado_credito,refer_documento,doctor) "+
+                         "VALUES (" + gridLookSerieVale.EditValue + ","+tipo_pago+", '" + textNumeroDocVale.Text+ "', " + id_cliente+ ", '" +dateEdit1.DateTime.ToString("yyyy-MM-dd") + "', " + totalVale+ ",0, " + totalVale+ ", " + clases.ClassVariables.id_usuario+ ",'" +id_socioComercial+ "',8,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"',"+gridLookDoctores.EditValue.ToString()+");SELECT LAST_INSERT_ID();";
                 comando = new MySqlCommand(cadena,conexion);
                 comando.Transaction = transa;
                 id_nuevo_vale = comando.ExecuteScalar().ToString();                
@@ -1497,7 +1508,7 @@ namespace ortoxela.Pedido
                 gridLookSerieVale.EditValue = tempLlena.Rows[0]["codigo_serie"].ToString();
                 gridLookSerieVale.Enabled = false;
                 textSocioComercial.Enabled = false;
-                textAtencionDr.Enabled = false;
+                gridLookDoctores.Enabled = false;
                 /* unicos no bloqueados */
                 gridLookTipoPago.EditValue = tempLlena.Rows[0]["tipo_pago"].ToString();
                 textDeposito.Text = tempLlena.Rows[0]["refer_documento"].ToString();

@@ -486,7 +486,7 @@ namespace ortoxela.FacturaTemporal
         }
         private void sbAceptar_Click(object sender, EventArgs e)
         {
-            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0 & gridLookTipoDocumento.SelectedText != "")
+            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0 & gridLookTipoDocumento.EditValue != "")
             {
                 
                     registraIngreso(); 

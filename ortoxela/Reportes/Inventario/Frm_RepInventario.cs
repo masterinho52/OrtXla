@@ -20,7 +20,7 @@ namespace ortoxela.Reportes.Inventario
         private void simpleButton1_Click(object sender, EventArgs e)
         {                
                 this.Cursor = Cursors.WaitCursor;
-                if ((dateEdit1.EditValue == null) || (dateEdit2.EditValue == null))
+                if ((FechaInicio.EditValue == null) || (FechaFin.EditValue == null))
                 {
                     MessageBox.Show("Faltan Fechas", "Error");
                     this.Cursor = Cursors.Default;
@@ -28,24 +28,24 @@ namespace ortoxela.Reportes.Inventario
                 }
                 Int32 Bodega_origen_int,Bodega_destino_int ;                
                 string consulta = "";
-                Bodega_origen_int = Int32.Parse(BodegaOrigen.SelectedValue.ToString());
+                Bodega_origen_int = Int32.Parse(bodegas.SelectedValue.ToString());
                 Bodega_destino_int = Int32.Parse(BodegaDestino.SelectedValue.ToString());       
-                consulta = "CALL sp_traslados_bodegas('" + dateEdit1.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + dateEdit2.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + Bodega_origen_int + ","+ Bodega_destino_int +"); ";
+                consulta = "CALL sp_traslados_bodegas('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + Bodega_origen_int + ","+ Bodega_destino_int +"); ";
                 
                 MySqlDataAdapter adaptadori = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
-                // DataSet_TrasladosBodega dataseti = new DataSet_TrasladosBodega();
+
                 DataSet dataseti = new DataSet();
                 adaptadori.Fill(dataseti, "v_traslados");
                 XtraReport_Traslados reportei = new XtraReport_Traslados();
-                // XtraReport_Inventario1 reportei = new XtraReport_Inventario1();
-                //  XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();            
+
                 reportei.DataSource = dataseti;
                 reportei.DataMember = dataseti.Tables["v_traslados"].TableName;
-                reportei.Parameters["Fecha_inicial"].Value = dateEdit1.EditValue;
-                reportei.Parameters["Fecha_final"].Value = dateEdit2.EditValue;
+                reportei.Parameters["Fecha_inicial"].Value = FechaInicio.EditValue;
+                reportei.Parameters["Fecha_final"].Value = FechaFin.EditValue;
                 reportei.Parameters["Texto_bodega"].Value = bodegas.Text.ToString();
                 reportei.Parameters["codigo_bodegai"].Value = Bodega_origen_int;
-                reportei.Parameters["codigo_bodegaf"].Value = Bodega_destino_int;                
+                reportei.Parameters["codigo_bodegaf"].Value = Bodega_destino_int;
+                reportei.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                 reportei.RequestParameters = false;
                 reportei.ShowPreview();
                 this.Cursor = Cursors.Default ;
@@ -94,20 +94,20 @@ namespace ortoxela.Reportes.Inventario
 
                         }
                     }
-            // XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();
-            // reportet.RequestParameters = false;
-            // reportet.ShowPreview();
+         
              
             MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
             DataSet_Inventario dataset = new DataSet_Inventario();
             adaptador1.Fill(dataset, "v_inventario");
             XtraReport_InventarioExistencia reportee = new XtraReport_InventarioExistencia();
-            //  XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();            
+
             reportee.DataSource = dataset;
             reportee.DataMember = dataset.Tables["v_inventario"].TableName;
             reportee.Parameters["codigo_bodega1"].Value = bodega1;
             reportee.Parameters["codigo_bodega2"].Value = bodega2;
             reportee.Parameters["bodega"].Value = botittle;
+            reportee.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+
             this.Cursor = Cursors.Default ;
             reportee.RequestParameters = false;
             reportee.ShowPreviewDialog();
@@ -168,11 +168,11 @@ namespace ortoxela.Reportes.Inventario
             }
             string fechaInicialx = "2011-12-01";
             
-            if ((dateEdit4.EditValue != null) && (dateEdit3.EditValue != null))
+            if ((FechaInicio.EditValue != null) && (FechaFin.EditValue != null))
             {
-                fechaInicialx = dateEdit4.DateTime.ToString("yyyy-MM-dd");
-                consulta = consulta + " and fecha between '" + dateEdit4.DateTime.ToString("yyyy-MM-dd") + " 00:00:00' ";
-                consulta = consulta + " and '" + dateEdit3.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' ";
+                fechaInicialx = FechaInicio.DateTime.ToString("yyyy-MM-dd");
+                consulta = consulta + " and fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00' ";
+                consulta = consulta + " and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' ";
             }
             
 
@@ -185,9 +185,11 @@ namespace ortoxela.Reportes.Inventario
             reporteP.Parameters["codigo_bodega"].Value = codigo_bodega;
             reporteP.Parameters["bodega"].Value = botittle;
             reporteP.Parameters["Fecha_inicio"].Value = Convert.ToDateTime(fechaInicialx);
-            reporteP.Parameters["Fecha_fin"].Value = dateEdit3.EditValue;
+            reporteP.Parameters["Fecha_fin"].Value = FechaFin.EditValue;
             reporteP.Parameters["categoria1"].Value = cat1;
             reporteP.Parameters["categoria2"].Value = cat2;
+            reporteP.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+
             this.Cursor = Cursors.Default;
             reporteP.RequestParameters = false;
             reporteP.ShowPreviewDialog();            
@@ -196,18 +198,21 @@ namespace ortoxela.Reportes.Inventario
         classortoxela logicaxela = new classortoxela();
         private void Frm_RepInventario_Load(object sender, EventArgs e)
         {
+            this.Text = "Reportes de Inventario - " + clases.ClassVariables.nombreEmpresa; 
             try
             {
-                string ssql = "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
-                            " union all  "+
-                            " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1";
+                string ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                    // "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
+                            // " union all  "+
+                            // " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1";
+                            
                 bodegas.DataSource = logicaxela.Tabla(ssql);
                 bodegas.DisplayMember = "nombre_bodega";
                 bodegas.ValueMember = "codigo_bodega";
                 //
-                BodegaOrigen.DataSource = logicaxela.Tabla(ssql);
-                BodegaOrigen.DisplayMember = "nombre_bodega";
-                BodegaOrigen.ValueMember = "codigo_bodega";
+                //BodegaOrigen.DataSource = logicaxela.Tabla(ssql);
+                //BodegaOrigen.DisplayMember = "nombre_bodega";
+                //BodegaOrigen.ValueMember = "codigo_bodega";
                 //
                 
                 BodegaDestino.DataSource = logicaxela.Tabla(ssql);
@@ -225,6 +230,26 @@ namespace ortoxela.Reportes.Inventario
                 comboBoxCategorias.DataSource = logicaxela.Tabla(ssql);
                 comboBoxCategorias.DisplayMember = "categoria";
                 comboBoxCategorias.ValueMember = "codigo";
+
+            }
+            catch
+            { }
+
+            /* FECHAS */
+            try
+            {
+
+                /* jramirez 2014.01.20 */
+
+                DateTime now = DateTime.Now;
+
+                string date = now.GetDateTimeFormats('d')[0];
+                this.FechaFin.EditValue = date;
+
+                DateTime now2 = DateTime.Now.AddMonths(-6);
+
+                string date2 = now2.ToShortDateString();
+                this.FechaInicio.EditValue = date2;
 
             }
             catch
@@ -263,9 +288,6 @@ namespace ortoxela.Reportes.Inventario
             {
                 consulta = consulta + " and codigo_categoria = " + comboBoxCategorias.SelectedValue;
             }
-            // XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();
-            // reportet.RequestParameters = false;
-            // reportet.ShowPreview();
 
             MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
             DataSet_Inventario dataset = new DataSet_Inventario();
@@ -274,9 +296,11 @@ namespace ortoxela.Reportes.Inventario
             reportet.DataSource = dataset;
             reportet.DataMember = dataset.Tables["v_inventario"].TableName;
             this.Cursor = Cursors.Default;
+            reportet.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
             reportet.RequestParameters = false;
             reportet.ShowPreviewDialog();
         }
+
                                                    
     }
 }

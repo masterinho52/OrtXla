@@ -192,7 +192,7 @@
             this.label16.ForeColor = System.Drawing.Color.Green;
             this.label16.Location = new System.Drawing.Point(319, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 19);
+            this.label16.Size = new System.Drawing.Size(131, 19);
             this.label16.TabIndex = 20;
             this.label16.Text = "SALDO ACTUAL:";
             // 
@@ -214,7 +214,7 @@
             this.label15.ForeColor = System.Drawing.Color.Green;
             this.label15.Location = new System.Drawing.Point(8, 59);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 19);
+            this.label15.Size = new System.Drawing.Size(120, 19);
             this.label15.TabIndex = 18;
             this.label15.Text = "SALDO TOTAL:";
             // 
@@ -260,7 +260,7 @@
             this.label11.ForeColor = System.Drawing.Color.Blue;
             this.label11.Location = new System.Drawing.Point(566, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 19);
+            this.label11.Size = new System.Drawing.Size(117, 19);
             this.label11.TabIndex = 13;
             this.label11.Text = "COMENTARIO:";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -280,7 +280,7 @@
             this.label10.ForeColor = System.Drawing.Color.Blue;
             this.label10.Location = new System.Drawing.Point(316, 87);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(185, 19);
+            this.label10.Size = new System.Drawing.Size(182, 19);
             this.label10.TabIndex = 11;
             this.label10.Text = "CANTIDAD RESTANTE: ";
             // 
@@ -351,7 +351,7 @@
             this.labelTotalDoc.ForeColor = System.Drawing.Color.Red;
             this.labelTotalDoc.Location = new System.Drawing.Point(4, 87);
             this.labelTotalDoc.Name = "labelTotalDoc";
-            this.labelTotalDoc.Size = new System.Drawing.Size(176, 19);
+            this.labelTotalDoc.Size = new System.Drawing.Size(174, 19);
             this.labelTotalDoc.TabIndex = 5;
             this.labelTotalDoc.Text = "TOTAL RECIBO: Q0.00";
             // 
@@ -375,7 +375,7 @@
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(507, -3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(190, 19);
+            this.label14.Size = new System.Drawing.Size(188, 19);
             this.label14.TabIndex = 16;
             this.label14.Text = "FACTURAS DEL CLIENTE";
             // 
@@ -693,9 +693,9 @@
             this.lbTotalSaldo.ForeColor = System.Drawing.Color.Red;
             this.lbTotalSaldo.Location = new System.Drawing.Point(982, 12);
             this.lbTotalSaldo.Name = "lbTotalSaldo";
-            this.lbTotalSaldo.Size = new System.Drawing.Size(42, 16);
+            this.lbTotalSaldo.Size = new System.Drawing.Size(33, 16);
             this.lbTotalSaldo.TabIndex = 13;
-            this.lbTotalSaldo.Text = "Q0.00";
+            this.lbTotalSaldo.Text = "0.00";
             // 
             // label13
             // 
@@ -740,9 +740,9 @@
             this.labelCantRestante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.labelCantRestante.Location = new System.Drawing.Point(1030, 41);
             this.labelCantRestante.Name = "labelCantRestante";
-            this.labelCantRestante.Size = new System.Drawing.Size(53, 19);
+            this.labelCantRestante.Size = new System.Drawing.Size(41, 19);
             this.labelCantRestante.TabIndex = 10;
-            this.labelCantRestante.Text = "Q0.00";
+            this.labelCantRestante.Text = "0.00";
             // 
             // label8
             // 

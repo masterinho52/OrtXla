@@ -83,6 +83,7 @@ namespace ortoxela.ModCobranza.Reporte
                     reporte.DataMember = datset.Tables["v_factura_credito_pendiente"].TableName;
                     reporte.Parameters["Fecha_inicio"].Value = dateEditInicial.DateTime.ToString("yyyy-MM-dd");
                     reporte.Parameters["Fecha_fin"].Value = dateEditFinal.DateTime.ToString("yyyy-MM-dd");
+                    reporte.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                     reporte.RequestParameters = false;
                     reporte.ShowPreviewDialog();
                 }
@@ -130,6 +131,7 @@ namespace ortoxela.ModCobranza.Reporte
                     reported.DataMember = dataset1.Tables["v_abonos_clientes"].TableName;
                     reported.Parameters["Fecha_inicio"].Value = dateEditInicial.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                     reported.Parameters["Fecha_fin"].Value = dateEditFinal.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                     reported.RequestParameters = false;
                     reported.ShowPreview();
                 }
@@ -177,6 +179,7 @@ namespace ortoxela.ModCobranza.Reporte
                     reporte.DataMember = datset.Tables["v_factura_credito_cancelada"].TableName;
                     reporte.Parameters["Fecha_inicio"].Value = dateEditInicial.DateTime.ToString("yyyy-MM-dd");
                     reporte.Parameters["Fecha_fin"].Value = dateEditFinal.DateTime.ToString("yyyy-MM-dd");
+                    reporte.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                     reporte.RequestParameters = false;
                     reporte.ShowPreviewDialog();
                 }
@@ -221,6 +224,24 @@ namespace ortoxela.ModCobranza.Reporte
 
         private void frm_reportes_Load(object sender, EventArgs e)
         {
+            /* FECHAS */
+            try
+            {
+                /* jramirez  */
+                DateTime now = DateTime.Now;
+
+                string date = now.GetDateTimeFormats('d')[0];
+                this.dateEditFinal.EditValue = date;
+
+                DateTime now2 = DateTime.Now.AddMonths(-6);
+
+                string date2 = now2.ToShortDateString();
+                this.dateEditInicial.EditValue = date2;
+
+            }
+            catch
+            { }
+            
             if (clases.ClassVariables.op_reporte == 1)
             {
                 panelControl1.Visible = true;

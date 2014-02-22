@@ -29,6 +29,7 @@ namespace ortoxela.Reportes.Ventas
          classortoxela logicaxela = new classortoxela();
          private void Frm_RepVentas_Load(object sender, EventArgs e)
          {
+             this.Text = "Reportes de Ventas - " + clases.ClassVariables.nombreEmpresa; 
              /* ESTADOS FACTURAS */
              try
              {
@@ -60,7 +61,7 @@ namespace ortoxela.Reportes.Ventas
                  string ssql;
 
                  /* jramirez 2013.07.24 */
-                 ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;                 
+                 ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
 
                  listBoxBodegas.DataSource = logicaxela.Tabla(ssql);
                  listBoxBodegas.DisplayMember = "nombre_bodega";
@@ -150,6 +151,8 @@ namespace ortoxela.Reportes.Ventas
                      reportef.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                      reportef.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                      reportef.Parameters["Series"].Value = ListaNombresSeries;
+                     reportef.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+                     
 
                      reportef.RequestParameters = false;
                      reportef.ShowPreview();
@@ -184,6 +187,8 @@ namespace ortoxela.Reportes.Ventas
                  reporteem.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                  reporteem.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                  reporteem.Parameters["Bodega"].Value = "1"; //bodegas.Text;
+                 reporteem.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
                  reporteem.RequestParameters = false;
                  reporteem.ShowPreview();
             }
@@ -246,7 +251,10 @@ namespace ortoxela.Reportes.Ventas
                      reportev.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                      reportev.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                      reportev.Parameters["nombre_estado"].Value = estado;
-                     //reportev.Parameters["Series"].Value = ListaNombresSeries;
+                     reportev.Parameters["Series"].Value = ListaNombresSeries;
+                     reportev.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
+
                      reportev.RequestParameters = false;
                      reportev.ShowPreviewDialog();
                  }
@@ -298,6 +306,8 @@ namespace ortoxela.Reportes.Ventas
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                     reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
                     reported.RequestParameters = false;
                     reported.ShowPreview();
                 }
@@ -335,6 +345,8 @@ namespace ortoxela.Reportes.Ventas
                         reported.DataMember = datasetx.Tables["v_ventas_articulo_mas"].TableName;
                         reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
                         reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
+                        reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
                         reported.RequestParameters = false;
                         reported.ShowPreview();
                     //}
@@ -389,6 +401,8 @@ namespace ortoxela.Reportes.Ventas
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                     reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
                     reported.RequestParameters = false;
                     reported.ShowPreview();
                 }
@@ -450,6 +464,8 @@ namespace ortoxela.Reportes.Ventas
                         reported.Parameters["codigo_subcat2"].Value = comboBox5.SelectedValue;
                     }
                     reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+
                     reported.RequestParameters = false;
                     reported.ShowPreview();
 
@@ -497,6 +513,7 @@ namespace ortoxela.Reportes.Ventas
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59"; ;
                     reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
 
                     reported.RequestParameters = false;
                     reported.ShowPreview();
@@ -543,6 +560,7 @@ namespace ortoxela.Reportes.Ventas
                     reported.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00"; ;
                     reported.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                     reported.Parameters["Series"].Value = ListaNombresSeries;
+                    reported.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
 
                     reported.RequestParameters = false;
                     reported.ShowPreview();

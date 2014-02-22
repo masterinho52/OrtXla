@@ -18,6 +18,13 @@ namespace ortoxela.ModCobranza
         {
             InitializeComponent();
         }
+        private string quitarMoneda(string valor)
+        {
+            string resultado = valor.Replace("Q", "");
+            resultado = resultado.Replace("L", "");
+            resultado = resultado.Replace("$", "");
+            return resultado;
+        }
 
         private void frm_Abono_Load(object sender, EventArgs e)
         {
@@ -55,7 +62,7 @@ namespace ortoxela.ModCobranza
             gridLookTipoPago.Properties.DataSource = ortoxela.Tabla(cadena);
             gridLookTipoPago.Properties.DisplayMember = "TIPO PAGO";
             gridLookTipoPago.Properties.ValueMember = "CODIGO";
-            gridLookTipoPago.EditValue = null;
+            gridLookTipoPago.EditValue = 0;
             //gridLookTipoPago.Properties.View.Columns["CODIGO"].Visible = false;
         }
         private void CargaBancos()
@@ -64,7 +71,7 @@ namespace ortoxela.ModCobranza
             gridLookBanco.Properties.DataSource = ortoxela.Tabla(cadena);
             gridLookBanco.Properties.DisplayMember = "NOMBRE";
             gridLookBanco.Properties.ValueMember = "CODIGO";
-            gridLookBanco.EditValue = null;
+            gridLookBanco.EditValue = 0;
             //gridLookTipoPago.Properties.View.Columns["CODIGO"].Visible = false;
         }
         private void CargaTipoDoc()
@@ -118,8 +125,8 @@ namespace ortoxela.ModCobranza
 
                     if ((Convert.ToDouble(gridView1.GetFocusedRowCellValue("SALDO ACTUAL")) - Convert.ToDouble(e.Value)) >= 0)
                     {
-
-                        if (Convert.ToDouble(e.Value) <= Convert.ToDouble(labelCantidadRestante.Text.Replace("Q", "")))
+                        
+                        if (Convert.ToDouble(e.Value) <= double.Parse(labelCantidadRestante.Text.ToString(), NumberStyles.Currency))
                         {                            
                             gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "SALDO", (Convert.ToDouble(gridView1.GetFocusedRowCellValue("SALDO ACTUAL")) - Convert.ToDouble(e.Value)).ToString("n"));
                             Total = 0;
@@ -130,7 +137,8 @@ namespace ortoxela.ModCobranza
                                     Total = Total + Convert.ToDouble(gridView1.GetRowCellValue(x, "ABONO"));
                                 }
                             }
-                            labelCantidadRestante.Text = (Convert.ToDouble(textTotal.Text.Replace("Q", "")) - Total).ToString("C");
+                            
+                            labelCantidadRestante.Text = (double.Parse(textTotal.Text.ToString(), NumberStyles.Currency) - Total).ToString("C");
                         }
                         else
                         {
@@ -164,7 +172,8 @@ namespace ortoxela.ModCobranza
             {
                 resuma =resuma + Convert.ToDouble(gridView1.GetRowCellValue(x,"ABONO"));
             }
-            labelCantidadRestante.Text = (Convert.ToDouble(textTotal.Text.Replace("Q", "")) - resuma).ToString("C");
+            
+            labelCantidadRestante.Text = (Convert.ToDouble(quitarMoneda(textTotal.Text)) - resuma).ToString("C");
         }
 
         private void gridView1_ValidateRow(object sender, ValidateRowEventArgs e)
@@ -187,7 +196,8 @@ namespace ortoxela.ModCobranza
         {
             try
             {
-                labelCantRestante.Text = Convert.ToDouble(textTotal.Text.Replace("Q","")).ToString("C");
+
+                labelCantRestante.Text = double.Parse(textTotal.Text.ToString(), NumberStyles.Currency).ToString();                
             }
             catch
             { }
@@ -243,14 +253,17 @@ namespace ortoxela.ModCobranza
                 gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "IDBANCO", id_bancos);
                 gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "BANCO", gridLookBanco.Text);
                 gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "MONTO", Convert.ToDouble(textMonto.Text).ToString("C"));
-                gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "SALDO", (Convert.ToDouble(labelCantRestante.Text.Replace("Q", "")) - Convert.ToDouble(textMonto.Text)).ToString("C"));
+                gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "SALDO", (Convert.ToDouble(quitarMoneda(labelCantRestante.Text)) - Convert.ToDouble(textMonto.Text)).ToString("C"));
                 gridView4.UpdateCurrentRow();
                 try
                 {
                     gridLookTipoPago.EditValue = null;
                 }
                 catch { }
-                labelCantRestante.Text = (Convert.ToDouble(labelCantRestante.Text.Replace("Q", "")) - Convert.ToDouble(textMonto.Text)).ToString("C");
+                double monto =Convert.ToDouble(textMonto.Text);
+                double cantres = double.Parse(labelCantRestante.Text.ToString(), NumberStyles.Currency);
+                double resto = cantres - monto;
+                labelCantRestante.Text = (resto).ToString("C");
                 textMonto.Text=textNoDoc.Text=gridLookBanco.Text= "";
                 textNombreCliente.Enabled = false;
                 dateEdit1.Enabled = false;
@@ -298,20 +311,28 @@ namespace ortoxela.ModCobranza
             {
                 if (gridLookTipoPago.EditValue.ToString() == "1" | gridLookTipoPago.EditValue.ToString() == "4" | gridLookTipoPago.EditValue.ToString() == "5" | gridLookTipoPago.EditValue.ToString() == "6")
                 {
-                    if (dxValidationTipoPago.Validate() & (Convert.ToDouble(textMonto.Text) <= Convert.ToDouble(labelCantRestante.Text.Replace("Q", ""))))
+                    if (dxValidationTipoPago.Validate() ) 
                     {
-                        if(Convert.ToDouble(textMonto.Text)>=0)
-                        agregaTipoPagoaGV("0");
+                        double monto =Convert.ToDouble(textMonto.Text);
+                        double cantres = double.Parse(labelCantRestante.Text.ToString(), NumberStyles.Currency);
+                            // Convert.ToDouble(quitarMoneda(labelCantidadRestante.Text));
+                        if (monto <=cantres )
+                        {
+                            if (Convert.ToDouble(textMonto.Text) >= 0)
+                                agregaTipoPagoaGV("0");
+                            else
+                                Mensajes.Show(this, "Informacion", "El monto tiene que ser positivo.", Properties.Resources.Advertencia48);
+                        }
                         else
-                            Mensajes.Show(this, "Informacion", "El monto tiene que ser positivo.", Properties.Resources.Advertencia48);
+                            Mensajes.Show(this, "Informacion", "El monto debe ser menor a cantidad restante.", Properties.Resources.Advertencia48);
                     }
                     else
-                        Mensajes.Show(this, "Informacion", "Faltad Datos, o el monto es demsiado grande.", Properties.Resources.Advertencia48);
+                        Mensajes.Show(this, "Informacion", "Faltan Datos, o el monto es demsiado grande.", Properties.Resources.Advertencia48);
                 }
                 else
                 {
 
-                    if (dxValidationTipoPago.Validate() & (Convert.ToDouble(textMonto.Text) <= Convert.ToDouble(labelCantRestante.Text.Replace("Q", ""))))
+                    if (dxValidationTipoPago.Validate() & (Convert.ToDouble(textMonto.Text) <= double.Parse(labelCantRestante.Text.ToString(), NumberStyles.Currency)))
                     {
                         if (dxValidationBancos.Validate())
                         {
@@ -350,7 +371,7 @@ namespace ortoxela.ModCobranza
         classortoxela logicaorto = new classortoxela();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (dxValidationEncabezado.Validate() && Convert.ToDouble(labelCantRestante.Text.Replace("Q", ""))==0)
+            if (dxValidationEncabezado.Validate() && double.Parse(labelCantRestante.Text.ToString(), NumberStyles.Currency) == 0)
             {
                 xtraTabPage2.PageEnabled = true;
                 labelTotalDoc.Text = "TOTAL " +gridLookTipoDoc.Text.ToUpper() +": "+Convert.ToDouble(textTotal.Text).ToString("C");
@@ -360,7 +381,8 @@ namespace ortoxela.ModCobranza
                 cadena = "SELECT (MAX(recibos.no_recibo)+1)AS 'NORECIBO' FROM recibos where codigo_serie=24";
                 textNoRecibo.Text = logicaorto.Tabla(cadena).Rows[0]["NORECIBO"].ToString();
                 lbSaldoTotal.Text = lbTotalSaldo.Text;
-                lbRestoSaldo.Text = (Convert.ToDouble(lbTotalSaldo.Text.Replace("Q",""))-Convert.ToDouble(textTotal.Text)).ToString("C");
+
+                lbRestoSaldo.Text = (double.Parse(lbTotalSaldo.Text.ToString(), NumberStyles.Currency) - Convert.ToDouble(textTotal.Text)).ToString("C");
             }
             else
                 clases.ClassMensajes.FaltanDatosEnCampos(this);
@@ -398,7 +420,7 @@ namespace ortoxela.ModCobranza
                 for (int x = 0; x < gridView4.DataRowCount;x++)
                 {
                     cadena += "INSERT INTO ortoxela.detalle_recibos (id_recibos, codigo_serie, tipo_pago, monto,fecha_operacion, id_banco, no_documento, observaciones, activo)" +
-                                "  VALUES	('" + id_recibos + "', '"+gridLookTipoDoc.EditValue+"', '" + gridView4.GetRowCellValue(x, "IDTIPOPAGO").ToString() + "', '" + gridView4.GetRowCellValue(x, "MONTO").ToString().Replace("Q", "").Replace(",","") + "', '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + gridView4.GetRowCellValue(x, "IDBANCO").ToString() + "', '" + gridView4.GetRowCellValue(x, "NO DOCUMENTO").ToString() + "', '" + memoEdit1.Text + "', '1');";
+                                "  VALUES	('" + id_recibos + "', '"+gridLookTipoDoc.EditValue+"', '" + gridView4.GetRowCellValue(x, "IDTIPOPAGO").ToString() + "', '" + double.Parse(gridView4.GetRowCellValue(x, "MONTO").ToString(), NumberStyles.Currency) + "', '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + gridView4.GetRowCellValue(x, "IDBANCO").ToString() + "', '" + gridView4.GetRowCellValue(x, "NO DOCUMENTO").ToString() + "', '" + memoEdit1.Text + "', '1');";
 
                 }
                 comando = new MySqlCommand(cadena, conexion);
@@ -440,7 +462,8 @@ namespace ortoxela.ModCobranza
         
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (dxValidationGuardar.Validate() & Convert.ToDouble(labelCantidadRestante.Text.Replace("Q", "")) == 0)
+
+            if (dxValidationGuardar.Validate() & double.Parse(labelCantidadRestante.Text.ToString(), NumberStyles.Currency) == 0)
             {
                 cadena = "SELECT * FROM recibos WHERE recibos.codigo_serie="+gridLookTipoDoc.EditValue+" AND recibos.no_recibo="+textNoRecibo.Text;
                 if (logicaorto.ExisteRegistro(cadena) == false)
@@ -456,7 +479,7 @@ namespace ortoxela.ModCobranza
         {
             try
             {
-                labelCantRestante.Text = (Convert.ToDouble(labelCantRestante.Text.Replace("Q", "")) + Convert.ToDouble(gridView4.GetFocusedRowCellValue("MONTO").ToString().Replace("Q",""))).ToString("C");
+                labelCantRestante.Text = (double.Parse(labelCantidadRestante.Text.ToString(), NumberStyles.Currency) + double.Parse(labelCantidadRestante.Text.ToString(), NumberStyles.Currency)).ToString("C");
                 gridView4.DeleteSelectedRows();
             }
             catch
@@ -511,8 +534,9 @@ namespace ortoxela.ModCobranza
                         }
                         facturass += " "+memoEdit1.Text;
                         Pedido.ReciboCaja.DataSetReciboCaja dataset = new Pedido.ReciboCaja.DataSetReciboCaja();
-                dataset.Tables["recibos"].Rows.Add(textNoRecibo.Text, dateEdit1.DateTime, 1,textTotal.Text.Replace("Q", ""), clases.ClassVariables.id_usuario, 1, facturass, 
-                    "", "", textTotal.Text, abono, cancelacion, otro,logicaorto.enletras(textTotal.Text.Replace("Q", "")), gridLookCliente.Text, gridLookCliente.EditValue,
+                        // string cantidad = quitarMoneda(textTotal.Text).ToString();
+                dataset.Tables["recibos"].Rows.Add(textNoRecibo.Text, dateEdit1.DateTime, 1,double.Parse(textTotal.Text.ToString(), NumberStyles.Currency) , clases.ClassVariables.id_usuario, 1, facturass,
+                    "", "", textTotal.Text, abono, cancelacion, otro, logicaorto.enletras(textTotal.Text.Replace("Q","") ), gridLookCliente.Text, gridLookCliente.EditValue,
                     "",memoEdit1.Text,Convert.ToInt32(textNoRecibo.Text));
                 Pedido.ReciboCaja.XtraReportReciboCaja reporte = new Pedido.ReciboCaja.XtraReportReciboCaja();
                 reporte.DataSource = dataset;
@@ -555,7 +579,8 @@ namespace ortoxela.ModCobranza
 
         private void textTotal_Validating(object sender, CancelEventArgs e)
         {
-            if (decimal.Parse(textTotal.Text.Replace("Q", "")) > decimal.Parse(lbTotalSaldo.Text.Replace("Q", "")))
+       
+            if (double.Parse(textTotal.Text.ToString(), NumberStyles.Currency) > double.Parse(lbTotalSaldo.Text.ToString(), NumberStyles.Currency))
             {
                 Mensajes.Show(this, "Error", "MONTO NO PUEDE SER MAYOR A SALDO!, MONTO HA SIDO CAMBIADO.",Properties.Resources.Advertencia64);
                 textTotal.Text = lbTotalSaldo.Text.Replace("Q", "");
@@ -588,5 +613,7 @@ namespace ortoxela.ModCobranza
             if (e.Column.FieldName == "ABONO")
                 if (Convert.ToDecimal(e.Value) == 0) e.DisplayText = "0.00";
         }
+
+        
     }
 }

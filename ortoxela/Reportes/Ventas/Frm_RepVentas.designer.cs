@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -75,7 +76,7 @@
             this.listBoxBodegas = new System.Windows.Forms.ListBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxSeries = new System.Windows.Forms.ListBox();
-            this.dxValidationFechas = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationFechas = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();

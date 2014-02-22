@@ -74,6 +74,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frm_RepVueltos";
             this.Text = "REPORTE DE VUELTOS";
+            this.Load += new System.EventHandler(this.frm_RepVueltos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();

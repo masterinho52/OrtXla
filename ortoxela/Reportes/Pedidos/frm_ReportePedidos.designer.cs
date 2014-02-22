@@ -70,6 +70,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frm_ReportePedidos";
             this.Text = "Pedidos - Envios";
+            this.Load += new System.EventHandler(this.frm_ReportePedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

@@ -34,8 +34,6 @@
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.FechaFin = new DevExpress.XtraEditors.DateEdit();
-            this.FechaInicio = new DevExpress.XtraEditors.DateEdit();
             this.listBoxSeries = new System.Windows.Forms.ListBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxBodegas = new System.Windows.Forms.ListBox();
@@ -44,21 +42,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.FechaInicio = new DevExpress.XtraEditors.DateEdit();
+            this.FechaFin = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl6
             // 
             this.panelControl6.Controls.Add(this.labelControl18);
             this.panelControl6.Controls.Add(this.simpleButton6);
-            this.panelControl6.Location = new System.Drawing.Point(415, 127);
+            this.panelControl6.Location = new System.Drawing.Point(567, 113);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(632, 44);
             this.panelControl6.TabIndex = 15;
@@ -68,9 +68,9 @@
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl18.Location = new System.Drawing.Point(6, 12);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(159, 20);
+            this.labelControl18.Size = new System.Drawing.Size(297, 20);
             this.labelControl18.TabIndex = 3;
-            this.labelControl18.Text = "Corte de Caja Recibos";
+            this.labelControl18.Text = "Corte de Caja Recibos (Solo toma fechas)";
             // 
             // simpleButton6
             // 
@@ -85,7 +85,7 @@
             // 
             this.panelControl5.Controls.Add(this.labelControl15);
             this.panelControl5.Controls.Add(this.simpleButton5);
-            this.panelControl5.Location = new System.Drawing.Point(415, 64);
+            this.panelControl5.Location = new System.Drawing.Point(567, 50);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(632, 44);
             this.panelControl5.TabIndex = 14;
@@ -107,30 +107,6 @@
             this.simpleButton5.TabIndex = 2;
             this.simpleButton5.Text = "Consultar";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.EditValue = "";
-            this.FechaFin.Location = new System.Drawing.Point(240, 113);
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.FechaFin.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.FechaFin.Size = new System.Drawing.Size(103, 20);
-            this.FechaFin.TabIndex = 11;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.EditValue = null;
-            this.FechaInicio.Location = new System.Drawing.Point(77, 113);
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.FechaInicio.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.FechaInicio.Size = new System.Drawing.Size(103, 20);
-            this.FechaInicio.TabIndex = 10;
             // 
             // listBoxSeries
             // 
@@ -208,11 +184,39 @@
             this.labelControl12.TabIndex = 33;
             this.labelControl12.Text = "Al:";
             // 
+            // FechaInicio
+            // 
+            this.FechaInicio.EditValue = null;
+            this.FechaInicio.Location = new System.Drawing.Point(77, 113);
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.FechaInicio.Properties.Mask.EditMask = "dd-mm-yyyy";
+            this.FechaInicio.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.FechaInicio.Size = new System.Drawing.Size(103, 20);
+            this.FechaInicio.TabIndex = 39;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.EditValue = null;
+            this.FechaFin.Location = new System.Drawing.Point(254, 113);
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.FechaFin.Properties.Mask.EditMask = "dd-mm-yyyy";
+            this.FechaFin.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.FechaFin.Size = new System.Drawing.Size(103, 20);
+            this.FechaFin.TabIndex = 40;
+            // 
             // Frm_CortesCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 442);
+            this.ClientSize = new System.Drawing.Size(1230, 442);
+            this.Controls.Add(this.FechaFin);
+            this.Controls.Add(this.FechaInicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelControl10);
@@ -221,9 +225,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.listBoxBodegas);
             this.Controls.Add(this.labelControl17);
-            this.Controls.Add(this.FechaFin);
             this.Controls.Add(this.panelControl6);
-            this.Controls.Add(this.FechaInicio);
             this.Controls.Add(this.panelControl5);
             this.Name = "Frm_CortesCaja";
             this.Text = "Cortes de Caja";
@@ -234,10 +236,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FechaInicio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FechaFin.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +253,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.DateEdit FechaFin;
-        private DevExpress.XtraEditors.DateEdit FechaInicio;
         private System.Windows.Forms.ListBox listBoxSeries;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.ListBox listBoxBodegas;
@@ -261,5 +261,7 @@
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.DateEdit FechaInicio;
+        private DevExpress.XtraEditors.DateEdit FechaFin;
     }
 }

@@ -23,6 +23,7 @@ namespace ortoxela.Reportes.Pedidos
                 xtr_vueltos vueltos = new xtr_vueltos();
                 vueltos.Parameters["Estado"].Value = 4;
                 vueltos.Parameters["Nombre"].Value = "Vueltos pendientes de dar";
+                vueltos.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                 vueltos.RequestParameters = false;
                 
                 vueltos.ShowPreviewDialog();
@@ -32,9 +33,15 @@ namespace ortoxela.Reportes.Pedidos
                 xtr_vueltos vueltos = new xtr_vueltos();
                 vueltos.Parameters["Estado"].Value = 5;
                 vueltos.Parameters["Nombre"].Value = "Vueltos Operados";
-                //vueltos.RequestParameters = false;                
+                vueltos.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+                vueltos.RequestParameters = false;                
                 vueltos.ShowPreviewDialog();
             }
+        }
+
+        private void frm_RepVueltos_Load(object sender, EventArgs e)
+        {
+            this.Text = "Reportes de Vueltos - " + clases.ClassVariables.nombreEmpresa; 
         }
     }
 }

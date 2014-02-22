@@ -18,5 +18,6 @@ namespace ortoxela.clases
         public static string id_traido;//esta variable me sirve para q cuando se este filtrando categorias o direcciones se lleve el id deseado
         public static bool sociocomercial;
         public static int op_reporte = 0;
+        public static string nombreEmpresa;
     }
 }

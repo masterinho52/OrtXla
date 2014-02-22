@@ -19,9 +19,17 @@ namespace ortoxela.Reportes.Pedidos
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             XtraReport_x_SocioComercial reportesc = new XtraReport_x_SocioComercial();
+            reportesc.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+
             reportesc.RequestParameters = false;
             reportesc.ShowPreview();
         }
 
+        private void frm_ReportePedidos_Load(object sender, EventArgs e)
+        {
+            this.Text = "Reportes Pedidos/Envios - " + clases.ClassVariables.nombreEmpresa; 
+        }
+
+      
           }
 }

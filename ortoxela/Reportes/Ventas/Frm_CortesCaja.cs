@@ -85,7 +85,7 @@ namespace ortoxela.Reportes.Ventas
                     reportec.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
                     reportec.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
                     reportec.Parameters["Series"].Value = ListaNombresSeries;
-                    reportec.Parameters["NombreEmpresa"].Value = ListaNombresSeries;
+                    reportec.Parameters["NombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
                     
                     reportec.RequestParameters = false;
                     reportec.ShowPreview();
@@ -98,19 +98,49 @@ namespace ortoxela.Reportes.Ventas
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
-            if ((FechaInicio.EditValue != null) && (FechaFin.EditValue != null))
+            Cursor.Current = Cursors.WaitCursor;
+
+            if (this.validarFechas())
             {
-                XtraReport_CorteCajaRecibos reporter = new XtraReport_CorteCajaRecibos();
-                reporter.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
-                reporter.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-                reporter.RequestParameters = false;
-                reporter.ShowPreview();
+                if (validarSeries())
+                {
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
+                    /**/
+
+                    string QueryVtas = "SELECT        r.no_recibo, r.fecha_creacion, r.monto_recibo, r.vale, r.factura, r.nombre_documento, r.serie_documento, r.nombre_cliente, r.estadoid, p.nombre_tipo_pago, "+
+                            "r.socio_comercial FROM            v_recibos r INNER JOIN  tipo_pago p ON r.tipo_pago = p.tipo_pago "+
+                             " where fecha_creacion between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00'  and '" +
+                            FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'";
+
+                    MySqlDataAdapter adaptadorx = new MySqlDataAdapter(QueryVtas, Properties.Settings.Default.ortoxelaConnectionString);
+                    DataSet datasetx = new DataSet();
+                    adaptadorx.Fill(datasetx, "v_recibos");
+
+                    XtraReport_CorteCajaRecibos reportec = new XtraReport_CorteCajaRecibos ();
+                    reportec.DataSource = datasetx;
+                    reportec.DataMember = datasetx.Tables["v_recibos"].TableName;
+                    reportec.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
+                    reportec.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reportec.Parameters["Series"].Value = ListaNombresSeries;
+                    reportec.Parameters["NombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+                    
+                    reportec.RequestParameters = false;
+                    reportec.ShowPreview();
+                }
             }
-            else MessageBox.Show("Debe ingresar un Rango de Fechas!", "Advertencia");
+            
         }
 
         private void Frm_CortesCaja_Load(object sender, EventArgs e)
         {
+            this.Text = "Cortes de Caja - " + clases.ClassVariables.nombreEmpresa; 
             /* BODEGAS */
             try
             {
@@ -141,7 +171,7 @@ namespace ortoxela.Reportes.Ventas
                 DateTime now2 = DateTime.Now.AddMonths(-6);
 
                 string date2 = now2.ToShortDateString();
-                this.FechaInicio.EditValue = date;
+                this.FechaInicio.EditValue = date2;
 
             }
             catch

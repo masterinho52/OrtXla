@@ -45,7 +45,13 @@ namespace ortoxela
                     cadena = "SELECT r.codigo_rol FROM rol_usuario r WHERE r.estadoid=1 and r.userid=" + clases.ClassVariables.id_usuario;
                     DataTable dt_rol = new DataTable();
                     dt_rol = logica.Tabla(cadena);
-                    clases.ClassVariables.id_rol = dt_rol.Rows[0][0].ToString();                    
+                    clases.ClassVariables.id_rol = dt_rol.Rows[0][0].ToString();
+
+                    cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=1 ";
+                    DataTable dt_empresa = new DataTable();
+                    dt_empresa = logica.Tabla(cadena);
+                    clases.ClassVariables.nombreEmpresa = dt_empresa.Rows[0][0].ToString();
+                    
                     textEditcontraseña.Text = "";
                     textEditnombre.Text = "";
                     textEditnombre.Focus();

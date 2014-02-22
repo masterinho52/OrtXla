@@ -31,6 +31,7 @@ namespace ortoxela.Reportes.Admin
             Reportes.Inventario.XtraReport_InventarioResumen reporte = new Reportes.Inventario.XtraReport_InventarioResumen();
             reporte.Parameters["Fecha_inicio"].Value = dateEdit6.EditValue;
             reporte.Parameters["Fecha_fin"].Value = dateEdit5.EditValue;
+            reporte.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
             reporte.RequestParameters = false;
             reporte.ShowPreview();
 
@@ -78,7 +79,7 @@ namespace ortoxela.Reportes.Admin
             Reportes.Inventario.DataSet_Inventario dataseti = new Reportes.Inventario.DataSet_Inventario();
             adaptadori.Fill(dataseti, "v_inventario");
             Reportes.Inventario.XtraReport_Inventario1 reportei = new Reportes.Inventario.XtraReport_Inventario1();
-            //  XtraReport_TomaInventario reportet = new XtraReport_TomaInventario();            
+                 
             reportei.DataSource = dataseti;
             reportei.DataMember = dataseti.Tables["v_inventario"].TableName;
             reportei.Parameters["Fecha_inicio"].Value = dateEdit6.EditValue;
@@ -87,6 +88,7 @@ namespace ortoxela.Reportes.Admin
             reportei.Parameters["codigo_bodega1"].Value = bodega1;
             reportei.Parameters["codigo_bodega2"].Value = bodega2;
             reportei.Parameters["bodega"].Value = botittle;
+            reportei.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
             reportei.RequestParameters = false;
             reportei.ShowPreview();
             this.Cursor = Cursors.Default;
@@ -96,6 +98,7 @@ namespace ortoxela.Reportes.Admin
         classortoxela logicaxela = new classortoxela();
         private void Frm_ReportesAdmin_Load(object sender, EventArgs e)
         {
+            this.Text = "Reportes de Administracion - " + clases.ClassVariables.nombreEmpresa; 
             try
             {
                 string ssql = "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
@@ -119,6 +122,11 @@ namespace ortoxela.Reportes.Admin
             }
             catch
             { }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

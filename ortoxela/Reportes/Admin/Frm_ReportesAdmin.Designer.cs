@@ -71,6 +71,7 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(931, 56);
             this.panelControl6.TabIndex = 19;
+            this.panelControl6.Visible = false;
             // 
             // simpleButton5
             // 
@@ -80,6 +81,7 @@
             this.simpleButton5.Size = new System.Drawing.Size(112, 35);
             this.simpleButton5.TabIndex = 2;
             this.simpleButton5.Text = "Consultar";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // labelControl25
             // 
