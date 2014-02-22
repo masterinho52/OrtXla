@@ -34,7 +34,7 @@ namespace ortoxela.Estado
             {            
                 if (bandera == 1)
                 {
-                   cadena = "INSERT INTO ortoxela.estado "+
+                   cadena = "INSERT into estado "+
                             "(nombre_status, activo, subcat_status, cat_status) "+
                             "VALUES ('"+textEditnombre.Text+"', "+checkEditestado.Checked+", '"+textEditsubcategoria.Text+"', '"+textEditcategoria.Text+"')";
                    clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
@@ -58,7 +58,7 @@ namespace ortoxela.Estado
             {
                 if (bandera == 2)
                 {
-                    cadena = "UPDATE ortoxela.estado SET nombre_status = '" + textEditnombre.Text + "' , activo = " + checkEditestado.Checked + ",subcat_status = '"+textEditsubcategoria.Text+"', cat_status = '" + textEditcategoria.Text + "' WHERE estadoid=" + clases.ClassVariables.id_busca;
+                    cadena = "update estado SET nombre_status = '" + textEditnombre.Text + "' , activo = " + checkEditestado.Checked + ",subcat_status = '"+textEditsubcategoria.Text+"', cat_status = '" + textEditcategoria.Text + "' WHERE estadoid=" + clases.ClassVariables.id_busca;
                      if (clases.ClassMensajes.MODIFICAR(this,cadena))
                      {
                          groupControl1.Enabled = false;
@@ -74,7 +74,7 @@ namespace ortoxela.Estado
                     if (bandera == 3)
                     {
                         
-                            cadena = "UPDATE ortoxela.estado SET activo = 0  WHERE estadoid=" + clases.ClassVariables.id_busca;
+                            cadena = "update estado SET activo = 0  WHERE estadoid=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -146,7 +146,7 @@ namespace ortoxela.Estado
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT estadoid AS CODIGO, nombre_status AS NOMBRE,cat_status AS CATEGORIA FROM ortoxela.estado where activo=1";
+            clases.ClassVariables.cadenabusca = "SELECT estadoid AS CODIGO, nombre_status AS NOMBRE,cat_status AS CATEGORIA FROM estado where activo=1";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -154,7 +154,7 @@ namespace ortoxela.Estado
                 
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT estadoid , nombre_status, activo,subcat_status,cat_status FROM ortoxela.estado where estadoid=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT estadoid , nombre_status, activo,subcat_status,cat_status FROM estado where estadoid=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)

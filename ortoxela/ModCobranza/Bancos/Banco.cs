@@ -36,7 +36,7 @@ namespace ortoxela.ModCobranza.Bancos
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -47,7 +47,7 @@ namespace ortoxela.ModCobranza.Bancos
 
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -56,7 +56,7 @@ namespace ortoxela.ModCobranza.Bancos
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT bancos.id_banco AS CODIGO, bancos.nombre_banco AS NOMBRE FROM ortoxela.bancos WHERE estado<>2";
+            clases.ClassVariables.cadenabusca = "SELECT bancos.id_banco AS CODIGO, bancos.nombre_banco AS NOMBRE FROM bancos WHERE estado<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -64,7 +64,7 @@ namespace ortoxela.ModCobranza.Bancos
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT bancos.id_banco, bancos.nombre_banco, estado FROM ortoxela.bancos WHERE bancos.id_banco=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT bancos.id_banco, bancos.nombre_banco, estado FROM bancos WHERE bancos.id_banco=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -132,7 +132,7 @@ namespace ortoxela.ModCobranza.Bancos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.bancos (nombre_banco, estado)  VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ")";
+                    cadena = "INSERT into bancos (nombre_banco, estado)  VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
                     {
@@ -154,7 +154,7 @@ namespace ortoxela.ModCobranza.Bancos
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.bancos SET nombre_banco = '" + textEditnombre.Text + "', estado = " + gridLookUpEditestado.EditValue + " WHERE id_banco=" + clases.ClassVariables.id_busca;
+                        cadena = "update bancos SET nombre_banco = '" + textEditnombre.Text + "', estado = " + gridLookUpEditestado.EditValue + " WHERE id_banco=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
                             groupControl1.Enabled = false;
@@ -170,7 +170,7 @@ namespace ortoxela.ModCobranza.Bancos
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.bancos SET estado = 2 WHERE id_banco=" + clases.ClassVariables.id_busca;
+                            cadena = "update bancos SET estado = 2 WHERE id_banco=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;

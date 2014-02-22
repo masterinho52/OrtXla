@@ -40,7 +40,7 @@ namespace ortoxela.ModCobranza
         private void CargRecibos()
         {
             cadena = "SELECT r.id_recibos AS CODIGO,CAST(CONCAT(s.serie_documento,'[',r.no_recibo,']') AS CHAR) AS 'NO RECIBO' "+
-"FROM ortoxela.recibos r LEFT JOIN  ortoxela.v_abonos_recibos p ON (r.id_recibos=p.id_docto_abono) " +
+"FROM recibos r LEFT JOIN  v_abonos_recibos p ON (r.id_recibos=p.id_docto_abono) " +
 "INNER JOIN series_documentos s ON r.codigo_serie=s.codigo_serie "+
 "WHERE r.codigo_cliente="+id_cliente+" AND (monto-COALESCE(abono,0))>0";
 
@@ -90,7 +90,7 @@ namespace ortoxela.ModCobranza
         {
             cadena = "SELECT h.fecha AS 'FECHA',sd.serie_documento AS 'SERIE',h.id_documento,h.no_documento AS 'NO. FACTURA',h.monto_neto AS 'TOTAL',(monto_neto-COALESCE(TotAbono,0)) "+
 "AS 'SALDO ACTUAL',0 AS 'ABONO',(monto_neto-COALESCE(TotAbono,0))AS 'SALDO' "+
-"FROM ortoxela.header_doctos_inv h LEFT JOIN  ortoxela.v_abonos_factura f ON (h.id_documento=f.id_factura) "+
+"FROM header_doctos_inv h LEFT JOIN  v_abonos_factura f ON (h.id_documento=f.id_factura) "+
 "inner join series_documentos sd on h.codigo_serie=sd.codigo_serie "+
 "WHERE h.codigo_cliente="+id_cliente+" and h.estadoid=4 ANd h.contado_credito=1";
             gridControl1.DataSource = ortoxela.Tabla(cadena);
@@ -341,7 +341,7 @@ namespace ortoxela.ModCobranza
                 conexion.Open();
                 transaccion = conexion.BeginTransaction();
 
-                //cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid)" +
+                //cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid)" +
                 //        "VALUES	('"+textNoRecibo.Text+"', '"+gridLookTipoDoc.EditValue+"', '"+gridLookCliente.EditValue+"', '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"', '0', '0', '"+textTotal.Text+"', '"+clases.ClassVariables.id_usuario+"', '4');";
                 //comando = new MySqlCommand(cadena, conexion);
                 //comando.Transaction = transaccion;
@@ -349,7 +349,7 @@ namespace ortoxela.ModCobranza
                 //cadena = "";
                 //for (int x = 0; x < gridView4.DataRowCount;x++)
                 //{
-                //    cadena += "INSERT INTO ortoxela.detalle_recibos (no_recibo, codigo_serie, tipo_pago, monto,fecha_operacion, id_banco, no_documento, observaciones, activo)" +
+                //    cadena += "INSERT into detalle_recibos (no_recibo, codigo_serie, tipo_pago, monto,fecha_operacion, id_banco, no_documento, observaciones, activo)" +
                 //                "  VALUES	('" + textNoRecibo.Text + "', '"+gridLookTipoDoc.EditValue+"', '" + gridView4.GetRowCellValue(x, "IDTIPOPAGO").ToString() + "', '" + gridView4.GetRowCellValue(x, "MONTO").ToString().Replace("Q", "").Replace(",","") + "', '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + gridView4.GetRowCellValue(x, "IDBANCO").ToString() + "', '" + gridView4.GetRowCellValue(x, "NO DOCUMENTO").ToString() + "', '" + memoEdit1.Text + "', '1');";
 
                 //}
@@ -362,7 +362,7 @@ namespace ortoxela.ModCobranza
                 {
                     if (Convert.ToDouble(gridView1.GetRowCellValue(y, "ABONO")) > 0)
                     {
-                        cadena += "insert into ortoxela.relacion_pagos (no_transaccion, codigo_cliente, id_factura, saldo_factura, fecha_operacion, id_docto_abono, monto_abono, comentarios, activo)" +
+                        cadena += "insert into relacion_pagos (no_transaccion, codigo_cliente, id_factura, saldo_factura, fecha_operacion, id_docto_abono, monto_abono, comentarios, activo)" +
                                     "values	('" + NoTransaccion + "', '" + id_cliente + "', '" + gridView1.GetRowCellValue(y, "id_documento") + "', '" + gridView1.GetRowCellValue(y, "SALDO").ToString().Replace(",","") + "', '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + gridLookSerieRecibo.EditValue + "', '" + gridView1.GetRowCellValue(y, "ABONO").ToString().Replace(",","") + "', '" + memoEdit1.Text + "', '1');";
                         if (Convert.ToDouble(gridView1.GetRowCellValue(y, "SALDO").ToString()) == 0)
                         { 
@@ -445,12 +445,12 @@ namespace ortoxela.ModCobranza
                 //transa = conexion.BeginTransaction();
 
                 //string tempValor = textPor.Text.Replace(",", "");
-                //cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
+                //cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
                 //        "VALUES (" + textNoRecibo.Text + ", 3, " + id_cliente + ", '" + Convert.ToDateTime(dateFechaRecibo.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "', " + id_nuevo_vale + ", 1, " + tempValor.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ", 4);";
                 //comando = new MySqlCommand(cadena, conexion);
                 //comando.Transaction = transa;
                 //comando.ExecuteNonQuery();
-                //cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                //cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
                 //        "VALUES (" + id_cliente + ", " + id_nuevo_vale + "," + textNoRecibo.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                 //comando = new MySqlCommand(cadena, conexion);
                 //comando.Transaction = transa;
@@ -494,7 +494,7 @@ namespace ortoxela.ModCobranza
             try
             {
                 cadena = "SELECT no_recibo,codigo_cliente,monto AS monto_recibo,(monto-COALESCE(abono,0)) AS saldo "+
-"FROM ortoxela.recibos r LEFT JOIN  ortoxela.v_abonos_recibos p ON (r.id_recibos=p.id_docto_abono) "+
+"FROM recibos r LEFT JOIN  v_abonos_recibos p ON (r.id_recibos=p.id_docto_abono) "+
 "WHERE r.codigo_cliente="+id_cliente+" and r.id_recibos=" + gridLookSerieRecibo.EditValue;
                 DataTable datosCliente = logicaorto.Tabla(cadena);
                 //id_cliente = int.Parse(datosCliente.Rows[0]["codigo_cliente"].ToString());
@@ -552,7 +552,7 @@ namespace ortoxela.ModCobranza
                 LlenaFacturas();
                 //cadena = "SELECT (MAX(recibos.no_recibo)+1)AS 'NORECIBO' FROM recibos";
                 cadena = "SELECT COALESCE(SUM(SALDO),0)AS TotalSaldo FROM(SELECT (monto_neto-COALESCE(TotAbono,0))AS 'SALDO' "+
-"FROM ortoxela.header_doctos_inv h LEFT JOIN  ortoxela.v_abonos_factura f ON (h.id_documento=f.id_factura) "+
+"FROM header_doctos_inv h LEFT JOIN  v_abonos_factura f ON (h.id_documento=f.id_factura) "+
 "INNER JOIN series_documentos sd ON h.codigo_serie=sd.codigo_serie "+
 "WHERE h.codigo_cliente="+id_cliente+" AND h.estadoid=4 AND h.contado_credito=1)TablaSaldo";
                 lbTotalSaldo.Text = Convert.ToDouble(logicaorto.Tabla(cadena).Rows[0][0].ToString()).ToString("C");

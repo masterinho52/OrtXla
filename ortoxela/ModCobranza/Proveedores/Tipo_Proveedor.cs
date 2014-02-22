@@ -81,7 +81,7 @@ namespace ortoxela.Proveedores
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.tipo_proveedor (tipo_proveedor, estadoid) VALUES ('" + textEdit1.Text + "'," + gridLookestado.EditValue + ")";
+                    cadena = "INSERT into tipo_proveedor (tipo_proveedor, estadoid) VALUES ('" + textEdit1.Text + "'," + gridLookestado.EditValue + ")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
                     {
@@ -103,7 +103,7 @@ namespace ortoxela.Proveedores
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.tipo_proveedor SET tipo_proveedor = '" + textEdit1.Text + "' , estadoid = " + gridLookestado.EditValue + " WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
+                        cadena = "update tipo_proveedor SET tipo_proveedor = '" + textEdit1.Text + "' , estadoid = " + gridLookestado.EditValue + " WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
                             groupControl1.Enabled = false;
@@ -119,7 +119,7 @@ namespace ortoxela.Proveedores
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.tipo_proveedor SET estadoid = 2 WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
+                            cadena = "update tipo_proveedor SET estadoid = 2 WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -165,7 +165,7 @@ namespace ortoxela.Proveedores
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookestado.Properties.ValueMember = "CODIGO";
             gridLookestado.Properties.DisplayMember = "NOMBRE";
@@ -175,7 +175,7 @@ namespace ortoxela.Proveedores
 
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM ortoxela.tipo_proveedor WHERE estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM tipo_proveedor WHERE estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -183,7 +183,7 @@ namespace ortoxela.Proveedores
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_tipo_prov, tipo_proveedor, estadoid FROM ortoxela.tipo_proveedor WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_tipo_prov, tipo_proveedor, estadoid FROM tipo_proveedor WHERE codigo_tipo_prov=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -208,7 +208,7 @@ namespace ortoxela.Proveedores
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookestado.Properties.ValueMember = "CODIGO";
                 gridLookestado.Properties.DisplayMember = "NOMBRE";

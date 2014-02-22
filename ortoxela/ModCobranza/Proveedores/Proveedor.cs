@@ -64,7 +64,7 @@ namespace ortoxela.Proveedores
         
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_proveedor as CODIGO, nombre_proveedor AS NOMBRE,nit AS NIT FROM ortoxela.proveedores where estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_proveedor as CODIGO, nombre_proveedor AS NOMBRE,nit AS NIT FROM proveedores where estadoid<>2";
                                                          
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
@@ -74,7 +74,7 @@ namespace ortoxela.Proveedores
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 cadena = "SELECT codigo_proveedor, nombre_proveedor, contacto,telefono_principal, telefono_celular, fax_otro_tel, nit, dias_credito,  " +
-                "email,codigo_tipo_prov, direccion,estadoid FROM ortoxela.proveedores where codigo_proveedor=" + clases.ClassVariables.id_busca;
+                "email,codigo_tipo_prov, direccion,estadoid FROM proveedores where codigo_proveedor=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -123,7 +123,7 @@ namespace ortoxela.Proveedores
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM ortoxela.tipo_proveedor WHERE estadoid<>2";
+                cadena = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM tipo_proveedor WHERE estadoid<>2";
                 gridLookTipo_Prov.Properties.DataSource = logica.Tabla(cadena);
                 gridLookTipo_Prov.Properties.ValueMember = "CODIGO";
                 gridLookTipo_Prov.Properties.DisplayMember = "TIPO_PROVEEDOR";
@@ -141,7 +141,7 @@ namespace ortoxela.Proveedores
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -162,7 +162,7 @@ namespace ortoxela.Proveedores
             {
                 if (bandera == 1)
                 {
-                      cadena = "INSERT INTO ortoxela.proveedores " +
+                      cadena = "INSERT into proveedores " +
                                 "(nombre_proveedor, contacto,dias_credito,nit, telefono_principal, telefono_celular, fax_otro_tel, email, fecha_ingreso, usuario_ingreso,estadoid, codigo_tipo_prov, direccion) " +
                             "VALUES ('" + textNombreProv.Text + "', '" + textContacto.Text + "',"+spinEditdiascredito.Text+", '" + textNit.Text + "', '" + textTelefono.Text + "', '" + textCelular.Text + "', '" + textFax.Text + "', '" + textEmail.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + "," + gridLookUpEstado.EditValue + ", " + gridLookTipo_Prov.EditValue + ", '" + memoEditdireccion.Text + "')";
                         clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
@@ -187,7 +187,7 @@ namespace ortoxela.Proveedores
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.proveedores SET nombre_proveedor = '" + textNombreProv.Text + "' , contacto = '" + textContacto.Text + "',dias_credito = "+spinEditdiascredito.Text+", nit = '" + textNit.Text + "', telefono_principal = '" + textTelefono.Text + "', telefono_celular = '" + textCelular.Text + "', fax_otro_tel = '" + textFax.Text + "', email = '" + textEmail.Text + "',fecha_modificacion = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',usuario_modifica = " + clases.ClassVariables.id_usuario + ", estadoid = " + gridLookUpEstado.EditValue + ", codigo_tipo_prov = " + gridLookTipo_Prov.EditValue + ", direccion = '" + memoEditdireccion.Text + "' " +
+                        cadena = "update proveedores SET nombre_proveedor = '" + textNombreProv.Text + "' , contacto = '" + textContacto.Text + "',dias_credito = "+spinEditdiascredito.Text+", nit = '" + textNit.Text + "', telefono_principal = '" + textTelefono.Text + "', telefono_celular = '" + textCelular.Text + "', fax_otro_tel = '" + textFax.Text + "', email = '" + textEmail.Text + "',fecha_modificacion = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',usuario_modifica = " + clases.ClassVariables.id_usuario + ", estadoid = " + gridLookUpEstado.EditValue + ", codigo_tipo_prov = " + gridLookTipo_Prov.EditValue + ", direccion = '" + memoEditdireccion.Text + "' " +
                                     "WHERE proveedores.codigo_proveedor=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
@@ -204,7 +204,7 @@ namespace ortoxela.Proveedores
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.proveedores SET  estadoid = 2 WHERE proveedores.codigo_proveedor=" + clases.ClassVariables.id_busca;
+                            cadena = "update proveedores SET  estadoid = 2 WHERE proveedores.codigo_proveedor=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -244,18 +244,18 @@ namespace ortoxela.Proveedores
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
             gridLookUpEstado.Text = "";
             gridLookUpEstado.EditValue = 1;
-            cadena = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM ortoxela.tipo_proveedor WHERE estadoid<>2";
+            cadena = "SELECT codigo_tipo_prov as CODIGO, tipo_proveedor as TIPO_PROVEEDOR FROM tipo_proveedor WHERE estadoid<>2";
             gridLookTipo_Prov.Properties.DataSource = logica.Tabla(cadena);
             gridLookTipo_Prov.Properties.ValueMember = "CODIGO";
             gridLookTipo_Prov.Properties.DisplayMember = "TIPO_PROVEEDOR";
             gridLookTipo_Prov.Text = "";
-            cadena = "SELECT id_tipo_proveedor_conta AS CODIGO, descripcion AS TIPO FROM ortoxela.tipo_proveedor_contabilidad WHERE activo=1";
+            cadena = "SELECT id_tipo_proveedor_conta AS CODIGO, descripcion AS TIPO FROM tipo_proveedor_contabilidad WHERE activo=1";
             gridLookUpTipoProveedorConta.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpTipoProveedorConta.Properties.DisplayMember = "TIPO";
             gridLookUpTipoProveedorConta.Properties.ValueMember = "CODIGO";

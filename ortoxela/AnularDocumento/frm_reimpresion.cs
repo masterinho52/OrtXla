@@ -181,7 +181,7 @@ namespace ortoxela.AnularDocumento
                             {
                                 if (bandera_ingreso_egreso == "2")
                                 {
-                                    ssql = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo -" + gridView2.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView2.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView2.GetRowCellValue(x, "CODIGO") + "'";
+                                    ssql = "update bodegas SET  existencia_articulo = existencia_articulo -" + gridView2.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView2.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView2.GetRowCellValue(x, "CODIGO") + "'";
                                     comando = new MySqlCommand(ssql, conexion);
                                     comando.Transaction = transac;
                                     comando.ExecuteNonQuery();
@@ -193,14 +193,14 @@ namespace ortoxela.AnularDocumento
                                         ssql = "SELECT * FROM bodegas WHERE bodegas.codigo_articulo='" + gridView2.GetRowCellValue(x, "CODIGO") + "' AND bodegas.codigo_bodega=" + gridView2.GetRowCellValue(x, "IDBODEGA");
                                         if (ortoxela.ExisteRegistro(ssql))
                                         {
-                                            ssql = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo +" + gridView2.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView2.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView2.GetRowCellValue(x, "CODIGO") + "'";
+                                            ssql = "update bodegas SET  existencia_articulo = existencia_articulo +" + gridView2.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView2.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView2.GetRowCellValue(x, "CODIGO") + "'";
                                             comando = new MySqlCommand(ssql, conexion);
                                             comando.Transaction = transac;
                                             comando.ExecuteNonQuery();
                                         }
                                         else
                                         {
-                                            ssql = "INSERT INTO ortoxela.bodegas(codigo_bodega, codigo_articulo, existencia_articulo) " +
+                                            ssql = "INSERT into bodegas(codigo_bodega, codigo_articulo, existencia_articulo) " +
                                                   "VALUES (" + gridView2.GetRowCellValue(x, "IDBODEGA") + ", '" + gridView2.GetRowCellValue(x, "CODIGO") + "', '" + gridView2.GetRowCellValue(x, "CANTIDAD") + "')";
                                             comando = new MySqlCommand(ssql, conexion);
                                             comando.Transaction = transac;

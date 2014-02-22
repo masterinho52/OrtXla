@@ -25,7 +25,7 @@ namespace ortoxela.Bodega
                 {
 
                     
-                        cadena = "INSERT INTO ortoxela.bodegas_header (usuario_creador, nombre_bodega, direccion, telefono1, telefono2, descripcion, fecha_creacion, estadoid) " +
+                        cadena = "INSERT into bodegas_header (usuario_creador, nombre_bodega, direccion, telefono1, telefono2, descripcion, fecha_creacion, estadoid) " +
                                     "VALUES (" + clases.ClassVariables.id_usuario + ", '" + textEditbodega.Text + "', '" + memoEditdireccion.Text + "', '" + texttelefono1.Text + "', '" + texttelefono2.Text + "', '" + memoEditdescripcion.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'," + gridLookUpEstado.EditValue + ")";
                         clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                         if (clases.ClassVariables.idnuevo != null)
@@ -50,7 +50,7 @@ namespace ortoxela.Bodega
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.bodegas_header "+
+                        cadena = "update bodegas_header "+
                                     "SET nombre_bodega = '" + textEditbodega.Text + "', direccion = '" + memoEditdireccion.Text + "', telefono1 = '" + texttelefono1.Text + "', telefono2 = '" + texttelefono2.Text + "', descripcion = '" + memoEditdescripcion.Text + "',estadoid="+gridLookUpEstado.EditValue+" " +
                                     "WHERE codigo_bodega=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
@@ -67,11 +67,11 @@ namespace ortoxela.Bodega
                     {
                         if (bandera == 3)
                         {
-                            cadena = "SELECT bodegas.existencia_articulo FROM ortoxela.bodegas_header inner join bodegas on bodegas.codigo_bodega = bodegas_header.codigo_bodega " +
+                            cadena = "SELECT bodegas.existencia_articulo FROM bodegas_header inner join bodegas on bodegas.codigo_bodega = bodegas_header.codigo_bodega " +
                                     "where bodegas.existencia_articulo>0 and bodegas_header.codigo_bodega=" + clases.ClassVariables.id_busca;
                             if (logica.ExisteRegistro(cadena) == false)
                             {
-                                cadena = "UPDATE ortoxela.bodegas_header SET estadoid=2 WHERE codigo_bodega=" + clases.ClassVariables.id_busca;
+                                cadena = "update bodegas_header SET estadoid=2 WHERE codigo_bodega=" + clases.ClassVariables.id_busca;
                                 if (clases.ClassMensajes.ELIMINAR(this, cadena))
                                 {
                                     groupControl1.Enabled = false;
@@ -119,7 +119,7 @@ namespace ortoxela.Bodega
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -130,7 +130,7 @@ namespace ortoxela.Bodega
         
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_bodega as CODIGO,nombre_bodega AS BODEGA, direccion AS DIRECCION, telefono1 AS TELEFONO,descripcion AS DESCRIPCION FROM ortoxela.bodegas_header where estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_bodega as CODIGO,nombre_bodega AS BODEGA, direccion AS DIRECCION, telefono1 AS TELEFONO,descripcion AS DESCRIPCION FROM bodegas_header where estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -139,7 +139,7 @@ namespace ortoxela.Bodega
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 cadena = "SELECT codigo_bodega, nombre_bodega, direccion, telefono1, telefono2, descripcion,estadoid "+
-                            "FROM ortoxela.bodegas_header WHERE codigo_bodega=" + clases.ClassVariables.id_busca;
+                            "FROM bodegas_header WHERE codigo_bodega=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -220,7 +220,7 @@ namespace ortoxela.Bodega
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";

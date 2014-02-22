@@ -36,7 +36,7 @@ namespace ortoxela.Series
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM ortoxela.tipos_documento";
+                cadena = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM tipos_documento";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -47,7 +47,7 @@ namespace ortoxela.Series
 
         private void llenacombos()
         {
-            cadena = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM ortoxela.tipos_documento";
+            cadena = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM tipos_documento";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -57,7 +57,7 @@ namespace ortoxela.Series
         private void busca_mod_eli()
         {
             clases.ClassVariables.cadenabusca = "SELECT codigo_serie as CODIGO, serie_documento as SERIE,tipos_documento.nombre_documento as DOCUMENTO " +
-                                                "FROM ortoxela.series_documentos inner join tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo " +
+                                                "FROM series_documentos inner join tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo " +
                                                 "WHERE  series_documentos.codigo_serie<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
@@ -66,7 +66,7 @@ namespace ortoxela.Series
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_serie, serie_documento, codigo_tipo FROM ortoxela.series_documentos WHERE codigo_serie=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_serie, serie_documento, codigo_tipo FROM series_documentos WHERE codigo_serie=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -122,7 +122,7 @@ namespace ortoxela.Series
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.series_documentos "+
+                    cadena = "INSERT into series_documentos "+
                                 "(serie_documento, fecha_creacion, usuario_creador, codigo_tipo) "+
                             "VALUES ('"+textEditnombre.Text+"', '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"',"+clases.ClassVariables.id_usuario+", "+gridLookUpEditestado.EditValue+")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
@@ -146,7 +146,7 @@ namespace ortoxela.Series
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.series_documentos SET serie_documento = '"+textEditnombre.Text+"',codigo_tipo = "+gridLookUpEditestado.EditValue+" "+
+                        cadena = "update series_documentos SET serie_documento = '"+textEditnombre.Text+"',codigo_tipo = "+gridLookUpEditestado.EditValue+" "+
                                 "WHERE codigo_serie=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {

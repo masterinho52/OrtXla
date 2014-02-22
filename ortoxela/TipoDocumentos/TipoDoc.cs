@@ -32,7 +32,7 @@ namespace ortoxela.TipoDocumentos
               
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM ortoxela.tipos_documento";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_tipo as CODIGO, nombre_documento AS NOMBRE FROM tipos_documento";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -41,7 +41,7 @@ namespace ortoxela.TipoDocumentos
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 cadena = "SELECT codigo_tipo, nombre_documento,signo, actualiza_precios, comentario_docto, estado_id "+
-                            "FROM ortoxela.tipos_documento where codigo_tipo=" + clases.ClassVariables.id_busca;
+                            "FROM tipos_documento where codigo_tipo=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -110,7 +110,7 @@ namespace ortoxela.TipoDocumentos
            }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -125,7 +125,7 @@ namespace ortoxela.TipoDocumentos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.tipos_documento (nombre_documento, fecha_creacion, usuario_creacion, signo, actualiza_precios, comentario_docto, estado_id)  " +
+                    cadena = "INSERT into tipos_documento (nombre_documento, fecha_creacion, usuario_creacion, signo, actualiza_precios, comentario_docto, estado_id)  " +
                             "VALUES ('" + textEditnombre.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + "," + gridLookmovimiento.EditValue + "," + radioGroupactuprecios.SelectedIndex + ",'" + memoEditcomentario.Text + "'," + gridLookUpEstado.EditValue + ")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
@@ -149,7 +149,7 @@ namespace ortoxela.TipoDocumentos
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.tipos_documento SET nombre_documento = '" + textEditnombre.Text + "' , signo = " + gridLookmovimiento.EditValue + ", actualiza_precios = " + radioGroupactuprecios.SelectedIndex + ", comentario_docto = '" + memoEditcomentario.Text + "', estado_id = " + gridLookUpEstado.EditValue + " " +
+                        cadena = "update tipos_documento SET nombre_documento = '" + textEditnombre.Text + "' , signo = " + gridLookmovimiento.EditValue + ", actualiza_precios = " + radioGroupactuprecios.SelectedIndex + ", comentario_docto = '" + memoEditcomentario.Text + "', estado_id = " + gridLookUpEstado.EditValue + " " +
                                 "WHERE tipos_documento.codigo_tipo=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
@@ -163,7 +163,7 @@ namespace ortoxela.TipoDocumentos
                     {
                         if (bandera == 3)
                         {
-                            cadena = "UPDATE ortoxela.tipos_documento SET estado_id = 2 " +
+                            cadena = "update tipos_documento SET estado_id = 2 " +
                                     "WHERE tipos_documento.codigo_tipo=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.MODIFICAR(this, cadena))
                             {
@@ -231,7 +231,7 @@ namespace ortoxela.TipoDocumentos
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";

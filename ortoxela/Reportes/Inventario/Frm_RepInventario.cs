@@ -60,7 +60,7 @@ namespace ortoxela.Reportes.Inventario
             Int32 bodega2 = 100;
             string botittle = "Todas";
             string consulta = "SELECT codigo_articulo, articulo, Ult_compra, Ult_venta, Ult_precio, nombre_bodega, categoria, codigo_categoria, existencia_articulo, codigo_bodega  " +
-                                   " FROM ortoxela.v_inventario where existencia_articulo >0 ";  
+                                   " FROM v_inventario where existencia_articulo >0 ";  
                     if (bodegas.SelectedValue.ToString() != "0")
                     {
                         consulta = String.Format("{0} and codigo_bodega = {1}", consulta, bodegas.SelectedValue);
@@ -125,7 +125,7 @@ namespace ortoxela.Reportes.Inventario
             Int16 cat1 = 0, cat2 = 10000;
             string consulta = "SELECT codigo_articulo, Articulo, cantidad, costo_sin_iva, costo_iva, codigo_bodega, nombre_bodega, fecha, Tipo_Pago, nombre_proveedor, nombre_cliente, dias_credito, "+
                              "signo, tipo_docto, no_documento, refer_documento, bodega_destino, codigo_categoria, categoria "+
-                            "FROM ortoxela.v_kardex  where 1=1 ";
+                            "FROM v_kardex  where 1=1 ";
 
             if (bodegas.SelectedValue.ToString() != "0")
             {
@@ -201,7 +201,7 @@ namespace ortoxela.Reportes.Inventario
             this.Text = "Reportes de Inventario - " + clases.ClassVariables.nombreEmpresa; 
             try
             {
-                string ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                string ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                     // "  Select 0 as codigo_bodega, 'Todas' as nombre_bodega from dual " +
                             // " union all  "+
                             // " select codigo_bodega,nombre_bodega from bodegas_header where estadoid=1";
