@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraEditors.Controls;
+using System.Globalization;
 namespace ortoxela.FacturaTemporal
 {
     public partial class IngresarFacturas : DevExpress.XtraEditors.XtraForm
@@ -69,6 +70,18 @@ namespace ortoxela.FacturaTemporal
             }
             catch
             { }
+
+            try
+            {
+                cadena = "SELECT username,userid FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
+                gridLookUpEdit1.Properties.DisplayMember = "username";
+                gridLookUpEdit1.Properties.ValueMember = "userid";
+                gridLookUpEdit1.EditValue = 0;
+                gridLookUpEdit1.Text = "";
+            }
+            catch
+            { }  
         }
         private void CargaBodega(int serie)
         {            
@@ -130,7 +143,7 @@ namespace ortoxela.FacturaTemporal
             dateEdit1.DateTime = DateTime.Now;
             NuevoCliente = true;
         }
-        
+
         private void gridControl1_KeyPress(object sender, KeyPressEventArgs e)
         {
             
@@ -171,7 +184,23 @@ namespace ortoxela.FacturaTemporal
             try
             {
                 if (dxValidationProvider1.Validate())
-                {         
+                {
+                    int existeCEx = 0;
+                    for (int x = 0; x < gridView1.DataRowCount; x++)
+                    {
+                        if (gridView1.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
+                        {
+                            existeCEx++;
+                        }
+                    }
+
+                    if (existeCEx > 0)
+                    {
+                        MessageBox.Show("No puede agregar Mas Productos Porque Ha Agregado El Recargo Extra, Si desea modificar la factura elimine el recargo extra y vuelva a aplicarlo si es necesario");
+                        Cursor.Current = Cursors.Default;
+                        return;
+                    }    
+
 
                         DataTable TempoPadre = new DataTable();
                         /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
@@ -486,7 +515,7 @@ namespace ortoxela.FacturaTemporal
         }
         private void sbAceptar_Click(object sender, EventArgs e)
         {
-            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0 & gridLookTipoDocumento.SelectedText != "")
+            if(dxValidationProvider2.Validate() & gridView1.DataRowCount>0 & gridLookTipoDocumento.EditValue != "")
             {
                 
                     registraIngreso(); 
@@ -530,12 +559,12 @@ namespace ortoxela.FacturaTemporal
         {
             try
             {
-            TotalIngresoCosto = TotalIngresoCosto - (Convert.ToDouble(gridView1.GetFocusedRowCellValue("CANTIDAD")) * Convert.ToDouble(gridView1.GetFocusedRowCellValue("PRECIO")));
-            TotalIngresoVenta = TotalIngresoCosto - (Convert.ToDouble(gridView1.GetFocusedRowCellValue("CANTIDAD")) * Convert.ToDouble(gridView1.GetFocusedRowCellValue("VENTA")));
-            gridView1.DeleteSelectedRows();
-            gridView1.UpdateCurrentRow();
-            textTotalSinIva.Text = TotalIngresoCosto.ToString("C");
-            textPrecioTotal.Text = TotalIngresoVenta.ToString("C");                        
+                TotalIngresoCosto = TotalIngresoCosto - (Convert.ToDouble(gridView1.GetFocusedRowCellValue("CANTIDAD")) * Convert.ToDouble(gridView1.GetFocusedRowCellValue("PRECIO")));
+                TotalIngresoVenta = TotalIngresoCosto - (Convert.ToDouble(gridView1.GetFocusedRowCellValue("CANTIDAD")) * Convert.ToDouble(gridView1.GetFocusedRowCellValue("VENTA")));
+                gridView1.DeleteSelectedRows();
+                gridView1.UpdateCurrentRow();
+                textTotalSinIva.Text = TotalIngresoCosto.ToString("C");
+                textPrecioTotal.Text = TotalIngresoVenta.ToString("C");                        
             }
             catch
             {}
@@ -553,6 +582,8 @@ namespace ortoxela.FacturaTemporal
                 Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
                 reporte.Parameters["ID"].Value = id_nuevoIngreso;
                 reporte.Parameters["LETRAS"].Value =logicaorto.enletras(textPrecioTotal.Text.Replace("Q",""));
+                reporte.Parameters["Vende"].Value = gridLookUpEdit1.Text;
+                reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
                 reporte.RequestParameters = false;
                 reporte.ShowPreviewDialog();
             }
@@ -951,6 +982,117 @@ namespace ortoxela.FacturaTemporal
         private void textCodigoArt_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit2_EditValueChanged_1(object sender, EventArgs e)
+        {
+            double tmpCEv = 0.00;
+
+            if (checkBox2.Checked)
+            {
+                try
+                {
+                    //tmpCEv = Convert.ToDouble(textTotalDeFactura.Text.ToString().Replace("Q", "")) * Convert.ToDouble(textEdit2.Text) / 100;
+                    tmpCEv = double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency) * Convert.ToDouble(textEdit2.Text) / 100;
+                    textEdit3.Text = tmpCEv.ToString();
+                }
+                catch
+                {
+                    textEdit3.Text = "0";
+                    tmpCEv = 0.00;
+                }
+
+            }
+            else
+            {
+                textEdit3.Text = textEdit2.Text;
+            }
+        }
+
+        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            double tmpCEv = 0.00;
+
+            if (checkBox2.Checked)
+            {
+                try
+                {
+                    //tmpCEv = Convert.ToDouble(textTotalDeFactura.Text.ToString().Replace("Q", "")) * Convert.ToDouble(textEdit2.Text) / 100;
+                    tmpCEv = double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency) * Convert.ToDouble(textEdit2.Text) / 100;
+                    textEdit3.Text = tmpCEv.ToString();
+                }
+                catch
+                {
+                    textEdit3.Text = "0";
+                    tmpCEv = 0.00;
+                }
+
+            }
+            else
+            {
+                textEdit3.Text = textEdit2.Text;
+            }
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            int existeCEx = 0;
+            for (int x = 0; x < gridView1.DataRowCount; x++)
+            {
+                if (gridView1.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
+                {
+                    existeCEx++;
+                }
+            }
+
+            if (existeCEx <= 0)
+            {
+                double vCEX = 0;
+
+                try
+                {
+                    vCEX = Convert.ToDouble(textEdit3.Text);
+                }
+                catch
+                {
+                    vCEX = 0;
+                }
+                if (vCEX <= 0)
+                {
+                    MessageBox.Show("No ha definido Correctamente el monto del Cargo Extra");
+                }
+                else
+                {
+                    gridView1.AddNewRow();
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "IDBODEGA", gridLookBodega.EditValue);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "BODEGA", gridLookBodega.Text + "[" + gridLookBodega.EditValue + "]");
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "CODIGO", "CARGOEXTRA");
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "DESCRIPCION", "Cargo Extra");
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "CANTIDAD", 1);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "SUBTOTAL", (vCEX));
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "ACTUALIZA_PRECIO", false);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "INGRESO_EGRESO", false);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "VENTA", vCEX);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "EXISTENCIA", 1);
+                    TotalIngresoVenta = TotalIngresoVenta + (ExistenciaFija * vCEX);
+                    gridView1.UpdateCurrentRow();
+                    CalculaDescuento();
+                    //textTotalVenta.Text = TotalIngresoVenta.ToString("C");
+                    //double tmpNewTotx = 0;
+                    //tmpNewTotx = double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency) + double.Parse(textEdit3.Text.ToString(), NumberStyles.Currency);
+                    //textTotalDeFactura.Text = tmpNewTotx.ToString();
+                    MessageBox.Show("Se ha aplicado el cargo extra exitosamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puede volver a aplicar el cargo extra, Si desea cambiar el cargo extra actual elimine y vuelva a cargar el cargo extra actual.");
+            }
         }
 
     
