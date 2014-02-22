@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
+using System.Globalization;
 namespace ortoxela.Pedido
 {
     public partial class frm_regreso : DevExpress.XtraEditors.XtraForm
@@ -56,6 +57,18 @@ namespace ortoxela.Pedido
             }
             catch
             { }
+
+            try
+            {
+                cadena = "SELECT username,userid FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
+                gridLookUpEdit1.Properties.DisplayMember = "username";
+                gridLookUpEdit1.Properties.ValueMember = "userid";
+                gridLookUpEdit1.EditValue = 0;
+                gridLookUpEdit1.Text = "";
+            }
+            catch
+            { }  
 
         }
         MySqlConnection conexion = new MySqlConnection(Properties.Settings.Default.ortoxelaConnectionString);
@@ -220,7 +233,17 @@ namespace ortoxela.Pedido
                     { id_recibo = "0"; }
 
                     textTotalPedido.Text = Convert.ToDouble(logicaorto.Tabla("SELECT header_doctos_inv.monto_neto FROM header_doctos_inv WHERE header_doctos_inv.id_documento=" + id_vale).Rows[0][0]).ToString("C");
-                
+
+                    string tmpVueltox = "";
+                     try
+                    {
+                        cadena = "SELECT monto_vuelto FROM vueltos WHERE id_pedido = " + id_pedido;
+                        tmpVueltox = logicaorto.Tabla(cadena).Rows[0][0].ToString();
+                    }
+                    catch
+                    {   tmpVueltox = "0"; }
+
+                     textTotalDevuelta.Text = tmpVueltox;
             }
             Cursor.Current = Cursors.Default;
         }
@@ -362,6 +385,7 @@ namespace ortoxela.Pedido
             catch
             { }
             textEditVENDEDOR.Text = clases.ClassVariables.NombreComple;
+            gridLookUpEdit1.Text = clases.ClassVariables.NombreComple;
             
                 DataTable tempoFactura = new DataTable();
             tempoFactura.Columns.Add("CODIGO");
@@ -495,6 +519,8 @@ namespace ortoxela.Pedido
                         Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
                         reporte.Parameters["ID"].Value = id_nuevo_factura;
                         reporte.Parameters["LETRAS"].Value = logicaorto.enletras(textTotalDeFactura.Text.Replace("Q",""));
+                        reporte.Parameters["Vende"].Value = textEditVENDEDOR.Text;
+                        reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + textSocioComercial.Text + " - Operado: " + textEdit4.Text;
                         reporte.RequestParameters = false;
                         reporte.ShowPreviewDialog();
                     }
@@ -627,5 +653,146 @@ namespace ortoxela.Pedido
         }
 
         
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            int existeCEx = 0;
+            for (int x = 0; x < gridView4.DataRowCount; x++)
+            {
+                if (gridView4.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
+                {
+                    existeCEx++;
+                }
+            }
+
+            if (existeCEx <= 0)
+            {
+                double vCEX = 0;
+
+                try
+                {
+                    vCEX = Convert.ToDouble(textEdit3.Text);
+                }
+                catch
+                {
+                    vCEX = 0;
+                }
+                if (vCEX <= 0)
+                {
+                    MessageBox.Show("No ha definido Correctamente el monto del Cargo Extra");
+                }
+                else
+                {
+                    gridView4.AddNewRow();
+                    gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "CODIGO", "CARGOEXTRA");
+                    gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "DESCRIPCION", "Cargo Extra");
+                    gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "CANTIDAD", 1);
+                    gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "UNITARIO", vCEX);
+                    gridView4.SetRowCellValue(gridView4.FocusedRowHandle, "TOTAL", vCEX);
+                    gridView4.UpdateCurrentRow();
+                    double tmpNewTotx = 0;
+                    tmpNewTotx = double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency) + double.Parse(textEdit3.Text.ToString(), NumberStyles.Currency);
+                    textTotalDeFactura.Text = tmpNewTotx.ToString();
+                    MessageBox.Show("Se ha aplicado el cargo extra exitosamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puede volver a aplicar el cargo extra, Si desea cambiar el cargo extra actual elimine y vuelva a cargar el cargo extra actual.");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textTotalDevuelta_EditValueChanged(object sender, EventArgs e)
+        {
+            textEdit1.Text = textTotalDevuelta.Text;
+        }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            //double tmpMaxVuelto = Convert.ToDouble(textEdit1.Text);
+            double tmpCEv = 0.00;
+
+            if (checkBox2.Checked)
+            {
+                try
+                {
+                    //tmpCEv = Convert.ToDouble(textTotalDeFactura.Text.ToString().Replace("Q", "")) * Convert.ToDouble(textEdit2.Text) / 100;
+                    tmpCEv = double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency) * Convert.ToDouble(textEdit2.Text) / 100;
+                    textEdit3.Text = tmpCEv.ToString();
+                }
+                catch
+                {
+                    textEdit3.Text = "0";
+                    tmpCEv = 0.00;
+                }
+
+            }
+            else
+            {
+                textEdit3.Text = textEdit2.Text;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            //double tmpMaxVuelto = Convert.ToDouble(textEdit1.Text);
+            double tmpCEv = 0.00;
+
+            if (checkBox2.Checked)
+            {
+                try
+                {
+                    //tmpCEv = Convert.ToDouble(textTotalDeFactura.Text.ToString().Replace("Q", "")) * Convert.ToDouble(textEdit2.Text) / 100;
+                    tmpCEv = double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency) * Convert.ToDouble(textEdit2.Text) / 100;
+                    textEdit3.Text = tmpCEv.ToString();
+                }
+                catch
+                {
+                    textEdit3.Text = "0";
+                    tmpCEv = 0.00;
+                }
+
+            }
+            else
+            { 
+                textEdit3.Text = textEdit2.Text;
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            for (int x = 0; x < gridView4.DataRowCount; x++)
+            {
+                if (gridView4.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
+                {
+                    double delTmpRE = 0;
+                    delTmpRE = Convert.ToDouble(gridView4.GetRowCellValue(x, "TOTAL"));
+                    gridView4.DeleteRow(x);
+                    double tmpNewTotx = 0;
+                    tmpNewTotx = double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency) -delTmpRE;
+                    textTotalDeFactura.Text = tmpNewTotx.ToString();
+                    MessageBox.Show("Se ha borrado el Cargo Extra");
+                }
+            }
+        }
+
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            textEditVENDEDOR.Text = gridLookUpEdit1.Text;
+        }
     }
 }

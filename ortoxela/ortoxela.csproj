@@ -733,6 +733,12 @@
     <Compile Include="Reportes\Compras\Frm_RepComp.designer.cs">
       <DependentUpon>Frm_RepComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Compras\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Compras\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Compras\XtraReport_Compras_por_Categoria.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1370,6 +1376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Compras\Frm_RepComp.resx">
       <DependentUpon>Frm_RepComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Compras\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Compras\XtraReport_Compras_por_Categoria.resx">
       <DependentUpon>XtraReport_Compras_por_Categoria.cs</DependentUpon>
@@ -2086,6 +2095,7 @@
     <None Include="Resources\window-remove_32x32-32.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\remove-16.png" />
     <None Include="Resources\Windows_Log_Off_Icon_32.png" />
     <None Include="Resources\salir-de-gnome-icono-8179-32.png" />
     <None Include="Resources\salir-de-gnome-icono-7637-32.png" />
