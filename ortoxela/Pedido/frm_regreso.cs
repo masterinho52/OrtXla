@@ -23,7 +23,7 @@ namespace ortoxela.Pedido
         {
             try
             {
-                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM ortoxela.tipo_pago where estadoid<>2";
+                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM tipo_pago where estadoid<>2";
                 gridLookTipoPago.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoPago.Properties.DisplayMember = "TIPO PAGO";
                 gridLookTipoPago.Properties.ValueMember = "CODIGO";
@@ -34,9 +34,9 @@ namespace ortoxela.Pedido
             { }       
             try
             {
-                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo";*/
+                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) as DOCUMENTO FROM series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo";*/
                 /* jramirez 2013.07.24 */
-                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE userid=" + clases.ClassVariables.id_usuario;
+                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM v_bodegas_series_usuarios  WHERE userid=" + clases.ClassVariables.id_usuario;
                 gridLookTipoDocumento.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
@@ -47,9 +47,9 @@ namespace ortoxela.Pedido
             { }
             try
             {
-                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1"; */
+                /* cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1"; */
                 /* jramirez 2013.07.24 */
-                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE codigo_tipo=1 and userid=" + clases.ClassVariables.id_usuario;
+                cadena = "SELECT distinct codigo_serie AS CODIGO, CONCAT(nombre_documento,' - ',serie_documento) as DOCUMENTO FROM v_bodegas_series_usuarios  WHERE codigo_tipo=1 and userid=" + clases.ClassVariables.id_usuario;
                 gridLookDocFactura.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookDocFactura.Properties.DisplayMember = "DOCUMENTO";
                 gridLookDocFactura.Properties.ValueMember = "CODIGO";
@@ -60,7 +60,7 @@ namespace ortoxela.Pedido
 
             try
             {
-                cadena = "SELECT userid,username FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                cadena = "SELECT userid,username FROM usuarios WHERE mostrar_ventas=1";
                 gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookUpEdit1.Properties.DisplayMember = "username";
                 gridLookUpEdit1.Properties.ValueMember = "userid";
@@ -303,7 +303,7 @@ namespace ortoxela.Pedido
 
                         if (double.Parse(tempoValor.ToString(), NumberStyles.Currency) > 0)
                         {
-                            cadena = "INSERT INTO ortoxela.vueltos(codigo_cliente, id_vale,id_recibo,id_pedido, monto_vuelto, fecha_creacion, estadoid) " +
+                            cadena = "INSERT into vueltos(codigo_cliente, id_vale,id_recibo,id_pedido, monto_vuelto, fecha_creacion, estadoid) " +
                                         "VALUES (" + id_cliente + ", " + id_vale + "," + id_recibo + "," + id_pedido + ", " + double.Parse(tempoValor.ToString(), NumberStyles.Currency) + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "',4)";
                             comando = new MySqlCommand(cadena, conexion);
                             comando.Transaction = transa;
@@ -365,7 +365,7 @@ namespace ortoxela.Pedido
             textEditCODIGO.Text = id_cliente;
             textClienteFactura.Text = textNombreCliente.Text;
             textNitFactura.Text = textNitCliente.Text;
-            cadena = "SELECT codigo_cliente, nombre_cliente, nit,direccion FROM ortoxela.clientes where codigo_cliente="+id_cliente;
+            cadena = "SELECT codigo_cliente, nombre_cliente, nit,direccion FROM clientes where codigo_cliente="+id_cliente;
             DataTable dt = new DataTable();
             dt=logicaorto.Tabla(cadena);
             foreach (DataRow fila in dt.Rows)
@@ -374,7 +374,7 @@ namespace ortoxela.Pedido
             }
             try
             {
-                cadena = "SELECT  contado_credito FROM ortoxela.header_doctos_inv where id_documento=" + id_pedido;
+                cadena = "SELECT  contado_credito FROM header_doctos_inv where id_documento=" + id_pedido;
                 dt.Clear();
                 dt = logicaorto.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -484,20 +484,20 @@ namespace ortoxela.Pedido
                     conexion.Open();
                     transa = conexion.BeginTransaction();
                     string tempoTotalFactura = textTotalFactura.Text.Replace(",", "");
-                    cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento,vendedor) " +
+                    cadena = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento,vendedor) " +
                             "VALUES (" + gridLookDocFactura.EditValue + "," + gridLookTipoPago.EditValue + ", '" + textNumeroDocFactura.Text + "', " + id_cliente + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ",0," + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ", " + clases.ClassVariables.id_usuario + "," + id_socio_comercial + ",4," + radioGroup1.SelectedIndex + ",'" + textDeposito.Text + "'," + gridLookUpEdit1.EditValue + ");select last_insert_id();";
                     comando = new MySqlCommand(cadena, conexion);
                     comando.Transaction = transa;
                     id_nuevo_factura = comando.ExecuteScalar().ToString();
                     for (int x = 0; x < gridView4.DataRowCount; x++)
                     {
-                        cadena = "INSERT INTO ortoxela.detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
+                        cadena = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
                                     "VALUES (" + id_nuevo_factura + ", " + gridView4.GetRowCellValue(x, "CANTIDAD") + ", " + gridView4.GetRowCellValue(x, "UNITARIO") + ", " + gridView4.GetRowCellValue(x, "TOTAL") + ",'" + gridView4.GetRowCellValue(x, "CODIGO") + "', 1)";
                         comando = new MySqlCommand(cadena, conexion);
                         comando.Transaction = transa;
                         comando.ExecuteNonQuery();
                     }
-                    cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                    cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
                                 "VALUES (" + id_cliente + ", " + id_vale + "," + id_nuevo_factura + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                     comando = new MySqlCommand(cadena, conexion);
                     comando.Transaction = transa;
@@ -607,12 +607,12 @@ namespace ortoxela.Pedido
                     transa = conexion.BeginTransaction();
 
                     string tempValor = textPor.Text.Replace(",", "");
-                    cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
+                    cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
                             "VALUES (" + textNoRecibo.Text + ", 3, " + id_cliente + ", '" + Convert.ToDateTime(dateFechaRecibo.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "', " + id_vale+ ", 1, " + tempValor.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ", 4);";
                     comando = new MySqlCommand(cadena, conexion);
                     comando.Transaction = transa;
                     comando.ExecuteNonQuery();
-                    cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                    cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
                             "VALUES (" + id_cliente + ", " + id_vale + "," + textNoRecibo.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                     comando = new MySqlCommand(cadena, conexion);
                     comando.Transaction = transa;

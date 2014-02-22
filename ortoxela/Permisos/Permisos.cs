@@ -29,7 +29,7 @@ namespace ortoxela.Permisos
                     if (boton is BarButtonItem)
                     {
                         botoningresa = (BarButtonItem)boton;
-                        cadena = "INSERT INTO ortoxela.permisos (nombre_permiso)VALUES ('" + botoningresa.Name + "')";
+                        cadena = "INSERT into permisos (nombre_permiso)VALUES ('" + botoningresa.Name + "')";
                         logica.variosservios(cadena);                     
 
 
@@ -60,7 +60,7 @@ namespace ortoxela.Permisos
         private void Permisos_Load(object sender, EventArgs e)
         {
             barStaticItem1.Caption = "Usted esta en el sistema como " + clases.ClassVariables.NombreComple;
-            cadena = "SELECT codigo_rol as CODIGO,nombre_rol AS NOMBRE FROM ortoxela.roles where estadoid<>2";
+            cadena = "SELECT codigo_rol as CODIGO,nombre_rol AS NOMBRE FROM roles where estadoid<>2";
             gridControl1.DataSource = logica.Tabla(cadena);
         }
 
@@ -96,7 +96,7 @@ namespace ortoxela.Permisos
             labelControl3.Text = nombre;
             ribbon.Enabled = true;
             cadena = "SELECT roles_permisos.codigo_rol,  permisos.nombre_permiso "+
-                        "FROM ortoxela.roles_permisos inner join permisos ON roles_permisos.permisoid = permisos.permisoid "+
+                        "FROM roles_permisos inner join permisos ON roles_permisos.permisoid = permisos.permisoid "+
                         "where roles_permisos.codigo_rol="+codigo;
             dt=logica.Tabla(cadena);
             foreach (DataRow fila in dt.Rows)
@@ -122,12 +122,12 @@ namespace ortoxela.Permisos
         {            
             try
             {
-                cadena = "DELETE FROM ortoxela.roles_permisos WHERE codigo_rol="+codigo;
+                cadena = "DELETE FROM roles_permisos WHERE codigo_rol="+codigo;
                 logica.variosservios(cadena);
                 foreach (string permiso in dicboton.Values)
                 {
-                    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                                "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + permiso + "'))";
+                    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                                "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + permiso + "'))";
                     logica.variosservios(cadena);
                 }
                 clases.ClassMensajes.INSERTO(this);

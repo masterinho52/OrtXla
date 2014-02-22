@@ -126,7 +126,7 @@ namespace ortoxela.Clientes
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.tipo_cliente_contabilidad (descripcion,porcentaje_ret) " +
+                    cadena = "INSERT into tipo_cliente_contabilidad (descripcion,porcentaje_ret) " +
                             "VALUES ('" + textclienteconta.Text + "', '" + Convert.ToDecimal(textporcentaje.Text) + "')";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
@@ -147,7 +147,7 @@ namespace ortoxela.Clientes
                 }//fin bandera 1
                 else if (bandera == 2)
                 {
-                    cadena = "UPDATE ortoxela.tipo_cliente_contabilidad SET descripcion = '" + textclienteconta.Text + "' , porcentaje_ret = " + Convert.ToDecimal(textporcentaje.Text) + " WHERE id_tipo_cliente_c=" + clases.ClassVariables.id_busca;
+                    cadena = "update tipo_cliente_contabilidad SET descripcion = '" + textclienteconta.Text + "' , porcentaje_ret = " + Convert.ToDecimal(textporcentaje.Text) + " WHERE id_tipo_cliente_c=" + clases.ClassVariables.id_busca;
                     if (clases.ClassMensajes.MODIFICAR(this, cadena))
                     {
                         groupControl1.Enabled = false;
@@ -156,7 +156,7 @@ namespace ortoxela.Clientes
                 }
                 else if (bandera == 3)
                 {
-                    cadena = "UPDATE ortoxela.tipo_cliente_contabilidad SET activo = 0 WHERE id_tipo_cliente_c=" + clases.ClassVariables.id_busca;
+                    cadena = "update tipo_cliente_contabilidad SET activo = 0 WHERE id_tipo_cliente_c=" + clases.ClassVariables.id_busca;
                     if (clases.ClassMensajes.ELIMINAR(this, cadena))
                     {
                         groupControl1.Enabled = false;

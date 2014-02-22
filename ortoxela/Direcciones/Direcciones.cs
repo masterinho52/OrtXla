@@ -23,7 +23,7 @@ namespace ortoxela.Direcciones
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.direcciones (codigo_muni, Direccion1, direccion2, zona, Barrio, Colonia, estadoid) "+
+                    cadena = "INSERT into direcciones (codigo_muni, Direccion1, direccion2, zona, Barrio, Colonia, estadoid) "+
                                 "VALUES ("+gridLookUpEditmuni.EditValue+", '"+textEditdirec1.Text+"','"+textEditdirec2.Text+"', '"+textEditzona.Text+"', '"+textEditbarrio.Text+"', '"+textEditcolonia.Text+"', "+gridLookUpEditestado.EditValue+")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
@@ -46,7 +46,7 @@ namespace ortoxela.Direcciones
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.direcciones SET codigo_muni = " + gridLookUpEditmuni.EditValue + "  , Direccion1 = '" + textEditdirec1.Text + "', direccion2 = '" + textEditdirec2.Text + "', zona = '" + textEditzona.Text + "', Barrio = '" + textEditbarrio.Text + "', Colonia = '" + textEditcolonia.Text + "', estadoid =" + gridLookUpEditestado.EditValue + "  " +
+                        cadena = "update direcciones SET codigo_muni = " + gridLookUpEditmuni.EditValue + "  , Direccion1 = '" + textEditdirec1.Text + "', direccion2 = '" + textEditdirec2.Text + "', zona = '" + textEditzona.Text + "', Barrio = '" + textEditbarrio.Text + "', Colonia = '" + textEditcolonia.Text + "', estadoid =" + gridLookUpEditestado.EditValue + "  " +
                                     "WHERE codigo_direccion=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
@@ -63,7 +63,7 @@ namespace ortoxela.Direcciones
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.direcciones SET estadoid = 2 WHERE codigo_direccion=" + clases.ClassVariables.id_busca;
+                            cadena = "update direcciones SET estadoid = 2 WHERE codigo_direccion=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -97,7 +97,7 @@ namespace ortoxela.Direcciones
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -116,7 +116,7 @@ namespace ortoxela.Direcciones
             if (clases.ClassVariables.idnuevo != "")
             {
                 cadena = "SELECT codigo_muni as CODIGO, nombre_muni AS MUNICIPIO " +
-                        "FROM  ortoxela.municipios " +
+                        "from  municipios " +
                         "where municipios.estadoid<>2 and municipios.codigo_depto=" + gridLookUpEditdepar.EditValue;
                 
                 gridLookUpEditmuni.Properties.DataSource = logica.Tabla(cadena);
@@ -128,13 +128,13 @@ namespace ortoxela.Direcciones
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
             gridLookUpEditestado.Text = "";
             gridLookUpEditestado.EditValue = 1;
-            cadena = "SELECT codigo_pais AS CODIGO, nombre_pais AS PAIS FROM ortoxela.paises WHERE estadoid<>2";
+            cadena = "SELECT codigo_pais AS CODIGO, nombre_pais AS PAIS FROM paises WHERE estadoid<>2";
             gridLookUppais.Properties.DataSource = logica.Tabla(cadena);
             gridLookUppais.Properties.ValueMember = "CODIGO";
             gridLookUppais.Properties.DisplayMember = "PAIS";
@@ -190,7 +190,7 @@ namespace ortoxela.Direcciones
         private void busca_mod_eli()
         {
             clases.ClassVariables.cadenabusca = "SELECT direcciones.codigo_direccion as CODIGO,direcciones.Direccion1 AS DIRECCION,direcciones.Colonia as COLONIA,direcciones.zona as ZONA,municipios.nombre_muni AS MUNICIPIO,departamentos.nombre_depto AS DEPARTAMENTO " +
-                                                              "FROM ortoxela.direcciones inner join municipios ON direcciones.codigo_muni = municipios.codigo_muni " +
+                                                              "FROM direcciones inner join municipios ON direcciones.codigo_muni = municipios.codigo_muni " +
                                                                 "inner join departamentos ON municipios.codigo_depto = departamentos.codigo_depto " +
                                                                 "inner join paises ON departamentos.codigo_pais = paises.codigo_pais WHERE direcciones.estadoid<>2";
             Form busca = new Buscador.Buscador();
@@ -201,7 +201,7 @@ namespace ortoxela.Direcciones
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 cadena = "SELECT direcciones.codigo_direccion, direcciones.codigo_muni, direcciones.Direccion1, direcciones.direccion2, direcciones.zona, direcciones.Barrio, direcciones.Colonia, direcciones.estadoid,departamentos.codigo_depto,paises.codigo_pais "+
-                        "FROM ortoxela.direcciones inner join municipios ON direcciones.codigo_muni = municipios.codigo_muni "+
+                        "FROM direcciones inner join municipios ON direcciones.codigo_muni = municipios.codigo_muni "+
                         "inner join departamentos ON municipios.codigo_depto = departamentos.codigo_depto inner join paises ON departamentos.codigo_pais = paises.codigo_pais "+
                         "where direcciones.codigo_direccion=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
@@ -261,7 +261,7 @@ namespace ortoxela.Direcciones
             {
                 gridLookUpEditdepar.Enabled = true;
                 simpleButtondepa.Enabled = true;
-                cadena = "SELECT codigo_depto as CODIGO, nombre_depto AS DEPARTAMENTO FROM ortoxela.departamentos " +
+                cadena = "SELECT codigo_depto as CODIGO, nombre_depto AS DEPARTAMENTO FROM departamentos " +
                         " WHERE departamentos.estadoid<>2 and  departamentos.codigo_pais=" + gridLookUppais.EditValue;
 
                 gridLookUpEditdepar.Properties.DataSource = logica.Tabla(cadena);
@@ -287,7 +287,7 @@ namespace ortoxela.Direcciones
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT codigo_pais AS CODIGO, nombre_pais AS PAIS FROM ortoxela.paises WHERE estadoid<>2";
+                cadena = "SELECT codigo_pais AS CODIGO, nombre_pais AS PAIS FROM paises WHERE estadoid<>2";
                 gridLookUppais.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUppais.Properties.ValueMember = "CODIGO";
                 gridLookUppais.Properties.DisplayMember = "PAIS";
@@ -303,7 +303,7 @@ namespace ortoxela.Direcciones
                 gridLookUpEditmuni.Enabled = true;
                 simpleButtonmuni.Enabled = true;
                 cadena = "SELECT codigo_muni as CODIGO, nombre_muni AS MUNICIPIO " +
-                        "FROM  ortoxela.municipios " +
+                        "from  municipios " +
                         "where municipios.estadoid<>2 and municipios.codigo_depto=" + gridLookUpEditdepar.EditValue;
 
                 gridLookUpEditmuni.Properties.DataSource = logica.Tabla(cadena);
@@ -328,7 +328,7 @@ namespace ortoxela.Direcciones
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT codigo_depto as CODIGO, nombre_depto AS DEPARTAMENTO, paises.nombre_pais AS PAIS FROM ortoxela.departamentos " +
+                cadena = "SELECT codigo_depto as CODIGO, nombre_depto AS DEPARTAMENTO, paises.nombre_pais AS PAIS FROM departamentos " +
                            " inner join paises ON departamentos.codigo_pais = paises.codigo_pais " +
                             "WHERE departamentos.estadoid<>2 and  departamentos.codigo_pais=" + gridLookUppais.EditValue;
 

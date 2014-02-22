@@ -67,7 +67,7 @@ namespace ortoxela.Articulos
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT * FROM ortoxela.v_articulos_cat_lbod ";
+            clases.ClassVariables.cadenabusca = "SELECT * FROM v_articulos_cat_lbod ";
                                                          
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
@@ -137,7 +137,7 @@ namespace ortoxela.Articulos
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -178,12 +178,12 @@ namespace ortoxela.Articulos
                         if (bandera == 2)
                         {
                             if(temo_id_articulao!=textEditcodigo.Text.ToString())
-                            cadena = "SELECT articulos.codigo_articulo FROM ortoxela.articulos where codigo_articulo='" + textEditcodigo.Text + "'";
+                            cadena = "SELECT articulos.codigo_articulo FROM articulos where codigo_articulo='" + textEditcodigo.Text + "'";
                             else
-                                cadena = "SELECT articulos.codigo_articulo FROM ortoxela.articulos where codigo_articulo='" + textEditcodigo.Text + "d4#z'";
+                                cadena = "SELECT articulos.codigo_articulo FROM articulos where codigo_articulo='" + textEditcodigo.Text + "d4#z'";
                         }
                         else
-                            cadena = "SELECT articulos.codigo_articulo FROM ortoxela.articulos where codigo_articulo='" + textEditcodigo.Text + "'";
+                            cadena = "SELECT articulos.codigo_articulo FROM articulos where codigo_articulo='" + textEditcodigo.Text + "'";
                         if (logica.ExisteRegistro(cadena) == true)
                             alertControl1.Show(this, "Cuidado", "Este codigo de producto ya existe", Properties.Resources.Advertencia48);
                         else
@@ -194,14 +194,14 @@ namespace ortoxela.Articulos
 
                                 if (codigo_padre == "null")
                                 {
-                                    cadena = "INSERT INTO ortoxela.articulos " +
+                                    cadena = "INSERT into articulos " +
                                             "(codigo_articulo, codigo_marca, codigo_categoria, descripcion, fecha_compra, costo, precio_venta, minimo, maximo, numero_serie, modelo, comentario, usuario_ingresa, estadoid,compuesto, codigo_padre) " +
                                             "VALUES ('" + textEditcodigo.Text + "', " + codigo_marca + ", " + gridLooksubcategoria.EditValue + ", '" + memoEditdescripcion.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + texteditpcosto.Text + ", " + textEditpventa.Text + ", " +
                                             "" + textEditpmin.Text + ", " + textEditpmax.Text + ", '" + textEditserie.Text + "', '" + texteditmodelo.Text + "', '" + memoEditcomentario.Text + "', " + clases.ClassVariables.id_usuario + "," + gridLookUpEstado.EditValue + "," + checkEditCompu.Checked + ", " + codigo_padre + ")";
                                 }
                                 else
                                 {
-                                    cadena = "INSERT INTO ortoxela.articulos " +
+                                    cadena = "INSERT into articulos " +
                                             "(codigo_articulo, codigo_marca, codigo_categoria,descripcion, fecha_compra, costo, precio_venta, minimo, maximo, numero_serie, modelo, comentario, usuario_ingresa, estadoid,compuesto, codigo_padre) " +
                                             "VALUES ('" + textEditcodigo.Text + "', " + codigo_marca + ", " + gridLooksubcategoria.EditValue + ", '" + (memoEditdescripcion.Text + "[" + codigo_padredesc + "]") + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + texteditpcosto.Text + ", " + textEditpventa.Text + ", " +
                                             "" + textEditpmin.Text + ", " + textEditpmax.Text + ", '" + textEditserie.Text + "', '" + texteditmodelo.Text + "', '" + memoEditcomentario.Text + "', " + clases.ClassVariables.id_usuario + "," + gridLookUpEstado.EditValue + "," + checkEditCompu.Checked + ", " + codigo_padre + ")";
@@ -230,7 +230,7 @@ namespace ortoxela.Articulos
                                 if (bandera == 2)
                                 {
 
-                                    cadena = "UPDATE ortoxela.articulos " +
+                                    cadena = "update articulos " +
                                                 "SET codigo_marca = " + codigo_marca + ", codigo_categoria = " + gridLookcategoria.EditValue + ", descripcion = '" + memoEditdescripcion.Text + "', " +
                                             "costo = " + texteditpcosto.Text + ", precio_venta = " + textEditpventa.Text + ", minimo = " + textEditpmin.Text + ", maximo = " + textEditpmax.Text + ", numero_serie = '" + textEditserie.Text + "', modelo = '" + texteditmodelo.Text + "', comentario = '" + memoEditcomentario.Text + "', " +
                                             "usuario_modifica = " + clases.ClassVariables.id_usuario + ", estadoid = " + gridLookUpEstado.EditValue + ", compuesto = " + checkEditCompu.Checked + ",codigo_padre = " + codigo_padre + " " +
@@ -251,11 +251,11 @@ namespace ortoxela.Articulos
                                     if (bandera == 3)
                                     {
 
-                                        cadena = "SELECT bodegas.existencia_articulo FROM ortoxela.articulos inner join bodegas on bodegas.codigo_articulo= articulos.codigo_articulo " +
+                                        cadena = "SELECT bodegas.existencia_articulo FROM articulos inner join bodegas on bodegas.codigo_articulo= articulos.codigo_articulo " +
                                                     "where bodegas.existencia_articulo>0 and articulos.codigo_articulo='" + clases.ClassVariables.id_busca + "'";
                                         if (logica.ExisteRegistro(cadena) == false)
                                         {
-                                            cadena = "UPDATE ortoxela.articulos SET fecha_baja = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',estadoid = 2 WHERE articulos.codigo_articulo='" + clases.ClassVariables.id_busca + "'";
+                                            cadena = "update articulos SET fecha_baja = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',estadoid = 2 WHERE articulos.codigo_articulo='" + clases.ClassVariables.id_busca + "'";
                                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                                             {
                                                 groupControl1.Enabled = false;
@@ -311,26 +311,26 @@ namespace ortoxela.Articulos
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
             gridLookUpEstado.Text = "";
            gridLookUpEstado.EditValue= 1;
-            cadena = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM ortoxela.categorias WHERE estadoid<>2";
+            cadena = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM categorias WHERE estadoid<>2";
             gridLookcategoria.Properties.DataSource = logica.Tabla(cadena);
             gridLookcategoria.Properties.ValueMember = "CODIGO";
             gridLookcategoria.Properties.DisplayMember = "NOMBRE";
             gridLookcategoria.Text = "";
             gridLooksubcategoria.Enabled = false;
             simpleButtonsubcategoria.Enabled = false;
-            cadena = "SELECT codigo_marca as CODIGO, nombre_marca AS NOMBRE FROM ortoxela.marcas WHERE estadoid<>2";
+            cadena = "SELECT codigo_marca as CODIGO, nombre_marca AS NOMBRE FROM marcas WHERE estadoid<>2";
             gridLookmarca.Properties.DataSource = logica.Tabla(cadena);
             gridLookmarca.Properties.ValueMember = "CODIGO";
             gridLookmarca.Properties.DisplayMember = "NOMBRE";
             gridLookmarca.Text = "";
             cadena = "SELECT  articulos.codigo_articulo as CODIGO,descripcion as DESCRIPCION " +
-                                                 "FROM ortoxela.articulos WHERE articulos.estadoid<>2 and compuesto=1";
+                                                 "FROM articulos WHERE articulos.estadoid<>2 and compuesto=1";
             gridLookupartpadre.Properties.DataSource = logica.Tabla(cadena);
             gridLookupartpadre.Properties.ValueMember = "CODIGO";
             gridLookupartpadre.Properties.DisplayMember = "DESCRIPCION";
@@ -350,7 +350,7 @@ namespace ortoxela.Articulos
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT codigo_marca as CODIGO, nombre_marca AS NOMBRE FROM ortoxela.marcas WHERE estadoid<>2";
+                cadena = "SELECT codigo_marca as CODIGO, nombre_marca AS NOMBRE FROM marcas WHERE estadoid<>2";
                 gridLookmarca.Properties.DataSource = logica.Tabla(cadena);
                 gridLookmarca.Properties.ValueMember = "CODIGO";
                 gridLookmarca.Properties.DisplayMember = "NOMBRE";
@@ -368,7 +368,7 @@ namespace ortoxela.Articulos
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM ortoxela.categorias WHERE estadoid<>2";
+                cadena = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM categorias WHERE estadoid<>2";
                 gridLookcategoria.Properties.DataSource = logica.Tabla(cadena);
                 gridLookcategoria.Properties.ValueMember = "CODIGO";
                 gridLookcategoria.Properties.DisplayMember = "NOMBRE";
@@ -414,7 +414,7 @@ namespace ortoxela.Articulos
             if (clases.ClassVariables.idnuevo != null)
             {
                 cadena = "SELECT sub_categorias.codigo_subcat as CODIGO,sub_categorias.nombre_subcategoria as SUBCATEGORIA " +
-                          "FROM ortoxela.sub_categorias inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria " +
+                          "FROM sub_categorias inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria " +
                           "where sub_categorias.estadoid<>2 and categorias.codigo_categoria=" + gridLookcategoria.EditValue; 
                 gridLooksubcategoria.Properties.DataSource = logica.Tabla(cadena);
                 gridLooksubcategoria.Properties.ValueMember = "CODIGO";
@@ -429,7 +429,7 @@ namespace ortoxela.Articulos
             try
             {
                 cadena = "SELECT sub_categorias.codigo_subcat as CODIGO,sub_categorias.nombre_subcategoria as SUBCATEGORIA " +
-                          "FROM ortoxela.sub_categorias inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria " +
+                          "FROM sub_categorias inner join categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria " +
                           "where sub_categorias.estadoid<>2 and categorias.codigo_categoria=" + gridLookcategoria.EditValue;
                 gridLooksubcategoria.Enabled = true;
                 simpleButtonsubcategoria.Enabled=true;

@@ -104,17 +104,17 @@ namespace ortoxela.Clientes
         }
         private void llenacombos()
         {
-            ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM ortoxela.tipo_cliente";
+            ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM tipo_cliente";
             gridLookUpTipoClie.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpTipoClie.Properties.DisplayMember = "TIPO";
             gridLookUpTipoClie.Properties.ValueMember = "CODIGO";
             gridLookUpTipoClie.Text = "";
-            ssql = "SELECT id_tipo_cliente_c AS CODIGO, descripcion AS TIPO FROM ortoxela.tipo_cliente_contabilidad WHERE activo=1";
+            ssql = "SELECT id_tipo_cliente_c AS CODIGO, descripcion AS TIPO FROM tipo_cliente_contabilidad WHERE activo=1";
             gridLookUpTipoClienteConta.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpTipoClienteConta.Properties.DisplayMember = "TIPO";
             gridLookUpTipoClienteConta.Properties.ValueMember = "CODIGO";
             gridLookUpTipoClienteConta.EditValue = 0;            
-            ssql = "SELECT estadoid as CODIGO, nombre_status AS ESTADO FROM ortoxela.estado";
+            ssql = "SELECT estadoid as CODIGO, nombre_status AS ESTADO FROM estado";
             gridLookUpEstado.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpEstado.Properties.DisplayMember = "ESTADO";
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
@@ -126,7 +126,7 @@ namespace ortoxela.Clientes
         private void busca_mod_eli()
         {
             clases.ClassVariables.cadenabusca = "SELECT codigo_cliente as CODIGO, nombre_cliente AS CLIENTE, contacto AS CONTACTO, nombre_paciente AS PACIENTE, telefono_casa AS TELEFONO "+
-                                                "FROM ortoxela.clientes where estadoid<>2";
+                                                "FROM clientes where estadoid<>2";
             Form BUSCA = new Buscador.Buscador();
             BUSCA.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -135,7 +135,7 @@ namespace ortoxela.Clientes
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 ssql = "SELECT codigo_cliente, nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email,direccion,socio_comercial, afiliacion_igss, estadoid, codigo_tipoc, tipo_cliente_conta " +  
-                    "FROM ortoxela.clientes where codigo_cliente=" + clases.ClassVariables.id_busca ;
+                    "FROM clientes where codigo_cliente=" + clases.ClassVariables.id_busca ;
                 DataTable dt = new DataTable();
                 dt = logicaxela.Tabla(ssql);
                 foreach (DataRow fila in dt.Rows)
@@ -172,7 +172,7 @@ namespace ortoxela.Clientes
         }
         private void insertaCliente()
         {
-            ssql = "INSERT INTO ortoxela.clientes(nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email, fecha_ingreso, usuario_creador, direccion, socio_comercial, afiliacion_igss, estadoid, codigo_tipoc,tipo_cliente_conta) " +
+            ssql = "INSERT into clientes(nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email, fecha_ingreso, usuario_creador, direccion, socio_comercial, afiliacion_igss, estadoid, codigo_tipoc,tipo_cliente_conta) " +
             "VALUES ('" + textNombreClie.Text + "', '" + textContacto.Text + "', '" + textNombrePaciente.Text + "', '" + textNit.Text + "', '" + textTelefono.Text + "', '" + textCelular.Text + "', '" + textFax.Text + "', '" + textEmail.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + ", '" + memoEditdireccion.Text + "', " + radioGroup1.SelectedIndex + ", '" + textIgss.Text + "', " + gridLookUpEstado.EditValue + ", " + gridLookUpTipoClie.EditValue + ", " + gridLookUpTipoClienteConta.EditValue + ")";
 
             clases.ClassVariables.idnuevo = logicaxela.nuevoid(ssql);
@@ -220,7 +220,7 @@ namespace ortoxela.Clientes
                 {
                     if (bandera == 2)
                     {
-                        ssql= "UPDATE ortoxela.clientes SET nombre_cliente = '"+textNombreClie.Text+"' , contacto = '"+textContacto.Text+"', nombre_paciente = '"+textNombrePaciente.Text+"', "+
+                        ssql= "update clientes SET nombre_cliente = '"+textNombreClie.Text+"' , contacto = '"+textContacto.Text+"', nombre_paciente = '"+textNombrePaciente.Text+"', "+
                                 "nit = '"+textNit.Text+"', telefono_casa = '"+textTelefono.Text+"', telefono_celular = '"+textCelular.Text+"', fax_otro_tel = '"+textFax.Text+"', "+
                                 "email = '" + textEmail.Text + "',fecha_modificacion = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',usuario_modifica = " + clases.ClassVariables.id_usuario + ",direccion ='" + memoEditdireccion.Text + "', " +
                                " socio_comercial = "+radioGroup1.SelectedIndex+", afiliacion_igss = '"+textIgss.Text+"', estadoid = "+gridLookUpEstado.EditValue+", codigo_tipoc = "+gridLookUpTipoClie.EditValue+" "+
@@ -240,7 +240,7 @@ namespace ortoxela.Clientes
                         if (bandera == 3)
                         {
 
-                            ssql = "UPDATE ortoxela.clientes SET  estadoid = 2 WHERE codigo_cliente=" + clases.ClassVariables.id_busca;
+                            ssql = "update clientes SET  estadoid = 2 WHERE codigo_cliente=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, ssql))
                             {
                                 groupControl1.Enabled = false;
@@ -269,7 +269,7 @@ namespace ortoxela.Clientes
             prov.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                ssql = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                ssql = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -298,7 +298,7 @@ namespace ortoxela.Clientes
             if (clases.ClassVariables.idnuevo != "")
             {
                
-                ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM ortoxela.tipo_cliente WHERE estadoid<>2";
+                ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM tipo_cliente WHERE estadoid<>2";
                 gridLookUpTipoClie.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookUpTipoClie.Properties.ValueMember = "CODIGO";
                 gridLookUpTipoClie.Properties.DisplayMember = "TIPO";

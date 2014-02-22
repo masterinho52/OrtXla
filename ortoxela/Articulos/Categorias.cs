@@ -25,7 +25,7 @@ namespace ortoxela.Articulos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.categorias " +
+                    cadena = "INSERT into categorias " +
                             "(nombre_categoria, estadoid, fecha_creacion, usuario_creador) " +
                             "VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ", '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', "+clases.ClassVariables.id_usuario+")";
                     clases.ClassVariables.idnuevo=logica.nuevoid(cadena);
@@ -49,7 +49,7 @@ namespace ortoxela.Articulos
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.categorias "+
+                        cadena = "update categorias "+
                                     "SET nombre_categoria = '" + textEditnombre.Text + "' , estadoid = " + gridLookUpEditestado.EditValue + " "+
                                     "WHERE categorias.codigo_categoria=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
@@ -67,7 +67,7 @@ namespace ortoxela.Articulos
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.categorias SET estadoid = 2 WHERE categorias.codigo_categoria=" + clases.ClassVariables.id_busca;
+                            cadena = "update categorias SET estadoid = 2 WHERE categorias.codigo_categoria=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -89,7 +89,7 @@ namespace ortoxela.Articulos
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -99,7 +99,7 @@ namespace ortoxela.Articulos
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM ortoxela.categorias WHERE estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_categoria as CODIGO, nombre_categoria AS NOMBRE FROM categorias WHERE estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -107,7 +107,7 @@ namespace ortoxela.Articulos
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_categoria, nombre_categoria, estadoid FROM ortoxela.categorias where codigo_categoria=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_categoria, nombre_categoria, estadoid FROM categorias where codigo_categoria=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -194,7 +194,7 @@ namespace ortoxela.Articulos
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";

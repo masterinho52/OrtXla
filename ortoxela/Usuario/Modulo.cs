@@ -36,7 +36,7 @@ namespace ortoxela.Usuario
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -47,7 +47,7 @@ namespace ortoxela.Usuario
 
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -56,7 +56,7 @@ namespace ortoxela.Usuario
         }
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_modulo as CODIGO, nombre_modulo AS NOMBRE FROM ortoxela.modulos where estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_modulo as CODIGO, nombre_modulo AS NOMBRE FROM modulos where estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -64,7 +64,7 @@ namespace ortoxela.Usuario
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_modulo, nombre_modulo, estadoid FROM ortoxela.modulos where codigo_modulo=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_modulo, nombre_modulo, estadoid FROM modulos where codigo_modulo=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -132,7 +132,7 @@ namespace ortoxela.Usuario
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.modulos (nombre_modulo, estadoid)   VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ")";
+                    cadena = "INSERT into modulos (nombre_modulo, estadoid)   VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
                     {
@@ -154,7 +154,7 @@ namespace ortoxela.Usuario
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.modulos  SET nombre_modulo = '" + textEditnombre.Text + "', estadoid = " + gridLookUpEditestado.EditValue + " WHERE codigo_modulo=" + clases.ClassVariables.id_busca;
+                        cadena = "update modulos  SET nombre_modulo = '" + textEditnombre.Text + "', estadoid = " + gridLookUpEditestado.EditValue + " WHERE codigo_modulo=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
                             groupControl1.Enabled = false;
@@ -170,7 +170,7 @@ namespace ortoxela.Usuario
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.modulos SET  estadoid = 2 WHERE codigo_modulo=" + clases.ClassVariables.id_busca;
+                            cadena = "update modulos SET  estadoid = 2 WHERE codigo_modulo=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;

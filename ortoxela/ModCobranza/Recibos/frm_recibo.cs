@@ -20,7 +20,7 @@ namespace ortoxela.ModCobranza.Recibos
         classortoxela logicaorto = new classortoxela();
         private void llenaFacturas()
         {
-            cadena = "SELECT id_documento,CAST(CONCAT(nombre_documento,' [',serie_documento,']',' No ',no_documento)AS CHAR CHARACTER SET utf8) AS Documento FROM header_doctos_inv h JOIN ortoxela.v_tipos_documentos t ON(h.codigo_serie=t.codigo_serie) WHERE t.codigo_tipo =1 AND estadoid=4 AND contado_credito=1 ORDER BY h.codigo_serie,no_documento";
+            cadena = "SELECT id_documento,CAST(CONCAT(nombre_documento,' [',serie_documento,']',' No ',no_documento)AS CHAR CHARACTER SET utf8) AS Documento FROM header_doctos_inv h JOIN v_tipos_documentos t ON(h.codigo_serie=t.codigo_serie) WHERE t.codigo_tipo =1 AND estadoid=4 AND contado_credito=1 ORDER BY h.codigo_serie,no_documento";
             gridLookSerieVale.Properties.DataSource = ortoxela.Tabla(cadena);
             gridLookSerieVale.Properties.DisplayMember = "Documento";           
             gridLookSerieVale.Properties.ValueMember="id_documento";            
@@ -33,7 +33,7 @@ namespace ortoxela.ModCobranza.Recibos
            // this.vueltosTableAdapter.Fill(this.dataSetVuelto1.Vueltos);
             try
             {
-                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=2";
+                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=2";
                 gridLookSerieRecibo.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookSerieRecibo.Properties.DisplayMember = "DOCUMENTO";
                 gridLookSerieRecibo.Properties.ValueMember = "CODIGO";
@@ -138,11 +138,11 @@ namespace ortoxela.ModCobranza.Recibos
                         string tempValor = textPor.Text.Replace(",", "");
                         if (radioGroup2.SelectedIndex == 0)
                         {
-                            //cadena = "INSERT INTO ortoxela.clientes(nombre_cliente) " +
+                            //cadena = "INSERT into clientes(nombre_cliente) " +
                             //    "VALUES ('" + textRecibimosDe + "')";
                             //id_cliente = ortoxela.nuevoid(cadena);
 
-                            cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, tipo_pago, monto, usuario_creador, estadoid) " +
+                            cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, tipo_pago, monto, usuario_creador, estadoid) " +
                                  "VALUES (" + textNoRecibo.Text + ", 24, " + id_cliente + ", '" + Convert.ToDateTime(dateFechaRecibo.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "', 1, " + tempValor.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ", 4);";
                             comando = new MySqlCommand(cadena, conexion);
                             comando.Transaction = transa;
@@ -161,12 +161,12 @@ namespace ortoxela.ModCobranza.Recibos
                         {
                             if (FacturaDirecta)
                             {
-                                cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, tipo_pago, monto, usuario_creador, estadoid) " +
+                                cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, tipo_pago, monto, usuario_creador, estadoid) " +
                                         "VALUES (" + textNoRecibo.Text + ", 3, " + id_cliente + ", '" + Convert.ToDateTime(dateFechaRecibo.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "', 1, " + tempValor.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ", 4);";
                                 comando = new MySqlCommand(cadena, conexion);
                                 comando.Transaction = transa;
                                 comando.ExecuteNonQuery();
-                                cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_documento, fecha_creacion, usuario_creador, estadoid,id_factura) " +
+                                cadena = "INSERT into relacion_venta(codigo_cliente, id_documento, fecha_creacion, usuario_creador, estadoid,id_factura) " +
                                         "VALUES (" + id_cliente + "," + textNoRecibo.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4,"+gridLookSerieVale.EditValue+")";
                                 comando = new MySqlCommand(cadena, conexion);
                                 comando.Transaction = transa;
@@ -187,12 +187,12 @@ namespace ortoxela.ModCobranza.Recibos
                             }
                             else
                             {
-                                cadena = "INSERT INTO ortoxela.recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
+                                cadena = "INSERT into recibos(no_recibo, codigo_serie, codigo_cliente, fecha_creacion, no_pedido, tipo_pago, monto, usuario_creador, estadoid) " +
                                 "VALUES (" + textNoRecibo.Text + ", 3, " + id_cliente + ", '" + Convert.ToDateTime(dateFechaRecibo.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "', " + id_vale + ", 1, " + tempValor.Replace("Q", "") + ", " + clases.ClassVariables.id_usuario + ", 4);";
                                 comando = new MySqlCommand(cadena, conexion);
                                 comando.Transaction = transa;
                                 comando.ExecuteNonQuery();
-                                cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                                cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
                                         "VALUES (" + id_cliente + ", " + id_vale + "," + textNoRecibo.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                                 comando = new MySqlCommand(cadena, conexion);
                                 comando.Transaction = transa;

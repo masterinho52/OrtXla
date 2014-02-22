@@ -47,7 +47,11 @@ namespace ortoxela
                     dt_rol = logica.Tabla(cadena);
                     clases.ClassVariables.id_rol = dt_rol.Rows[0][0].ToString();
 
+<<<<<<< HEAD
                     cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=2 ";
+=======
+                    cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=3 ";
+>>>>>>> 7090d0e70eec7e77c5edeab443a38482f04e606a
                     DataTable dt_empresa = new DataTable();
                     dt_empresa = logica.Tabla(cadena);
                     clases.ClassVariables.nombreEmpresa = dt_empresa.Rows[0][0].ToString();

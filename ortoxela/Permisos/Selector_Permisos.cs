@@ -43,7 +43,7 @@ namespace ortoxela.Permisos
                         }
                         if (existe_permiso == false)
                         {
-                            cadena = "insert into ortoxela.permisos (nombre_permiso) values ('" + botoningresa.Name + "')";
+                            cadena = "insert into permisos (nombre_permiso) values ('" + botoningresa.Name + "')";
                             logica.variosservios(cadena);
                         }
                     }
@@ -73,7 +73,7 @@ namespace ortoxela.Permisos
         private void Selector_Permisos_Load(object sender, EventArgs e)
         {
             barStaticItem1.Caption = "USUARIO: " + clases.ClassVariables.NombreComple;
-            cadena = "SELECT codigo_rol as CODIGO,nombre_rol AS NOMBRE FROM ortoxela.roles where estadoid<>2";
+            cadena = "SELECT codigo_rol as CODIGO,nombre_rol AS NOMBRE FROM roles where estadoid<>2";
             gridControl1.DataSource = logica.Tabla(cadena);
         }
 
@@ -110,7 +110,7 @@ namespace ortoxela.Permisos
             ribbon.Enabled = true;
             groupControl1.Enabled = true;
             cadena = "SELECT roles_permisos.codigo_rol,  permisos.nombre_permiso " +
-                        "FROM ortoxela.roles_permisos inner join permisos ON roles_permisos.permisoid = permisos.permisoid " +
+                        "FROM roles_permisos inner join permisos ON roles_permisos.permisoid = permisos.permisoid " +
                         "where roles_permisos.codigo_rol=" + codigo;
             dt = logica.Tabla(cadena);
             foreach (DataRow fila in dt.Rows)
@@ -152,12 +152,12 @@ namespace ortoxela.Permisos
         {
             try
             {
-                cadena = "DELETE FROM ortoxela.roles_permisos WHERE codigo_rol=" + codigo;
+                cadena = "DELETE FROM roles_permisos WHERE codigo_rol=" + codigo;
                 logica.variosservios(cadena);
                 foreach (string permiso in dicboton.Values)
                 {
-                    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                                "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + permiso + "'))";
+                    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                                "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + permiso + "'))";
                     logica.variosservios(cadena);
                 }
                 clases.ClassMensajes.INSERTO(this);
@@ -187,15 +187,15 @@ namespace ortoxela.Permisos
                         check = (CheckEdit)control;
                         if (check.Checked)
                         {
-                            cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + check.Text + "'and codigo_rol='" + codigo + "')";
+                            cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + check.Text + "'and codigo_rol='" + codigo + "')";
                             logica.variosservios(cadena);
-                            cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                                            "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + check.Text + "'))";
+                            cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                                            "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + check.Text + "'))";
                             logica.variosservios(cadena);
                         }
                         else if (check.Checked == false)
                         {
-                            cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + check.Text + "'and codigo_rol='" + codigo + "')";
+                            cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + check.Text + "'and codigo_rol='" + codigo + "')";
                             logica.variosservios(cadena);
                         }
                     }
@@ -203,61 +203,61 @@ namespace ortoxela.Permisos
                 ////Modulo Facturacion
                 //if (checkEdit1.Checked)
                 //{
-                //    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit1.Text + "'))";
+                //    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit1.Text + "'))";
                 //    logica.variosservios(cadena);
                 //}
                 //else if (checkEdit1.Checked == false)
                 //{
-                //    cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit1.Text + "')";
+                //    cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit1.Text + "')";
                 //    logica.variosservios(cadena);
                 //}
                 ////Modulo Administracion
                 //if (checkEdit2.Checked)
                 //{
-                //    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit2.Text + "'))";
+                //    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit2.Text + "'))";
                 //    logica.variosservios(cadena);
                 //}
                 //else if (checkEdit2.Checked == false)
                 //{
-                //    cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit2.Text + "')";
+                //    cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit2.Text + "')";
                 //    logica.variosservios(cadena);
                 //}
                 ////Modulo Cobranza
                 //if (checkEdit3.Checked)
                 //{
-                //    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit3.Text + "'))";
+                //    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit3.Text + "'))";
                 //    logica.variosservios(cadena);
                 //}
                 //else if (checkEdit3.Checked == false)
                 //{
-                //    cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit3.Text + "')";
+                //    cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit3.Text + "')";
                 //    logica.variosservios(cadena);
                 //}
                 ////Modulo Proveedores
                 //if (checkEdit4.Checked)
                 //{
-                //    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit4.Text + "'))";
+                //    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit4.Text + "'))";
                 //    logica.variosservios(cadena);
                 //}
                 //else if (checkEdit4.Checked == false)
                 //{
-                //    cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit4.Text + "')";
+                //    cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit4.Text + "')";
                 //    logica.variosservios(cadena);
                 //}
                 ////Modulo Contabilidad
                 //if (checkEdit5.Checked)
                 //{
-                //    cadena = "INSERT INTO ortoxela.roles_permisos (usuario_creador, codigo_rol, permisoid) " +
-                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit5.Text + "'))";
+                //    cadena = "INSERT into roles_permisos (usuario_creador, codigo_rol, permisoid) " +
+                //                    "VALUES (" + clases.ClassVariables.id_usuario + ", " + codigo + ", (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit5.Text + "'))";
                 //    logica.variosservios(cadena);
                 //}
                 //else if (checkEdit5.Checked == false)
                 //{
-                //    cadena = "DELETE FROM ortoxela.roles_permisos WHERE permisoid= (SELECT permisoid FROM ortoxela.permisos where nombre_permiso='" + checkEdit5.Text + "')";
+                //    cadena = "DELETE FROM roles_permisos WHERE permisoid= (SELECT permisoid FROM permisos where nombre_permiso='" + checkEdit5.Text + "')";
                 //    logica.variosservios(cadena);
                 //}
                 clases.ClassMensajes.INSERTO(this);

@@ -30,7 +30,7 @@ namespace ortoxela.Usuario
             {
                 if (textEdit1.Text == textEdit2.Text)
                 {
-                    consulta = "UPDATE ortoxela.usuarios SET pasword='" + logica.encripta(textEdit1.Text) + "'where userid='" + clases.ClassVariables.id_usuario + "'";
+                    consulta = "update usuarios SET pasword='" + logica.encripta(textEdit1.Text) + "'where userid='" + clases.ClassVariables.id_usuario + "'";
                     clases.ClassMensajes.MODIFICAR(this, consulta);
                     this.Close();
                 }

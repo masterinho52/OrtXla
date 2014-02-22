@@ -29,7 +29,7 @@ namespace ortoxela.MiniLogin
             if (dxValidationProvider1.Validate())
             {              
                     cadena = "SELECT userid, nombre, apellido " +
-                                "FROM ortoxela.usuarios where username='" + textEditnombre.Text + "' and pasword='" + logica.encripta(textEditcontraseña.Text) + "' and estadoid<>2";
+                                "FROM usuarios where username='" + textEditnombre.Text + "' and pasword='" + logica.encripta(textEditcontraseña.Text) + "' and estadoid<>2";
                     tabla = logica.Tabla(cadena);
                     if (tabla.Rows.Count == 1)
                     {

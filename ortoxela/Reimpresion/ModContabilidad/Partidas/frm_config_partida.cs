@@ -91,12 +91,12 @@ namespace ortoxela.ModContabilidad.Partidas
                 {
                     if (gridView1.GetRowCellValue(x, "DEBE").ToString() == "1")
                     {
-                        cadena += "insert into ortoxela.catalogo_partidas(id_cond, id_cuenta_debe,porcentaje) " +
+                        cadena += "insert into catalogo_partidas(id_cond, id_cuenta_debe,porcentaje) " +
                                 "values('" + id_condicion + "', '" + gridView1.GetRowCellValue(x, "IDCUENTA") + "', '" + gridView1.GetRowCellValue(x, "PORCENTAJE DEBE") + "');";
                     }
                     else
                     {
-                        cadena += "insert into ortoxela.catalogo_partidas(id_cond,id_cuenta_haber,porcentaje) " +
+                        cadena += "insert into catalogo_partidas(id_cond,id_cuenta_haber,porcentaje) " +
                                "values('" + id_condicion + "', '" + gridView1.GetRowCellValue(x, "IDCUENTA") + "','" + gridView1.GetRowCellValue(x, "PORCENTAJE HABER") + "');";
                     }
                 }

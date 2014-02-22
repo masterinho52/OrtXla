@@ -27,7 +27,7 @@ namespace ortoxela.ModContabilidad.Partidas
             try
             {
                 cadena = "SELECT codigo_serie CODIGO,CAST(CONCAT(nombre_documento,'[',serie_documento,']')AS CHAR) AS 'DOCUMENTO' " +
-                           "FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo where tipos_documento.estado_id=1 " +
+                           "FROM series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo where tipos_documento.estado_id=1 " +
                            "ORDER BY nombre_documento";
                 gridLookSerie.Properties.DataSource = ortoxela.Tabla(cadena);
                 gridLookSerie.Properties.DisplayMember = "DOCUMENTO";
@@ -52,7 +52,7 @@ namespace ortoxela.ModContabilidad.Partidas
         }
         private void ingresoCondicion()
         {
-            cadena = "INSERT INTO ortoxela.condiciones_contabilidad (nombre_operacion, codigo_serie, tipo_pago, tipo_cliente)"+
+            cadena = "INSERT into condiciones_contabilidad (nombre_operacion, codigo_serie, tipo_pago, tipo_cliente)"+
                     "VALUES('"+textNombreOperacion.Text+"','"+gridLookSerie.EditValue+"', '"+radioGroup1.SelectedIndex+"', '"+gridLookUpTipoCliente.EditValue+"')";
             if(Convert.ToInt32(ortoxela.nuevoid(cadena))>0)
             {

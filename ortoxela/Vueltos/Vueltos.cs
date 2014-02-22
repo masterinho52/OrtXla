@@ -22,7 +22,7 @@ namespace ortoxela.Vueltos
         {
             try
             {
-                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM ortoxela.tipo_pago where estadoid<>2";
+                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM tipo_pago where estadoid<>2";
                 gridLookTipoPago.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoPago.Properties.DisplayMember = "TIPO PAGO";
                 gridLookTipoPago.Properties.ValueMember = "CODIGO";
@@ -73,7 +73,7 @@ namespace ortoxela.Vueltos
                 id_vuelto = clases.ClassVariables.id_busca;
                 DataTable tempLlena = new DataTable();
                 cadena = "SELECT vueltos.id_vuelto as CODIGO,vueltos.id_factura AS FACTURA,vueltos.id_pedido AS PEDIDO,vueltos.id_recibo AS RECIBO,vueltos.id_vale AS VALE,clientes.nombre_cliente AS CLIENTE,vueltos.monto_vuelto as VUELTO " +
-                            "FROM ortoxela.vueltos INNER JOIN clientes ON vueltos.codigo_cliente = clientes.codigo_cliente WHERE vueltos.id_vuelto=" + id_vuelto;
+                            "FROM vueltos INNER JOIN clientes ON vueltos.codigo_cliente = clientes.codigo_cliente WHERE vueltos.id_vuelto=" + id_vuelto;
                 tempLlena = logicaorto.Tabla(cadena);
                 foreach (DataRow fila in tempLlena.Rows)
                 {
@@ -117,7 +117,7 @@ namespace ortoxela.Vueltos
             {
                 if (MessageBox.Show("¿ESTA SEGURO DE CONTINUAR, AL HACER ESTO NO HAY VUELTA ATRAS?", "INFORMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cadena = "UPDATE ortoxela.vueltos "+
+                    cadena = "update vueltos "+
                             "SET fecha_pago = '"+dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss")+"', tipo_pago = "+gridLookTipoPago.EditValue+", no_cheque = '"+textCHEQUE.Text+"', nombre_banco = '"+textBANCO.Text+"', decripcion = '"+memoDescripcion.Text+"', estadoid = 5 ,no_vuelto="+no_vuelto+
                             " WHERE vueltos.id_vuelto="+id_vuelto;
                     if (logicaorto.variosservios(cadena) == 1)

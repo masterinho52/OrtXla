@@ -24,7 +24,7 @@ namespace ortoxela.AnulaFactura
         {
             try
             {
-                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM ortoxela.series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1";
+                cadena = "SELECT codigo_serie CODIGO,CONCAT(tipos_documento.nombre_documento,' - ',serie_documento) AS DOCUMENTO FROM series_documentos INNER JOIN tipos_documento ON series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=1";
                 gridLookDocFactura.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookDocFactura.Properties.DisplayMember = "DOCUMENTO";
                 gridLookDocFactura.Properties.ValueMember = "CODIGO";

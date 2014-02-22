@@ -75,7 +75,7 @@ namespace ortoxela.Reportes.Compras
         {
             try
             {
-                string ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM ortoxela.proveedores WHERE estadoid<>2";
+                string ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM proveedores WHERE estadoid<>2";
                 gridLookProveedor.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookProveedor.Properties.DisplayMember = "NOMBRE";
                 gridLookProveedor.Properties.ValueMember = "CODIGO";
@@ -89,7 +89,7 @@ namespace ortoxela.Reportes.Compras
                 string ssql;
 
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
 
                 listBox2.DataSource = logicaxela.Tabla(ssql);
                 listBox2.DisplayMember = "nombre_bodega";
@@ -103,7 +103,7 @@ namespace ortoxela.Reportes.Compras
                 string ssql;
 
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
 
                 listBox2.DataSource = logicaxela.Tabla(ssql);
                 listBox2.DisplayMember = "nombre_bodega";

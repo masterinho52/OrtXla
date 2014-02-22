@@ -61,7 +61,7 @@ namespace ortoxela.Reportes.Ventas
                  string ssql;
 
                  /* jramirez 2013.07.24 */
-                 ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                 ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
 
                  listBoxBodegas.DataSource = logicaxela.Tabla(ssql);
                  listBoxBodegas.DisplayMember = "nombre_bodega";
@@ -221,7 +221,7 @@ namespace ortoxela.Reportes.Ventas
 
 
                      string consulta = "select  fecha, Tipo_Pago, nombre_cliente, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, no_documento, refer_documento, nombre_tipo_pago, documento,  " +
-                                  "nombre_estado, fecha_anula, usuario_anula, tipo_cliente, nitCliente, codigo_cliente from ortoxela.v_ventas_general where 1=1 " +
+                                  "nombre_estado, fecha_anula, usuario_anula, tipo_cliente, nitCliente, codigo_cliente FROM v_ventas_general where 1=1 " +
                                  " and fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59" + "' " +
                                  " and codigo_serie in (" + ListaSeries + ") ";
 
@@ -329,7 +329,7 @@ namespace ortoxela.Reportes.Ventas
                 string consultax = "SELECT        codigo_articulo, Articulo, nombre_bodega, cantidad_enviada, precio_maximo_sin_iva, precio_maximo_iva, precio_minimo_sin_iva, precio_minimo_iva, " +
                  " precio_promedio_iva, precio_promedio_sin_iva, total_facturado_iva, Total_facturado_sin_iva, descuentoPct, DescuentoQ, documento, costo_iva, costo_sin_iva, " +
                  " categoria, fecha, fecha_1era_venta, fecha_ultima_venta,codigo_serie  " +
-                 " FROM    ortoxela.v_ventas_articulo_mas where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' ";
+                 " FROM    v_ventas_articulo_mas where fecha between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00" + "' and '" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59' ";
                         
 
                         if (textEdit1.Text.Trim() != "")
@@ -588,7 +588,7 @@ namespace ortoxela.Reportes.Ventas
                 
                 }                            
             }
-            string ssql = " SELECT distinct codigo_serie,CONCAT(nombre_documento,'[',serie_documento,']',' Bod: ',nombre_bodega) AS documento FROM ortoxela.v_bodegas_series_usuarios b " +
+            string ssql = " SELECT distinct codigo_serie,CONCAT(nombre_documento,'[',serie_documento,']',' Bod: ',nombre_bodega) AS documento FROM v_bodegas_series_usuarios b " +
                         " WHERE codigo_tipo=1 AND codigo_bodega IN (" + ListaBodegas + " )";
             this.listBoxSeries.DataSource = logicaxela.Tabla(ssql);
             this.listBoxSeries.DisplayMember = "documento";

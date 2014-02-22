@@ -31,7 +31,7 @@ namespace ortoxela.Usuario
                          if (bandera == 1)
                             {
                    
-                               cadena = "INSERT INTO ortoxela.usuarios (nombre, apellido, username, pasword, email, telefono_casa, telefono_celular, codigo_direccion, estadoid) " +
+                               cadena = "INSERT into usuarios (nombre, apellido, username, pasword, email, telefono_casa, telefono_celular, codigo_direccion, estadoid) " +
                                         "VALUES ('" + textNombreusu.Text + "', '" + textapellidousu.Text + "', '" + textusua.Text + "', '" + logica.encripta(textcontrasenia.Text) + "', '" + textemail.Text + "', '" + texttelefono.Text + "', '" + textcelular.Text + "', '" + memoEditdireccion.Text + "', " + gridLookUpEstado.EditValue + ")";
                             clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                             if (clases.ClassVariables.idnuevo != null)
@@ -56,7 +56,7 @@ namespace ortoxela.Usuario
                         {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.usuarios "+
+                        cadena = "update usuarios "+
                                 "SET nombre = '"+textNombreusu.Text+"' , apellido = '"+textapellidousu.Text+"', username = '"+textusua.Text+"', pasword = '" + logica.encripta(textcontrasenia.Text) + "', email = '" + textemail.Text + "', telefono_casa = '" + texttelefono.Text + "', telefono_celular = '" + textcelular.Text + "', codigo_direccion = '" + memoEditdireccion.Text + "', estadoid = " + gridLookUpEstado.EditValue + " " +
                                 "WHERE userid=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
@@ -74,7 +74,7 @@ namespace ortoxela.Usuario
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.usuarios SET estadoid = 2 WHERE userid=" + clases.ClassVariables.id_busca;
+                            cadena = "update usuarios SET estadoid = 2 WHERE userid=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -98,7 +98,7 @@ namespace ortoxela.Usuario
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.Properties.DisplayMember = "NOMBRE";
@@ -110,7 +110,7 @@ namespace ortoxela.Usuario
         private void busca_mod_eli()
         {
             clases.ClassVariables.cadenabusca = "SELECT userid AS CODIGO, nombre AS NOMBRE, apellido AS APELLIDO, username AS USUARIO, pasword AS CONTRASEÑA, email AS EMAIL, telefono_casa AS TELEFONO, telefono_celular AS CELULAR "+
-                                                "FROM ortoxela.usuarios WHERE estadoid<>2";
+                                                "FROM usuarios WHERE estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -119,7 +119,7 @@ namespace ortoxela.Usuario
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
                 cadena = "SELECT userid, nombre, apellido, username, pasword, email, telefono_casa, telefono_celular, codigo_direccion, estadoid "+
-                            "FROM ortoxela.usuarios where userid=" + clases.ClassVariables.id_busca;
+                            "FROM usuarios where userid=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -230,7 +230,7 @@ namespace ortoxela.Usuario
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEstado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEstado.Properties.ValueMember = "CODIGO";
                 gridLookUpEstado.Properties.DisplayMember = "NOMBRE";

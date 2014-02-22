@@ -41,7 +41,7 @@ namespace ortoxela.Cotizacion
         {
             try
             {
-                cadena = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM ortoxela.proveedores WHERE estadoid<>2";
+                cadena = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM proveedores WHERE estadoid<>2";
                 gridLookProveedor.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookProveedor.Properties.DisplayMember = "NOMBRE";
                 gridLookProveedor.Properties.ValueMember = "CODIGO";
@@ -51,9 +51,9 @@ namespace ortoxela.Cotizacion
             { }
             try
             {
-                /* cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2"; */
+                /* cadena = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM bodegas_header where estadoid<>2"; */
                 /* jramirez 2013.07.24 */
-                cadena = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                cadena = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
                 gridLookBodega.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -150,7 +150,7 @@ namespace ortoxela.Cotizacion
                     /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'"; 
                      jramirez 2013.07.04 
                      */
-                    cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
+                    cadena = "select f_es_compuesto('" + id_articulo + "') AS compuesto;";
                     string compuesto = logicaorto.Tabla(cadena).Rows[0]["compuesto"].ToString();
                     if (Convert.ToBoolean(logicaorto.Tabla(cadena).Rows[0]["compuesto"]))
                     {
@@ -370,7 +370,7 @@ namespace ortoxela.Cotizacion
                     labelNoDocumento.Text = (Convert.ToInt32(labelNoDocumento.Text) + 1).ToString();
                 conexion.Open();
                 transa = conexion.BeginTransaction();
-                cadena = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie, tipo_pago, no_documento,codigo_proveedor, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial,razon_ajuste, descripcion, estadoid,contado_credito,refer_documento) " +
+                cadena = "INSERT into header_doctos_inv(codigo_serie, tipo_pago, no_documento,codigo_proveedor, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, socio_comercial,razon_ajuste, descripcion, estadoid,contado_credito,refer_documento) " +
                         "VALUES (" + id_serie_documento + ", " + 1 + ", '" + labelNoDocumento.Text + "',"+id_proveedor+", '" + dateFechaCotizacion.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + TotalPedido + ", " + TotalDescuento + ", " + TotalPedido + ", " + clases.ClassVariables.id_usuario + ", " + 0 + ",'" + id_socioComercial + "', 'Marca: " + textMarcas.Text + "     Tiempo de Entrega: " + textTiempoEntrega.Text + "','" + "Diagnostico :" + textEmail.Text + "   Medico :" + "', 4,0,'" + textSostenimiento.Text + "');select last_insert_id();";
                 comando = new MySqlCommand(cadena, conexion);
                 comando.Transaction = transa;
@@ -379,23 +379,23 @@ namespace ortoxela.Cotizacion
                 {
                     if (Convert.ToInt32(gridView1.GetRowCellValue(x, "CANTIDAD")) > 0)
                     {
-                        cadena = "INSERT INTO ortoxela.detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
+                        cadena = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
                                     "VALUES (" + id_nuevo_pedido + ", " + gridView1.GetRowCellValue(x, "CANTIDAD") + ", " + gridView1.GetRowCellValue(x, "PRECIO UNITARIO") + ", " + gridView1.GetRowCellValue(x, "SUB TOTAL") + ",'" + gridView1.GetRowCellValue(x, "CODIGO") + "', " + gridView1.GetRowCellValue(x, "IDBODEGA") + ")";
                         comando = new MySqlCommand(cadena, conexion);
                         comando.Transaction = transa;
                         comando.ExecuteNonQuery();
                     }
-                    //cadena = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
+                    //cadena = "update bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
                     //comando = new MySqlCommand(cadena, conexion);
                     //comando.Transaction = transa;
                     //comando.ExecuteNonQuery();
                 }
-                //cadena = "INSERT INTO ortoxela.relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                //cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
                 //            "VALUES (" + id_cliente + ", " + id_nuevo_vale + "," + id_nuevo_pedido + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                 //comando = new MySqlCommand(cadena, conexion);
                 //comando.Transaction = transa;
                 //comando.ExecuteNonQuery();
-                //cadena = "UPDATE ortoxela.header_doctos_inv SET estadoid = 4 WHERE header_doctos_inv.id_documento=" + id_nuevo_vale;
+                //cadena = "update header_doctos_inv SET estadoid = 4 WHERE header_doctos_inv.id_documento=" + id_nuevo_vale;
                 //comando = new MySqlCommand(cadena, conexion);
                 //comando.Transaction = transa;
                 //comando.ExecuteNonQuery();

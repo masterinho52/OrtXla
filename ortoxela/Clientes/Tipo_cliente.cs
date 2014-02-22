@@ -96,7 +96,7 @@ namespace ortoxela.Clientes
 
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.tipo_cliente (tipo_cliente, descuento_maximo, credito_maximo, estadoid) "+
+                    cadena = "INSERT into tipo_cliente (tipo_cliente, descuento_maximo, credito_maximo, estadoid) "+
                             "VALUES ('"+textcliente.Text+"', "+descuentomax+", "+creditomax+", "+gridLookestado.EditValue+")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
                     if (clases.ClassVariables.idnuevo != null)
@@ -119,7 +119,7 @@ namespace ortoxela.Clientes
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.tipo_cliente SET tipo_cliente = '"+textcliente.Text+"' , descuento_maximo = "+descuentomax+", credito_maximo = "+creditomax+", estadoid = "+gridLookestado.EditValue+" "+
+                        cadena = "update tipo_cliente SET tipo_cliente = '"+textcliente.Text+"' , descuento_maximo = "+descuentomax+", credito_maximo = "+creditomax+", estadoid = "+gridLookestado.EditValue+" "+
                                     "WHERE codigo_tipoc=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
                         {
@@ -136,7 +136,7 @@ namespace ortoxela.Clientes
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.tipo_cliente SET estadoid = 2 WHERE codigo_tipoc=" + clases.ClassVariables.id_busca;
+                            cadena = "update tipo_cliente SET estadoid = 2 WHERE codigo_tipoc=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -182,7 +182,7 @@ namespace ortoxela.Clientes
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookestado.Properties.ValueMember = "CODIGO";
             gridLookestado.Properties.DisplayMember = "NOMBRE";
@@ -192,7 +192,7 @@ namespace ortoxela.Clientes
 
         private void busca_mod_eli()
         {
-            clases.ClassVariables.cadenabusca = "SELECT codigo_tipoc as CODIGO , tipo_cliente AS CLIENTE  FROM ortoxela.tipo_cliente WHERE estadoid<>2";
+            clases.ClassVariables.cadenabusca = "SELECT codigo_tipoc as CODIGO , tipo_cliente AS CLIENTE  FROM tipo_cliente WHERE estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -200,7 +200,7 @@ namespace ortoxela.Clientes
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_tipoc, tipo_cliente, descuento_maximo, credito_maximo, estadoid FROM ortoxela.tipo_cliente WHERE codigo_tipoc=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_tipoc, tipo_cliente, descuento_maximo, credito_maximo, estadoid FROM tipo_cliente WHERE codigo_tipoc=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -228,7 +228,7 @@ namespace ortoxela.Clientes
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != "")
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookestado.Properties.ValueMember = "CODIGO";
                 gridLookestado.Properties.DisplayMember = "NOMBRE";

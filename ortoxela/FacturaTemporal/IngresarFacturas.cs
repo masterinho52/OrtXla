@@ -60,7 +60,7 @@ namespace ortoxela.FacturaTemporal
 
             try
             {
-                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM ortoxela.tipo_pago where estadoid<>2";
+                cadena = "SELECT tipo_pago as CODIGO, nombre_tipo_pago AS 'TIPO PAGO' FROM tipo_pago where estadoid<>2";
                 gridLookTipoPago.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookTipoPago.Properties.DisplayMember = "TIPO PAGO";
                 gridLookTipoPago.Properties.ValueMember = "CODIGO";
@@ -73,7 +73,7 @@ namespace ortoxela.FacturaTemporal
 
             try
             {
-                cadena = "SELECT userid,username FROM ortoxela.usuarios WHERE mostrar_ventas=1";
+                cadena = "SELECT userid,username FROM usuarios WHERE mostrar_ventas=1";
                 gridLookUpEdit1.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookUpEdit1.Properties.DisplayMember = "username";
                 gridLookUpEdit1.Properties.ValueMember = "userid";
@@ -86,9 +86,9 @@ namespace ortoxela.FacturaTemporal
         {            
             try
             {
-                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM bodegas_header where estadoid=1"; */
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
                 if (serie != 0)
                     ssql = ssql + " and codigo_serie="+serie.ToString();
                 ssql = ssql + " order by codigo_bodega asc ";
@@ -157,7 +157,7 @@ namespace ortoxela.FacturaTemporal
                 {
                     id_articulo = textCodigoArt.Text;
                     if (bandera_ingreso_egreso == "1")
-                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM ortoxela.articulos where codigo_articulo='" + id_articulo + "'";
+                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM articulos where codigo_articulo='" + id_articulo + "'";
                     else
                         cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',costo,articulos.precio_venta FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo where articulos.codigo_articulo='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
                     tempTabla = logicaxela.Tabla(cadena);
@@ -205,7 +205,7 @@ namespace ortoxela.FacturaTemporal
                         /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
                          jramirez 2013.07.04
                          */
-                        cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
+                        cadena = "select f_es_compuesto('" + id_articulo + "') AS compuesto;";
                         string compuesto = logicaxela.Tabla(cadena).Rows[0]["compuesto"].ToString();
                         if (Convert.ToBoolean(logicaxela.Tabla(cadena).Rows[0]["compuesto"]))
                         {
@@ -382,7 +382,7 @@ namespace ortoxela.FacturaTemporal
                             {
                                 if (MessageBox.Show("Es posible que el cliente ya exita...\n ¿Desea crearlo de todos modos[Pueda ser que se duplique]?", "INFORMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                                 {
-                                    cadena = "INSERT INTO ortoxela.clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
+                                    cadena = "INSERT into clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
                                                 "VALUES ('" + textNombreCliente.Text + "', '" + textNitCliente.Text + "', '" + textTelefonoCliente.Text + "', '" + textTelefonoCliente.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + textDireccion.Text + "'," + gridLookSocioComercial.EditValue + "," + clases.ClassVariables.id_usuario + ",0,1, 1)";
                                     id_cliente = logicaorto.nuevoid(cadena);
                                     tipo_cliente_conta = "1";
@@ -392,7 +392,7 @@ namespace ortoxela.FacturaTemporal
                             }
                             else
                             {
-                                cadena = "INSERT INTO ortoxela.clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
+                                cadena = "INSERT into clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
                                             "VALUES ('" + textNombreCliente.Text + "', '" + textNitCliente.Text + "', '" + textTelefonoCliente.Text + "', '" + textTelefonoCliente.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + textDireccion.Text + "'," + gridLookSocioComercial.EditValue + "," + clases.ClassVariables.id_usuario + ",0,1, 1)";
                                 id_cliente = logicaorto.nuevoid(cadena);
                                 tipo_cliente_conta = "1";
@@ -407,7 +407,7 @@ namespace ortoxela.FacturaTemporal
                             alertControl1.Show(this, "ADVERTENCIA", "EL CLIENTE YA EXISTE, VERIFIQUE POR FAVOR", Properties.Resources.Advertencia64);
                             if (MessageBox.Show("Es posible que el Cliente ya exista, verifique los registros, de clic en el botón [SI] si desea crear un nuevo registro de lo contrario hacer clic en el botón [NO] y hacer la busca del Cliente.", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                             {
-                                cadena = "INSERT INTO ortoxela.clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
+                                cadena = "INSERT into clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
                                         "VALUES ('" + textNombreCliente.Text + "', '" + textNitCliente.Text + "', '" + textTelefonoCliente.Text + "', '" + textTelefonoCliente.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + textDireccion.Text + "'," + gridLookSocioComercial.EditValue + "," + clases.ClassVariables.id_usuario + ",0,1, 1)";
                                 id_cliente = logicaorto.nuevoid(cadena);
                             }
@@ -416,7 +416,7 @@ namespace ortoxela.FacturaTemporal
                         }
                         else
                         {
-                            cadena = "INSERT INTO ortoxela.clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
+                            cadena = "INSERT into clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
                                         "VALUES ('" + textNombreCliente.Text + "', '" + textNitCliente.Text + "', '" + textTelefonoCliente.Text + "', '" + textTelefonoCliente.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + textDireccion.Text + "'," + gridLookSocioComercial.EditValue + "," + clases.ClassVariables.id_usuario + ",0,1, 1)";
                             id_cliente = logicaorto.nuevoid(cadena);
                         }
@@ -432,7 +432,7 @@ namespace ortoxela.FacturaTemporal
                 //    }
                 //    else
                 //    {
-                //        cadena = "INSERT INTO ortoxela.clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
+                //        cadena = "INSERT into clientes(nombre_cliente, nit, telefono_casa, telefono_celular,fecha_ingreso,direccion,referido_por,usuario_creador, socio_comercial,estadoid, codigo_tipoc) " +
                 //                    "VALUES ('" + textNombreCliente.Text + "', '" + textNitCliente.Text + "', '" + textTelefonoCliente.Text + "', '" + textTelefonoCliente.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + textDireccion.Text + "'," + gridLookSocioComercial.EditValue + "," + clases.ClassVariables.id_usuario + ",0,1, 1)";
                 //        id_cliente = logicaorto.nuevoid(cadena);
                 //    }                       
@@ -440,19 +440,19 @@ namespace ortoxela.FacturaTemporal
                 conexion.Open();
                 transac = conexion.BeginTransaction();   
 
-                ssql = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,tipo_pago,no_documento,codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento,socio_comercial,estadoid,contado_credito,refer_documento) " +
+                ssql = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento,codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento,socio_comercial,estadoid,contado_credito,refer_documento) " +
                         "VALUES ("+gridLookTipoDocumento.EditValue+","+gridLookTipoPago.EditValue+",'"+textNoDocumento.Text+"',"+id_cliente+" ,'"+dateEdit1.DateTime.ToString("yyyy-MM-dd")+"', "+TotalIngresoCosto+", "+TotalDescuento+", "+TotalIngresoVenta+", "+clases.ClassVariables.id_usuario+", "+id_usuario_descuento+","+gridLookSocioComercial.EditValue+",4,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"');SELECT LAST_INSERT_ID();";
                 comando = new MySqlCommand(ssql, conexion);
                 comando.Transaction=transac;                
                 id_nuevoIngreso=comando.ExecuteScalar().ToString();
                 for (int x = 0; x < gridView1.DataRowCount; x++)
                 {
-                    ssql = "INSERT INTO ortoxela.detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total,codigo_articulo, codigo_bodega, precio_venta) "+
+                    ssql = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total,codigo_articulo, codigo_bodega, precio_venta) "+
                                "VALUES (" + id_nuevoIngreso + ", " + gridView1.GetRowCellValue(x, "CANTIDAD") + ", " + gridView1.GetRowCellValue(x, "VENTA") + ", " + gridView1.GetRowCellValue(x, "SUBTOTAL") + ",'" + gridView1.GetRowCellValue(x, "CODIGO") + "', " + gridView1.GetRowCellValue(x, "IDBODEGA") + ", " + gridView1.GetRowCellValue(x, "VENTA") + ");";
                     comando = new MySqlCommand(ssql, conexion);
                     comando.Transaction = transac;
                     comando.ExecuteNonQuery();                    
-                        ssql = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
+                        ssql = "update bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
                         comando = new MySqlCommand(ssql, conexion);
                         comando.Transaction = transac;
                         comando.ExecuteNonQuery();                                                                
@@ -601,7 +601,7 @@ namespace ortoxela.FacturaTemporal
                 Form nuevo = new Bodega.Tipobodega();
                 nuevo.WindowState = System.Windows.Forms.FormWindowState.Normal;
                 nuevo.ShowDialog();
-                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM bodegas_header where estadoid<>2";
                 gridLookBodega.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -622,7 +622,7 @@ namespace ortoxela.FacturaTemporal
             DataTable dt = new DataTable();
             try
             {
-                ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=6";
+                ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=6";
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";

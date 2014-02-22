@@ -25,7 +25,7 @@ namespace ortoxela.Articulos
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM ortoxela.categorias WHERE estadoid<>2";
+                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM categorias WHERE estadoid<>2";
                 gridLookUpcategoria.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpcategoria.Properties.ValueMember = "CODIGO";
                 gridLookUpcategoria.Properties.DisplayMember = "CATEGORIA";
@@ -44,7 +44,7 @@ namespace ortoxela.Articulos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT INTO ortoxela.sub_categorias "+
+                    cadena = "INSERT into sub_categorias "+
                             "(codigo_categoria, nombre_subcategoria, fecha_creacion, usuario_creador, estadoid) "+
                             "VALUES ("+gridLookUpcategoria.EditValue+", '"+textEditnombre.Text+"', '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"', "+clases.ClassVariables.id_usuario+", "+gridLookUpEditestado.EditValue+")";
                     clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
@@ -68,7 +68,7 @@ namespace ortoxela.Articulos
                 {
                     if (bandera == 2)
                     {
-                        cadena = "UPDATE ortoxela.sub_categorias "+
+                        cadena = "update sub_categorias "+
                                     "SET codigo_categoria = "+gridLookUpcategoria.EditValue+" , nombre_subcategoria ='"+textEditnombre.EditValue+"', estadoid = "+gridLookUpEditestado.EditValue+" "+
                                     "WHERE codigo_subcat=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, cadena))
@@ -86,7 +86,7 @@ namespace ortoxela.Articulos
                         if (bandera == 3)
                         {
 
-                            cadena = "UPDATE ortoxela.sub_categorias SET estadoid = 2 WHERE codigo_subcat=" + clases.ClassVariables.id_busca;
+                            cadena = "update sub_categorias SET estadoid = 2 WHERE codigo_subcat=" + clases.ClassVariables.id_busca;
                             if (clases.ClassMensajes.ELIMINAR(this, cadena))
                             {
                                 groupControl1.Enabled = false;
@@ -108,7 +108,7 @@ namespace ortoxela.Articulos
         }
         private void llenacombos()
         {
-            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+            cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
             gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
             gridLookUpEditestado.Properties.ValueMember = "CODIGO";
             gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";
@@ -116,7 +116,7 @@ namespace ortoxela.Articulos
             gridLookUpEditestado.EditValue = 1;
             if (clases.ClassVariables.id_traido != "")
             {
-                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM ortoxela.categorias WHERE estadoid<>2";
+                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM categorias WHERE estadoid<>2";
                 gridLookUpcategoria.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpcategoria.Properties.ValueMember = "CODIGO";
                 gridLookUpcategoria.Properties.DisplayMember = "CATEGORIA";
@@ -125,7 +125,7 @@ namespace ortoxela.Articulos
             }
             else
             {
-                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM ortoxela.categorias WHERE estadoid<>2";
+                cadena = "SELECT codigo_categoria AS CODIGO, nombre_categoria AS CATEGORIA FROM categorias WHERE estadoid<>2";
                 gridLookUpcategoria.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpcategoria.Properties.ValueMember = "CODIGO";
                 gridLookUpcategoria.Properties.DisplayMember = "CATEGORIA";
@@ -135,7 +135,7 @@ namespace ortoxela.Articulos
         private void busca_mod_eli()
         {
             clases.ClassVariables.cadenabusca = "SELECT sub_categorias.codigo_subcat AS CODIGO,sub_categorias.nombre_subcategoria AS SUBCATEGORIA, categorias.nombre_categoria AS CATEGORIA "+
-                                                "FROM ortoxela.sub_categorias INNER JOIN categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria WHERE sub_categorias.estadoid<>2";
+                                                "FROM sub_categorias INNER JOIN categorias ON sub_categorias.codigo_categoria = categorias.codigo_categoria WHERE sub_categorias.estadoid<>2";
             Form busca = new Buscador.Buscador();
             busca.ShowDialog();
             if (clases.ClassVariables.id_busca != "")
@@ -143,7 +143,7 @@ namespace ortoxela.Articulos
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                cadena = "SELECT codigo_subcat, codigo_categoria, nombre_subcategoria,estadoid FROM ortoxela.sub_categorias WHERE codigo_subcat=" + clases.ClassVariables.id_busca;
+                cadena = "SELECT codigo_subcat, codigo_categoria, nombre_subcategoria,estadoid FROM sub_categorias WHERE codigo_subcat=" + clases.ClassVariables.id_busca;
                 DataTable dt = new DataTable();
                 dt = logica.Tabla(cadena);
                 foreach (DataRow fila in dt.Rows)
@@ -231,7 +231,7 @@ namespace ortoxela.Articulos
             hijo.ShowDialog();
             if (clases.ClassVariables.idnuevo != null)
             {
-                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM ortoxela.estado where activo=1";
+                cadena = "SELECT estadoid as CODIGO, nombre_status as NOMBRE FROM estado where activo=1";
                 gridLookUpEditestado.Properties.DataSource = logica.Tabla(cadena);
                 gridLookUpEditestado.Properties.ValueMember = "CODIGO";
                 gridLookUpEditestado.Properties.DisplayMember = "NOMBRE";

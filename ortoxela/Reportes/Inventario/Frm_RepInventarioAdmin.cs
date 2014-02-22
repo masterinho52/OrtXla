@@ -37,7 +37,7 @@ namespace ortoxela.Reportes.Inventario
             Int32 bodega2 = 100;
             string botittle = "Todas";
             string consulta = "SELECT precio_venta,codigo_articulo, articulo, Ult_compra, Ult_venta, Ult_precio, nombre_bodega, categoria, codigo_categoria, existencia_articulo, codigo_bodega  " +
-                               " FROM ortoxela.v_inventario2h where 1=1 ";
+                               " FROM v_inventario2h where 1=1 ";
             if (bodegas.SelectedValue.ToString() != "0")
             {
                 consulta = "SELECT `a`.`precio_venta` AS `precio_venta`,`a`.`codigo_articulo` AS `codigo_articulo`,REPLACE(a.descripcion,'\"','') AS articulo,SUM(COALESCE(`b`.`existencia_articulo`,0)) AS `existencia_articulo`, " +

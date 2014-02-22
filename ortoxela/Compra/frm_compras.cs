@@ -22,9 +22,9 @@ namespace ortoxela.Compra
         {
             try
             {
-                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid=1"; */
+                /* ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM bodegas_header where estadoid=1"; */
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_bodega AS CODIGO, nombre_bodega AS NOMBRE FROM v_bodegas_series_usuarios  WHERE estadoid_bodega=1 AND userid=" + clases.ClassVariables.id_usuario;
                 if (serie != 0)
                     ssql = ssql + " and codigo_serie=" + serie.ToString();
                 ssql = ssql + " order by codigo_bodega asc ";
@@ -48,7 +48,7 @@ namespace ortoxela.Compra
         {
             try
             {
-                ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM ortoxela.proveedores WHERE estadoid<>2";
+                ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM proveedores WHERE estadoid<>2";
                 gridLookProveedor.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookProveedor.Properties.DisplayMember = "NOMBRE";
                 gridLookProveedor.Properties.ValueMember = "CODIGO";         
@@ -63,16 +63,16 @@ namespace ortoxela.Compra
             {
                 if (clases.ClassVariables.id_rol == "1")
                 {
-                    /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo and t.signo>0"; */
+                    /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM tipos_documento AS t , series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo and t.signo>0"; */
                     /* jramirez 2013.07.24 */
-                    ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE signo >0 AND userid=" + clases.ClassVariables.id_usuario;
+                    ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO FROM v_bodegas_series_usuarios  WHERE signo >0 AND userid=" + clases.ClassVariables.id_usuario;
 
                 }
                 else
                 {
                     /* jramirez 2013.07.24 */
-                    ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO FROM ortoxela.v_bodegas_series_usuarios  WHERE signo >0 AND codigo_serie NOT IN(18,19) AND userid=" + clases.ClassVariables.id_usuario;
-                    /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM ortoxela.tipos_documento AS t , ortoxela.series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo and t.signo>0 AND s.codigo_serie NOT IN(18,19)"; */
+                    ssql = "SELECT distinct codigo_serie,CONCAT(nombre_documento,' [', serie_documento,']') AS DOCUMENTO FROM v_bodegas_series_usuarios  WHERE signo >0 AND codigo_serie NOT IN(18,19) AND userid=" + clases.ClassVariables.id_usuario;
+                    /* ssql = "SELECT s.codigo_serie,CONCAT(t.nombre_documento,' [', s.serie_documento,']') AS DOCUMENTO FROM tipos_documento AS t , series_documentos AS s WHERE s.codigo_tipo = t.codigo_tipo and t.signo>0 AND s.codigo_serie NOT IN(18,19)"; */
                 }
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "DOCUMENTO";
@@ -134,7 +134,7 @@ namespace ortoxela.Compra
                 {
                     id_articulo = textCodigoArt.Text;
                     if (bandera_ingreso_egreso == "1")
-                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM ortoxela.articulos where codigo_articulo='" + id_articulo + "'";
+                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM articulos where codigo_articulo='" + id_articulo + "'";
                     else
                         cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',costo,articulos.precio_venta FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo where articulos.codigo_articulo='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
                     tempTabla = logicaxela.Tabla(cadena);
@@ -161,7 +161,7 @@ namespace ortoxela.Compra
             nuevo.ShowDialog();
             try
             {
-                ssql = "SELECT codigo_proveedor as CODIGO,nombre_proveedor AS NOMBRE FROM ortoxela.proveedores where estadoid<>2";
+                ssql = "SELECT codigo_proveedor as CODIGO,nombre_proveedor AS NOMBRE FROM proveedores where estadoid<>2";
                 gridLookProveedor.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookProveedor.Properties.DisplayMember = "NOMBRE";
                 gridLookProveedor.Properties.ValueMember = "CODIGO";
@@ -188,7 +188,7 @@ namespace ortoxela.Compra
                         /* cadena = "SELECT articulos.compuesto FROM articulos WHERE articulos.codigo_articulo='" + id_articulo + "'";
                          jramirez 2013.07.04
                          */
-                        cadena = "SELECT ortoxela.f_es_compuesto('" + id_articulo + "') AS compuesto;";
+                        cadena = "select f_es_compuesto('" + id_articulo + "') AS compuesto;";
                         string compuesto = logicaxela.Tabla(cadena).Rows[0]["compuesto"].ToString();
                         if (Convert.ToBoolean(logicaxela.Tabla(cadena).Rows[0]["compuesto"]))
                         {
@@ -430,7 +430,7 @@ namespace ortoxela.Compra
             if (dxValidationEncabezado.Validate())
             {
                 if (bandera_ingreso_egreso == "1")
-                    cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',costo as 'PRECIO COSTO', precio_venta AS 'PRECIO VENTA' FROM ortoxela.articulos where estadoid=1 ";
+                    cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',costo as 'PRECIO COSTO', precio_venta AS 'PRECIO VENTA' FROM articulos where estadoid=1 ";
                 else
                     cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.precio_venta AS 'PRECIO VENTA',bodegas.existencia_articulo AS 'EXISTENCIA' FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid=1 AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
                 clases.ClassVariables.cadenabusca = cadena;
@@ -440,7 +440,7 @@ namespace ortoxela.Compra
                 {
                     id_articulo = clases.ClassVariables.id_busca;
                     if (bandera_ingreso_egreso == "1")
-                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM ortoxela.articulos where codigo_articulo='" + id_articulo + "'";
+                        cadena = "SELECT codigo_articulo as CODIGO, descripcion AS 'NOMBRE ARTICULO',numero_serie AS 'No SERIE',costo,precio_venta FROM articulos where codigo_articulo='" + id_articulo + "'";
                     else
                         cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',costo,articulos.precio_venta FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo where articulos.codigo_articulo='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
                     tempTabla = logicaxela.Tabla(cadena);
@@ -470,28 +470,28 @@ namespace ortoxela.Compra
                     conexion.Open();
                     transac = conexion.BeginTransaction();
                     comando.Transaction = transac;
-                ssql = "INSERT INTO ortoxela.header_doctos_inv(codigo_serie,no_documento,codigo_proveedor, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, razon_ajuste, descripcion, estadoid,contado_credito,refer_documento) " +
+                ssql = "INSERT into header_doctos_inv(codigo_serie,no_documento,codigo_proveedor, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento, razon_ajuste, descripcion, estadoid,contado_credito,refer_documento) " +
                         "VALUES ("+gridLookTipoDocumento.EditValue+", '"+textNoDocumento.Text+"', "+id_proveedor+", '"+dateEdit1.DateTime.ToString("yyyy-MM-dd")+"', "+TotalIngresoCosto+", "+TotalDescuento+", "+TotalIngresoVenta+", "+clases.ClassVariables.id_usuario+", "+id_usuario_descuento+", '"+memoRazonAjuste.Text+"', '"+memoDescripcion.Text+"', 4,"+radioGroup2.SelectedIndex+",'"+textNoFacturaCompra.Text+"');SELECT LAST_INSERT_ID();";
                 comando = new MySqlCommand(ssql, conexion);
                 comando.Transaction=transac;                
                 id_nuevoIngreso=comando.ExecuteScalar().ToString();
                 for (int x = 0; x < gridView1.DataRowCount; x++)
                 {
-                    ssql = "INSERT INTO ortoxela.detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total,codigo_articulo, codigo_bodega, precio_venta) "+
+                    ssql = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total,codigo_articulo, codigo_bodega, precio_venta) "+
                                "VALUES (" + id_nuevoIngreso + ", " + gridView1.GetRowCellValue(x, "CANTIDAD") + ", " + gridView1.GetRowCellValue(x, "PRECIO") + ", " + gridView1.GetRowCellValue(x, "SUBTOTAL") + ",'" + gridView1.GetRowCellValue(x, "CODIGO") + "', " + gridView1.GetRowCellValue(x, "IDBODEGA") + ", " + gridView1.GetRowCellValue(x, "VENTA") + ");";
                     comando = new MySqlCommand(ssql, conexion);
                     comando.Transaction = transac;
                     comando.ExecuteNonQuery();
                     if (bandera_actualiza_precio == "1")
                     {
-                        ssql = "UPDATE articulos SET articulos.costo= (SELECT ortoxela.f_costo_iva_articulo('" + gridView1.GetRowCellValue(x, "CODIGO") + "')) ,articulos.precio_venta=" + gridView1.GetRowCellValue(x, "VENTA") + " WHERE articulos.codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
+                        ssql = "UPDATE articulos SET articulos.costo= (select f_costo_iva_articulo('" + gridView1.GetRowCellValue(x, "CODIGO") + "')) ,articulos.precio_venta=" + gridView1.GetRowCellValue(x, "VENTA") + " WHERE articulos.codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
                         comando = new MySqlCommand(ssql, conexion);
                         comando.Transaction = transac;
                         comando.ExecuteNonQuery();
                     }
                     if (bandera_ingreso_egreso == "2")
                     {
-                        ssql = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
+                        ssql = "update bodegas SET  existencia_articulo = existencia_articulo -" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
                         comando = new MySqlCommand(ssql, conexion);
                         comando.Transaction = transac;
                         comando.ExecuteNonQuery();
@@ -501,14 +501,14 @@ namespace ortoxela.Compra
                         ssql = "SELECT * FROM bodegas WHERE bodegas.codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "' AND bodegas.codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA");
                         if (logicaxela.ExisteRegistro(ssql))
                         {
-                            ssql = "UPDATE ortoxela.bodegas SET  existencia_articulo = existencia_articulo +" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
+                            ssql = "update bodegas SET  existencia_articulo = existencia_articulo +" + gridView1.GetRowCellValue(x, "CANTIDAD") + " WHERE codigo_bodega=" + gridView1.GetRowCellValue(x, "IDBODEGA") + " and codigo_articulo='" + gridView1.GetRowCellValue(x, "CODIGO") + "'";
                             comando = new MySqlCommand(ssql, conexion);
                             comando.Transaction = transac;
                             comando.ExecuteNonQuery();
                         }
                         else
                         {
-                            ssql = "INSERT INTO ortoxela.bodegas(codigo_bodega, codigo_articulo, existencia_articulo) " +
+                            ssql = "INSERT into bodegas(codigo_bodega, codigo_articulo, existencia_articulo) " +
                                   "VALUES (" + gridView1.GetRowCellValue(x, "IDBODEGA") + ", '" + gridView1.GetRowCellValue(x, "CODIGO") + "', '" + gridView1.GetRowCellValue(x, "CANTIDAD") + "')";
                             comando = new MySqlCommand(ssql, conexion);
                             comando.Transaction = transac;
@@ -651,7 +651,7 @@ namespace ortoxela.Compra
                 Form nuevo = new Bodega.Tipobodega();
                 nuevo.WindowState = System.Windows.Forms.FormWindowState.Normal;
                 nuevo.ShowDialog();
-                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM ortoxela.bodegas_header where estadoid<>2";
+                ssql = "SELECT codigo_bodega as CODIGO, nombre_bodega AS NOMBRE FROM bodegas_header where estadoid<>2";
                 gridLookBodega.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookBodega.Properties.DisplayMember = "NOMBRE";
                 gridLookBodega.Properties.ValueMember = "CODIGO";
@@ -672,7 +672,7 @@ namespace ortoxela.Compra
             DataTable dt = new DataTable();
             try
             {
-                ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM ortoxela.series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=6";
+                ssql = "SELECT codigo_serie CODIGO,serie_documento as SERIE FROM series_documentos INNER JOIn tipos_documento on series_documentos.codigo_tipo = tipos_documento.codigo_tipo WHERE tipos_documento.codigo_tipo=6";
                 gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
                 gridLookTipoDocumento.Properties.ValueMember = "CODIGO";

@@ -33,7 +33,7 @@ namespace ortoxela
             if (dxValidationProvider1.Validate())
             {
                 cadena = "SELECT userid, nombre, apellido " +
-                            "FROM usuarios where username='" + textEditnombre.Text + "' and pasword='" + logica.encripta(textEditcontraseña.Text) + "' and estadoid<>2";
+                            "FROM ortoxela.usuarios where username='" + textEditnombre.Text + "' and pasword='" + logica.encripta(textEditcontraseña.Text) + "' and estadoid<>2";
                 tabla = logica.Tabla(cadena);
                 if (tabla.Rows.Count == 1)
                 {
@@ -47,7 +47,7 @@ namespace ortoxela
                     dt_rol = logica.Tabla(cadena);
                     clases.ClassVariables.id_rol = dt_rol.Rows[0][0].ToString();
 
-                    cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=2 ";
+                    cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=1 ";
                     DataTable dt_empresa = new DataTable();
                     dt_empresa = logica.Tabla(cadena);
                     clases.ClassVariables.nombreEmpresa = dt_empresa.Rows[0][0].ToString();

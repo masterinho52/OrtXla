@@ -24,7 +24,7 @@ namespace ortoxela.Reportes.Proveedores
         {
             try
             {
-                ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM ortoxela.proveedores WHERE estadoid<>2";
+                ssql = "SELECT codigo_proveedor AS CODIGO,nombre_proveedor AS NOMBRE FROM proveedores WHERE estadoid<>2";
                 gridLookProveedor.Properties.DataSource = logicaxela.Tabla(ssql);
                 gridLookProveedor.Properties.DisplayMember = "NOMBRE";
                 gridLookProveedor.Properties.ValueMember = "CODIGO";
@@ -50,7 +50,7 @@ namespace ortoxela.Reportes.Proveedores
         {
 //            string consulta = "select p.codigo_proveedor, p.nombre_proveedor,h.no_documento,h.monto_neto, sum(d.cantidad_enviada) unidades,sum(d.precio_unitario*d.cantidad_enviada) as total,"+
 //" h.fecha as fecha_compra,DATE_ADD(h.fecha,interval p.dias_credito day) as fecha_venc, if(h.contado_credito=0,'Contado','Credito') as Tipo_Pago "+
-//" from ortoxela.header_doctos_inv h join ortoxela.detalle_doctos_inv d  on(h.id_documento = d.id_documento) "+
+//" FROM header_doctos_inv h join ortoxela.detalle_doctos_inv d  on(h.id_documento = d.id_documento) "+
 //"join proveedores p on (h.codigo_proveedor = p.codigo_proveedor) where codigo_serie =7 and p.codigo_proveedor="+gridLookProveedor.EditValue+"  group by p.nombre_proveedor,h.no_documento";
 
 //            MySqlDataAdapter adaptador = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);

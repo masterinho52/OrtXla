@@ -147,7 +147,7 @@ namespace ortoxela.Reportes.Ventas
                 string ssql;
 
                 /* jramirez 2013.07.24 */
-                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM ortoxela.v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
+                ssql = "SELECT distinct codigo_bodega, nombre_bodega FROM v_bodegas_series_usuarios  WHERE estadoid_bodega<>2 AND userid=" + clases.ClassVariables.id_usuario;
 
                 listBoxBodegas.DataSource = logicaxela.Tabla(ssql);
                 listBoxBodegas.DisplayMember = "nombre_bodega";
@@ -191,7 +191,7 @@ namespace ortoxela.Reportes.Ventas
 
                 }
             }
-            string ssql = " SELECT distinct codigo_serie,CONCAT(nombre_documento,'[',serie_documento,']',' Bod: ',nombre_bodega) AS documento FROM ortoxela.v_bodegas_series_usuarios b " +
+            string ssql = " SELECT distinct codigo_serie,CONCAT(nombre_documento,'[',serie_documento,']',' Bod: ',nombre_bodega) AS documento FROM v_bodegas_series_usuarios b " +
                         " WHERE codigo_tipo=1 AND codigo_bodega IN (" + ListaBodegas + " )";
             this.listBoxSeries.DataSource = logicaxela.Tabla(ssql);
             this.listBoxSeries.DisplayMember = "documento";
