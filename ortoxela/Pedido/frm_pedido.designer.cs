@@ -48,7 +48,12 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule17 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule18 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_pedido));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule19 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.gridLookBodega = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -104,6 +109,7 @@
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.gridLookDoctores = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
@@ -837,6 +843,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl5.Controls.Add(this.gridLookDoctores);
+            this.groupControl5.Controls.Add(this.simpleButton12);
             this.groupControl5.Controls.Add(this.panelControl2);
             this.groupControl5.Controls.Add(this.textDeposito);
             this.groupControl5.Controls.Add(this.labelControl14);
@@ -876,17 +883,30 @@
             // 
             // gridLookDoctores
             // 
-            this.gridLookDoctores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLookDoctores.Location = new System.Drawing.Point(92, 108);
+            this.gridLookDoctores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gridLookDoctores.Location = new System.Drawing.Point(115, 97);
+            this.gridLookDoctores.Margin = new System.Windows.Forms.Padding(0);
             this.gridLookDoctores.Name = "gridLookDoctores";
             this.gridLookDoctores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookDoctores.Size = new System.Drawing.Size(267, 20);
-            this.gridLookDoctores.TabIndex = 100;
-            conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule19.ErrorText = "SELECCIONE DOCTOR";
-            conditionValidationRule19.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationImprimeVale.SetValidationRule(this.gridLookDoctores, conditionValidationRule19);
+            this.gridLookDoctores.Size = new System.Drawing.Size(231, 20);
+            this.gridLookDoctores.TabIndex = 102;
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.Image = global::ortoxela.Properties.Resources.add_16x16_32;
+            this.simpleButton12.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton12.Location = new System.Drawing.Point(416, 105);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(26, 22);
+            toolTipTitleItem1.Text = "Agregar Doctor";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Agrega un Nuevo Doctor a la Base de Datos.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.simpleButton12.SuperTip = superToolTip1;
+            this.simpleButton12.TabIndex = 101;
+            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
             // 
             // panelControl2
             // 
@@ -1003,6 +1023,13 @@
             this.simpleButton7.Location = new System.Drawing.Point(416, 27);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(26, 22);
+            toolTipTitleItem2.Text = "Crear Nuevo Cliente";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Esto permite crear un nuevo cliente, si al buscar por numero de nit o nombre el c" +
+    "liente no existe.";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.simpleButton7.SuperTip = superToolTip2;
             this.simpleButton7.TabIndex = 83;
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
@@ -1953,6 +1980,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton sbSinDeposito;
         private DevExpress.XtraEditors.SimpleButton sbPrintReciboCaja;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookDoctores;
     }
 }

@@ -170,28 +170,38 @@ namespace ortoxela.Reportes.Ventas
             Cursor.Current = Cursors.WaitCursor;
             if (this.validarFechas())
             {
-                string codigo_bodega;
-                string consulta = "";
-                codigo_bodega = "1"; // bodegas.SelectedValue.ToString();            
-                
-                if (codigo_bodega=="0")
-                    consulta = "CALL sp_estadistica_mes_fechas_nb('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'); ";    
-                else consulta = "CALL sp_estadistica_mes_fechas('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + codigo_bodega + "); ";
-            
-                  MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
-                  DataSet dataset1 = new DataSet();
-                  adaptador1.Fill(dataset1, "v_estadistica_mes");
-                 XtraReport_Estadistica_Mes reporteem = new XtraReport_Estadistica_Mes();
-                 reporteem.DataSource = dataset1;
-                 reporteem.DataMember = dataset1.Tables["v_estadistica_mes"].TableName;
-                 reporteem.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
-                 reporteem.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-                 reporteem.Parameters["Bodega"].Value = "1"; //bodegas.Text;
-                 reporteem.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa; 
+                if (validarSeries())
+                {
+                    string consulta;
+                    ListaSeries = "0";
+                    ListaNombresSeries = "";
+                    for (int cnt = 0; cnt < listBoxSeries.SelectedItems.Count; cnt++)
+                    {
+                        DataRowView srs = listBoxSeries.SelectedItems[cnt] as DataRowView;
+                        ListaSeries += "," + srs["codigo_serie"].ToString();
+                        ListaNombresSeries += srs["documento"].ToString() + " ,";
+                    }
 
-                 reporteem.RequestParameters = false;
-                 reporteem.ShowPreview();
-            }
+                    if (ListaSeries == "0")
+                        ListaSeries = "";
+
+                    consulta = "CALL sp_estadistica_mes_fechas2('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59','" + ListaSeries + "'); ";
+
+                    MySqlDataAdapter adaptador1 = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
+                    DataSet dataset1 = new DataSet();
+                    adaptador1.Fill(dataset1, "v_estadistica_mes");
+                    XtraReport_Estadistica_Mes reporteem = new XtraReport_Estadistica_Mes();
+                    reporteem.DataSource = dataset1;
+                    reporteem.DataMember = dataset1.Tables["v_estadistica_mes"].TableName;
+                    reporteem.Parameters["Fecha_inicio"].Value = FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
+                    reporteem.Parameters["Fecha_fin"].Value = FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
+                    reporteem.Parameters["Bodega"].Value = ListaNombresSeries; //bodegas.Text;
+                    reporteem.Parameters["nombreEmpresa"].Value = clases.ClassVariables.nombreEmpresa;
+
+                    reporteem.RequestParameters = false;
+                    reporteem.ShowPreview();
+                }
+             }
             
 
              Cursor.Current = Cursors.Default;
