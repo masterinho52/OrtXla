@@ -320,7 +320,7 @@
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Location = new System.Drawing.Point(958, 74);
+            this.labelControl11.Location = new System.Drawing.Point(954, 74);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(98, 19);
             this.labelControl11.TabIndex = 45;
@@ -329,7 +329,7 @@
             // textTotalPedido
             // 
             this.textTotalPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalPedido.Location = new System.Drawing.Point(1064, 69);
+            this.textTotalPedido.Location = new System.Drawing.Point(1060, 69);
             this.textTotalPedido.Name = "textTotalPedido";
             this.textTotalPedido.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalPedido.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -401,7 +401,7 @@
             // 
             this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Location = new System.Drawing.Point(904, 42);
+            this.labelControl12.Location = new System.Drawing.Point(900, 42);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(151, 19);
             this.labelControl12.TabIndex = 66;
@@ -410,7 +410,7 @@
             // textTotalDescuento
             // 
             this.textTotalDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalDescuento.Location = new System.Drawing.Point(1064, 35);
+            this.textTotalDescuento.Location = new System.Drawing.Point(1060, 35);
             this.textTotalDescuento.Name = "textTotalDescuento";
             this.textTotalDescuento.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalDescuento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -445,7 +445,7 @@
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(676, 464);
+            this.labelControl4.Location = new System.Drawing.Point(672, 464);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(155, 19);
             this.labelControl4.TabIndex = 70;
@@ -454,7 +454,7 @@
             // textTotalDevuelta
             // 
             this.textTotalDevuelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalDevuelta.Location = new System.Drawing.Point(839, 461);
+            this.textTotalDevuelta.Location = new System.Drawing.Point(835, 461);
             this.textTotalDevuelta.Name = "textTotalDevuelta";
             this.textTotalDevuelta.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalDevuelta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -498,7 +498,7 @@
             this.groupControl1.Enabled = false;
             this.groupControl1.Location = new System.Drawing.Point(17, 13);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1185, 166);
+            this.groupControl1.Size = new System.Drawing.Size(1181, 166);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Encabezado";
             // 
@@ -522,7 +522,7 @@
             // textTotalFactura
             // 
             this.textTotalFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalFactura.Location = new System.Drawing.Point(1101, 461);
+            this.textTotalFactura.Location = new System.Drawing.Point(1097, 461);
             this.textTotalFactura.Name = "textTotalFactura";
             this.textTotalFactura.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.textTotalFactura.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -540,7 +540,7 @@
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Location = new System.Drawing.Point(962, 464);
+            this.labelControl6.Location = new System.Drawing.Point(958, 464);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(130, 19);
             this.labelControl6.TabIndex = 72;
@@ -552,7 +552,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1183, 228);
+            this.gridControl1.Size = new System.Drawing.Size(1179, 228);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -576,7 +576,7 @@
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Location = new System.Drawing.Point(17, 185);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1187, 251);
+            this.groupControl2.Size = new System.Drawing.Size(1183, 251);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Detalle";
             // 
@@ -586,7 +586,7 @@
             this.sbnuevo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbnuevo.Appearance.Options.UseFont = true;
             this.sbnuevo.Image = global::ortoxela.Properties.Resources.Nuevo42;
-            this.sbnuevo.Location = new System.Drawing.Point(17, 442);
+            this.sbnuevo.Location = new System.Drawing.Point(15, 442);
             this.sbnuevo.Name = "sbnuevo";
             this.sbnuevo.Size = new System.Drawing.Size(206, 49);
             this.sbnuevo.TabIndex = 13;
@@ -599,7 +599,7 @@
             this.sbAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbAceptar.Appearance.Options.UseFont = true;
             this.sbAceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.sbAceptar.Location = new System.Drawing.Point(287, 442);
+            this.sbAceptar.Location = new System.Drawing.Point(285, 442);
             this.sbAceptar.Name = "sbAceptar";
             this.sbAceptar.Size = new System.Drawing.Size(181, 49);
             this.sbAceptar.TabIndex = 10;
@@ -612,7 +612,7 @@
             this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbCancelar.Appearance.Options.UseFont = true;
             this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
-            this.sbCancelar.Location = new System.Drawing.Point(474, 442);
+            this.sbCancelar.Location = new System.Drawing.Point(472, 442);
             this.sbCancelar.Name = "sbCancelar";
             this.sbCancelar.Size = new System.Drawing.Size(181, 49);
             this.sbCancelar.TabIndex = 12;
@@ -647,7 +647,7 @@
             this.xtraTabPage1.Controls.Add(this.sbnuevo);
             this.xtraTabPage1.Controls.Add(this.sbAceptar);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage1.Text = "DEVOLUCION";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
@@ -689,7 +689,7 @@
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(166, 126);
             this.simpleButton9.TabIndex = 70;
-            this.simpleButton9.Text = "TERMINAR/IMPRI";
+            this.simpleButton9.Text = "GUARDAR/IMPRI";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // groupControl5
@@ -1036,7 +1036,7 @@
             this.checkEdit1.Location = new System.Drawing.Point(24, 142);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "DETALLE MANUAL";
-            this.checkEdit1.Size = new System.Drawing.Size(114, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(114, 18);
             this.checkEdit1.TabIndex = 78;
             this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 

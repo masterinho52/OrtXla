@@ -110,7 +110,7 @@ namespace ortoxela.Pedido
             { }
 
             try {
-                cadena = "SELECT codigo_cliente AS codigodoc,nombre_cliente AS nombreDoctor FROM clientes WHERE clientes.`codigo_tipoc` =7";
+                cadena = "SELECT codigo_cliente AS codigodoc,nombre_cliente AS nombreDoctor FROM clientes WHERE clientes.`codigo_tipoc` =7 and estadoid=1 ";
                 gridLookDoctores.Properties.DataSource = logicaorto.Tabla(cadena);
                 gridLookDoctores.Properties.DisplayMember = "nombreDoctor";
                 gridLookDoctores.Properties.ValueMember = "codigodoc";
@@ -534,6 +534,7 @@ namespace ortoxela.Pedido
             { }
         }
         string id_cliente;
+        string id_medico;
         string id_SocioComercialCompara;
         private void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1570,6 +1571,38 @@ namespace ortoxela.Pedido
         private void textDetalleVale_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            clases.ClassVariables.bandera = 1;
+            clases.ClassVariables.idnuevo = "";
+            clases.ClassVariables.llamadoDentroForm = true;
+            Form hijo = new Clientes.frm_medico();
+            hijo.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            hijo.ShowDialog();
+            if (clases.ClassVariables.idnuevo != "")
+            {
+                id_medico = clases.ClassVariables.idnuevo;                
+                DataTable tempCliente = new DataTable();
+                try
+                {
+                    cadena = "SELECT codigo_cliente AS codigodoc,nombre_cliente AS nombreDoctor FROM clientes WHERE clientes.`codigo_tipoc` =7 and estadoid=1";
+                    gridLookDoctores.Properties.DataSource = logicaorto.Tabla(cadena);
+                    gridLookDoctores.Properties.DisplayMember = "nombreDoctor";
+                    gridLookDoctores.Properties.ValueMember = "codigodoc";                    
+                    gridLookDoctores.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+                    gridLookDoctores.EditValue = id_medico;
+                }
+                catch
+                {
+                    cadena = "SELECT clientes.codigo_cliente AS CODIGO,clientes.nombre_cliente AS 'NOMBRE CLIENTE',clientes.nit,clientes.telefono_casa,clientes.nombre_paciente FROM clientes WHERE clientes.codigo_cliente=" + id_medico;
+                    tempCliente = logicaorto.Tabla(cadena);
+                    gridLookDoctores.EditValue = tempCliente.Rows[0]["CODIGO"].ToString();
+                    gridLookDoctores.Text = tempCliente.Rows[0]["nombre_cliente"].ToString();
+                }
+                
+            }
         }
 
 
