@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -40,8 +41,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             this.simplecancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
-            this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -95,13 +96,14 @@
             // pictureEdit1
             // 
             this.pictureEdit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureEdit1.EditValue = global::ortoxela.Properties.Resources.Logo_final;
+            this.pictureEdit1.EditValue = global::ortoxela.Properties.Resources.Logo_final1;
             this.pictureEdit1.Location = new System.Drawing.Point(14, 36);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(157, 65);
             this.pictureEdit1.TabIndex = 5;
+            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
             // textEditcontraseña
             // 
@@ -110,9 +112,9 @@
             this.textEditcontraseña.Properties.PasswordChar = '$';
             this.textEditcontraseña.Size = new System.Drawing.Size(225, 20);
             this.textEditcontraseña.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Ingrese su contraseña";
-            this.dxValidationProvider1.SetValidationRule(this.textEditcontraseña, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Ingrese su contraseña";
+            this.dxValidationProvider1.SetValidationRule(this.textEditcontraseña, conditionValidationRule3);
             this.textEditcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditcontraseña_KeyPress);
             // 
             // labelControl2
@@ -120,7 +122,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Location = new System.Drawing.Point(177, 80);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(82, 18);
+            this.labelControl2.Size = new System.Drawing.Size(81, 18);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Contraseña";
             // 
@@ -130,9 +132,9 @@
             this.textEditnombre.Name = "textEditnombre";
             this.textEditnombre.Size = new System.Drawing.Size(225, 20);
             this.textEditnombre.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Ingrese su nombre de usuario";
-            this.dxValidationProvider1.SetValidationRule(this.textEditnombre, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Ingrese su nombre de usuario";
+            this.dxValidationProvider1.SetValidationRule(this.textEditnombre, conditionValidationRule1);
             // 
             // labelControl1
             // 

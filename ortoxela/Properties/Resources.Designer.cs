@@ -763,6 +763,26 @@ namespace ortoxela.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_final1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo final1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoFinal_hn {
+            get {
+                object obj = ResourceManager.GetObject("LogoFinal hn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marca {
             get {
                 object obj = ResourceManager.GetObject("marca", resourceCulture);
