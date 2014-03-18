@@ -288,13 +288,11 @@
     <Compile Include="Clientes\form_cliente.Designer.cs">
       <DependentUpon>form_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\frm_medico.cs">
+    <Compile Include="Clientes\frm_medico2.cs">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Clientes\frm_medico.Designer.cs">
-      <DependentUpon>frm_medico.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Compile Include="Clientes\frm_medico2.Designer.cs">
+      <DependentUpon>frm_medico2.cs</DependentUpon>
     </Compile>
     <Compile Include="Clientes\Tipo_cliente.cs">
       <SubType>Form</SubType>
@@ -1253,9 +1251,8 @@
     <EmbeddedResource Include="Clientes\form_cliente.resx">
       <DependentUpon>form_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\frm_medico.resx">
-      <DependentUpon>frm_medico.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <EmbeddedResource Include="Clientes\frm_medico2.resx">
+      <DependentUpon>frm_medico2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\Tipo_cliente.resx">
       <DependentUpon>Tipo_cliente.cs</DependentUpon>

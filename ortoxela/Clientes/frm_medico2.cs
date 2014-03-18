@@ -26,14 +26,14 @@ namespace ortoxela.Clientes
             this.Close();
         }
 
-        private void frm_medico_Load(object sender, EventArgs e)
+        private void frm_medico2_Load(object sender, EventArgs e)
         {
             llamadentroform = clases.ClassVariables.llamadoDentroForm;
             llenacombos();
         }
 
         private void llenacombos()
-        {            
+        {
             ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM tipo_cliente where codigo_tipoc=7";
             gridLookUpTipoClie.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpTipoClie.Properties.DisplayMember = "TIPO";
@@ -47,16 +47,16 @@ namespace ortoxela.Clientes
             ssql = "SELECT estadoid as CODIGO, nombre_status AS ESTADO FROM estado where estadoid=1";
             gridLookUpEstado.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpEstado.Properties.DisplayMember = "ESTADO";
-            gridLookUpEstado.Properties.ValueMember = "CODIGO";            
+            gridLookUpEstado.Properties.ValueMember = "CODIGO";
             gridLookUpEstado.EditValue = 1;
 
         }
 
         private void simpleaceptar_Click(object sender, EventArgs e)
         {
-            insertaMedico();                    
+            insertaMedico();
         }
-        
+
         private void insertaMedico()
         {
             ssql = "INSERT into clientes(nombre_cliente, contacto, nit, telefono_casa, telefono_celular, email, fecha_ingreso, usuario_creador, direccion, socio_comercial, estadoid, codigo_tipoc,tipo_cliente_conta) " +

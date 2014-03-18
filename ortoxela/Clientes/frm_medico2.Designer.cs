@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.sbCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textCelular = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.textFax = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEstado = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.textIgss = new DevExpress.XtraEditors.TextEdit();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookUpTipoClienteConta = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -58,14 +60,18 @@
             this.textTelefono = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.sbCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textCelular.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEstado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIgss.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -82,48 +88,46 @@
             // groupControl1
             // 
             this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupControl1.Controls.Add(this.sbCancelar);
             this.groupControl1.Controls.Add(this.groupControl3);
-            this.groupControl1.Controls.Add(this.simpleaceptar);
             this.groupControl1.Controls.Add(this.groupControl2);
-            this.groupControl1.Location = new System.Drawing.Point(12, 3);
+            this.groupControl1.Location = new System.Drawing.Point(23, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(566, 439);
+            this.groupControl1.Size = new System.Drawing.Size(530, 380);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "Agregar Nuevo Medico";
-            // 
-            // sbCancelar
-            // 
-            this.sbCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbCancelar.Appearance.Options.UseFont = true;
-            this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
-            this.sbCancelar.Location = new System.Drawing.Point(280, 378);
-            this.sbCancelar.Name = "sbCancelar";
-            this.sbCancelar.Size = new System.Drawing.Size(179, 43);
-            this.sbCancelar.TabIndex = 28;
-            this.sbCancelar.Text = "Cancelar/Salir";
-            this.sbCancelar.Click += new System.EventHandler(this.sbCancelar_Click);
+            this.groupControl1.Text = "Nuevo Medico";
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.labelControl5);
             this.groupControl3.Controls.Add(this.textCelular);
             this.groupControl3.Controls.Add(this.labelControl4);
+            this.groupControl3.Controls.Add(this.textFax);
             this.groupControl3.Controls.Add(this.gridLookUpEstado);
             this.groupControl3.Controls.Add(this.textEmail);
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.labelControl6);
+            this.groupControl3.Controls.Add(this.labelControl10);
             this.groupControl3.Controls.Add(this.labelControl9);
+            this.groupControl3.Controls.Add(this.textIgss);
             this.groupControl3.Controls.Add(this.radioGroup1);
-            this.groupControl3.Location = new System.Drawing.Point(22, 222);
+            this.groupControl3.Location = new System.Drawing.Point(20, 224);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(504, 139);
+            this.groupControl3.Size = new System.Drawing.Size(486, 139);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Campos Opcionales";
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Location = new System.Drawing.Point(127, 22);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(26, 20);
+            this.labelControl5.TabIndex = 11;
+            this.labelControl5.Text = "Fax:";
+            // 
             // textCelular
             // 
-            this.textCelular.Location = new System.Drawing.Point(159, 24);
+            this.textCelular.Location = new System.Drawing.Point(320, 23);
             this.textCelular.Name = "textCelular";
             this.textCelular.Properties.Mask.EditMask = "\\d\\d\\d\\d-\\d\\d\\d\\d";
             this.textCelular.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
@@ -133,15 +137,24 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(108, 22);
+            this.labelControl4.Location = new System.Drawing.Point(274, 22);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(45, 20);
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "Celular:";
             // 
+            // textFax
+            // 
+            this.textFax.Location = new System.Drawing.Point(159, 24);
+            this.textFax.Name = "textFax";
+            this.textFax.Properties.Mask.EditMask = "\\d\\d\\d\\d-\\d\\d\\d\\d";
+            this.textFax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.textFax.Size = new System.Drawing.Size(112, 20);
+            this.textFax.TabIndex = 7;
+            // 
             // gridLookUpEstado
             // 
-            this.gridLookUpEstado.Location = new System.Drawing.Point(160, 105);
+            this.gridLookUpEstado.Location = new System.Drawing.Point(159, 102);
             this.gridLookUpEstado.Name = "gridLookUpEstado";
             this.gridLookUpEstado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -168,7 +181,7 @@
             // labelControl13
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Location = new System.Drawing.Point(108, 100);
+            this.labelControl13.Location = new System.Drawing.Point(107, 100);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(46, 20);
             this.labelControl13.TabIndex = 26;
@@ -183,38 +196,40 @@
             this.labelControl6.TabIndex = 13;
             this.labelControl6.Text = "Email:";
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Location = new System.Drawing.Point(274, 76);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(29, 20);
+            this.labelControl10.TabIndex = 21;
+            this.labelControl10.Text = "Igss:";
+            // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Location = new System.Drawing.Point(51, 74);
+            this.labelControl9.Location = new System.Drawing.Point(50, 74);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(103, 20);
             this.labelControl9.TabIndex = 18;
             this.labelControl9.Text = "Socio Comercial:";
             // 
+            // textIgss
+            // 
+            this.textIgss.Location = new System.Drawing.Point(309, 76);
+            this.textIgss.Name = "textIgss";
+            this.textIgss.Size = new System.Drawing.Size(125, 20);
+            this.textIgss.TabIndex = 12;
+            // 
             // radioGroup1
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(160, 76);
+            this.radioGroup1.Location = new System.Drawing.Point(159, 76);
             this.radioGroup1.Name = "radioGroup1";
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "NO"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "SI")});
             this.radioGroup1.Size = new System.Drawing.Size(100, 20);
             this.radioGroup1.TabIndex = 11;
-            // 
-            // simpleaceptar
-            // 
-            this.simpleaceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleaceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleaceptar.Appearance.Options.UseFont = true;
-            this.simpleaceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.simpleaceptar.Location = new System.Drawing.Point(80, 378);
-            this.simpleaceptar.Name = "simpleaceptar";
-            this.simpleaceptar.Size = new System.Drawing.Size(168, 43);
-            this.simpleaceptar.TabIndex = 27;
-            this.simpleaceptar.Text = "Aceptar";
-            this.simpleaceptar.Click += new System.EventHandler(this.simpleaceptar_Click);
             // 
             // groupControl2
             // 
@@ -232,16 +247,16 @@
             this.groupControl2.Controls.Add(this.textTelefono);
             this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.labelControl11);
-            this.groupControl2.Location = new System.Drawing.Point(22, 22);
+            this.groupControl2.Location = new System.Drawing.Point(20, 35);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(504, 194);
+            this.groupControl2.Size = new System.Drawing.Size(486, 183);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Campos Obligatorios";
             // 
             // simpleButton2
             // 
             this.simpleButton2.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButton2.Location = new System.Drawing.Point(444, 157);
+            this.simpleButton2.Location = new System.Drawing.Point(438, 154);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 22);
             this.simpleButton2.TabIndex = 38;
@@ -249,7 +264,7 @@
             // 
             // gridLookUpTipoClienteConta
             // 
-            this.gridLookUpTipoClienteConta.Location = new System.Drawing.Point(162, 159);
+            this.gridLookUpTipoClienteConta.Location = new System.Drawing.Point(157, 156);
             this.gridLookUpTipoClienteConta.Name = "gridLookUpTipoClienteConta";
             this.gridLookUpTipoClienteConta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -267,7 +282,7 @@
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Location = new System.Drawing.Point(9, 157);
+            this.labelControl14.Location = new System.Drawing.Point(3, 154);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(153, 20);
             this.labelControl14.TabIndex = 36;
@@ -275,22 +290,22 @@
             // 
             // memoEditdireccion
             // 
-            this.memoEditdireccion.Location = new System.Drawing.Point(159, 82);
+            this.memoEditdireccion.Location = new System.Drawing.Point(157, 79);
             this.memoEditdireccion.Name = "memoEditdireccion";
-            this.memoEditdireccion.Size = new System.Drawing.Size(276, 43);
+            this.memoEditdireccion.Size = new System.Drawing.Size(276, 40);
             this.memoEditdireccion.TabIndex = 4;
             // 
             // simpleButtonTipo_cliente
             // 
             this.simpleButtonTipo_cliente.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButtonTipo_cliente.Location = new System.Drawing.Point(444, 129);
+            this.simpleButtonTipo_cliente.Location = new System.Drawing.Point(438, 126);
             this.simpleButtonTipo_cliente.Name = "simpleButtonTipo_cliente";
             this.simpleButtonTipo_cliente.Size = new System.Drawing.Size(26, 22);
             this.simpleButtonTipo_cliente.TabIndex = 6;
             // 
             // gridLookUpTipoClie
             // 
-            this.gridLookUpTipoClie.Location = new System.Drawing.Point(160, 131);
+            this.gridLookUpTipoClie.Location = new System.Drawing.Point(157, 128);
             this.gridLookUpTipoClie.Name = "gridLookUpTipoClie";
             this.gridLookUpTipoClie.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -307,9 +322,8 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Location = new System.Drawing.Point(79, 129);
+            this.labelControl12.Location = new System.Drawing.Point(76, 126);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(78, 20);
             this.labelControl12.TabIndex = 35;
@@ -368,30 +382,60 @@
             // labelControl11
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Location = new System.Drawing.Point(90, 81);
+            this.labelControl11.Location = new System.Drawing.Point(88, 78);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(60, 20);
             this.labelControl11.TabIndex = 23;
             this.labelControl11.Text = "Direccion:";
             // 
-            // frm_medico
+            // sbCancelar
+            // 
+            this.sbCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbCancelar.Appearance.Options.UseFont = true;
+            this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
+            this.sbCancelar.Location = new System.Drawing.Point(295, 412);
+            this.sbCancelar.Name = "sbCancelar";
+            this.sbCancelar.Size = new System.Drawing.Size(179, 43);
+            this.sbCancelar.TabIndex = 3;
+            this.sbCancelar.Text = "Cancelar/Salir";
+            this.sbCancelar.Click += new System.EventHandler(this.sbCancelar_Click);
+            // 
+            // simpleaceptar
+            // 
+            this.simpleaceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleaceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleaceptar.Appearance.Options.UseFont = true;
+            this.simpleaceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
+            this.simpleaceptar.Location = new System.Drawing.Point(95, 412);
+            this.simpleaceptar.Name = "simpleaceptar";
+            this.simpleaceptar.Size = new System.Drawing.Size(168, 43);
+            this.simpleaceptar.TabIndex = 2;
+            this.simpleaceptar.Text = "Aceptar";
+            this.simpleaceptar.Click += new System.EventHandler(this.simpleaceptar_Click);
+            // 
+            // frm_medico2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 481);
+            this.ClientSize = new System.Drawing.Size(577, 477);
+            this.Controls.Add(this.sbCancelar);
+            this.Controls.Add(this.simpleaceptar);
             this.Controls.Add(this.groupControl1);
-            this.Name = "frm_medico";
-            this.Text = "MEDICOS";
-            this.Load += new System.EventHandler(this.frm_medico_Load);
+            this.Name = "frm_medico2";
+            this.Text = "Medicos";
+            this.Load += new System.EventHandler(this.frm_medico2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textCelular.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEstado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIgss.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -412,14 +456,18 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit textCelular;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit textFax;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEstado;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.TextEdit textEmail;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit textIgss;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
