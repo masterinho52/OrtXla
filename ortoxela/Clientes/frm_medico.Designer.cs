@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.sbCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.textCelular = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -39,6 +40,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookUpTipoClienteConta = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -56,8 +58,6 @@
             this.textTelefono = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.sbCancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -91,6 +91,19 @@
             this.groupControl1.Size = new System.Drawing.Size(566, 439);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Agregar Nuevo Medico";
+            // 
+            // sbCancelar
+            // 
+            this.sbCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbCancelar.Appearance.Options.UseFont = true;
+            this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
+            this.sbCancelar.Location = new System.Drawing.Point(280, 378);
+            this.sbCancelar.Name = "sbCancelar";
+            this.sbCancelar.Size = new System.Drawing.Size(179, 43);
+            this.sbCancelar.TabIndex = 28;
+            this.sbCancelar.Text = "Cancelar/Salir";
+            this.sbCancelar.Click += new System.EventHandler(this.sbCancelar_Click);
             // 
             // groupControl3
             // 
@@ -190,6 +203,19 @@
             this.radioGroup1.Size = new System.Drawing.Size(100, 20);
             this.radioGroup1.TabIndex = 11;
             // 
+            // simpleaceptar
+            // 
+            this.simpleaceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.simpleaceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleaceptar.Appearance.Options.UseFont = true;
+            this.simpleaceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
+            this.simpleaceptar.Location = new System.Drawing.Point(80, 378);
+            this.simpleaceptar.Name = "simpleaceptar";
+            this.simpleaceptar.Size = new System.Drawing.Size(168, 43);
+            this.simpleaceptar.TabIndex = 27;
+            this.simpleaceptar.Text = "Aceptar";
+            this.simpleaceptar.Click += new System.EventHandler(this.simpleaceptar_Click);
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.simpleButton2);
@@ -251,7 +277,7 @@
             // 
             this.memoEditdireccion.Location = new System.Drawing.Point(159, 82);
             this.memoEditdireccion.Name = "memoEditdireccion";
-            this.memoEditdireccion.Size = new System.Drawing.Size(276, 40);
+            this.memoEditdireccion.Size = new System.Drawing.Size(276, 43);
             this.memoEditdireccion.TabIndex = 4;
             // 
             // simpleButtonTipo_cliente
@@ -347,32 +373,6 @@
             this.labelControl11.Size = new System.Drawing.Size(60, 20);
             this.labelControl11.TabIndex = 23;
             this.labelControl11.Text = "Direccion:";
-            // 
-            // sbCancelar
-            // 
-            this.sbCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sbCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbCancelar.Appearance.Options.UseFont = true;
-            this.sbCancelar.Image = global::ortoxela.Properties.Resources.window_remove_32x32_32;
-            this.sbCancelar.Location = new System.Drawing.Point(280, 378);
-            this.sbCancelar.Name = "sbCancelar";
-            this.sbCancelar.Size = new System.Drawing.Size(179, 43);
-            this.sbCancelar.TabIndex = 28;
-            this.sbCancelar.Text = "Cancelar/Salir";
-            this.sbCancelar.Click += new System.EventHandler(this.sbCancelar_Click);
-            // 
-            // simpleaceptar
-            // 
-            this.simpleaceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleaceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleaceptar.Appearance.Options.UseFont = true;
-            this.simpleaceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.simpleaceptar.Location = new System.Drawing.Point(80, 378);
-            this.simpleaceptar.Name = "simpleaceptar";
-            this.simpleaceptar.Size = new System.Drawing.Size(168, 43);
-            this.simpleaceptar.TabIndex = 27;
-            this.simpleaceptar.Text = "Aceptar";
-            this.simpleaceptar.Click += new System.EventHandler(this.simpleaceptar_Click);
             // 
             // frm_medico
             // 
