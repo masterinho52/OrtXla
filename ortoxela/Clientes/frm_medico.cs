@@ -33,8 +33,7 @@ namespace ortoxela.Clientes
         }
 
         private void llenacombos()
-        {
-            
+        {            
             ssql = "SELECT codigo_tipoc as CODIGO, tipo_cliente AS TIPO FROM tipo_cliente where codigo_tipoc=7";
             gridLookUpTipoClie.Properties.DataSource = logicaxela.Tabla(ssql);
             gridLookUpTipoClie.Properties.DisplayMember = "TIPO";
