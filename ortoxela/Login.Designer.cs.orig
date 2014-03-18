@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            //DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+=======
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+>>>>>>> 31d3ee9e8ac96afc71f285486d6aeef1d5a43fe8
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -112,9 +117,15 @@
             this.textEditcontraseña.Properties.PasswordChar = '$';
             this.textEditcontraseña.Size = new System.Drawing.Size(225, 20);
             this.textEditcontraseña.TabIndex = 1;
+<<<<<<< HEAD
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Ingrese su contraseña";
             this.dxValidationProvider1.SetValidationRule(this.textEditcontraseña, conditionValidationRule3);
+=======
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Ingrese su contraseña";
+            this.dxValidationProvider1.SetValidationRule(this.textEditcontraseña, conditionValidationRule2);
+>>>>>>> 31d3ee9e8ac96afc71f285486d6aeef1d5a43fe8
             this.textEditcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditcontraseña_KeyPress);
             // 
             // labelControl2
@@ -132,9 +143,15 @@
             this.textEditnombre.Name = "textEditnombre";
             this.textEditnombre.Size = new System.Drawing.Size(225, 20);
             this.textEditnombre.TabIndex = 0;
+<<<<<<< HEAD
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Ingrese su nombre de usuario";
+            this.dxValidationProvider1.SetValidationRule(this.textEditnombre, conditionValidationRule1);
+=======
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Ingrese su nombre de usuario";
             this.dxValidationProvider1.SetValidationRule(this.textEditnombre, conditionValidationRule3);
+>>>>>>> 31d3ee9e8ac96afc71f285486d6aeef1d5a43fe8
             // 
             // labelControl1
             // 
