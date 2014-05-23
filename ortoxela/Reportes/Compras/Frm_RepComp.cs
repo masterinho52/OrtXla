@@ -53,7 +53,7 @@ namespace ortoxela.Reportes.Compras
             ortoxela.Reportes.Proveedores.XtraReport_RepProveedores reporteP = new ortoxela.Reportes.Proveedores.XtraReport_RepProveedores();
             reporteP.Parameters["Fecha_inicio"].Value = dateEdit5.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
             reporteP.Parameters["Fecha_fin"].Value = dateEdit6.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
-            reporteP.Parameters["Empresa"].Value = clases.ClassVariables.nombreEmpresa;
+            //reporteP.Parameters["Empresa"].Value = clases.ClassVariables.nombreEmpresa;
             reporteP.RequestParameters = false;
             reporteP.ShowPreview();
         }
@@ -64,7 +64,7 @@ namespace ortoxela.Reportes.Compras
             Reporteu.Parameters["Fecha_inicio"].Value = dateEdit7.DateTime.ToString("yyyy-MM-dd") + " 00:00:00";
             Reporteu.Parameters["Fecha_fin"].Value = dateEdit8.DateTime.ToString("yyyy-MM-dd") + " 23:59:59";
             Reporteu.Parameters["Codigo_proveedor"].Value = gridLookProveedor.EditValue;
-            Reporteu.Parameters["Empresa"].Value = clases.ClassVariables.nombreEmpresa;
+            //Reporteu.Parameters["Empresa"].Value = clases.ClassVariables.nombreEmpresa;
             Reporteu.RequestParameters = false;
             Reporteu.ShowPreview();
         }

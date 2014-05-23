@@ -440,8 +440,9 @@ namespace ortoxela.FacturaTemporal
                 conexion.Open();
                 transac = conexion.BeginTransaction();   
 
-                ssql = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento,codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento,socio_comercial,estadoid,contado_credito,refer_documento) " +
-                        "VALUES ("+gridLookTipoDocumento.EditValue+","+gridLookTipoPago.EditValue+",'"+textNoDocumento.Text+"',"+id_cliente+" ,'"+dateEdit1.DateTime.ToString("yyyy-MM-dd")+"', "+TotalIngresoCosto+", "+TotalDescuento+", "+TotalIngresoVenta+", "+clases.ClassVariables.id_usuario+", "+id_usuario_descuento+","+gridLookSocioComercial.EditValue+",4,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"');SELECT LAST_INSERT_ID();";
+                    int iddvendedor=Convert.ToInt16(gridLookUpEdit1.EditValue);
+                ssql = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento,codigo_cliente, fecha, monto, descuento, monto_neto, usuario_creador, usuario_descuento,socio_comercial,estadoid,contado_credito,refer_documento,vendedor) " +
+                        "VALUES ("+gridLookTipoDocumento.EditValue+","+gridLookTipoPago.EditValue+",'"+textNoDocumento.Text+"',"+id_cliente+" ,'"+dateEdit1.DateTime.ToString("yyyy-MM-dd")+"', "+TotalIngresoCosto+", "+TotalDescuento+", "+TotalIngresoVenta+", "+clases.ClassVariables.id_usuario+", "+id_usuario_descuento+","+gridLookSocioComercial.EditValue+",4,"+radioGroup2.SelectedIndex+",'"+textDeposito.Text+"'"+","+iddvendedor.ToString()+");SELECT LAST_INSERT_ID();";
                 comando = new MySqlCommand(ssql, conexion);
                 comando.Transaction=transac;                
                 id_nuevoIngreso=comando.ExecuteScalar().ToString();
@@ -578,13 +579,54 @@ namespace ortoxela.FacturaTemporal
         {
             try
             {
-                Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
-                reporte.Parameters["ID"].Value = id_nuevoIngreso;
-                reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency).ToString());                   
-                reporte.Parameters["Vende"].Value = gridLookUpEdit1.Text;
-                reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
-                reporte.RequestParameters = false;
-                reporte.ShowPreviewDialog();
+                //Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
+                //reporte.Parameters["ID"].Value = id_nuevoIngreso;
+                //reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency).ToString());
+                //reporte.Parameters["Vende"].Value = gridLookUpEdit1.Text;
+                //reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
+                //reporte.RequestParameters = false;
+                //reporte.ShowPreviewDialog();
+
+
+                string letras=logicaorto.enletras(double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency).ToString());                   
+                string cad="Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
+                Pedido.Factura.F_impresion nf = new Pedido.Factura.F_impresion();
+
+                string con,cre;
+
+                //ver si es credito o contado
+                if (radioGroup2.SelectedIndex == 0)
+                {
+                    con = "X";
+                    cre = " ";
+                }
+                else
+                {
+                    con = " ";
+                    cre = "X";
+                }
+
+                ////si es factura tipo A
+                //if (gridLookTipoDocumento.Text == "Factura [A]")
+                //{
+                //    nf.facturaA(Convert.ToInt16(id_nuevoIngreso), letras, cad, con, cre,"A");
+                //}
+                //else
+                    //si es tipo D
+                 
+                if (gridLookTipoDocumento.Text == "Factura [D]")
+                {
+                    nf.facturaD(Convert.ToInt16(id_nuevoIngreso), letras, con, cre);
+                }
+                //si es de otro tipo
+                else
+                {
+                    nf.facturaOtroTipo(Convert.ToInt16(id_nuevoIngreso), letras, cad, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue));
+                }
+
+
+                nf.ShowDialog();
+
             }
             catch
             {

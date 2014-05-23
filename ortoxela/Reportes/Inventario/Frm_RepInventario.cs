@@ -30,7 +30,7 @@ namespace ortoxela.Reportes.Inventario
                 string consulta = "";
                 Bodega_origen_int = Int32.Parse(bodegas.SelectedValue.ToString());
                 Bodega_destino_int = Int32.Parse(BodegaDestino.SelectedValue.ToString());       
-                consulta = "CALL sp_traslados_bodegas('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + Bodega_origen_int + ","+ Bodega_destino_int +"); ";
+                consulta = "CALL sp_traslados_bodegas('" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00','" + FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'," + Bodega_origen_int +/* ","+ Bodega_destino_int +*/"); ";
                 
                 MySqlDataAdapter adaptadori = new MySqlDataAdapter(consulta, Properties.Settings.Default.ortoxelaConnectionString);
 
