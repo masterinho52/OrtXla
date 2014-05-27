@@ -23,85 +23,19 @@ namespace ortoxela.Pedido.Factura
 
         }
 
-        public void facturaA(int header, string totalenletras_, string cadenapiedepagina_, string contado_, string credito_, string tip_)
-        {
-            //aca hayamos el nombre de usuario del vendedor, por medio del id del encabezado, que ya fue almacenado en la base de datos, en la tabla de encabezado
-            string ve = "";
-            DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ec = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
-            ve = ec.GetData_encontrarvendedor(header).Rows[0][0].ToString();
-
-            DataTable res = new DataTable();
-            DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
-            R_NFactura reporte = new R_NFactura();
-            res = lg.GetData_NFactura(header);
-            
-            reporte.SetDataSource(res);
-            crystalReportViewer_impresion.ReportSource = reporte;
-
-            //para mandarle valores al crystal en un campo en especifico
-                //total en letras
-                reporte.SetParameterValue("totalenletras", totalenletras_);
-
-                //cadena completa de no se q cosas q dice hasta abajo
-                reporte.SetParameterValue("cadenapiedepagina", cadenapiedepagina_);
-
-                //CREDITO O CONTADO
-                reporte.SetParameterValue("contado", contado_);
-                reporte.SetParameterValue("credito", credito_);
-
-            //vendedor
-                reporte.SetParameterValue("vendedor", ve);
-
-            //tipo de factura
-                reporte.SetParameterValue("tipodocumento", tip_);
-            //
-
-                
-            
-            
-        }
-
-        public void facturaD(int header,string totalenletras_,string contado_,string credito_)
-        {
-            //aca hayamos el nombre de usuario del vendedor, por medio del id del encabezado, que ya fue almacenado en la base de datos, en la tabla de encabezado
-            string ve = "";
-            DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ec = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
-            ve = ec.GetData_encontrarvendedor(header).Rows[0][0].ToString();
-
-            DataTable res = new DataTable();
-            DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
-            R_NFacturaD reporte = new R_NFacturaD();
-            res = lg.GetData_NFactura(header);
-
-            reporte.SetDataSource(res);
-            crystalReportViewer_impresion.ReportSource = reporte;
-
-            //para mandarle valores al crystal en un campo en especifico
-            //total en letras
-            reporte.SetParameterValue("totalenletras", totalenletras_);
-
-
-            //CREDITO O CONTADO
-            reporte.SetParameterValue("contado", contado_);
-            reporte.SetParameterValue("credito", credito_);
-
-            //vendedor
-            reporte.SetParameterValue("vendedor", ve);
-            //
-
-                
-            
-            
-        }
-
-        public void facturaOtroTipo(int header, string totalenletras_, string cadenapiedepagina_, string contado_, string credito_, int tip_)
+       
+        public void facturaOtroTipo(int header, string totalenletras_, string contado_, string credito_, int tip_)
         {
             DataSetFacturaTableAdapters.series_documentosTableAdapter lg1 = new DataSetFacturaTableAdapters.series_documentosTableAdapter();
             string ti = lg1.GetData_obtenernombredeserie(tip_).Rows[0][0].ToString();
 
             string ve = "";
-            DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ec = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
-            ve = ec.GetData_encontrarvendedor(header).Rows[0][0].ToString();
+            DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
+
+            string so = "";
+            DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
+            so = so1.GetData_encontrarsociocomercial(header).Rows[0][0].ToString();
 
             DataTable res = new DataTable();
             DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
@@ -115,8 +49,8 @@ namespace ortoxela.Pedido.Factura
             //total en letras
             reporte.SetParameterValue("totalenletras", totalenletras_);
 
-            //cadena completa de no se q cosas q dice hasta abajo
-            reporte.SetParameterValue("cadenapiedepagina", cadenapiedepagina_);
+            //socio comercial
+            reporte.SetParameterValue("sociocomercial", so);
 
             //CREDITO O CONTADO
             reporte.SetParameterValue("contado", contado_);

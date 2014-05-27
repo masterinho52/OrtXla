@@ -34,6 +34,8 @@ namespace ortoxela.Pedido.Factura {
         
         private series_documentosDataTable tableseries_documentos;
         
+        private encontrarsociocomercialDataTable tableencontrarsociocomercial;
+        
         private global::System.Data.DataRelation relationEncabezado_Detalle;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -78,6 +80,9 @@ namespace ortoxela.Pedido.Factura {
                 }
                 if ((ds.Tables["series_documentos"] != null)) {
                     base.Tables.Add(new series_documentosDataTable(ds.Tables["series_documentos"]));
+                }
+                if ((ds.Tables["encontrarsociocomercial"] != null)) {
+                    base.Tables.Add(new encontrarsociocomercialDataTable(ds.Tables["encontrarsociocomercial"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -144,6 +149,16 @@ namespace ortoxela.Pedido.Factura {
         public series_documentosDataTable series_documentos {
             get {
                 return this.tableseries_documentos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public encontrarsociocomercialDataTable encontrarsociocomercial {
+            get {
+                return this.tableencontrarsociocomercial;
             }
         }
         
@@ -229,6 +244,9 @@ namespace ortoxela.Pedido.Factura {
                 if ((ds.Tables["series_documentos"] != null)) {
                     base.Tables.Add(new series_documentosDataTable(ds.Tables["series_documentos"]));
                 }
+                if ((ds.Tables["encontrarsociocomercial"] != null)) {
+                    base.Tables.Add(new encontrarsociocomercialDataTable(ds.Tables["encontrarsociocomercial"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -292,6 +310,12 @@ namespace ortoxela.Pedido.Factura {
                     this.tableseries_documentos.InitVars();
                 }
             }
+            this.tableencontrarsociocomercial = ((encontrarsociocomercialDataTable)(base.Tables["encontrarsociocomercial"]));
+            if ((initTable == true)) {
+                if ((this.tableencontrarsociocomercial != null)) {
+                    this.tableencontrarsociocomercial.InitVars();
+                }
+            }
             this.relationEncabezado_Detalle = this.Relations["Encabezado_Detalle"];
         }
         
@@ -313,6 +337,8 @@ namespace ortoxela.Pedido.Factura {
             base.Tables.Add(this.tableencontrarvendedor);
             this.tableseries_documentos = new series_documentosDataTable();
             base.Tables.Add(this.tableseries_documentos);
+            this.tableencontrarsociocomercial = new encontrarsociocomercialDataTable();
+            base.Tables.Add(this.tableencontrarsociocomercial);
             this.relationEncabezado_Detalle = new global::System.Data.DataRelation("Encabezado_Detalle", new global::System.Data.DataColumn[] {
                         this.tableEncabezado.id_documentoColumn}, new global::System.Data.DataColumn[] {
                         this.tableDetalle.id_documentoColumn}, false);
@@ -346,6 +372,12 @@ namespace ortoxela.Pedido.Factura {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeseries_documentos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeencontrarsociocomercial() {
             return false;
         }
         
@@ -418,6 +450,9 @@ namespace ortoxela.Pedido.Factura {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void series_documentosRowChangeEventHandler(object sender, series_documentosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void encontrarsociocomercialRowChangeEventHandler(object sender, encontrarsociocomercialRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1276,8 +1311,6 @@ namespace ortoxela.Pedido.Factura {
             
             private global::System.Data.DataColumn columnnit;
             
-            private global::System.Data.DataColumn columnsocio_comercial;
-            
             private global::System.Data.DataColumn columnno_documento;
             
             private global::System.Data.DataColumn columnfecha;
@@ -1350,14 +1383,6 @@ namespace ortoxela.Pedido.Factura {
             public global::System.Data.DataColumn nitColumn {
                 get {
                     return this.columnnit;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn socio_comercialColumn {
-                get {
-                    return this.columnsocio_comercial;
                 }
             }
             
@@ -1470,13 +1495,12 @@ namespace ortoxela.Pedido.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NFacturaRow AddNFacturaRow(string nombre_cliente, string direccion, string nit, string socio_comercial, int no_documento, System.DateTime fecha, string codigo_articulo, string descripcion, decimal cantidad_enviada, decimal precio_unitario, decimal precio_total, decimal monto, string refer_documento) {
+            public NFacturaRow AddNFacturaRow(string nombre_cliente, string direccion, string nit, int no_documento, System.DateTime fecha, string codigo_articulo, string descripcion, decimal cantidad_enviada, decimal precio_unitario, decimal precio_total, decimal monto, string refer_documento) {
                 NFacturaRow rowNFacturaRow = ((NFacturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nombre_cliente,
                         direccion,
                         nit,
-                        socio_comercial,
                         no_documento,
                         fecha,
                         codigo_articulo,
@@ -1518,7 +1542,6 @@ namespace ortoxela.Pedido.Factura {
                 this.columnnombre_cliente = base.Columns["nombre_cliente"];
                 this.columndireccion = base.Columns["direccion"];
                 this.columnnit = base.Columns["nit"];
-                this.columnsocio_comercial = base.Columns["socio_comercial"];
                 this.columnno_documento = base.Columns["no_documento"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columncodigo_articulo = base.Columns["codigo_articulo"];
@@ -1539,8 +1562,6 @@ namespace ortoxela.Pedido.Factura {
                 base.Columns.Add(this.columndireccion);
                 this.columnnit = new global::System.Data.DataColumn("nit", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnit);
-                this.columnsocio_comercial = new global::System.Data.DataColumn("socio_comercial", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsocio_comercial);
                 this.columnno_documento = new global::System.Data.DataColumn("no_documento", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnno_documento);
                 this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1564,7 +1585,6 @@ namespace ortoxela.Pedido.Factura {
                 this.columnnombre_cliente.MaxLength = 200;
                 this.columndireccion.MaxLength = 200;
                 this.columnnit.MaxLength = 20;
-                this.columnsocio_comercial.MaxLength = 11;
                 this.columnno_documento.AllowDBNull = false;
                 this.columncodigo_articulo.AllowDBNull = false;
                 this.columncodigo_articulo.Unique = true;
@@ -2155,6 +2175,254 @@ namespace ortoxela.Pedido.Factura {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "series_documentosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class encontrarsociocomercialDataTable : global::System.Data.TypedTableBase<encontrarsociocomercialRow> {
+            
+            private global::System.Data.DataColumn columnnombre_cliente;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialDataTable() {
+                this.TableName = "encontrarsociocomercial";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal encontrarsociocomercialDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected encontrarsociocomercialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombre_clienteColumn {
+                get {
+                    return this.columnnombre_cliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialRow this[int index] {
+                get {
+                    return ((encontrarsociocomercialRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event encontrarsociocomercialRowChangeEventHandler encontrarsociocomercialRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event encontrarsociocomercialRowChangeEventHandler encontrarsociocomercialRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event encontrarsociocomercialRowChangeEventHandler encontrarsociocomercialRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event encontrarsociocomercialRowChangeEventHandler encontrarsociocomercialRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddencontrarsociocomercialRow(encontrarsociocomercialRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialRow AddencontrarsociocomercialRow(string nombre_cliente) {
+                encontrarsociocomercialRow rowencontrarsociocomercialRow = ((encontrarsociocomercialRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        nombre_cliente};
+                rowencontrarsociocomercialRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowencontrarsociocomercialRow);
+                return rowencontrarsociocomercialRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                encontrarsociocomercialDataTable cln = ((encontrarsociocomercialDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new encontrarsociocomercialDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnnombre_cliente = base.Columns["nombre_cliente"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnnombre_cliente = new global::System.Data.DataColumn("nombre_cliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_cliente);
+                this.columnnombre_cliente.MaxLength = 200;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialRow NewencontrarsociocomercialRow() {
+                return ((encontrarsociocomercialRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new encontrarsociocomercialRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(encontrarsociocomercialRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.encontrarsociocomercialRowChanged != null)) {
+                    this.encontrarsociocomercialRowChanged(this, new encontrarsociocomercialRowChangeEvent(((encontrarsociocomercialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.encontrarsociocomercialRowChanging != null)) {
+                    this.encontrarsociocomercialRowChanging(this, new encontrarsociocomercialRowChangeEvent(((encontrarsociocomercialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.encontrarsociocomercialRowDeleted != null)) {
+                    this.encontrarsociocomercialRowDeleted(this, new encontrarsociocomercialRowChangeEvent(((encontrarsociocomercialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.encontrarsociocomercialRowDeleting != null)) {
+                    this.encontrarsociocomercialRowDeleting(this, new encontrarsociocomercialRowChangeEvent(((encontrarsociocomercialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveencontrarsociocomercialRow(encontrarsociocomercialRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetFactura ds = new DataSetFactura();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "encontrarsociocomercialDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2830,22 +3098,6 @@ namespace ortoxela.Pedido.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string socio_comercial {
-                get {
-                    try {
-                        return ((string)(this[this.tableNFactura.socio_comercialColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'socio_comercial\' de la tabla \'NFactura\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNFactura.socio_comercialColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int no_documento {
                 get {
                     return ((int)(this[this.tableNFactura.no_documentoColumn]));
@@ -3011,18 +3263,6 @@ namespace ortoxela.Pedido.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Issocio_comercialNull() {
-                return this.IsNull(this.tableNFactura.socio_comercialColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setsocio_comercialNull() {
-                this[this.tableNFactura.socio_comercialColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfechaNull() {
                 return this.IsNull(this.tableNFactura.fechaColumn);
             }
@@ -3161,6 +3401,50 @@ namespace ortoxela.Pedido.Factura {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setserie_documentoNull() {
                 this[this.tableseries_documentos.serie_documentoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class encontrarsociocomercialRow : global::System.Data.DataRow {
+            
+            private encontrarsociocomercialDataTable tableencontrarsociocomercial;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal encontrarsociocomercialRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableencontrarsociocomercial = ((encontrarsociocomercialDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_cliente {
+                get {
+                    try {
+                        return ((string)(this[this.tableencontrarsociocomercial.nombre_clienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_cliente\' de la tabla \'encontrarsociocomercial\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableencontrarsociocomercial.nombre_clienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_clienteNull() {
+                return this.IsNull(this.tableencontrarsociocomercial.nombre_clienteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_clienteNull() {
+                this[this.tableencontrarsociocomercial.nombre_clienteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3320,6 +3604,40 @@ namespace ortoxela.Pedido.Factura {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public series_documentosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class encontrarsociocomercialRowChangeEvent : global::System.EventArgs {
+            
+            private encontrarsociocomercialRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialRowChangeEvent(encontrarsociocomercialRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public encontrarsociocomercialRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3826,7 +4144,6 @@ FROM            detalle_doctos_inv INNER JOIN
             tableMapping.ColumnMappings.Add("nombre_cliente", "nombre_cliente");
             tableMapping.ColumnMappings.Add("direccion", "direccion");
             tableMapping.ColumnMappings.Add("nit", "nit");
-            tableMapping.ColumnMappings.Add("socio_comercial", "socio_comercial");
             tableMapping.ColumnMappings.Add("no_documento", "no_documento");
             tableMapping.ColumnMappings.Add("fecha", "fecha");
             tableMapping.ColumnMappings.Add("codigo_articulo", "codigo_articulo");
@@ -3852,15 +4169,15 @@ FROM            detalle_doctos_inv INNER JOIN
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        clientes.nombre_cliente, clientes.direccion, clientes.nit, header_doctos_inv.socio_comercial, header_doctos_inv.no_documento, header_doctos_inv.fecha, 
-                         articulos.codigo_articulo, articulos.descripcion, detalle_doctos_inv.cantidad_enviada, detalle_doctos_inv.precio_unitario, detalle_doctos_inv.precio_total, 
-                         header_doctos_inv.monto, header_doctos_inv.refer_documento
+            this._commandCollection[0].CommandText = @"SELECT        clientes.nombre_cliente, clientes.direccion, clientes.nit, header_doctos_inv.no_documento, header_doctos_inv.fecha, articulos.codigo_articulo, 
+                         articulos.descripcion, detalle_doctos_inv.cantidad_enviada, detalle_doctos_inv.precio_unitario, detalle_doctos_inv.precio_total, header_doctos_inv.monto, 
+                         header_doctos_inv.refer_documento
 FROM            header_doctos_inv INNER JOIN
                          clientes ON header_doctos_inv.codigo_cliente = clientes.codigo_cliente INNER JOIN
                          series_documentos ON header_doctos_inv.codigo_serie = series_documentos.codigo_serie INNER JOIN
                          detalle_doctos_inv ON header_doctos_inv.id_documento = detalle_doctos_inv.id_documento INNER JOIN
                          articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo
-WHERE     header_doctos_inv.id_documento = @noheader
+WHERE        (header_doctos_inv.id_documento = @noheader)
 ORDER BY header_doctos_inv.id_documento DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -4024,8 +4341,8 @@ ORDER BY header_doctos_inv.id_documento DESC";
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        usuarios.username\r\nFROM            header_doctos_inv INNER JOIN\r\n  " +
-                "                       usuarios ON header_doctos_inv.vendedor = usuarios.userid\r" +
-                "\nwhere\r\nheader_doctos_inv.id_documento = @noheader";
+                "                       usuarios ON header_doctos_inv.usuario_creador = usuarios." +
+                "userid\r\nwhere\r\nheader_doctos_inv.id_documento = @noheader";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@noheader";
@@ -4207,6 +4524,170 @@ ORDER BY header_doctos_inv.id_documento DESC";
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(sd));
             DataSetFactura.series_documentosDataTable dataTable = new DataSetFactura.series_documentosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class encontrarsociocomercialTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public encontrarsociocomercialTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "encontrarsociocomercial";
+            tableMapping.ColumnMappings.Add("nombre_cliente", "nombre_cliente");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::ortoxela.Properties.Settings.Default.ortoxelaConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        clientes.nombre_cliente\r\nFROM            header_doctos_inv INNER JO" +
+                "IN\r\n                         clientes ON header_doctos_inv.socio_comercial = cli" +
+                "entes.codigo_cliente\r\n\r\nwhere\r\nheader_doctos_inv.id_documento = @noheader";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@noheader";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_documento";
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetFactura.encontrarsociocomercialDataTable GetData_encontrarsociocomercial(int noheader) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(noheader));
+            DataSetFactura.encontrarsociocomercialDataTable dataTable = new DataSetFactura.encontrarsociocomercialDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -589,7 +589,7 @@ namespace ortoxela.FacturaTemporal
 
 
                 string letras=logicaorto.enletras(double.Parse(textPrecioTotal.Text.ToString(), NumberStyles.Currency).ToString());                   
-                string cad="Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + gridLookSocioComercial.Text + " - Operado: " + dateEdit1.Text;
+                
                 Pedido.Factura.F_impresion nf = new Pedido.Factura.F_impresion();
 
                 string con,cre;
@@ -606,23 +606,9 @@ namespace ortoxela.FacturaTemporal
                     cre = "X";
                 }
 
-                ////si es factura tipo A
-                //if (gridLookTipoDocumento.Text == "Factura [A]")
-                //{
-                //    nf.facturaA(Convert.ToInt16(id_nuevoIngreso), letras, cad, con, cre,"A");
-                //}
-                //else
-                    //si es tipo D
-                 
-                if (gridLookTipoDocumento.Text == "Factura [D]")
-                {
-                    nf.facturaD(Convert.ToInt16(id_nuevoIngreso), letras, con, cre);
-                }
-                //si es de otro tipo
-                else
-                {
-                    nf.facturaOtroTipo(Convert.ToInt16(id_nuevoIngreso), letras, cad, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue));
-                }
+
+                
+                    nf.facturaOtroTipo(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue));
 
 
                 nf.ShowDialog();

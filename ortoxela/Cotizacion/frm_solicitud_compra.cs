@@ -430,6 +430,7 @@ namespace ortoxela.Cotizacion
         {
             try
             {
+                
                 XtraReport_Solicitud_compra reporte = new XtraReport_Solicitud_compra();
                 reporte.Parameters["ID"].Value = id_nuevo_pedido;
                 reporte.RequestParameters = false;

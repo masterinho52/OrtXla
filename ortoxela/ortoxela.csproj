@@ -551,12 +551,6 @@
       <DependentUpon>R_NFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pedido\Factura\R_NFacturaD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>R_NFacturaD.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1353,10 +1347,6 @@
     <EmbeddedResource Include="Pedido\Factura\R_NFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_NFactura.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pedido\Factura\R_NFacturaD.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>R_NFacturaD.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.resx">
       <DependentUpon>frm_condicion_conta.cs</DependentUpon>
