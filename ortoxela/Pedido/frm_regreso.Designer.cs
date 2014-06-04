@@ -658,7 +658,7 @@
             this.xtraTabPage2.Controls.Add(this.simpleButton9);
             this.xtraTabPage2.Controls.Add(this.groupControl5);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage2.Text = "FACTURA";
             this.xtraTabPage2.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage2_Paint);
             // 
@@ -1135,10 +1135,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 21);
+            this.gridControl2.Location = new System.Drawing.Point(4, 19);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1068, 299);
+            this.gridControl2.Size = new System.Drawing.Size(1064, 298);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1156,7 +1156,7 @@
             this.xtraTabPage3.Controls.Add(this.sbPrintReciboCaja);
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1285, 501);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1283, 501);
             this.xtraTabPage3.Text = "RECIBO DE CAJA";
             // 
             // sbPrintReciboCaja

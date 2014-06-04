@@ -244,7 +244,7 @@
     <value>Panel2</value>
   </data>
   <data name="splitContainerDatos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1284, 510</value>
+    <value>1286, 511</value>
   </data>
   <data name="splitContainerDatos.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -801,6 +801,9 @@
   <data name="barButtonItem136.Caption" xml:space="preserve">
     <value>Reportes Administracion</value>
   </data>
+  <data name="barButtonItem137.Caption" xml:space="preserve">
+    <value>Estadistica</value>
+  </data>
   <data name="ribbon.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -941,13 +944,13 @@
     <value>False</value>
   </data>
   <data name="ribbon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1284, 147</value>
+    <value>1286, 147</value>
   </data>
   <data name="ribbonStatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 657</value>
+    <value>0, 658</value>
   </data>
   <data name="ribbonStatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1284, 23</value>
+    <value>1286, 23</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar.Name" xml:space="preserve">
     <value>ribbonStatusBar</value>
@@ -986,7 +989,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1284, 680</value>
+    <value>1286, 681</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2593,6 +2596,12 @@
     <value>barButtonItem136</value>
   </data>
   <data name="&gt;&gt;barButtonItem136.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem137.Name" xml:space="preserve">
+    <value>barButtonItem137</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem137.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ribbonMiniToolbar1.Name" xml:space="preserve">

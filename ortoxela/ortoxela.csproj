@@ -18,7 +18,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Julio\Documents\Instaladores\OrtoXelaInstall\</PublishUrl>
+    <PublishUrl>C:\Users\Julio\Desktop\OrtoXelaInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -28,7 +28,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -69,6 +69,9 @@
     <Reference Include="Accessibility">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -917,6 +920,12 @@
     <Compile Include="Reportes\Pedidos\xtr_vueltos.Designer.cs">
       <DependentUpon>xtr_vueltos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventas\Frm_Estadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventas\Frm_Estadistica.Designer.cs">
+      <DependentUpon>Frm_Estadistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrasladoBodega\Producto\frm_Existencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1450,6 +1459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Pedidos\xtr_vueltos.resx">
       <DependentUpon>xtr_vueltos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventas\Frm_Estadistica.resx">
+      <DependentUpon>Frm_Estadistica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrasladoBodega\Producto\frm_Existencias.resx">
       <DependentUpon>frm_Existencias.cs</DependentUpon>
@@ -4097,6 +4109,12 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

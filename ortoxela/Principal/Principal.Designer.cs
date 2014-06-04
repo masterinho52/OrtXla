@@ -237,6 +237,7 @@
             this.barButtonItem134 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem135 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem136 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem137 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.FACTURACION = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -864,8 +865,9 @@
             this.barButtonItem133,
             this.barButtonItem134,
             this.barButtonItem135,
-            this.barButtonItem136});
-            this.ribbon.MaxItemId = 208;
+            this.barButtonItem136,
+            this.barButtonItem137});
+            this.ribbon.MaxItemId = 209;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -2177,6 +2179,13 @@
             this.barButtonItem136.Name = "barButtonItem136";
             this.barButtonItem136.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem136_ItemClick);
             // 
+            // barButtonItem137
+            // 
+            resources.ApplyResources(this.barButtonItem137, "barButtonItem137");
+            this.barButtonItem137.Id = 208;
+            this.barButtonItem137.Name = "barButtonItem137";
+            this.barButtonItem137.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem137_ItemClick);
+            // 
             // FACTURACION
             // 
             resources.ApplyResources(this.FACTURACION, "FACTURACION");
@@ -2251,6 +2260,7 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem96);
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem83);
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem102);
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem137);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             resources.ApplyResources(this.ribbonPageGroup16, "ribbonPageGroup16");
             // 
@@ -2788,5 +2798,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem135;
         private DevExpress.XtraBars.BarButtonItem barButtonItem136;
         private DevExpress.XtraBars.BarSubItem barSubItem30;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem137;
     }
 }

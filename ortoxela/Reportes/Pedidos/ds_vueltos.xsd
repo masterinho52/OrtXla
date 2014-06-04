@@ -42,7 +42,7 @@ FROM            v_vueltos</CommandText>
   <xs:element name="ds_vueltos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_vueltos" msprop:Generator_UserDSName="ds_vueltos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vueltos" msprop:Generator_TableClassName="vueltosDataTable" msprop:Generator_TableVarName="tablevueltos" msprop:Generator_TablePropName="vueltos" msprop:Generator_RowDeletingName="vueltosRowDeleting" msprop:Generator_UserTableName="vueltos" msprop:Generator_RowChangingName="vueltosRowChanging" msprop:Generator_RowEvHandlerName="vueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="vueltosRowDeleted" msprop:Generator_RowEvArgName="vueltosRowChangeEvent" msprop:Generator_RowChangedName="vueltosRowChanged" msprop:Generator_RowClassName="vueltosRow">
+        <xs:element name="vueltos" msprop:Generator_TableClassName="vueltosDataTable" msprop:Generator_TableVarName="tablevueltos" msprop:Generator_RowChangedName="vueltosRowChanged" msprop:Generator_TablePropName="vueltos" msprop:Generator_RowDeletingName="vueltosRowDeleting" msprop:Generator_RowChangingName="vueltosRowChanging" msprop:Generator_RowEvHandlerName="vueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="vueltosRowDeleted" msprop:Generator_RowClassName="vueltosRow" msprop:Generator_UserTableName="vueltos" msprop:Generator_RowEvArgName="vueltosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" type="xs:unsignedInt" />
@@ -55,7 +55,7 @@ FROM            v_vueltos</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="estadoid" msprop:Generator_ColumnVarNameInTable="columnestadoid" msprop:Generator_ColumnPropNameInRow="estadoid" msprop:Generator_ColumnPropNameInTable="estadoidColumn" msprop:Generator_UserColumnName="estadoid" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="estadoid" msprop:Generator_ColumnVarNameInTable="columnestadoid" msprop:Generator_ColumnPropNameInRow="estadoid" msprop:Generator_ColumnPropNameInTable="estadoidColumn" msprop:Generator_UserColumnName="estadoid" type="xs:int" minOccurs="0" />
               <xs:element name="monto_vuelto" msprop:Generator_ColumnVarNameInTable="columnmonto_vuelto" msprop:Generator_ColumnPropNameInRow="monto_vuelto" msprop:Generator_ColumnPropNameInTable="monto_vueltoColumn" msprop:Generator_UserColumnName="monto_vuelto" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha_pago" msprop:Generator_ColumnVarNameInTable="columnfecha_pago" msprop:Generator_ColumnPropNameInRow="fecha_pago" msprop:Generator_ColumnPropNameInTable="fecha_pagoColumn" msprop:Generator_UserColumnName="fecha_pago" type="xs:dateTime" minOccurs="0" />
               <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />

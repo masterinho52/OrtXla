@@ -2010,6 +2010,14 @@ namespace ortoxela.Principal
             adminRep.Show();
         }
 
+        private void barButtonItem137_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form nuevo = new Reportes.Ventas.Frm_Estadistica();
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
+
+     
 
 
         
