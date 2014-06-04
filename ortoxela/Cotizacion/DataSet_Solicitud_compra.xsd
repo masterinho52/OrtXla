@@ -128,7 +128,9 @@ FROM            detalle_doctos_inv INNER JOIN
 FROM            header_doctos_inv INNER JOIN
                          detalle_doctos_inv ON header_doctos_inv.id_documento = detalle_doctos_inv.id_documento INNER JOIN
                          proveedores ON header_doctos_inv.codigo_proveedor = proveedores.codigo_proveedor INNER JOIN
-                         articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo</CommandText>
+                         articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo
+                         
+                         ORDER BY header_doctos_inv.id_documento DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -160,7 +162,7 @@ FROM            header_doctos_inv INNER JOIN
   <xs:element name="DataSet_Solicitud_compra" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Solicitud_compra" msprop:Generator_UserDSName="DataSet_Solicitud_compra">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowClassName="EncabezadoRow" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent">
+        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowClassName="EncabezadoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
@@ -282,7 +284,7 @@ FROM            header_doctos_inv INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowClassName="DetalleRow" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowEvArgName="DetalleRowChangeEvent">
+        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_RowClassName="DetalleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="detdocinv_id" msprop:Generator_ColumnVarNameInTable="columndetdocinv_id" msprop:Generator_ColumnPropNameInRow="detdocinv_id" msprop:Generator_ColumnPropNameInTable="detdocinv_idColumn" msprop:Generator_UserColumnName="detdocinv_id" type="xs:unsignedInt" />
@@ -358,7 +360,7 @@ FROM            header_doctos_inv INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="solicitudcompra" msprop:Generator_TableClassName="solicitudcompraDataTable" msprop:Generator_TableVarName="tablesolicitudcompra" msprop:Generator_RowChangedName="solicitudcompraRowChanged" msprop:Generator_TablePropName="solicitudcompra" msprop:Generator_RowDeletingName="solicitudcompraRowDeleting" msprop:Generator_RowChangingName="solicitudcompraRowChanging" msprop:Generator_RowEvHandlerName="solicitudcompraRowChangeEventHandler" msprop:Generator_RowDeletedName="solicitudcompraRowDeleted" msprop:Generator_RowClassName="solicitudcompraRow" msprop:Generator_UserTableName="solicitudcompra" msprop:Generator_RowEvArgName="solicitudcompraRowChangeEvent">
+        <xs:element name="solicitudcompra" msprop:Generator_TableClassName="solicitudcompraDataTable" msprop:Generator_TableVarName="tablesolicitudcompra" msprop:Generator_TablePropName="solicitudcompra" msprop:Generator_RowDeletingName="solicitudcompraRowDeleting" msprop:Generator_RowChangingName="solicitudcompraRowChanging" msprop:Generator_RowEvHandlerName="solicitudcompraRowChangeEventHandler" msprop:Generator_RowDeletedName="solicitudcompraRowDeleted" msprop:Generator_UserTableName="solicitudcompra" msprop:Generator_RowChangedName="solicitudcompraRowChanged" msprop:Generator_RowEvArgName="solicitudcompraRowChangeEvent" msprop:Generator_RowClassName="solicitudcompraRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
@@ -434,7 +436,7 @@ FROM            header_doctos_inv INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Encabezado_Detalle" msdata:parent="Encabezado" msdata:child="Detalle" msdata:parentkey="id_documento" msdata:childkey="id_documento" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Encabezado_Detalle" msprop:Generator_RelationVarName="relationEncabezado_Detalle" msprop:Generator_UserParentTable="Encabezado" msprop:Generator_ParentPropName="EncabezadoRow" />
+      <msdata:Relationship name="Encabezado_Detalle" msdata:parent="Encabezado" msdata:child="Detalle" msdata:parentkey="id_documento" msdata:childkey="id_documento" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Encabezado_Detalle" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_RelationVarName="relationEncabezado_Detalle" msprop:Generator_UserParentTable="Encabezado" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

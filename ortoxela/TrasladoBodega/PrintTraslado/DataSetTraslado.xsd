@@ -67,7 +67,7 @@ FROM            traslado_bodega_detail INNER JOIN
   <xs:element name="DataSetTraslado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTraslado" msprop:Generator_UserDSName="DataSetTraslado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowClassName="EncabezadoRow">
+        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowClassName="EncabezadoRow" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ORIGEN" msprop:Generator_ColumnVarNameInTable="columnORIGEN" msprop:Generator_ColumnPropNameInRow="ORIGEN" msprop:Generator_ColumnPropNameInTable="ORIGENColumn" msprop:Generator_UserColumnName="ORIGEN" minOccurs="0">
@@ -110,7 +110,7 @@ FROM            traslado_bodega_detail INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="detalle" msprop:Generator_TableClassName="detalleDataTable" msprop:Generator_TableVarName="tabledetalle" msprop:Generator_TablePropName="detalle" msprop:Generator_RowDeletingName="detalleRowDeleting" msprop:Generator_UserTableName="detalle" msprop:Generator_RowChangingName="detalleRowChanging" msprop:Generator_RowEvHandlerName="detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="detalleRowDeleted" msprop:Generator_RowEvArgName="detalleRowChangeEvent" msprop:Generator_RowChangedName="detalleRowChanged" msprop:Generator_RowClassName="detalleRow">
+        <xs:element name="detalle" msprop:Generator_TableClassName="detalleDataTable" msprop:Generator_TableVarName="tabledetalle" msprop:Generator_RowChangedName="detalleRowChanged" msprop:Generator_TablePropName="detalle" msprop:Generator_RowDeletingName="detalleRowDeleting" msprop:Generator_RowChangingName="detalleRowChanging" msprop:Generator_RowEvHandlerName="detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="detalleRowDeleted" msprop:Generator_RowClassName="detalleRow" msprop:Generator_UserTableName="detalle" msprop:Generator_RowEvArgName="detalleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="no_traslado_bodega" msprop:Generator_ColumnVarNameInTable="columnno_traslado_bodega" msprop:Generator_ColumnPropNameInRow="no_traslado_bodega" msprop:Generator_ColumnPropNameInTable="no_traslado_bodegaColumn" msprop:Generator_UserColumnName="no_traslado_bodega" type="xs:int" minOccurs="0" />
@@ -142,7 +142,7 @@ FROM            traslado_bodega_detail INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Encabezado_detalle" msdata:parent="Encabezado" msdata:child="detalle" msdata:parentkey="no_traslado_bodega" msdata:childkey="no_traslado_bodega" msprop:Generator_UserChildTable="detalle" msprop:Generator_ChildPropName="GetdetalleRows" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_UserRelationName="Encabezado_detalle" msprop:Generator_RelationVarName="relationEncabezado_detalle" msprop:Generator_UserParentTable="Encabezado" />
+      <msdata:Relationship name="Encabezado_detalle" msdata:parent="Encabezado" msdata:child="detalle" msdata:parentkey="no_traslado_bodega" msdata:childkey="no_traslado_bodega" msprop:Generator_UserChildTable="detalle" msprop:Generator_ChildPropName="GetdetalleRows" msprop:Generator_UserRelationName="Encabezado_detalle" msprop:Generator_RelationVarName="relationEncabezado_detalle" msprop:Generator_UserParentTable="Encabezado" msprop:Generator_ParentPropName="EncabezadoRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

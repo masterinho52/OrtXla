@@ -629,6 +629,7 @@ namespace ortoxela.Compra
 
         private void simplePrinter_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             try
             {
                 PrintIngresoProd.XtraReportIngresoProd reporte = new PrintIngresoProd.XtraReportIngresoProd();
@@ -640,6 +641,7 @@ namespace ortoxela.Compra
             {
             
             }
+            this.Cursor = Cursors.Default;
         }
 
         private void simpleButtonEstado_Click(object sender, EventArgs e)

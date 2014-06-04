@@ -2010,6 +2010,13 @@ namespace ortoxela.Principal
             adminRep.Show();
         }
 
+        private void barButtonItem137_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form ajreqrep = new Reportes.Requisiciones_Ajustes.F_reportesrequisicionyajuste();
+            ajreqrep.MdiParent = this;
+            ajreqrep.Show();
+        }
+
 
 
         

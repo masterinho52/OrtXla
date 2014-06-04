@@ -426,15 +426,23 @@ namespace ortoxela.Cotizacion {
             
             private global::System.Data.DataColumn columnvendedor;
             
-            private global::System.Data.DataColumn columnExpr1;
-            
-            private global::System.Data.DataColumn columnExpr2;
-            
-            private global::System.Data.DataColumn columnExpr3;
-            
-            private global::System.Data.DataColumn columnExpr4;
-            
             private global::System.Data.DataColumn columntipo_proveedor_conta;
+            
+            private global::System.Data.DataColumn columnfecha;
+            
+            private global::System.Data.DataColumn columnfecha_modificacion;
+            
+            private global::System.Data.DataColumn columnfecha_retorno;
+            
+            private global::System.Data.DataColumn columnfecha_creacion;
+            
+            private global::System.Data.DataColumn columncodigo_proveedor1;
+            
+            private global::System.Data.DataColumn columnfecha_modificacion1;
+            
+            private global::System.Data.DataColumn columnusuario_modifica1;
+            
+            private global::System.Data.DataColumn columnestadoid1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -751,41 +759,73 @@ namespace ortoxela.Cotizacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr2Column {
-                get {
-                    return this.columnExpr2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr3Column {
-                get {
-                    return this.columnExpr3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr4Column {
-                get {
-                    return this.columnExpr4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn tipo_proveedor_contaColumn {
                 get {
                     return this.columntipo_proveedor_conta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaColumn {
+                get {
+                    return this.columnfecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_modificacionColumn {
+                get {
+                    return this.columnfecha_modificacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_retornoColumn {
+                get {
+                    return this.columnfecha_retorno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_creacionColumn {
+                get {
+                    return this.columnfecha_creacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn codigo_proveedor1Column {
+                get {
+                    return this.columncodigo_proveedor1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_modificacion1Column {
+                get {
+                    return this.columnfecha_modificacion1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn usuario_modifica1Column {
+                get {
+                    return this.columnusuario_modifica1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoid1Column {
+                get {
+                    return this.columnestadoid1;
                 }
             }
             
@@ -862,11 +902,15 @@ namespace ortoxela.Cotizacion {
                         uint id_documento1, 
                         uint doctor, 
                         uint vendedor, 
-                        uint Expr1, 
-                        System.DateTime Expr2, 
-                        uint Expr3, 
-                        uint Expr4, 
-                        int tipo_proveedor_conta) {
+                        int tipo_proveedor_conta, 
+                        System.DateTime fecha, 
+                        System.DateTime fecha_modificacion, 
+                        System.DateTime fecha_retorno, 
+                        System.DateTime fecha_creacion, 
+                        uint codigo_proveedor1, 
+                        System.DateTime fecha_modificacion1, 
+                        uint usuario_modifica1, 
+                        uint estadoid1) {
                 EncabezadoRow rowEncabezadoRow = ((EncabezadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_documento,
@@ -904,11 +948,15 @@ namespace ortoxela.Cotizacion {
                         id_documento1,
                         doctor,
                         vendedor,
-                        Expr1,
-                        Expr2,
-                        Expr3,
-                        Expr4,
-                        tipo_proveedor_conta};
+                        tipo_proveedor_conta,
+                        fecha,
+                        fecha_modificacion,
+                        fecha_retorno,
+                        fecha_creacion,
+                        codigo_proveedor1,
+                        fecha_modificacion1,
+                        usuario_modifica1,
+                        estadoid1};
                 rowEncabezadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEncabezadoRow);
                 return rowEncabezadoRow;
@@ -916,10 +964,10 @@ namespace ortoxela.Cotizacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EncabezadoRow FindByid_documento1Expr1(uint id_documento1, uint Expr1) {
+            public EncabezadoRow FindByid_documento1codigo_proveedor1(uint id_documento1, uint codigo_proveedor1) {
                 return ((EncabezadoRow)(this.Rows.Find(new object[] {
                             id_documento1,
-                            Expr1})));
+                            codigo_proveedor1})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -974,11 +1022,15 @@ namespace ortoxela.Cotizacion {
                 this.columnid_documento1 = base.Columns["id_documento1"];
                 this.columndoctor = base.Columns["doctor"];
                 this.columnvendedor = base.Columns["vendedor"];
-                this.columnExpr1 = base.Columns["Expr1"];
-                this.columnExpr2 = base.Columns["Expr2"];
-                this.columnExpr3 = base.Columns["Expr3"];
-                this.columnExpr4 = base.Columns["Expr4"];
                 this.columntipo_proveedor_conta = base.Columns["tipo_proveedor_conta"];
+                this.columnfecha = base.Columns["fecha"];
+                this.columnfecha_modificacion = base.Columns["fecha_modificacion"];
+                this.columnfecha_retorno = base.Columns["fecha_retorno"];
+                this.columnfecha_creacion = base.Columns["fecha_creacion"];
+                this.columncodigo_proveedor1 = base.Columns["codigo_proveedor1"];
+                this.columnfecha_modificacion1 = base.Columns["fecha_modificacion1"];
+                this.columnusuario_modifica1 = base.Columns["usuario_modifica1"];
+                this.columnestadoid1 = base.Columns["estadoid1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1054,19 +1106,27 @@ namespace ortoxela.Cotizacion {
                 base.Columns.Add(this.columndoctor);
                 this.columnvendedor = new global::System.Data.DataColumn("vendedor", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvendedor);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr2);
-                this.columnExpr3 = new global::System.Data.DataColumn("Expr3", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr3);
-                this.columnExpr4 = new global::System.Data.DataColumn("Expr4", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr4);
                 this.columntipo_proveedor_conta = new global::System.Data.DataColumn("tipo_proveedor_conta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo_proveedor_conta);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
+                this.columnfecha_modificacion = new global::System.Data.DataColumn("fecha_modificacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_modificacion);
+                this.columnfecha_retorno = new global::System.Data.DataColumn("fecha_retorno", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_retorno);
+                this.columnfecha_creacion = new global::System.Data.DataColumn("fecha_creacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_creacion);
+                this.columncodigo_proveedor1 = new global::System.Data.DataColumn("codigo_proveedor1", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_proveedor1);
+                this.columnfecha_modificacion1 = new global::System.Data.DataColumn("fecha_modificacion1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_modificacion1);
+                this.columnusuario_modifica1 = new global::System.Data.DataColumn("usuario_modifica1", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuario_modifica1);
+                this.columnestadoid1 = new global::System.Data.DataColumn("estadoid1", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestadoid1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_documento1,
-                                this.columnExpr1}, true));
+                                this.columncodigo_proveedor1}, true));
                 this.columnid_documento.AllowDBNull = false;
                 this.columnno_documento.AllowDBNull = false;
                 this.columnmonto.AllowDBNull = false;
@@ -1086,7 +1146,8 @@ namespace ortoxela.Cotizacion {
                 this.columndireccion.MaxLength = 200;
                 this.columnid_documento1.AllowDBNull = false;
                 this.columnid_documento1.Caption = "id_documento";
-                this.columnExpr1.AllowDBNull = false;
+                this.columnfecha_creacion.AllowDBNull = false;
+                this.columncodigo_proveedor1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2875,65 +2936,6 @@ namespace ortoxela.Cotizacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uint Expr1 {
-                get {
-                    return ((uint)(this[this.tableEncabezado.Expr1Column]));
-                }
-                set {
-                    this[this.tableEncabezado.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Expr2 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableEncabezado.Expr2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr2\' de la tabla \'Encabezado\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEncabezado.Expr2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uint Expr3 {
-                get {
-                    try {
-                        return ((uint)(this[this.tableEncabezado.Expr3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr3\' de la tabla \'Encabezado\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEncabezado.Expr3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public uint Expr4 {
-                get {
-                    try {
-                        return ((uint)(this[this.tableEncabezado.Expr4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr4\' de la tabla \'Encabezado\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEncabezado.Expr4Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int tipo_proveedor_conta {
                 get {
                     try {
@@ -2946,6 +2948,124 @@ namespace ortoxela.Cotizacion {
                 }
                 set {
                     this[this.tableEncabezado.tipo_proveedor_contaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEncabezado.fechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.fechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_modificacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEncabezado.fecha_modificacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_modificacion\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.fecha_modificacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_retorno {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEncabezado.fecha_retornoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_retorno\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.fecha_retornoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_creacion {
+                get {
+                    return ((global::System.DateTime)(this[this.tableEncabezado.fecha_creacionColumn]));
+                }
+                set {
+                    this[this.tableEncabezado.fecha_creacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uint codigo_proveedor1 {
+                get {
+                    return ((uint)(this[this.tableEncabezado.codigo_proveedor1Column]));
+                }
+                set {
+                    this[this.tableEncabezado.codigo_proveedor1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_modificacion1 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEncabezado.fecha_modificacion1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_modificacion1\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.fecha_modificacion1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uint usuario_modifica1 {
+                get {
+                    try {
+                        return ((uint)(this[this.tableEncabezado.usuario_modifica1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usuario_modifica1\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.usuario_modifica1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uint estadoid1 {
+                get {
+                    try {
+                        return ((uint)(this[this.tableEncabezado.estadoid1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estadoid1\' de la tabla \'Encabezado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEncabezado.estadoid1Column] = value;
                 }
             }
             
@@ -3299,42 +3419,6 @@ namespace ortoxela.Cotizacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr2Null() {
-                return this.IsNull(this.tableEncabezado.Expr2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr2Null() {
-                this[this.tableEncabezado.Expr2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr3Null() {
-                return this.IsNull(this.tableEncabezado.Expr3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr3Null() {
-                this[this.tableEncabezado.Expr3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr4Null() {
-                return this.IsNull(this.tableEncabezado.Expr4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr4Null() {
-                this[this.tableEncabezado.Expr4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Istipo_proveedor_contaNull() {
                 return this.IsNull(this.tableEncabezado.tipo_proveedor_contaColumn);
             }
@@ -3343,6 +3427,78 @@ namespace ortoxela.Cotizacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Settipo_proveedor_contaNull() {
                 this[this.tableEncabezado.tipo_proveedor_contaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfechaNull() {
+                return this.IsNull(this.tableEncabezado.fechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfechaNull() {
+                this[this.tableEncabezado.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_modificacionNull() {
+                return this.IsNull(this.tableEncabezado.fecha_modificacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_modificacionNull() {
+                this[this.tableEncabezado.fecha_modificacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_retornoNull() {
+                return this.IsNull(this.tableEncabezado.fecha_retornoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_retornoNull() {
+                this[this.tableEncabezado.fecha_retornoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_modificacion1Null() {
+                return this.IsNull(this.tableEncabezado.fecha_modificacion1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_modificacion1Null() {
+                this[this.tableEncabezado.fecha_modificacion1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isusuario_modifica1Null() {
+                return this.IsNull(this.tableEncabezado.usuario_modifica1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setusuario_modifica1Null() {
+                this[this.tableEncabezado.usuario_modifica1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isestadoid1Null() {
+                return this.IsNull(this.tableEncabezado.estadoid1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setestadoid1Null() {
+                this[this.tableEncabezado.estadoid1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4721,11 +4877,15 @@ namespace ortoxela.Cotizacion.DataSet_Solicitud_compraTableAdapters {
             tableMapping.ColumnMappings.Add("id_documento", "id_documento1");
             tableMapping.ColumnMappings.Add("doctor", "doctor");
             tableMapping.ColumnMappings.Add("vendedor", "vendedor");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
-            tableMapping.ColumnMappings.Add("Expr3", "Expr3");
-            tableMapping.ColumnMappings.Add("Expr4", "Expr4");
             tableMapping.ColumnMappings.Add("tipo_proveedor_conta", "tipo_proveedor_conta");
+            tableMapping.ColumnMappings.Add("fecha", "fecha");
+            tableMapping.ColumnMappings.Add("fecha_modificacion", "fecha_modificacion");
+            tableMapping.ColumnMappings.Add("fecha_retorno", "fecha_retorno");
+            tableMapping.ColumnMappings.Add("fecha_creacion", "fecha_creacion");
+            tableMapping.ColumnMappings.Add("codigo_proveedor1", "codigo_proveedor1");
+            tableMapping.ColumnMappings.Add("fecha_modificacion1", "fecha_modificacion1");
+            tableMapping.ColumnMappings.Add("usuario_modifica1", "usuario_modifica1");
+            tableMapping.ColumnMappings.Add("estadoid1", "estadoid1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4742,26 +4902,9 @@ namespace ortoxela.Cotizacion.DataSet_Solicitud_compraTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        header_doctos_inv.id_documento, header_doctos_inv.codigo_serie, hea" +
-                "der_doctos_inv.tipo_pago, header_doctos_inv.no_documento, \r\n                    " +
-                "     header_doctos_inv.codigo_cliente, header_doctos_inv.codigo_proveedor, heade" +
-                "r_doctos_inv.monto, header_doctos_inv.descuento, \r\n                         head" +
-                "er_doctos_inv.monto_neto, header_doctos_inv.usuario_creador, header_doctos_inv.u" +
-                "suario_descuento, header_doctos_inv.usuario_modifica, \r\n                        " +
-                " header_doctos_inv.socio_comercial, header_doctos_inv.razon_ajuste, header_docto" +
-                "s_inv.descripcion, header_doctos_inv.estadoid, \r\n                         header" +
-                "_doctos_inv.contado_credito, header_doctos_inv.refer_documento, header_doctos_in" +
-                "v.doctor, header_doctos_inv.vendedor, \r\n                         proveedores.cod" +
-                "igo_proveedor AS Expr1, proveedores.nombre_proveedor, proveedores.contacto, prov" +
-                "eedores.nit, proveedores.dias_credito, \r\n                         proveedores.te" +
-                "lefono_principal, proveedores.telefono_celular, proveedores.fax_otro_tel, provee" +
-                "dores.email, proveedores.fecha_ingreso, \r\n                         proveedores.f" +
-                "echa_modificacion AS Expr2, proveedores.usuario_ingreso, proveedores.usuario_mod" +
-                "ifica AS Expr3, proveedores.total_comprado, \r\n                         proveedor" +
-                "es.ultima_compra, proveedores.estadoid AS Expr4, proveedores.codigo_tipo_prov, p" +
-                "roveedores.direccion, \r\n                         proveedores.tipo_proveedor_cont" +
-                "a\r\nFROM            header_doctos_inv INNER JOIN\r\n                         provee" +
-                "dores ON header_doctos_inv.codigo_proveedor = proveedores.codigo_proveedor";
+            this._commandCollection[0].CommandText = "SELECT        header_doctos_inv.*, proveedores.*\r\nFROM            header_doctos_i" +
+                "nv INNER JOIN\r\n                         proveedores ON header_doctos_inv.codigo_" +
+                "proveedor = proveedores.codigo_proveedor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5148,7 +5291,9 @@ FROM            detalle_doctos_inv INNER JOIN
 FROM            header_doctos_inv INNER JOIN
                          detalle_doctos_inv ON header_doctos_inv.id_documento = detalle_doctos_inv.id_documento INNER JOIN
                          proveedores ON header_doctos_inv.codigo_proveedor = proveedores.codigo_proveedor INNER JOIN
-                         articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo";
+                         articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo
+                         
+                         ORDER BY header_doctos_inv.id_documento DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

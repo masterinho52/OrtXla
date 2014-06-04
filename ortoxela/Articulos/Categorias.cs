@@ -25,39 +25,49 @@ namespace ortoxela.Articulos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT into categorias " +
-                            "(nombre_categoria, estadoid, fecha_creacion, usuario_creador) " +
-                            "VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ", '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', "+clases.ClassVariables.id_usuario+")";
-                    clases.ClassVariables.idnuevo=logica.nuevoid(cadena);
-                    if (clases.ClassVariables.idnuevo!=null)
+                    DataSet_articuloTableAdapters.existenciacategoriaTableAdapter lg = new DataSet_articuloTableAdapters.existenciacategoriaTableAdapter();
+                    int existe = Convert.ToInt16(lg.GetData_verificarexistenciacategoria(textEditnombre.Text).Rows[0][0]);
+                    if (existe == 0)
                     {
-                        groupControl1.Enabled = false;
-                        simpleaceptar.Enabled = false;
-                        clases.ClassMensajes.INSERTO(this);
-                        if (llamadentroform == true)
+                        cadena = "INSERT into categorias " +
+                                "(nombre_categoria, estadoid, fecha_creacion, usuario_creador) " +
+                                "VALUES ('" + textEditnombre.Text + "', " + gridLookUpEditestado.EditValue + ", '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + ")";
+                        clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
+                        if (clases.ClassVariables.idnuevo != null)
                         {
-                            llamadentroform = false;
-                            this.Close();
+                            groupControl1.Enabled = false;
+                            simpleaceptar.Enabled = false;
+                            clases.ClassMensajes.INSERTO(this);
+                            if (llamadentroform == true)
+                            {
+                                llamadentroform = false;
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            clases.ClassMensajes.NoINSERTO(this);
                         }
                     }
                     else
                     {
+                        
                         clases.ClassMensajes.NoINSERTO(this);
+                        MessageBox.Show("La categoria " + textEditnombre.Text + " ya existe", "Categorias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textEditnombre.Focus();
                     }
                 }
                 else
                 {
                     if (bandera == 2)
                     {
-                        cadena = "update categorias "+
-                                    "SET nombre_categoria = '" + textEditnombre.Text + "' , estadoid = " + gridLookUpEditestado.EditValue + " "+
-                                    "WHERE categorias.codigo_categoria=" + clases.ClassVariables.id_busca;
-                        if (clases.ClassMensajes.MODIFICAR(this, cadena))
-                        {
-                            groupControl1.Enabled = false;
-                            simpleaceptar.Enabled = false;
-                        }
-
+                            cadena = "update categorias " +  "SET nombre_categoria = '" + textEditnombre.Text + "' , estadoid = " + gridLookUpEditestado.EditValue + " " +     "WHERE categorias.codigo_categoria=" + clases.ClassVariables.id_busca;
+                            if (clases.ClassMensajes.MODIFICAR(this, cadena))
+                            {
+                                groupControl1.Enabled = false;
+                                simpleaceptar.Enabled = false;
+                            }
+                        
 
                     }
 
@@ -223,6 +233,11 @@ namespace ortoxela.Articulos
 
             }
         
+        }
+
+        private void textEditnombre_Validated(object sender, EventArgs e)
+        {
+            textEditnombre.Text = textEditnombre.Text.Trim();
         }
     }
 }

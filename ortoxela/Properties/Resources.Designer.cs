@@ -233,6 +233,16 @@ namespace ortoxela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajustes_y_reqi {
+            get {
+                object obj = ResourceManager.GetObject("ajustes_y_reqi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap anadir_carrito_de_compras_de_comercio_electronico_icono_7472_32 {
             get {
                 object obj = ResourceManager.GetObject("anadir-carrito-de-compras-de-comercio-electronico-icono-7472-32", resourceCulture);

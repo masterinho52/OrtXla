@@ -608,7 +608,27 @@ namespace ortoxela.FacturaTemporal
 
 
                 
-                    nf.facturaOtroTipo(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue));
+                    //nf.facturaOtroTipo(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue));
+                if (gridLookTipoDocumento.Text == "Factura [A]")
+                {
+                    nf.facturaA(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue), gridLookSocioComercial.EditValue.ToString());
+                }
+                else if (gridLookTipoDocumento.Text == "Factura [B]")
+                {
+                    nf.facturaB(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue), gridLookSocioComercial.EditValue.ToString());
+                }
+                else if (gridLookTipoDocumento.Text == "Factura [C]")
+                {
+                    nf.facturaC(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue), gridLookSocioComercial.EditValue.ToString());
+                }
+                else if (gridLookTipoDocumento.Text == "Factura [D]")
+                {
+                    nf.facturaD(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue), gridLookSocioComercial.EditValue.ToString());
+                }
+                else if (gridLookTipoDocumento.Text == "Factura [E]")
+                {
+                    nf.facturaE(Convert.ToInt16(id_nuevoIngreso), letras, con, cre, Convert.ToInt16(gridLookTipoDocumento.EditValue), gridLookSocioComercial.EditValue.ToString());
+                }
 
 
                 nf.ShowDialog();

@@ -245,7 +245,7 @@ namespace ortoxela.ReciboCredito
             if (serie == "")
                 serie = "3";
             cadena = "SELECT (recibos.no_recibo+1) AS 'NODOC' FROM recibos INNER JOIN series_documentos ON recibos.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_serie=" + serie + " ORDER BY recibos.no_recibo DESC LIMIT 1";
-            textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0]["NORECIBO"].ToString();
+            textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0][0].ToString();
             sbPrintReciboCaja.Enabled = true;
             llenaFacturas();
         }

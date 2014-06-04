@@ -428,16 +428,38 @@ namespace ortoxela.Cotizacion
 
         private void simplePrinter_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            XtraReport_Solicitud_compra reporte = new XtraReport_Solicitud_compra();
             try
             {
-                
-                XtraReport_Solicitud_compra reporte = new XtraReport_Solicitud_compra();
                 reporte.Parameters["ID"].Value = id_nuevo_pedido;
                 reporte.RequestParameters = false;
                 reporte.ShowPreviewDialog();
             }
             catch
-            { }
+            {
+                try
+                {
+                    reporte.Parameters["ID"].Value = id_nuevo_pedido;
+                    reporte.RequestParameters = false;
+                    reporte.ShowPreviewDialog();
+                }
+                catch
+                {
+                    try
+                    {
+                        reporte.Parameters["ID"].Value = id_nuevo_pedido;
+                        reporte.RequestParameters = false;
+                        reporte.ShowPreviewDialog();
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+                
+            
+            this.Cursor = Cursors.Default;
         }
 
         private void sbCancelar_Click(object sender, EventArgs e)

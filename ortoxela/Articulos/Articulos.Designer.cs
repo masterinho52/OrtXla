@@ -33,8 +33,8 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -44,6 +44,8 @@
             this.textEditpventa = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButtonsubcategoria = new DevExpress.XtraEditors.SimpleButton();
+            this.memoEditdescripcion = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gridLooksubcategoria = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -54,8 +56,6 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.memoEditdescripcion = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtoncategoria = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookcategoria = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -90,12 +90,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditpventa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEditdescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLooksubcategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCompu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEditcomentario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditserie.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEditdescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookcategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookmarca.Properties)).BeginInit();
@@ -211,6 +211,26 @@
             this.simpleButtonsubcategoria.TabIndex = 6;
             this.simpleButtonsubcategoria.Click += new System.EventHandler(this.simpleButtonsubcategoria_Click);
             // 
+            // memoEditdescripcion
+            // 
+            this.memoEditdescripcion.Location = new System.Drawing.Point(209, 38);
+            this.memoEditdescripcion.Name = "memoEditdescripcion";
+            this.memoEditdescripcion.Size = new System.Drawing.Size(306, 50);
+            this.memoEditdescripcion.TabIndex = 7;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Ingrese el nombre del articulo";
+            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule5);
+            this.memoEditdescripcion.EditValueChanged += new System.EventHandler(this.memoEditdescripcion_EditValueChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(130, 40);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(71, 20);
+            this.labelControl3.TabIndex = 38;
+            this.labelControl3.Text = "Descripcion";
+            // 
             // gridLooksubcategoria
             // 
             this.gridLooksubcategoria.Enabled = false;
@@ -300,26 +320,6 @@
             this.labelControl4.TabIndex = 41;
             this.labelControl4.Text = "Precio Venta";
             // 
-            // memoEditdescripcion
-            // 
-            this.memoEditdescripcion.Location = new System.Drawing.Point(209, 38);
-            this.memoEditdescripcion.Name = "memoEditdescripcion";
-            this.memoEditdescripcion.Size = new System.Drawing.Size(306, 50);
-            this.memoEditdescripcion.TabIndex = 7;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Ingrese el nombre del articulo";
-            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule5);
-            this.memoEditdescripcion.EditValueChanged += new System.EventHandler(this.memoEditdescripcion_EditValueChanged);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(130, 40);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(71, 20);
-            this.labelControl3.TabIndex = 38;
-            this.labelControl3.Text = "Descripcion";
-            // 
             // simpleButtoncategoria
             // 
             this.simpleButtoncategoria.Image = global::ortoxela.Properties.Resources.add_16x16_32;
@@ -395,6 +395,7 @@
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "Ingrese el codigo del producto";
             this.dxValidationProvider1.SetValidationRule(this.textEditcodigo, conditionValidationRule8);
+            this.textEditcodigo.Validated += new System.EventHandler(this.textEditcodigo_Validated);
             // 
             // labelControl7
             // 
@@ -589,12 +590,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEditdescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLooksubcategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCompu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEditcomentario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditserie.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEditdescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookcategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookmarca.Properties)).EndInit();

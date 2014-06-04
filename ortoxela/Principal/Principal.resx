@@ -801,6 +801,9 @@
   <data name="barButtonItem136.Caption" xml:space="preserve">
     <value>Reportes Administracion</value>
   </data>
+  <data name="barButtonItem137.Caption" xml:space="preserve">
+    <value>Reportes de requisiciones y ajustes</value>
+  </data>
   <data name="ribbon.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -833,6 +836,9 @@
   </data>
   <data name="ribbonPageGroup27.Text" xml:space="preserve">
     <value>ADMIN</value>
+  </data>
+  <data name="ribbonPageGroup28.Text" xml:space="preserve">
+    <value>REQUISICIONES Y AJUSTES</value>
   </data>
   <data name="ribbonPage4.Text" xml:space="preserve">
     <value>REPORTES</value>
@@ -2595,6 +2601,12 @@
   <data name="&gt;&gt;barButtonItem136.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;barButtonItem137.Name" xml:space="preserve">
+    <value>barButtonItem137</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem137.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;ribbonMiniToolbar1.Name" xml:space="preserve">
     <value>ribbonMiniToolbar1</value>
   </data>
@@ -2659,6 +2671,12 @@
     <value>ribbonPageGroup27</value>
   </data>
   <data name="&gt;&gt;ribbonPageGroup27.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageGroup28.Name" xml:space="preserve">
+    <value>ribbonPageGroup28</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageGroup28.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ADMINISTRACION.Name" xml:space="preserve">

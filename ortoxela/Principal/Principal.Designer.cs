@@ -237,6 +237,7 @@
             this.barButtonItem134 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem135 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem136 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem137 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.FACTURACION = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -248,6 +249,7 @@
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ADMINISTRACION = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -864,8 +866,9 @@
             this.barButtonItem133,
             this.barButtonItem134,
             this.barButtonItem135,
-            this.barButtonItem136});
-            this.ribbon.MaxItemId = 208;
+            this.barButtonItem136,
+            this.barButtonItem137});
+            this.ribbon.MaxItemId = 209;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -2177,6 +2180,14 @@
             this.barButtonItem136.Name = "barButtonItem136";
             this.barButtonItem136.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem136_ItemClick);
             // 
+            // barButtonItem137
+            // 
+            resources.ApplyResources(this.barButtonItem137, "barButtonItem137");
+            this.barButtonItem137.Id = 208;
+            this.barButtonItem137.LargeGlyph = global::ortoxela.Properties.Resources.ajustes_y_reqi;
+            this.barButtonItem137.Name = "barButtonItem137";
+            this.barButtonItem137.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem137_ItemClick);
+            // 
             // FACTURACION
             // 
             resources.ApplyResources(this.FACTURACION, "FACTURACION");
@@ -2227,7 +2238,8 @@
             this.ribbonPageGroup12,
             this.ribbonPageGroup16,
             this.ribbonPageGroup18,
-            this.ribbonPageGroup27});
+            this.ribbonPageGroup27,
+            this.ribbonPageGroup28});
             this.ribbonPage4.Name = "ribbonPage4";
             resources.ApplyResources(this.ribbonPage4, "ribbonPage4");
             // 
@@ -2265,6 +2277,12 @@
             this.ribbonPageGroup27.ItemLinks.Add(this.barButtonItem136);
             this.ribbonPageGroup27.Name = "ribbonPageGroup27";
             resources.ApplyResources(this.ribbonPageGroup27, "ribbonPageGroup27");
+            // 
+            // ribbonPageGroup28
+            // 
+            this.ribbonPageGroup28.ItemLinks.Add(this.barButtonItem137);
+            this.ribbonPageGroup28.Name = "ribbonPageGroup28";
+            resources.ApplyResources(this.ribbonPageGroup28, "ribbonPageGroup28");
             // 
             // ADMINISTRACION
             // 
@@ -2788,5 +2806,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem135;
         private DevExpress.XtraBars.BarButtonItem barButtonItem136;
         private DevExpress.XtraBars.BarSubItem barSubItem30;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem137;
     }
 }
