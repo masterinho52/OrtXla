@@ -12,14 +12,10 @@
               <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        clientes.nombre_cliente, vueltos.id_vale, vueltos.id_recibo, vueltos.id_pedido, vueltos.id_factura, vueltos.monto_vuelto, vueltos.fecha_pago, vueltos.no_cheque, 
-                         vueltos.nombre_banco, vueltos.id_vuelto, header_doctos_inv.no_documento, header_doctos_inv_1.no_documento AS NoPedido, vueltos.no_vuelto, 
-                         clientes.nombre_paciente, clientes.nit, header_doctos_inv_2.id_documento, header_doctos_inv_2.no_documento AS no_factura, 
-                         series_documentos.serie_documento AS serie_factura
+                    <CommandText>SELECT        clientes.nombre_cliente, vueltos.monto_vuelto, vueltos.fecha_pago, vueltos.no_cheque, vueltos.nombre_banco, vueltos.no_vuelto, 
+                         clientes.nombre_paciente, clientes.nit, header_doctos_inv_2.no_documento AS no_factura, series_documentos.serie_documento AS serie_factura
 FROM            clientes INNER JOIN
                          vueltos ON clientes.codigo_cliente = vueltos.codigo_cliente INNER JOIN
-                         header_doctos_inv ON vueltos.id_vale = header_doctos_inv.id_documento INNER JOIN
-                         header_doctos_inv header_doctos_inv_1 ON vueltos.id_pedido = header_doctos_inv_1.id_documento INNER JOIN
                          header_doctos_inv header_doctos_inv_2 ON vueltos.id_factura = header_doctos_inv_2.id_documento INNER JOIN
                          series_documentos ON header_doctos_inv_2.codigo_serie = series_documentos.codigo_serie</CommandText>
                     <Parameters />
@@ -29,21 +25,13 @@ FROM            clientes INNER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="nombre_cliente" DataSetColumn="nombre_cliente" />
-              <Mapping SourceColumn="id_vale" DataSetColumn="id_vale" />
-              <Mapping SourceColumn="id_recibo" DataSetColumn="id_recibo" />
-              <Mapping SourceColumn="id_pedido" DataSetColumn="id_pedido" />
-              <Mapping SourceColumn="id_factura" DataSetColumn="id_factura" />
               <Mapping SourceColumn="monto_vuelto" DataSetColumn="monto_vuelto" />
+              <Mapping SourceColumn="no_vuelto" DataSetColumn="no_vuelto" />
               <Mapping SourceColumn="fecha_pago" DataSetColumn="fecha_pago" />
               <Mapping SourceColumn="no_cheque" DataSetColumn="no_cheque" />
               <Mapping SourceColumn="nombre_banco" DataSetColumn="nombre_banco" />
-              <Mapping SourceColumn="no_vuelto" DataSetColumn="no_vuelto" />
-              <Mapping SourceColumn="id_vuelto" DataSetColumn="id_vuelto" />
-              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
-              <Mapping SourceColumn="NoPedido" DataSetColumn="NoPedido" />
               <Mapping SourceColumn="nombre_paciente" DataSetColumn="nombre_paciente" />
               <Mapping SourceColumn="nit" DataSetColumn="nit" />
-              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
               <Mapping SourceColumn="no_factura" DataSetColumn="no_factura" />
               <Mapping SourceColumn="serie_factura" DataSetColumn="serie_factura" />
             </Mappings>
@@ -57,7 +45,7 @@ FROM            clientes INNER JOIN
   <xs:element name="DataSetVuelto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetVuelto" msprop:Generator_UserDSName="DataSetVuelto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Vueltos" msprop:Generator_TableClassName="VueltosDataTable" msprop:Generator_TableVarName="tableVueltos" msprop:Generator_TablePropName="Vueltos" msprop:Generator_RowDeletingName="VueltosRowDeleting" msprop:Generator_UserTableName="Vueltos" msprop:Generator_RowChangingName="VueltosRowChanging" msprop:Generator_RowEvHandlerName="VueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="VueltosRowDeleted" msprop:Generator_RowEvArgName="VueltosRowChangeEvent" msprop:Generator_RowChangedName="VueltosRowChanged" msprop:Generator_RowClassName="VueltosRow">
+        <xs:element name="Vueltos" msprop:Generator_TableClassName="VueltosDataTable" msprop:Generator_TableVarName="tableVueltos" msprop:Generator_TablePropName="Vueltos" msprop:Generator_RowDeletingName="VueltosRowDeleting" msprop:Generator_RowChangingName="VueltosRowChanging" msprop:Generator_RowEvHandlerName="VueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="VueltosRowDeleted" msprop:Generator_UserTableName="Vueltos" msprop:Generator_RowChangedName="VueltosRowChanged" msprop:Generator_RowEvArgName="VueltosRowChangeEvent" msprop:Generator_RowClassName="VueltosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
@@ -67,11 +55,8 @@ FROM            clientes INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="id_vale" msprop:Generator_ColumnVarNameInTable="columnid_vale" msprop:Generator_ColumnPropNameInRow="id_vale" msprop:Generator_ColumnPropNameInTable="id_valeColumn" msprop:Generator_UserColumnName="id_vale" type="xs:unsignedInt" minOccurs="0" />
-              <xs:element name="id_recibo" msprop:Generator_ColumnVarNameInTable="columnid_recibo" msprop:Generator_ColumnPropNameInRow="id_recibo" msprop:Generator_ColumnPropNameInTable="id_reciboColumn" msprop:Generator_UserColumnName="id_recibo" type="xs:unsignedInt" minOccurs="0" />
-              <xs:element name="id_pedido" msprop:Generator_ColumnVarNameInTable="columnid_pedido" msprop:Generator_ColumnPropNameInRow="id_pedido" msprop:Generator_ColumnPropNameInTable="id_pedidoColumn" msprop:Generator_UserColumnName="id_pedido" type="xs:unsignedInt" minOccurs="0" />
-              <xs:element name="id_factura" msprop:Generator_ColumnVarNameInTable="columnid_factura" msprop:Generator_ColumnPropNameInRow="id_factura" msprop:Generator_ColumnPropNameInTable="id_facturaColumn" msprop:Generator_UserColumnName="id_factura" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="monto_vuelto" msprop:Generator_ColumnVarNameInTable="columnmonto_vuelto" msprop:Generator_ColumnPropNameInRow="monto_vuelto" msprop:Generator_ColumnPropNameInTable="monto_vueltoColumn" msprop:Generator_UserColumnName="monto_vuelto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="no_vuelto" msprop:Generator_ColumnVarNameInTable="columnno_vuelto" msprop:Generator_ColumnPropNameInRow="no_vuelto" msprop:Generator_ColumnPropNameInTable="no_vueltoColumn" msprop:Generator_UserColumnName="no_vuelto" type="xs:int" minOccurs="0" />
               <xs:element name="fecha_pago" msprop:Generator_ColumnVarNameInTable="columnfecha_pago" msprop:Generator_ColumnPropNameInRow="fecha_pago" msprop:Generator_ColumnPropNameInTable="fecha_pagoColumn" msprop:Generator_UserColumnName="fecha_pago" type="xs:dateTime" minOccurs="0" />
               <xs:element name="no_cheque" msprop:Generator_ColumnVarNameInTable="columnno_cheque" msprop:Generator_ColumnPropNameInRow="no_cheque" msprop:Generator_ColumnPropNameInTable="no_chequeColumn" msprop:Generator_UserColumnName="no_cheque" minOccurs="0">
                 <xs:simpleType>
@@ -87,10 +72,6 @@ FROM            clientes INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="no_vuelto" msprop:Generator_ColumnVarNameInTable="columnno_vuelto" msprop:Generator_ColumnPropNameInRow="no_vuelto" msprop:Generator_ColumnPropNameInTable="no_vueltoColumn" msprop:Generator_UserColumnName="no_vuelto" type="xs:int" minOccurs="0" />
-              <xs:element name="id_vuelto" msprop:Generator_ColumnVarNameInTable="columnid_vuelto" msprop:Generator_ColumnPropNameInRow="id_vuelto" msprop:Generator_ColumnPropNameInTable="id_vueltoColumn" msprop:Generator_UserColumnName="id_vuelto" type="xs:unsignedInt" />
-              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
-              <xs:element name="NoPedido" msprop:Generator_ColumnVarNameInTable="columnNoPedido" msprop:Generator_ColumnPropNameInRow="NoPedido" msprop:Generator_ColumnPropNameInTable="NoPedidoColumn" msprop:Generator_UserColumnName="NoPedido" type="xs:int" />
               <xs:element name="nombre_paciente" msprop:Generator_ColumnVarNameInTable="columnnombre_paciente" msprop:Generator_ColumnPropNameInRow="nombre_paciente" msprop:Generator_ColumnPropNameInTable="nombre_pacienteColumn" msprop:Generator_UserColumnName="nombre_paciente" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -105,7 +86,6 @@ FROM            clientes INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:unsignedInt" />
               <xs:element name="no_factura" msprop:Generator_ColumnVarNameInTable="columnno_factura" msprop:Generator_ColumnPropNameInRow="no_factura" msprop:Generator_ColumnPropNameInTable="no_facturaColumn" msprop:Generator_UserColumnName="no_factura" type="xs:int" />
               <xs:element name="serie_factura" msprop:Generator_ColumnVarNameInTable="columnserie_factura" msprop:Generator_ColumnPropNameInRow="serie_factura" msprop:Generator_ColumnPropNameInTable="serie_facturaColumn" msprop:Generator_UserColumnName="serie_factura" minOccurs="0">
                 <xs:simpleType>

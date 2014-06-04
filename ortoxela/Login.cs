@@ -47,10 +47,10 @@ namespace ortoxela
                     dt_rol = logica.Tabla(cadena);
                     clases.ClassVariables.id_rol = dt_rol.Rows[0][0].ToString();
 
-                    cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=1 ";
-                    DataTable dt_empresa = new DataTable();
-                    dt_empresa = logica.Tabla(cadena);
-                    clases.ClassVariables.nombreEmpresa = dt_empresa.Rows[0][0].ToString();
+                    // cadena = " SELECT Sucursal  FROM master.sucursales  WHERE IDSuc=1 ";
+                    // DataTable dt_empresa = new DataTable();
+                    // dt_empresa = logica.Tabla(cadena);
+                    clases.ClassVariables.nombreEmpresa = "OrtoXela"; //dt_empresa.Rows[0][0].ToString();
                     
                     textEditcontraseña.Text = "";
                     textEditnombre.Text = "";

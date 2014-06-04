@@ -802,7 +802,11 @@
     <value>Reportes Administracion</value>
   </data>
   <data name="barButtonItem137.Caption" xml:space="preserve">
+<<<<<<< HEAD
     <value>Reportes de requisiciones y ajustes</value>
+=======
+    <value>Estadistica</value>
+>>>>>>> dec8eacc4589f61edbebb5fdb2493fb676b13cb4
   </data>
   <data name="ribbon.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -2599,12 +2603,6 @@
     <value>barButtonItem136</value>
   </data>
   <data name="&gt;&gt;barButtonItem136.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barButtonItem137.Name" xml:space="preserve">
-    <value>barButtonItem137</value>
-  </data>
-  <data name="&gt;&gt;barButtonItem137.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;barButtonItem137.Name" xml:space="preserve">

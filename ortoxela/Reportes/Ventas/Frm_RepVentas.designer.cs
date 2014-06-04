@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -262,11 +262,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.FechaFin.Size = new System.Drawing.Size(103, 20);
             this.FechaFin.TabIndex = 11;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule2.Value1 = new System.DateTime(2009, 1, 1, 13, 16, 17, 0);
-            this.dxValidationFechas.SetValidationRule(this.FechaFin, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule1.Value1 = new System.DateTime(2009, 1, 1, 13, 16, 17, 0);
+            this.dxValidationFechas.SetValidationRule(this.FechaFin, conditionValidationRule1);
             // 
             // FechaInicio
             // 
@@ -280,11 +280,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.FechaInicio.Size = new System.Drawing.Size(103, 20);
             this.FechaInicio.TabIndex = 10;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule3.Value1 = "01/01/0001";
-            this.dxValidationFechas.SetValidationRule(this.FechaInicio, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule2.Value1 = "01/01/0001";
+            this.dxValidationFechas.SetValidationRule(this.FechaInicio, conditionValidationRule2);
             // 
             // labelControl10
             // 
@@ -567,7 +567,7 @@
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Frm_RepVentas";
-            this.Text = "Reportes de Ventas";
+            this.Text = "e";
             this.Load += new System.EventHandler(this.Frm_RepVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

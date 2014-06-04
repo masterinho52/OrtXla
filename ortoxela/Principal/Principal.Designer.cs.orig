@@ -2184,7 +2184,10 @@
             // 
             resources.ApplyResources(this.barButtonItem137, "barButtonItem137");
             this.barButtonItem137.Id = 208;
+<<<<<<< HEAD
             this.barButtonItem137.LargeGlyph = global::ortoxela.Properties.Resources.ajustes_y_reqi;
+=======
+>>>>>>> dec8eacc4589f61edbebb5fdb2493fb676b13cb4
             this.barButtonItem137.Name = "barButtonItem137";
             this.barButtonItem137.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem137_ItemClick);
             // 
@@ -2807,7 +2810,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem135;
         private DevExpress.XtraBars.BarButtonItem barButtonItem136;
         private DevExpress.XtraBars.BarSubItem barSubItem30;
+<<<<<<< HEAD
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
+=======
+>>>>>>> dec8eacc4589f61edbebb5fdb2493fb676b13cb4
         private DevExpress.XtraBars.BarButtonItem barButtonItem137;
     }
 }
