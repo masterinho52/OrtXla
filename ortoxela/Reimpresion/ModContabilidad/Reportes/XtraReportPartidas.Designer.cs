@@ -38,8 +38,12 @@
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.dataSetPartidas1 = new ortoxela.ModContabilidad.Reportes.DataSetPartidas();
-            this.partidasTableAdapter = new ortoxela.ModContabilidad.Reportes.DataSetPartidasTableAdapters.partidasTableAdapter();
+            
+            //this.dataSetPartidas1 = new ortoxela.ModContabilidad.Reportes.DataSetPartidas();
+            this.dataSetPartidas1 = new Reimpresion.ModContabilidad.Reportes.DataSetPartidas();
+            //this.partidasTableAdapter = new ortoxela.ModContabilidad.Reportes.DataSetPartidasTableAdapters.partidasTableAdapter();
+            this.partidasTableAdapter = new Reimpresion.ModContabilidad.Reportes.DataSetPartidasTableAdapters.partidasTableAdapter();
+
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
@@ -514,8 +518,11 @@
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
-        private DataSetPartidas dataSetPartidas1;
-        private DataSetPartidasTableAdapters.partidasTableAdapter partidasTableAdapter;
+        //private DataSetPartidas dataSetPartidas1;
+        private ortoxela.Reimpresion.ModContabilidad.Reportes.DataSetPartidas dataSetPartidas1;
+        //private DataSetPartidasTableAdapters.partidasTableAdapter partidasTableAdapter;
+        private ortoxela.Reimpresion.ModContabilidad.Reportes.DataSetPartidasTableAdapters.partidasTableAdapter partidasTableAdapter;
+        
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;

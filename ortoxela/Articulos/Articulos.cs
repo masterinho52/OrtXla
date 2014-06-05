@@ -171,10 +171,12 @@ namespace ortoxela.Articulos
                             codigo_padre = "null";
                             codigo_padredesc = "null";
                         }
+
                         if (gridLookmarca.EditValue.ToString() != "")
                             codigo_marca = gridLookmarca.EditValue.ToString();
                         else
                             codigo_marca = "null";
+
                         if (bandera == 2)
                         {
                             if(temo_id_articulao!=textEditcodigo.Text.ToString())
@@ -184,8 +186,18 @@ namespace ortoxela.Articulos
                         }
                         else
                             cadena = "SELECT articulos.codigo_articulo FROM articulos where codigo_articulo='" + textEditcodigo.Text + "'";
+
                         if (logica.ExisteRegistro(cadena) == true)
+                        {
                             alertControl1.Show(this, "Cuidado", "Este codigo de producto ya existe", Properties.Resources.Advertencia48);
+                            
+                            //aca vamos a ver que hacemos para eliminar los espacios en los codigos
+                            DataSet_articuloTableAdapters.filtrocodigoTableAdapter lg = new DataSet_articuloTableAdapters.filtrocodigoTableAdapter();
+                            DataTable res = new DataTable();
+                            res = lg.GetData_filtrarcodigodearticulo(textEditcodigo.Text);
+                            MessageBox.Show("El codigo " + res.Rows[0][0].ToString() + " ya existe, con la descripcion: " + res.Rows[0][1].ToString()+" y actualmente esta en el estado: " +res.Rows[0][2].ToString(), "Producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textEditcodigo.Focus();
+                        }
                         else
                         {
 
@@ -442,6 +454,12 @@ namespace ortoxela.Articulos
             {
 
             }
+        }
+
+        private void textEditcodigo_Validated(object sender, EventArgs e)
+        {
+            textEditcodigo.Text = textEditcodigo.Text.Replace(" ", "");
+            textEditcodigo.Text = textEditcodigo.Text.Trim();
         }
 
        

@@ -2012,9 +2012,9 @@ namespace ortoxela.Principal
 
         private void barButtonItem137_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form nuevo = new Reportes.Ventas.Frm_Estadistica();
-            nuevo.MdiParent = this;
-            nuevo.Show();
+            Form ajreqrep = new Reportes.Requisiciones_Ajustes.F_reportesrequisicionyajuste();
+            ajreqrep.MdiParent = this;
+            ajreqrep.Show();
         }
 
      

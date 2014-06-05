@@ -114,8 +114,8 @@ namespace ortoxela.Reportes.Ventas
                     }
                     /**/
 
-                    string QueryVtas = "SELECT        r.no_recibo, r.fecha_creacion, r.monto_recibo, r.vale, r.factura, r.nombre_documento, r.serie_documento, r.nombre_cliente, r.estadoid, p.nombre_tipo_pago, "+
-                            "r.socio_comercial FROM            v_recibos r INNER JOIN  tipo_pago p ON r.tipo_pago = p.tipo_pago "+
+                    string QueryVtas = "SELECT        r.no_recibo, r.fecha_creacion, r.monto_recibo, r.vale, r.factura, r.nombre_documento, r.serie_documento, r.nombre_cliente, r.estadoid, p.nombre_tipo_pago "+
+                            /*",r.socio_comercial*/ "FROM            v_recibos r INNER JOIN  tipo_pago p ON r.tipo_pago = p.tipo_pago "+
                              " where fecha_creacion between '" + FechaInicio.DateTime.ToString("yyyy-MM-dd") + " 00:00:00'  and '" +
                             FechaFin.DateTime.ToString("yyyy-MM-dd") + " 23:59:59'";
 

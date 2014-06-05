@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EncabezadoTableAdapter" GeneratorDataComponentClassName="EncabezadoTableAdapter" Name="Encabezado" UserDataComponentName="EncabezadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        header_doctos_inv.*, proveedores.*
@@ -21,20 +21,16 @@ FROM            header_doctos_inv INNER JOIN
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
               <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
               <Mapping SourceColumn="tipo_pago" DataSetColumn="tipo_pago" />
               <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
               <Mapping SourceColumn="codigo_cliente" DataSetColumn="codigo_cliente" />
               <Mapping SourceColumn="codigo_proveedor" DataSetColumn="codigo_proveedor" />
-              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
               <Mapping SourceColumn="monto" DataSetColumn="monto" />
               <Mapping SourceColumn="descuento" DataSetColumn="descuento" />
               <Mapping SourceColumn="monto_neto" DataSetColumn="monto_neto" />
               <Mapping SourceColumn="usuario_creador" DataSetColumn="usuario_creador" />
               <Mapping SourceColumn="usuario_descuento" DataSetColumn="usuario_descuento" />
-              <Mapping SourceColumn="fecha_modificacion" DataSetColumn="fecha_modificacion" />
-              <Mapping SourceColumn="fecha_retorno" DataSetColumn="fecha_retorno" />
               <Mapping SourceColumn="usuario_modifica" DataSetColumn="usuario_modifica" />
               <Mapping SourceColumn="socio_comercial" DataSetColumn="socio_comercial" />
               <Mapping SourceColumn="razon_ajuste" DataSetColumn="razon_ajuste" />
@@ -42,7 +38,6 @@ FROM            header_doctos_inv INNER JOIN
               <Mapping SourceColumn="estadoid" DataSetColumn="estadoid" />
               <Mapping SourceColumn="contado_credito" DataSetColumn="contado_credito" />
               <Mapping SourceColumn="refer_documento" DataSetColumn="refer_documento" />
-              <Mapping SourceColumn="codigo_proveedor1" DataSetColumn="codigo_proveedor1" />
               <Mapping SourceColumn="nombre_proveedor" DataSetColumn="nombre_proveedor" />
               <Mapping SourceColumn="contacto" DataSetColumn="contacto" />
               <Mapping SourceColumn="nit" DataSetColumn="nit" />
@@ -52,14 +47,23 @@ FROM            header_doctos_inv INNER JOIN
               <Mapping SourceColumn="fax_otro_tel" DataSetColumn="fax_otro_tel" />
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="fecha_ingreso" DataSetColumn="fecha_ingreso" />
-              <Mapping SourceColumn="fecha_modificacion1" DataSetColumn="fecha_modificacion1" />
               <Mapping SourceColumn="usuario_ingreso" DataSetColumn="usuario_ingreso" />
-              <Mapping SourceColumn="usuario_modifica1" DataSetColumn="usuario_modifica1" />
               <Mapping SourceColumn="total_comprado" DataSetColumn="total_comprado" />
               <Mapping SourceColumn="ultima_compra" DataSetColumn="ultima_compra" />
-              <Mapping SourceColumn="estadoid1" DataSetColumn="estadoid1" />
               <Mapping SourceColumn="codigo_tipo_prov" DataSetColumn="codigo_tipo_prov" />
               <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento1" />
+              <Mapping SourceColumn="doctor" DataSetColumn="doctor" />
+              <Mapping SourceColumn="vendedor" DataSetColumn="vendedor" />
+              <Mapping SourceColumn="tipo_proveedor_conta" DataSetColumn="tipo_proveedor_conta" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="fecha_modificacion" DataSetColumn="fecha_modificacion" />
+              <Mapping SourceColumn="fecha_retorno" DataSetColumn="fecha_retorno" />
+              <Mapping SourceColumn="fecha_creacion" DataSetColumn="fecha_creacion" />
+              <Mapping SourceColumn="codigo_proveedor1" DataSetColumn="codigo_proveedor1" />
+              <Mapping SourceColumn="fecha_modificacion1" DataSetColumn="fecha_modificacion1" />
+              <Mapping SourceColumn="usuario_modifica1" DataSetColumn="usuario_modifica1" />
+              <Mapping SourceColumn="estadoid1" DataSetColumn="estadoid1" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -113,6 +117,43 @@ FROM            detalle_doctos_inv INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="solicitudcompraTableAdapter" GeneratorDataComponentClassName="solicitudcompraTableAdapter" Name="solicitudcompra" UserDataComponentName="solicitudcompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_solicitudcompra" GetMethodModifier="Public" GetMethodName="GetData_solicitudcompra" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_solicitudcompra" UserSourceName="GetData_solicitudcompra">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        proveedores.nombre_proveedor, proveedores.email, proveedores.direccion, proveedores.nit, proveedores.telefono_principal, 
+                         header_doctos_inv.no_documento, header_doctos_inv.fecha, detalle_doctos_inv.cantidad_enviada, detalle_doctos_inv.codigo_articulo, 
+                         articulos.descripcion, detalle_doctos_inv.precio_unitario, detalle_doctos_inv.precio_total, header_doctos_inv.monto, header_doctos_inv.id_documento
+FROM            header_doctos_inv INNER JOIN
+                         detalle_doctos_inv ON header_doctos_inv.id_documento = detalle_doctos_inv.id_documento INNER JOIN
+                         proveedores ON header_doctos_inv.codigo_proveedor = proveedores.codigo_proveedor INNER JOIN
+                         articulos ON detalle_doctos_inv.codigo_articulo = articulos.codigo_articulo
+                         
+                         ORDER BY header_doctos_inv.id_documento DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre_proveedor" DataSetColumn="nombre_proveedor" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+              <Mapping SourceColumn="nit" DataSetColumn="nit" />
+              <Mapping SourceColumn="telefono_principal" DataSetColumn="telefono_principal" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="cantidad_enviada" DataSetColumn="cantidad_enviada" />
+              <Mapping SourceColumn="codigo_articulo" DataSetColumn="codigo_articulo" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="precio_unitario" DataSetColumn="precio_unitario" />
+              <Mapping SourceColumn="precio_total" DataSetColumn="precio_total" />
+              <Mapping SourceColumn="monto" DataSetColumn="monto" />
+              <Mapping SourceColumn="id_documento" DataSetColumn="id_documento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -121,7 +162,7 @@ FROM            detalle_doctos_inv INNER JOIN
   <xs:element name="DataSet_Solicitud_compra" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Solicitud_compra" msprop:Generator_UserDSName="DataSet_Solicitud_compra">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowClassName="EncabezadoRow">
+        <xs:element name="Encabezado" msprop:Generator_TableClassName="EncabezadoDataTable" msprop:Generator_TableVarName="tableEncabezado" msprop:Generator_TablePropName="Encabezado" msprop:Generator_RowDeletingName="EncabezadoRowDeleting" msprop:Generator_RowChangingName="EncabezadoRowChanging" msprop:Generator_RowEvHandlerName="EncabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EncabezadoRowDeleted" msprop:Generator_UserTableName="Encabezado" msprop:Generator_RowChangedName="EncabezadoRowChanged" msprop:Generator_RowEvArgName="EncabezadoRowChangeEvent" msprop:Generator_RowClassName="EncabezadoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
@@ -130,14 +171,11 @@ FROM            detalle_doctos_inv INNER JOIN
               <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
               <xs:element name="codigo_cliente" msprop:Generator_ColumnVarNameInTable="columncodigo_cliente" msprop:Generator_ColumnPropNameInRow="codigo_cliente" msprop:Generator_ColumnPropNameInTable="codigo_clienteColumn" msprop:Generator_UserColumnName="codigo_cliente" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="codigo_proveedor" msprop:Generator_ColumnVarNameInTable="columncodigo_proveedor" msprop:Generator_ColumnPropNameInRow="codigo_proveedor" msprop:Generator_ColumnPropNameInTable="codigo_proveedorColumn" msprop:Generator_UserColumnName="codigo_proveedor" type="xs:int" minOccurs="0" />
-              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" />
               <xs:element name="descuento" msprop:Generator_ColumnVarNameInTable="columndescuento" msprop:Generator_ColumnPropNameInRow="descuento" msprop:Generator_ColumnPropNameInTable="descuentoColumn" msprop:Generator_UserColumnName="descuento" type="xs:decimal" />
               <xs:element name="monto_neto" msprop:Generator_ColumnVarNameInTable="columnmonto_neto" msprop:Generator_ColumnPropNameInRow="monto_neto" msprop:Generator_ColumnPropNameInTable="monto_netoColumn" msprop:Generator_UserColumnName="monto_neto" type="xs:decimal" />
               <xs:element name="usuario_creador" msprop:Generator_ColumnVarNameInTable="columnusuario_creador" msprop:Generator_ColumnPropNameInRow="usuario_creador" msprop:Generator_ColumnPropNameInTable="usuario_creadorColumn" msprop:Generator_UserColumnName="usuario_creador" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="usuario_descuento" msprop:Generator_ColumnVarNameInTable="columnusuario_descuento" msprop:Generator_ColumnPropNameInRow="usuario_descuento" msprop:Generator_ColumnPropNameInTable="usuario_descuentoColumn" msprop:Generator_UserColumnName="usuario_descuento" type="xs:int" minOccurs="0" />
-              <xs:element name="fecha_modificacion" msprop:Generator_ColumnVarNameInTable="columnfecha_modificacion" msprop:Generator_ColumnPropNameInRow="fecha_modificacion" msprop:Generator_ColumnPropNameInTable="fecha_modificacionColumn" msprop:Generator_UserColumnName="fecha_modificacion" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="fecha_retorno" msprop:Generator_ColumnVarNameInTable="columnfecha_retorno" msprop:Generator_ColumnPropNameInRow="fecha_retorno" msprop:Generator_ColumnPropNameInTable="fecha_retornoColumn" msprop:Generator_UserColumnName="fecha_retorno" type="xs:dateTime" minOccurs="0" />
               <xs:element name="usuario_modifica" msprop:Generator_ColumnVarNameInTable="columnusuario_modifica" msprop:Generator_ColumnPropNameInRow="usuario_modifica" msprop:Generator_ColumnPropNameInTable="usuario_modificaColumn" msprop:Generator_UserColumnName="usuario_modifica" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="socio_comercial" msprop:Generator_ColumnVarNameInTable="columnsocio_comercial" msprop:Generator_ColumnPropNameInRow="socio_comercial" msprop:Generator_ColumnPropNameInTable="socio_comercialColumn" msprop:Generator_UserColumnName="socio_comercial" minOccurs="0">
                 <xs:simpleType>
@@ -169,7 +207,6 @@ FROM            detalle_doctos_inv INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="codigo_proveedor1" msprop:Generator_ColumnVarNameInTable="columncodigo_proveedor1" msprop:Generator_ColumnPropNameInRow="codigo_proveedor1" msprop:Generator_ColumnPropNameInTable="codigo_proveedor1Column" msprop:Generator_UserColumnName="codigo_proveedor1" type="xs:unsignedInt" />
               <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -221,12 +258,9 @@ FROM            detalle_doctos_inv INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="fecha_modificacion1" msprop:Generator_ColumnVarNameInTable="columnfecha_modificacion1" msprop:Generator_ColumnPropNameInRow="fecha_modificacion1" msprop:Generator_ColumnPropNameInTable="fecha_modificacion1Column" msprop:Generator_UserColumnName="fecha_modificacion1" type="xs:dateTime" minOccurs="0" />
               <xs:element name="usuario_ingreso" msprop:Generator_ColumnVarNameInTable="columnusuario_ingreso" msprop:Generator_ColumnPropNameInRow="usuario_ingreso" msprop:Generator_ColumnPropNameInTable="usuario_ingresoColumn" msprop:Generator_UserColumnName="usuario_ingreso" type="xs:unsignedInt" minOccurs="0" />
-              <xs:element name="usuario_modifica1" msprop:Generator_ColumnVarNameInTable="columnusuario_modifica1" msprop:Generator_ColumnPropNameInRow="usuario_modifica1" msprop:Generator_ColumnPropNameInTable="usuario_modifica1Column" msprop:Generator_UserColumnName="usuario_modifica1" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="total_comprado" msprop:Generator_ColumnVarNameInTable="columntotal_comprado" msprop:Generator_ColumnPropNameInRow="total_comprado" msprop:Generator_ColumnPropNameInTable="total_compradoColumn" msprop:Generator_UserColumnName="total_comprado" type="xs:decimal" minOccurs="0" />
               <xs:element name="ultima_compra" msprop:Generator_ColumnVarNameInTable="columnultima_compra" msprop:Generator_ColumnPropNameInRow="ultima_compra" msprop:Generator_ColumnPropNameInTable="ultima_compraColumn" msprop:Generator_UserColumnName="ultima_compra" type="xs:decimal" minOccurs="0" />
-              <xs:element name="estadoid1" msprop:Generator_ColumnVarNameInTable="columnestadoid1" msprop:Generator_ColumnPropNameInRow="estadoid1" msprop:Generator_ColumnPropNameInTable="estadoid1Column" msprop:Generator_UserColumnName="estadoid1" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="codigo_tipo_prov" msprop:Generator_ColumnVarNameInTable="columncodigo_tipo_prov" msprop:Generator_ColumnPropNameInRow="codigo_tipo_prov" msprop:Generator_ColumnPropNameInTable="codigo_tipo_provColumn" msprop:Generator_UserColumnName="codigo_tipo_prov" type="xs:unsignedInt" minOccurs="0" />
               <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
                 <xs:simpleType>
@@ -235,10 +269,22 @@ FROM            detalle_doctos_inv INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id_documento1" msdata:Caption="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento1" msprop:Generator_ColumnPropNameInRow="id_documento1" msprop:Generator_ColumnPropNameInTable="id_documento1Column" msprop:Generator_UserColumnName="id_documento1" type="xs:unsignedInt" />
+              <xs:element name="doctor" msprop:Generator_ColumnVarNameInTable="columndoctor" msprop:Generator_ColumnPropNameInRow="doctor" msprop:Generator_ColumnPropNameInTable="doctorColumn" msprop:Generator_UserColumnName="doctor" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="vendedor" msprop:Generator_ColumnVarNameInTable="columnvendedor" msprop:Generator_ColumnPropNameInRow="vendedor" msprop:Generator_ColumnPropNameInTable="vendedorColumn" msprop:Generator_UserColumnName="vendedor" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="tipo_proveedor_conta" msprop:Generator_ColumnVarNameInTable="columntipo_proveedor_conta" msprop:Generator_ColumnPropNameInRow="tipo_proveedor_conta" msprop:Generator_ColumnPropNameInTable="tipo_proveedor_contaColumn" msprop:Generator_UserColumnName="tipo_proveedor_conta" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_modificacion" msprop:Generator_ColumnVarNameInTable="columnfecha_modificacion" msprop:Generator_ColumnPropNameInRow="fecha_modificacion" msprop:Generator_ColumnPropNameInTable="fecha_modificacionColumn" msprop:Generator_UserColumnName="fecha_modificacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_retorno" msprop:Generator_ColumnVarNameInTable="columnfecha_retorno" msprop:Generator_ColumnPropNameInRow="fecha_retorno" msprop:Generator_ColumnPropNameInTable="fecha_retornoColumn" msprop:Generator_UserColumnName="fecha_retorno" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" />
+              <xs:element name="codigo_proveedor1" msprop:Generator_ColumnVarNameInTable="columncodigo_proveedor1" msprop:Generator_ColumnPropNameInRow="codigo_proveedor1" msprop:Generator_ColumnPropNameInTable="codigo_proveedor1Column" msprop:Generator_UserColumnName="codigo_proveedor1" type="xs:unsignedInt" />
+              <xs:element name="fecha_modificacion1" msprop:Generator_ColumnVarNameInTable="columnfecha_modificacion1" msprop:Generator_ColumnPropNameInRow="fecha_modificacion1" msprop:Generator_ColumnPropNameInTable="fecha_modificacion1Column" msprop:Generator_UserColumnName="fecha_modificacion1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="usuario_modifica1" msprop:Generator_ColumnVarNameInTable="columnusuario_modifica1" msprop:Generator_ColumnPropNameInRow="usuario_modifica1" msprop:Generator_ColumnPropNameInTable="usuario_modifica1Column" msprop:Generator_UserColumnName="usuario_modifica1" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="estadoid1" msprop:Generator_ColumnVarNameInTable="columnestadoid1" msprop:Generator_ColumnPropNameInRow="estadoid1" msprop:Generator_ColumnPropNameInTable="estadoid1Column" msprop:Generator_UserColumnName="estadoid1" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_RowClassName="DetalleRow">
+        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_RowClassName="DetalleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="detdocinv_id" msprop:Generator_ColumnVarNameInTable="columndetdocinv_id" msprop:Generator_ColumnPropNameInRow="detdocinv_id" msprop:Generator_ColumnPropNameInTable="detdocinv_idColumn" msprop:Generator_UserColumnName="detdocinv_id" type="xs:unsignedInt" />
@@ -314,12 +360,83 @@ FROM            detalle_doctos_inv INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="solicitudcompra" msprop:Generator_TableClassName="solicitudcompraDataTable" msprop:Generator_TableVarName="tablesolicitudcompra" msprop:Generator_TablePropName="solicitudcompra" msprop:Generator_RowDeletingName="solicitudcompraRowDeleting" msprop:Generator_RowChangingName="solicitudcompraRowChanging" msprop:Generator_RowEvHandlerName="solicitudcompraRowChangeEventHandler" msprop:Generator_RowDeletedName="solicitudcompraRowDeleted" msprop:Generator_UserTableName="solicitudcompra" msprop:Generator_RowChangedName="solicitudcompraRowChanged" msprop:Generator_RowEvArgName="solicitudcompraRowChangeEvent" msprop:Generator_RowClassName="solicitudcompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nit" msprop:Generator_ColumnVarNameInTable="columnnit" msprop:Generator_ColumnPropNameInRow="nit" msprop:Generator_ColumnPropNameInTable="nitColumn" msprop:Generator_UserColumnName="nit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono_principal" msprop:Generator_ColumnVarNameInTable="columntelefono_principal" msprop:Generator_ColumnPropNameInRow="telefono_principal" msprop:Generator_ColumnPropNameInTable="telefono_principalColumn" msprop:Generator_UserColumnName="telefono_principal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cantidad_enviada" msprop:Generator_ColumnVarNameInTable="columncantidad_enviada" msprop:Generator_ColumnPropNameInRow="cantidad_enviada" msprop:Generator_ColumnPropNameInTable="cantidad_enviadaColumn" msprop:Generator_UserColumnName="cantidad_enviada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_unitario" msprop:Generator_ColumnVarNameInTable="columnprecio_unitario" msprop:Generator_ColumnPropNameInRow="precio_unitario" msprop:Generator_ColumnPropNameInTable="precio_unitarioColumn" msprop:Generator_UserColumnName="precio_unitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="precio_total" msprop:Generator_ColumnVarNameInTable="columnprecio_total" msprop:Generator_ColumnPropNameInRow="precio_total" msprop:Generator_ColumnPropNameInTable="precio_totalColumn" msprop:Generator_UserColumnName="precio_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" />
+              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Encabezado" />
+      <xs:field xpath="mstns:id_documento1" />
+      <xs:field xpath="mstns:codigo_proveedor1" />
+    </xs:unique>
+    <xs:unique name="solicitudcompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:solicitudcompra" />
+      <xs:field xpath="mstns:id_documento" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Encabezado_Detalle" msdata:parent="Encabezado" msdata:child="Detalle" msdata:parentkey="id_documento" msdata:childkey="id_documento" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_UserRelationName="Encabezado_Detalle" msprop:Generator_RelationVarName="relationEncabezado_Detalle" msprop:Generator_UserParentTable="Encabezado" />
+      <msdata:Relationship name="Encabezado_Detalle" msdata:parent="Encabezado" msdata:child="Detalle" msdata:parentkey="id_documento" msdata:childkey="id_documento" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Encabezado_Detalle" msprop:Generator_ParentPropName="EncabezadoRow" msprop:Generator_RelationVarName="relationEncabezado_Detalle" msprop:Generator_UserParentTable="Encabezado" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

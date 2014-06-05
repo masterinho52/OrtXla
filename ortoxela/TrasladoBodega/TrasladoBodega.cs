@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MySql.Data.MySqlClient;
+
+
 namespace ortoxela.TrasladoBodega
 {
     public partial class TrasladoBodega : DevExpress.XtraEditors.XtraForm
@@ -36,6 +38,24 @@ namespace ortoxela.TrasladoBodega
                 gridLookBodegaOrigen.Properties.ValueMember = "CODIGO";
                 gridLookBodegaOrigen.Text = "";
                 gridLookBodegaOrigen.EditValue = 0;
+
+
+
+                //mostrar el numero de traslado q sera
+                //cadena = "SELECT (recibos.no_recibo+1) AS 'NODOC' FROM recibos INNER JOIN series_documentos ON recibos.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_serie=" + serie + " ORDER BY recibos.no_recibo DESC LIMIT 1";
+                //textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0][0].ToString();
+
+                //
+                string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
+                if (logicaorto.Tabla(cadena).Rows.Count != 0)
+                {
+                    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
+                    label_numerotraslado.Text="Traslado numero: "+(valortemporal + 1).ToString();
+                }
+                else
+                    label_numerotraslado.Text = "0";
+                //
+
                 
             }
             catch
@@ -280,7 +300,23 @@ namespace ortoxela.TrasladoBodega
         private void sbnuevo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿DESEA BORRAR LO DATOS?", "INFORMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //mostrar el numero de traslado q sera
+                //cadena = "SELECT (recibos.no_recibo+1) AS 'NODOC' FROM recibos INNER JOIN series_documentos ON recibos.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_serie=" + serie + " ORDER BY recibos.no_recibo DESC LIMIT 1";
+                //textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0][0].ToString();
+
+                //
+                string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
+                if (logicaorto.Tabla(cadena).Rows.Count != 0)
+                {
+                    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
+                    label_numerotraslado.Text = "Traslado numero: " + (valortemporal + 1).ToString();
+                }
+                else
+                    label_numerotraslado.Text = "0";
+                //
                 Limpia();
+            }
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -435,6 +471,17 @@ namespace ortoxela.TrasladoBodega
                 gridLookTipoDocumento.EditValue = 5;
             }
             catch {  }
+        }
+
+        private void gridLookTipoDocumento_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gridLookTipoDocumento_TextChanged(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

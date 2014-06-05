@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -38,11 +36,14 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.textEditpmax = new DevExpress.XtraEditors.TextEdit();
             this.texteditpcosto = new DevExpress.XtraEditors.TextEdit();
             this.textEditpmin = new DevExpress.XtraEditors.TextEdit();
             this.textEditpventa = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButtonsubcategoria = new DevExpress.XtraEditors.SimpleButton();
             this.memoEditdescripcion = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gridLooksubcategoria = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -55,8 +56,10 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButtoncategoria = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookcategoria = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButtonmarca = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookmarca = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -64,6 +67,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookupartpadre = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButtonEstado = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEstado = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -80,10 +84,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.sbCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonsubcategoria = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtoncategoria = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonmarca = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonEstado = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.textEditpmax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.texteditpcosto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditpmin.Properties)).BeginInit();
@@ -119,9 +119,9 @@
             this.textEditpmax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpmax.Size = new System.Drawing.Size(99, 20);
             this.textEditpmax.TabIndex = 11;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Ingrese existencia mayor";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpmax, conditionValidationRule9);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Ingrese existencia mayor";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpmax, conditionValidationRule1);
             // 
             // texteditpcosto
             // 
@@ -131,9 +131,9 @@
             this.texteditpcosto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.texteditpcosto.Size = new System.Drawing.Size(85, 20);
             this.texteditpcosto.TabIndex = 8;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "Ingrese el precio costo";
-            this.dxValidationProvider1.SetValidationRule(this.texteditpcosto, conditionValidationRule10);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Ingrese el precio costo";
+            this.dxValidationProvider1.SetValidationRule(this.texteditpcosto, conditionValidationRule2);
             // 
             // textEditpmin
             // 
@@ -143,9 +143,9 @@
             this.textEditpmin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpmin.Size = new System.Drawing.Size(85, 20);
             this.textEditpmin.TabIndex = 10;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Ingrese existencia menor";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpmin, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Ingrese existencia menor";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpmin, conditionValidationRule3);
             // 
             // textEditpventa
             // 
@@ -155,9 +155,9 @@
             this.textEditpventa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEditpventa.Size = new System.Drawing.Size(99, 20);
             this.textEditpventa.TabIndex = 9;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "INGRESE PRECIO VENTA";
-            this.dxValidationProvider1.SetValidationRule(this.textEditpventa, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "INGRESE PRECIO VENTA";
+            this.dxValidationProvider1.SetValidationRule(this.textEditpventa, conditionValidationRule4);
             // 
             // groupControl1
             // 
@@ -202,15 +202,24 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Nuevo Articulo";
             // 
+            // simpleButtonsubcategoria
+            // 
+            this.simpleButtonsubcategoria.Image = global::ortoxela.Properties.Resources.add_16x16_32;
+            this.simpleButtonsubcategoria.Location = new System.Drawing.Point(491, 174);
+            this.simpleButtonsubcategoria.Name = "simpleButtonsubcategoria";
+            this.simpleButtonsubcategoria.Size = new System.Drawing.Size(26, 22);
+            this.simpleButtonsubcategoria.TabIndex = 6;
+            this.simpleButtonsubcategoria.Click += new System.EventHandler(this.simpleButtonsubcategoria_Click);
+            // 
             // memoEditdescripcion
             // 
             this.memoEditdescripcion.Location = new System.Drawing.Point(209, 38);
             this.memoEditdescripcion.Name = "memoEditdescripcion";
             this.memoEditdescripcion.Size = new System.Drawing.Size(306, 50);
             this.memoEditdescripcion.TabIndex = 7;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Ingrese el nombre del articulo";
-            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Ingrese el nombre del articulo";
+            this.dxValidationProvider1.SetValidationRule(this.memoEditdescripcion, conditionValidationRule5);
             this.memoEditdescripcion.EditValueChanged += new System.EventHandler(this.memoEditdescripcion_EditValueChanged);
             // 
             // labelControl3
@@ -232,9 +241,9 @@
             this.gridLooksubcategoria.Properties.View = this.gridView5;
             this.gridLooksubcategoria.Size = new System.Drawing.Size(275, 20);
             this.gridLooksubcategoria.TabIndex = 5;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Seleccione la categoria";
-            this.dxValidationProvider1.SetValidationRule(this.gridLooksubcategoria, conditionValidationRule4);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Seleccione la categoria";
+            this.dxValidationProvider1.SetValidationRule(this.gridLooksubcategoria, conditionValidationRule6);
             // 
             // gridView5
             // 
@@ -257,7 +266,7 @@
             this.checkEditCompu.Location = new System.Drawing.Point(215, 361);
             this.checkEditCompu.Name = "checkEditCompu";
             this.checkEditCompu.Properties.Caption = "";
-            this.checkEditCompu.Size = new System.Drawing.Size(63, 18);
+            this.checkEditCompu.Size = new System.Drawing.Size(63, 19);
             this.checkEditCompu.TabIndex = 15;
             this.checkEditCompu.CheckedChanged += new System.EventHandler(this.checkEditCompu_CheckedChanged);
             // 
@@ -311,6 +320,15 @@
             this.labelControl4.TabIndex = 41;
             this.labelControl4.Text = "Precio Venta";
             // 
+            // simpleButtoncategoria
+            // 
+            this.simpleButtoncategoria.Image = global::ortoxela.Properties.Resources.add_16x16_32;
+            this.simpleButtoncategoria.Location = new System.Drawing.Point(491, 146);
+            this.simpleButtoncategoria.Name = "simpleButtoncategoria";
+            this.simpleButtoncategoria.Size = new System.Drawing.Size(26, 22);
+            this.simpleButtoncategoria.TabIndex = 4;
+            this.simpleButtoncategoria.Click += new System.EventHandler(this.simpleButtoncategoria_Click);
+            // 
             // gridLookcategoria
             // 
             this.gridLookcategoria.Location = new System.Drawing.Point(210, 148);
@@ -320,9 +338,9 @@
             this.gridLookcategoria.Properties.View = this.gridView4;
             this.gridLookcategoria.Size = new System.Drawing.Size(275, 20);
             this.gridLookcategoria.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Seleccione la categoria";
-            this.dxValidationProvider1.SetValidationRule(this.gridLookcategoria, conditionValidationRule5);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Seleccione la categoria";
+            this.dxValidationProvider1.SetValidationRule(this.gridLookcategoria, conditionValidationRule7);
             this.gridLookcategoria.EditValueChanged += new System.EventHandler(this.gridLookcategoria_EditValueChanged);
             // 
             // gridView4
@@ -331,6 +349,15 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // simpleButtonmarca
+            // 
+            this.simpleButtonmarca.Image = global::ortoxela.Properties.Resources.add_16x16_32;
+            this.simpleButtonmarca.Location = new System.Drawing.Point(491, 118);
+            this.simpleButtonmarca.Name = "simpleButtonmarca";
+            this.simpleButtonmarca.Size = new System.Drawing.Size(26, 22);
+            this.simpleButtonmarca.TabIndex = 2;
+            this.simpleButtonmarca.Click += new System.EventHandler(this.simpleButtonmarca_Click);
             // 
             // gridLookmarca
             // 
@@ -365,9 +392,10 @@
             this.textEditcodigo.Name = "textEditcodigo";
             this.textEditcodigo.Size = new System.Drawing.Size(275, 20);
             this.textEditcodigo.TabIndex = 0;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Ingrese el codigo del producto";
-            this.dxValidationProvider1.SetValidationRule(this.textEditcodigo, conditionValidationRule6);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "Ingrese el codigo del producto";
+            this.dxValidationProvider1.SetValidationRule(this.textEditcodigo, conditionValidationRule8);
+            this.textEditcodigo.Validated += new System.EventHandler(this.textEditcodigo_Validated);
             // 
             // labelControl7
             // 
@@ -395,6 +423,15 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // simpleButtonEstado
+            // 
+            this.simpleButtonEstado.Image = global::ortoxela.Properties.Resources.add_16x16_32;
+            this.simpleButtonEstado.Location = new System.Drawing.Point(491, 411);
+            this.simpleButtonEstado.Name = "simpleButtonEstado";
+            this.simpleButtonEstado.Size = new System.Drawing.Size(26, 22);
+            this.simpleButtonEstado.TabIndex = 18;
+            this.simpleButtonEstado.Click += new System.EventHandler(this.simpleButtonEstado_Click);
+            // 
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,9 +450,9 @@
             this.gridLookUpEstado.Properties.View = this.gridView1;
             this.gridLookUpEstado.Size = new System.Drawing.Size(275, 20);
             this.gridLookUpEstado.TabIndex = 17;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Seleccione el estado";
-            this.dxValidationProvider1.SetValidationRule(this.gridLookUpEstado, conditionValidationRule7);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "Seleccione el estado";
+            this.dxValidationProvider1.SetValidationRule(this.gridLookUpEstado, conditionValidationRule9);
             // 
             // gridView1
             // 
@@ -534,42 +571,6 @@
             this.simpleaceptar.TabIndex = 19;
             this.simpleaceptar.Text = "Aceptar";
             this.simpleaceptar.Click += new System.EventHandler(this.simpleaceptar_Click);
-            // 
-            // simpleButtonsubcategoria
-            // 
-            this.simpleButtonsubcategoria.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButtonsubcategoria.Location = new System.Drawing.Point(491, 174);
-            this.simpleButtonsubcategoria.Name = "simpleButtonsubcategoria";
-            this.simpleButtonsubcategoria.Size = new System.Drawing.Size(26, 22);
-            this.simpleButtonsubcategoria.TabIndex = 6;
-            this.simpleButtonsubcategoria.Click += new System.EventHandler(this.simpleButtonsubcategoria_Click);
-            // 
-            // simpleButtoncategoria
-            // 
-            this.simpleButtoncategoria.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButtoncategoria.Location = new System.Drawing.Point(491, 146);
-            this.simpleButtoncategoria.Name = "simpleButtoncategoria";
-            this.simpleButtoncategoria.Size = new System.Drawing.Size(26, 22);
-            this.simpleButtoncategoria.TabIndex = 4;
-            this.simpleButtoncategoria.Click += new System.EventHandler(this.simpleButtoncategoria_Click);
-            // 
-            // simpleButtonmarca
-            // 
-            this.simpleButtonmarca.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButtonmarca.Location = new System.Drawing.Point(491, 118);
-            this.simpleButtonmarca.Name = "simpleButtonmarca";
-            this.simpleButtonmarca.Size = new System.Drawing.Size(26, 22);
-            this.simpleButtonmarca.TabIndex = 2;
-            this.simpleButtonmarca.Click += new System.EventHandler(this.simpleButtonmarca_Click);
-            // 
-            // simpleButtonEstado
-            // 
-            this.simpleButtonEstado.Image = global::ortoxela.Properties.Resources.add_16x16_32;
-            this.simpleButtonEstado.Location = new System.Drawing.Point(491, 411);
-            this.simpleButtonEstado.Name = "simpleButtonEstado";
-            this.simpleButtonEstado.Size = new System.Drawing.Size(26, 22);
-            this.simpleButtonEstado.TabIndex = 18;
-            this.simpleButtonEstado.Click += new System.EventHandler(this.simpleButtonEstado_Click);
             // 
             // Articulos
             // 

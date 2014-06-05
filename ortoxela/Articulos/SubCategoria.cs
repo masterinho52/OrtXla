@@ -44,25 +44,45 @@ namespace ortoxela.Articulos
             {
                 if (bandera == 1)
                 {
-                    cadena = "INSERT into sub_categorias "+
-                            "(codigo_categoria, nombre_subcategoria, fecha_creacion, usuario_creador, estadoid) "+
-                            "VALUES ("+gridLookUpcategoria.EditValue+", '"+textEditnombre.Text+"', '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"', "+clases.ClassVariables.id_usuario+", "+gridLookUpEditestado.EditValue+")";
-                    clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
-                    if (clases.ClassVariables.idnuevo != null)
+                    //
+
+                    DataSet_articuloTableAdapters.existenciasubcategoriaTableAdapter lg = new DataSet_articuloTableAdapters.existenciasubcategoriaTableAdapter();
+                    int existe = Convert.ToInt16(lg.GetData_verificarexistenciasubcategoria(textEditnombre.Text, Convert.ToInt16(gridLookUpcategoria.EditValue)).Rows[0][0]);
+                    if (existe == 0)
                     {
-                        groupControl1.Enabled = false;
-                        simpleaceptar.Enabled = false;
-                        clases.ClassMensajes.INSERTO(this);
-                        if (llamadentroform == true)
+                        cadena = "INSERT into sub_categorias " +
+                                                    "(codigo_categoria, nombre_subcategoria, fecha_creacion, usuario_creador, estadoid) " +
+                                                    "VALUES (" + gridLookUpcategoria.EditValue + ", '" + textEditnombre.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + ", " + gridLookUpEditestado.EditValue + ")";
+                        clases.ClassVariables.idnuevo = logica.nuevoid(cadena);
+                        if (clases.ClassVariables.idnuevo != null)
                         {
-                            llamadentroform = false;
-                            this.Close();
+                            groupControl1.Enabled = false;
+                            simpleaceptar.Enabled = false;
+                            clases.ClassMensajes.INSERTO(this);
+                            if (llamadentroform == true)
+                            {
+                                llamadentroform = false;
+                                this.Close();
+                            }
                         }
+                        else
+                        {
+                            clases.ClassMensajes.NoINSERTO(this);
+                        }
+
+
                     }
                     else
                     {
+                        
                         clases.ClassMensajes.NoINSERTO(this);
+                        MessageBox.Show("La subcategoria " + textEditnombre.Text + " de la categoria " + gridLookUpcategoria.Text + " ya existe", "Subcategorias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textEditnombre.Focus();
                     }
+
+                    //
+
+
                 }
                 else
                 {
@@ -259,6 +279,11 @@ namespace ortoxela.Articulos
 
             }
         
+        }
+
+        private void textEditnombre_Validated(object sender, EventArgs e)
+        {
+            textEditnombre.Text = textEditnombre.Text.Trim();
         }
     }
 }
