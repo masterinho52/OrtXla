@@ -495,14 +495,14 @@ namespace ortoxela.Vueltos.Vuelto
             this.DataAdapter = this.vueltosTableAdapter;
             this.DataMember = "Vueltos";
             this.DataSource = this.dataSetVuelto1;
-            this.FilterString = "[id_vuelto] = ?id";
+            this.FilterString = "[id_vuelto] = [id_vuelto]";
             this.Margins = new System.Drawing.Printing.Margins(100, 92, 209, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.id,
             this.letras,
             this.banco,
             this.no_vuelto});
-            this.Version = "11.2";
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSetVuelto1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

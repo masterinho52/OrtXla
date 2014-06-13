@@ -13,7 +13,8 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        clientes.nombre_cliente, vueltos.monto_vuelto, vueltos.fecha_pago, vueltos.no_cheque, vueltos.nombre_banco, vueltos.no_vuelto, 
-                         clientes.nombre_paciente, clientes.nit, header_doctos_inv_2.no_documento AS no_factura, series_documentos.serie_documento AS serie_factura
+                         clientes.nombre_paciente, clientes.nit, header_doctos_inv_2.no_documento AS no_factura, series_documentos.serie_documento AS serie_factura, 
+                         vueltos.id_vuelto
 FROM            clientes INNER JOIN
                          vueltos ON clientes.codigo_cliente = vueltos.codigo_cliente INNER JOIN
                          header_doctos_inv header_doctos_inv_2 ON vueltos.id_factura = header_doctos_inv_2.id_documento INNER JOIN
@@ -34,6 +35,7 @@ FROM            clientes INNER JOIN
               <Mapping SourceColumn="nit" DataSetColumn="nit" />
               <Mapping SourceColumn="no_factura" DataSetColumn="no_factura" />
               <Mapping SourceColumn="serie_factura" DataSetColumn="serie_factura" />
+              <Mapping SourceColumn="id_vuelto" DataSetColumn="id_vuelto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -45,7 +47,7 @@ FROM            clientes INNER JOIN
   <xs:element name="DataSetVuelto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetVuelto" msprop:Generator_UserDSName="DataSetVuelto">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Vueltos" msprop:Generator_TableClassName="VueltosDataTable" msprop:Generator_TableVarName="tableVueltos" msprop:Generator_TablePropName="Vueltos" msprop:Generator_RowDeletingName="VueltosRowDeleting" msprop:Generator_RowChangingName="VueltosRowChanging" msprop:Generator_RowEvHandlerName="VueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="VueltosRowDeleted" msprop:Generator_UserTableName="Vueltos" msprop:Generator_RowChangedName="VueltosRowChanged" msprop:Generator_RowEvArgName="VueltosRowChangeEvent" msprop:Generator_RowClassName="VueltosRow">
+        <xs:element name="Vueltos" msprop:Generator_TableClassName="VueltosDataTable" msprop:Generator_TableVarName="tableVueltos" msprop:Generator_RowChangedName="VueltosRowChanged" msprop:Generator_TablePropName="Vueltos" msprop:Generator_RowDeletingName="VueltosRowDeleting" msprop:Generator_RowChangingName="VueltosRowChanging" msprop:Generator_RowEvHandlerName="VueltosRowChangeEventHandler" msprop:Generator_RowDeletedName="VueltosRowDeleted" msprop:Generator_RowClassName="VueltosRow" msprop:Generator_UserTableName="Vueltos" msprop:Generator_RowEvArgName="VueltosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombre_cliente" msprop:Generator_ColumnVarNameInTable="columnnombre_cliente" msprop:Generator_ColumnPropNameInRow="nombre_cliente" msprop:Generator_ColumnPropNameInTable="nombre_clienteColumn" msprop:Generator_UserColumnName="nombre_cliente" minOccurs="0">
@@ -94,10 +96,15 @@ FROM            clientes INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id_vuelto" msprop:Generator_ColumnVarNameInTable="columnid_vuelto" msprop:Generator_ColumnPropNameInRow="id_vuelto" msprop:Generator_ColumnPropNameInTable="id_vueltoColumn" msprop:Generator_UserColumnName="id_vuelto" type="xs:unsignedInt" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Vueltos" />
+      <xs:field xpath="mstns:id_vuelto" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
