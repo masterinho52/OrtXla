@@ -31,7 +31,23 @@ namespace ortoxela.Pedido.Factura
 
             string ve = "";
             DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            if(ve1.GetData_encontrarvendedor(header).Count>0)
             ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
+
+            string creador = "";
+            DataSetFacturaTableAdapters.encontrarcreadorTableAdapter creador1 = new DataSetFacturaTableAdapters.encontrarcreadorTableAdapter();
+            if (creador1.GetData_encontrarcreador(header).Count > 0)
+                creador = creador1.GetData_encontrarcreador(header).Rows[0][0].ToString();
+
+            string nombre_paci="";
+            string afiliacion_paci="";
+            DataSetFacturaTableAdapters.pacienteTableAdapter pa1 = new DataSetFacturaTableAdapters.pacienteTableAdapter();
+            if (pa1.GetData_datospaciente(header).Count > 0)
+            {
+                nombre_paci = pa1.GetData_datospaciente(header).Rows[0][0].ToString();
+                afiliacion_paci = pa1.GetData_datospaciente(header).Rows[0][1].ToString();
+            }
+
 
             //string so = "";
             //DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
@@ -61,6 +77,14 @@ namespace ortoxela.Pedido.Factura
 
             //tipo de factura
             reporte.SetParameterValue("tipodocumento", ti);
+
+            //nombre del paciente y su numero de afiliacion
+            reporte.SetParameterValue("nombrepaciente", nombre_paci);
+            reporte.SetParameterValue("afiliacionpaciente", afiliacion_paci);
+
+
+            //usuario creador
+            reporte.SetParameterValue("usuariocreador", creador);
             //
 
         }
@@ -72,7 +96,13 @@ namespace ortoxela.Pedido.Factura
 
             string ve = "";
             DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            if (ve1.GetData_encontrarvendedor(header).Count > 0)
             ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
+
+            string creador = "";
+            DataSetFacturaTableAdapters.encontrarcreadorTableAdapter creado1 = new DataSetFacturaTableAdapters.encontrarcreadorTableAdapter();
+            if (creado1.GetData_encontrarcreador(header).Count > 0)
+                creador = creado1.GetData_encontrarcreador(header).Rows[0][0].ToString();
 
             //string so = "";
             //DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
@@ -102,6 +132,9 @@ namespace ortoxela.Pedido.Factura
 
             //tipo de factura
             reporte.SetParameterValue("tipodocumento", ti);
+
+            //usuario creador
+            reporte.SetParameterValue("usuariocreador", creador);
             //
 
         }
@@ -113,11 +146,13 @@ namespace ortoxela.Pedido.Factura
 
             string ve = "";
             DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            if (ve1.GetData_encontrarvendedor(header).Count > 0)
             ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
 
-            //string so = "";
-            //DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
-            //so = so1.GetData_encontrarsociocomercial(header).Rows[0][0].ToString();
+            string creador = "";
+            DataSetFacturaTableAdapters.encontrarcreadorTableAdapter creado1 = new DataSetFacturaTableAdapters.encontrarcreadorTableAdapter();
+            if (creado1.GetData_encontrarcreador(header).Count > 0)
+                creador = creado1.GetData_encontrarcreador(header).Rows[0][0].ToString();
 
             DataTable res = new DataTable();
             DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
@@ -143,6 +178,9 @@ namespace ortoxela.Pedido.Factura
 
             //tipo de factura
             reporte.SetParameterValue("tipodocumento", ti);
+
+            //usuario creador
+            reporte.SetParameterValue("usuariocreador", creador);
             //
 
         }
@@ -154,11 +192,13 @@ namespace ortoxela.Pedido.Factura
 
             string ve = "";
             DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            if (ve1.GetData_encontrarvendedor(header).Count > 0)
             ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
 
-            //string so = "";
-            //DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
-            //so = so1.GetData_encontrarsociocomercial(header).Rows[0][0].ToString();
+            string creador = "";
+            DataSetFacturaTableAdapters.encontrarcreadorTableAdapter creado1 = new DataSetFacturaTableAdapters.encontrarcreadorTableAdapter();
+            if (creado1.GetData_encontrarcreador(header).Count > 0)
+                creador = creado1.GetData_encontrarcreador(header).Rows[0][0].ToString();
 
             DataTable res = new DataTable();
             DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
@@ -184,6 +224,9 @@ namespace ortoxela.Pedido.Factura
 
             //tipo de factura
             reporte.SetParameterValue("tipodocumento", ti);
+
+            //usuario creador
+            reporte.SetParameterValue("usuariocreador", creador);
             //
 
         }
@@ -195,11 +238,13 @@ namespace ortoxela.Pedido.Factura
 
             string ve = "";
             DataSetFacturaTableAdapters.encontrarvendedorTableAdapter ve1 = new DataSetFacturaTableAdapters.encontrarvendedorTableAdapter();
+            if (ve1.GetData_encontrarvendedor(header).Count > 0)
             ve = ve1.GetData_encontrarvendedor(header).Rows[0][0].ToString();
 
-            //string so = "";
-            //DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter so1 = new DataSetFacturaTableAdapters.encontrarsociocomercialTableAdapter();
-            //so = so1.GetData_encontrarsociocomercial(header).Rows[0][0].ToString();
+            string creador = "";
+            DataSetFacturaTableAdapters.encontrarcreadorTableAdapter creado1 = new DataSetFacturaTableAdapters.encontrarcreadorTableAdapter();
+            if (creado1.GetData_encontrarcreador(header).Count > 0)
+                creador = creado1.GetData_encontrarcreador(header).Rows[0][0].ToString();
 
             DataTable res = new DataTable();
             DataSetFacturaTableAdapters.NFacturaTableAdapter lg = new DataSetFacturaTableAdapters.NFacturaTableAdapter();
@@ -225,6 +270,9 @@ namespace ortoxela.Pedido.Factura
 
             //tipo de factura
             reporte.SetParameterValue("tipodocumento", ti);
+
+            //usuario creador
+            reporte.SetParameterValue("usuariocreador", creador);
             //
 
         }

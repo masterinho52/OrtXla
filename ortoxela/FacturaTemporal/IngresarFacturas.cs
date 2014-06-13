@@ -182,23 +182,26 @@ namespace ortoxela.FacturaTemporal
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                if (dxValidationProvider1.Validate())
+                if (gridView1.DataRowCount < 12)
                 {
-                    int existeCEx = 0;
-                    for (int x = 0; x < gridView1.DataRowCount; x++)
-                    {
-                        if (gridView1.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
-                        {
-                            existeCEx++;
-                        }
-                    }
 
-                    if (existeCEx > 0)
+                    if (dxValidationProvider1.Validate())
                     {
-                        MessageBox.Show("No puede agregar Mas Productos Porque Ha Agregado El Recargo Extra, Si desea modificar la factura elimine el recargo extra y vuelva a aplicarlo si es necesario");
-                        Cursor.Current = Cursors.Default;
-                        return;
-                    }    
+                        int existeCEx = 0;
+                        for (int x = 0; x < gridView1.DataRowCount; x++)
+                        {
+                            if (gridView1.GetRowCellValue(x, "CODIGO").ToString().ToUpper().Contains("CARGOEXTRA"))
+                            {
+                                existeCEx++;
+                            }
+                        }
+
+                        if (existeCEx > 0)
+                        {
+                            MessageBox.Show("No puede agregar Mas Productos Porque Ha Agregado El Recargo Extra, Si desea modificar la factura elimine el recargo extra y vuelva a aplicarlo si es necesario");
+                            Cursor.Current = Cursors.Default;
+                            return;
+                        }
 
 
                         DataTable TempoPadre = new DataTable();
@@ -210,8 +213,8 @@ namespace ortoxela.FacturaTemporal
                         if (Convert.ToBoolean(logicaxela.Tabla(cadena).Rows[0]["compuesto"]))
                         {
                             // cadena = "SELECT articulos.codigo_articulo AS CODIGO,articulos.descripcion AS 'NOMBRE ARTICULO',articulos.numero_serie AS 'No SERIE',bodegas.existencia_articulo AS 'EXISTENCIA',articulos.precio_venta,articulos.costo FROM articulos INNER JOIN bodegas ON bodegas.codigo_articulo=articulos.codigo_articulo WHERE articulos.estadoid<>2 AND articulos.codigo_padre='" + id_articulo + "' AND bodegas.codigo_bodega=" + gridLookBodega.EditValue;
-                            cadena = "CALL sp_devuelve_sistema ('" + id_articulo + "',"+ gridLookBodega.EditValue+")";
-                            TempoPadre = logicaxela.Tabla(cadena);                            
+                            cadena = "CALL sp_devuelve_sistema ('" + id_articulo + "'," + gridLookBodega.EditValue + ")";
+                            TempoPadre = logicaxela.Tabla(cadena);
                             for (int x = 0; x < TempoPadre.Rows.Count; x++)
                             {
                                 banderaRepetido = true;
@@ -224,10 +227,10 @@ namespace ortoxela.FacturaTemporal
                                 if (banderaRepetido)
                                 {
                                     ExistenciaHijo = Convert.ToInt32(TempoPadre.Rows[x]["EXISTENCIA"]);
-                                    cantidadHijo =Convert.ToInt32(TempoPadre.Rows[x]["cantidad"]);
+                                    cantidadHijo = Convert.ToInt32(TempoPadre.Rows[x]["cantidad"]);
                                     if (ExistenciaHijo != 0)
                                     {
-                                        if ((Convert.ToInt32(textCantidadArt.Text)*cantidadHijo) <= ExistenciaHijo)
+                                        if ((Convert.ToInt32(textCantidadArt.Text) * cantidadHijo) <= ExistenciaHijo)
                                         {
                                             ExistenciaFija = Convert.ToInt32(textCantidadArt.Text);
                                         }
@@ -249,19 +252,19 @@ namespace ortoxela.FacturaTemporal
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "BODEGA", gridLookBodega.Text + "[" + gridLookBodega.EditValue + "]");
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "CODIGO", TempoPadre.Rows[x]["CODIGO"]);
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "DESCRIPCION", TempoPadre.Rows[x]["NOMBRE ARTICULO"]);
-                                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "CANTIDAD", ExistenciaFija);                                        
+                                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "CANTIDAD", ExistenciaFija);
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "SUBTOTAL", (Convert.ToDouble(TempoPadre.Rows[x]["precio_venta"])) * (ExistenciaFija));
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "ACTUALIZA_PRECIO", bandera_actualiza_precio);
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "INGRESO_EGRESO", bandera_ingreso_egreso);
                                         gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "VENTA", TempoPadre.Rows[x]["precio_venta"]);
-                                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "EXISTENCIA", ExistenciaHijo);                                        
-                                        TotalIngresoVenta = TotalIngresoVenta + (ExistenciaFija * Convert.ToDouble(TempoPadre.Rows[x]["precio_venta"]));                                        
+                                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "EXISTENCIA", ExistenciaHijo);
+                                        TotalIngresoVenta = TotalIngresoVenta + (ExistenciaFija * Convert.ToDouble(TempoPadre.Rows[x]["precio_venta"]));
                                         gridView1.UpdateCurrentRow();
                                         CalculaDescuento();
                                         //textTotalVenta.Text = TotalIngresoVenta.ToString("C");
-                                        
+
                                     }
-                                    
+
                                 }
                                 else
                                     clases.ClassMensajes.ProdYaExisteEnListado(this);
@@ -299,8 +302,8 @@ namespace ortoxela.FacturaTemporal
                                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "ACTUALIZA_PRECIO", bandera_actualiza_precio);
                                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "INGRESO_EGRESO", bandera_ingreso_egreso);
                                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "VENTA", textVenta.Text);
-                                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "EXISTENCIA", cant_existencia);                                    
-                                    TotalIngresoVenta = TotalIngresoVenta + (Convert.ToDouble(textCantidadArt.Text) * Convert.ToDouble(textVenta.Text));                                    
+                                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "EXISTENCIA", cant_existencia);
+                                    TotalIngresoVenta = TotalIngresoVenta + (Convert.ToDouble(textCantidadArt.Text) * Convert.ToDouble(textVenta.Text));
                                     gridView1.UpdateCurrentRow();
                                     CalculaDescuento();
                                     //textTotalVenta.Text = TotalIngresoVenta.ToString("C");
@@ -309,11 +312,14 @@ namespace ortoxela.FacturaTemporal
                                 }
                             }
                             else
-                                clases.ClassMensajes.NoHayExistenciaProd(this);           
-                    
+                                clases.ClassMensajes.NoHayExistenciaProd(this);
+
+                    }
+                    else
+                        clases.ClassMensajes.FaltanDatosEnCampos(this);
                 }
                 else
-                    clases.ClassMensajes.FaltanDatosEnCampos(this);
+                    MessageBox.Show("No se pueden agregar mas de 12 campos a la factura", "", MessageBoxButtons.OK);
             }
             catch
             { 

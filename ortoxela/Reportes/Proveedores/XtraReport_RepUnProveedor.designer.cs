@@ -73,6 +73,7 @@ namespace ortoxela.Reportes.Proveedores
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.Codigo_proveedor = new DevExpress.XtraReports.Parameters.Parameter();
+            this.v_compras_proveedor2TableAdapter = new ortoxela.Reportes.Proveedores.DataSet_RepProveedoresTableAdapters.v_compras_proveedor2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RepProveedores1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -538,6 +539,10 @@ namespace ortoxela.Reportes.Proveedores
             this.Codigo_proveedor.Value = 0;
             this.Codigo_proveedor.Visible = false;
             // 
+            // v_compras_proveedor2TableAdapter
+            // 
+            this.v_compras_proveedor2TableAdapter.ClearBeforeFill = true;
+            // 
             // XtraReport_RepUnProveedor
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -551,14 +556,12 @@ namespace ortoxela.Reportes.Proveedores
             this.DataAdapter = this.v_compras_proveedorTableAdapter;
             this.DataMember = "v_compras_proveedor";
             this.DataSource = this.dataSet_RepProveedores1;
-            this.FilterString = "[fecha_compra] Between(?Fecha_inicio, ?Fecha_fin) And [codigo_proveedor] = ?Codig" +
-    "o_proveedor";
             this.Margins = new System.Drawing.Printing.Margins(35, 42, 25, 42);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
             this.Fecha_fin,
             this.Codigo_proveedor});
-            this.Version = "11.2";
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RepProveedores1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -611,5 +614,6 @@ namespace ortoxela.Reportes.Proveedores
         private DevExpress.XtraReports.UI.XRLabel xrLabel20;
         private DevExpress.XtraReports.UI.XRLabel xrLabel21;
         private DevExpress.XtraReports.UI.XRLabel xrLabel22;
+        private DataSet_RepProveedoresTableAdapters.v_compras_proveedor2TableAdapter v_compras_proveedor2TableAdapter;
     }
 }

@@ -503,15 +503,22 @@ namespace ortoxela.Cotizacion
 
         private void simplePrinter_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             try
             {
+                DataSet_CotizacionTableAdapters.DataTable3TableAdapter lg = new DataSet_CotizacionTableAdapters.DataTable3TableAdapter();
+                DataTable res = new DataTable();
+                res = lg.GetData_cot(Convert.ToInt16(id_nuevo_pedido));
+
                 XtraReport_Cotizacion reporte = new XtraReport_Cotizacion();
-                reporte.Parameters["ID_Documento"].Value = id_nuevo_pedido;
+                reporte.DataSource = res;
+                //reporte.Parameters["ID_Documento"].Value = id_nuevo_pedido;
                 reporte.RequestParameters = false;
                 reporte.ShowPreviewDialog();
             }
             catch
             { }
+            this.Cursor = Cursors.Default;
         }
 
         private void sbCancelar_Click(object sender, EventArgs e)

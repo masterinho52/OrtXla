@@ -46,14 +46,14 @@ namespace ortoxela.TrasladoBodega
                 //textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0][0].ToString();
 
                 //
-                string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
-                if (logicaorto.Tabla(cadena).Rows.Count != 0)
-                {
-                    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
-                    label_numerotraslado.Text="Traslado numero: "+(valortemporal + 1).ToString();
-                }
-                else
-                    label_numerotraslado.Text = "0";
+                //string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
+                //if (logicaorto.Tabla(cadena).Rows.Count != 0)
+                //{
+                //    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
+                //    label_numerotraslado.Text="Traslado numero: "+(valortemporal + 1).ToString();
+                //}
+                //else
+                //    label_numerotraslado.Text = "0";
                 //
 
                 
@@ -306,14 +306,14 @@ namespace ortoxela.TrasladoBodega
                 //textNoRecibo.Text = ortoxela.Tabla(cadena).Rows[0][0].ToString();
 
                 //
-                string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
-                if (logicaorto.Tabla(cadena).Rows.Count != 0)
-                {
-                    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
-                    label_numerotraslado.Text = "Traslado numero: " + (valortemporal + 1).ToString();
-                }
-                else
-                    label_numerotraslado.Text = "0";
+                //string cadena = "SELECT   no_traslado_bodega FROM traslado_bodega_header ORDER BY no_traslado_bodega DESC  LIMIT 1";
+                //if (logicaorto.Tabla(cadena).Rows.Count != 0)
+                //{
+                //    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
+                //    label_numerotraslado.Text = "Traslado numero: " + (valortemporal + 1).ToString();
+                //}
+                //else
+                //    label_numerotraslado.Text = "0";
                 //
                 Limpia();
             }
@@ -358,8 +358,8 @@ namespace ortoxela.TrasladoBodega
                 conexion.Open();
                 transac = conexion.BeginTransaction();
                 comando.Transaction = transac;
-                ssql = "INSERT into traslado_bodega_header(bodega_origen, bodega_destino, descripcion, usuario_creador, fecha_creacion, codigo_serie,no_doc_traslado) "+
-                        "VALUES (" + gridLookBodegaOrigen.EditValue + ", " + gridLookBodegaDestino.EditValue + ", '" + memoEdit1.Text + "', " + clases.ClassVariables.id_usuario + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd") + "', "+gridLookTipoDocumento.EditValue+",'"+textNoDocumento.Text+"');SELECT LAST_INSERT_ID();";                
+                ssql = "INSERT into traslado_bodega_header(bodega_origen, bodega_destino, descripcion, usuario_creador, fecha_creacion, codigo_serie,no_doc_traslado,no_documento) "+
+                        "VALUES (" + gridLookBodegaOrigen.EditValue + ", " + gridLookBodegaDestino.EditValue + ", '" + memoEdit1.Text + "', " + clases.ClassVariables.id_usuario + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd") + "', " + gridLookTipoDocumento.EditValue + ",'" + textNoDocumento.Text + "'," + textEdit_nodoc.Text + ");SELECT LAST_INSERT_ID();";                
                 comando = new MySqlCommand(ssql, conexion);
                 comando.Transaction = transac;
                 id_nuevoIngreso = comando.ExecuteScalar().ToString();
@@ -401,7 +401,10 @@ namespace ortoxela.TrasladoBodega
         {
             if (dxValidationProvider2.Validate() & gridView1.DataRowCount > 0)
             {
-                registraIngreso();
+                if ((gridLookTipoDocumento.Text != "") && (gridLookTipoDocumento.Text != "[Vacío]"))
+                    registraIngreso();
+                else
+                    MessageBox.Show("Seleccione una serie de Traslado", "", MessageBoxButtons.OK);
             }
             else
                 clases.ClassMensajes.FaltanDatosEnCampos(this);
@@ -461,16 +464,7 @@ namespace ortoxela.TrasladoBodega
 
         private void gridLookBodegaOrigen_EditValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodegaOrigen.EditValue.ToString();
-                gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
-                gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
-                gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
-                gridLookTipoDocumento.Text = "";
-                gridLookTipoDocumento.EditValue = 5;
-            }
-            catch {  }
+            
         }
 
         private void gridLookTipoDocumento_EditValueChanged(object sender, EventArgs e)
@@ -480,8 +474,38 @@ namespace ortoxela.TrasladoBodega
 
         private void gridLookTipoDocumento_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string cadena = "SELECT   no_traslado_bodega,no_documento FROM traslado_bodega_header WHERE (bodega_destino ="+gridLookBodegaDestino.EditValue+") AND (codigo_serie="+gridLookTipoDocumento.EditValue+") ORDER BY no_traslado_bodega DESC LIMIT 1;";
+                if (logicaorto.Tabla(cadena).Rows.Count != 0)
+                {
+                    int valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][0]);
+                    valortemporal = Convert.ToInt16(logicaorto.Tabla(cadena).Rows[0][1]);
+                    label_nodoc2.Text = "Traslado a la bodega: " + gridLookBodegaDestino.Text + ", Serie: " + gridLookTipoDocumento.Text;
+                    textEdit_nodoc.Text = (valortemporal + 1).ToString();
+                }
+                else
+                {
+                    label_nodoc2.Text = "Traslado a la bodega: " + gridLookBodegaDestino.Text + ", Serie: " + gridLookTipoDocumento.Text;
+                    textEdit_nodoc.Text = "1";
+                }
+            }
+            catch { }
             
-            
+        }
+
+        private void gridLookBodegaDestino_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ssql = "SELECT distinct codigo_serie AS CODIGO, serie_documento AS SERIE FROM v_bodegas_series_usuarios  WHERE codigo_tipo=4 AND userid=" + clases.ClassVariables.id_usuario + " and codigo_bodega = " + gridLookBodegaDestino.EditValue.ToString();
+                gridLookTipoDocumento.Properties.DataSource = logicaxela.Tabla(ssql);
+                gridLookTipoDocumento.Properties.DisplayMember = "SERIE";
+                gridLookTipoDocumento.Properties.ValueMember = "CODIGO";
+                gridLookTipoDocumento.Text = "";
+                gridLookTipoDocumento.EditValue = 5;
+            }
+            catch { }
         }
     }
 }

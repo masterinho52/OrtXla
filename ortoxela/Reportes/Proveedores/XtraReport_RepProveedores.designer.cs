@@ -71,6 +71,7 @@ namespace ortoxela.Reportes.Proveedores
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.TotalProveedor = new DevExpress.XtraReports.UI.CalculatedField();
+            this.v_compras_proveedor2TableAdapter = new ortoxela.Reportes.Proveedores.DataSet_RepProveedoresTableAdapters.v_compras_proveedor2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RepProveedores1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -508,6 +509,10 @@ namespace ortoxela.Reportes.Proveedores
             this.TotalProveedor.Expression = "sum([monto_neto])";
             this.TotalProveedor.Name = "TotalProveedor";
             // 
+            // v_compras_proveedor2TableAdapter
+            // 
+            this.v_compras_proveedor2TableAdapter.ClearBeforeFill = true;
+            // 
             // XtraReport_RepProveedores
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -523,12 +528,11 @@ namespace ortoxela.Reportes.Proveedores
             this.DataAdapter = this.v_compras_proveedorTableAdapter;
             this.DataMember = "v_compras_proveedor";
             this.DataSource = this.dataSet_RepProveedores1;
-            this.FilterString = "[fecha_compra] Between(?Fecha_inicio, ?Fecha_fin)";
             this.Margins = new System.Drawing.Printing.Margins(35, 42, 25, 46);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.Fecha_inicio,
             this.Fecha_fin});
-            this.Version = "11.2";
+            this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RepProveedores1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -579,5 +583,6 @@ namespace ortoxela.Reportes.Proveedores
         private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        private DataSet_RepProveedoresTableAdapters.v_compras_proveedor2TableAdapter v_compras_proveedor2TableAdapter;
     }
 }

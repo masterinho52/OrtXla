@@ -567,7 +567,7 @@
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Frm_RepVentas";
-            this.Text = "e";
+            this.Text = "Reportes de Ventas";
             this.Load += new System.EventHandler(this.Frm_RepVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -1405,8 +1405,17 @@ namespace ortoxela.Pedido
         private void simpleButton9_Click(object sender, EventArgs e)
         {
             /*Imprimir Vale*/
+            Vale.DataSet_DGTableAdapters.clientesTableAdapter lg = new Vale.DataSet_DGTableAdapters.clientesTableAdapter();
+            DataTable res = new DataTable();
+            res=lg.GetData_encontrarabreviaturaSC(textSocioComercial.Text);
+            string ab="";
+            if(res.Rows.Count>0)
+                ab = res.Rows[0][0].ToString();
+
+
             Vale.XtraReportVale reporte = new Vale.XtraReportVale();
             reporte.Parameters["ID"].Value = id_nuevo_vale;
+            reporte.Parameters["abrev"].Value = ab;
             // reporte.Parameters["RECIBO"].Value = textNoReciboVale.Text;
             // reporte.Parameters["SOCIO"].Value = textSocioComercial.Text;
             reporte.RequestParameters = false;

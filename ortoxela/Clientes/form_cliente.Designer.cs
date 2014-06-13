@@ -37,6 +37,8 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl_abreviatura = new DevExpress.XtraEditors.GroupControl();
+            this.textEdit_abrev = new DevExpress.XtraEditors.TextEdit();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.textCelular = new DevExpress.XtraEditors.TextEdit();
@@ -80,6 +82,9 @@
             this.simpleaceptar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl_abreviatura)).BeginInit();
+            this.groupControl_abreviatura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_abrev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textCelular.Properties)).BeginInit();
@@ -107,6 +112,7 @@
             // groupControl1
             // 
             this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupControl1.Controls.Add(this.groupControl_abreviatura);
             this.groupControl1.Controls.Add(this.groupControl3);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Location = new System.Drawing.Point(23, 27);
@@ -114,6 +120,23 @@
             this.groupControl1.Size = new System.Drawing.Size(709, 423);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Nuevo Cliente";
+            // 
+            // groupControl_abreviatura
+            // 
+            this.groupControl_abreviatura.Controls.Add(this.textEdit_abrev);
+            this.groupControl_abreviatura.Location = new System.Drawing.Point(542, 113);
+            this.groupControl_abreviatura.Name = "groupControl_abreviatura";
+            this.groupControl_abreviatura.Size = new System.Drawing.Size(162, 58);
+            this.groupControl_abreviatura.TabIndex = 2;
+            this.groupControl_abreviatura.Text = "Abreviatura";
+            this.groupControl_abreviatura.Visible = false;
+            // 
+            // textEdit_abrev
+            // 
+            this.textEdit_abrev.Location = new System.Drawing.Point(37, 28);
+            this.textEdit_abrev.Name = "textEdit_abrev";
+            this.textEdit_abrev.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_abrev.TabIndex = 0;
             // 
             // groupControl3
             // 
@@ -132,7 +155,7 @@
             this.groupControl3.Controls.Add(this.labelControl9);
             this.groupControl3.Controls.Add(this.textIgss);
             this.groupControl3.Controls.Add(this.radioGroup1);
-            this.groupControl3.Location = new System.Drawing.Point(102, 252);
+            this.groupControl3.Location = new System.Drawing.Point(32, 252);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(504, 162);
             this.groupControl3.TabIndex = 1;
@@ -300,7 +323,7 @@
             this.groupControl2.Controls.Add(this.textNombrePaciente);
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Location = new System.Drawing.Point(102, 35);
+            this.groupControl2.Location = new System.Drawing.Point(32, 35);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(504, 211);
             this.groupControl2.TabIndex = 0;
@@ -510,7 +533,7 @@
             this.simpleaceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleaceptar.Appearance.Options.UseFont = true;
             this.simpleaceptar.Image = global::ortoxela.Properties.Resources.accept_32x32_32;
-            this.simpleaceptar.Location = new System.Drawing.Point(282, 467);
+            this.simpleaceptar.Location = new System.Drawing.Point(277, 467);
             this.simpleaceptar.Name = "simpleaceptar";
             this.simpleaceptar.Size = new System.Drawing.Size(168, 43);
             this.simpleaceptar.TabIndex = 0;
@@ -532,6 +555,9 @@
             this.Load += new System.EventHandler(this.form_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl_abreviatura)).EndInit();
+            this.groupControl_abreviatura.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_abrev.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
@@ -604,5 +630,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpTipoClienteConta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.GroupControl groupControl_abreviatura;
+        private DevExpress.XtraEditors.TextEdit textEdit_abrev;
     }
 }

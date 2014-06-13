@@ -107,6 +107,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(723, 56);
             this.panelControl1.TabIndex = 5;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // panelControl2
             // 
@@ -181,15 +182,16 @@
             // 
             // gridLookProveedor
             // 
-            this.gridLookProveedor.EditValue = "SELECCIONE PROVEEDOR ";
+            this.gridLookProveedor.EditValue = "SELECCIONE PROVEEDOR";
             this.gridLookProveedor.Location = new System.Drawing.Point(187, 21);
             this.gridLookProveedor.Name = "gridLookProveedor";
             this.gridLookProveedor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookProveedor.Properties.NullText = "SELECCIONE PROVEEDOR (OPCIONAL)";
+            this.gridLookProveedor.Properties.NullText = "SELECCIONE PROVEEDOR";
             this.gridLookProveedor.Properties.View = this.gridView2;
             this.gridLookProveedor.Size = new System.Drawing.Size(251, 20);
             this.gridLookProveedor.TabIndex = 14;
+            this.gridLookProveedor.EditValueChanged += new System.EventHandler(this.gridLookProveedor_EditValueChanged);
             // 
             // gridView2
             // 
@@ -281,11 +283,12 @@
             // 
             // listBoxSeries
             // 
+            this.listBoxSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxSeries.FormattingEnabled = true;
-            this.listBoxSeries.ItemHeight = 20;
+            this.listBoxSeries.ItemHeight = 16;
             this.listBoxSeries.Location = new System.Drawing.Point(297, 142);
             this.listBoxSeries.Name = "listBoxSeries";
-            this.listBoxSeries.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxSeries.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxSeries.Size = new System.Drawing.Size(150, 164);
             this.listBoxSeries.TabIndex = 14;
             // 
@@ -321,11 +324,12 @@
             // 
             // listBoxBodegas
             // 
+            this.listBoxBodegas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxBodegas.FormattingEnabled = true;
-            this.listBoxBodegas.ItemHeight = 20;
+            this.listBoxBodegas.ItemHeight = 16;
             this.listBoxBodegas.Location = new System.Drawing.Point(73, 142);
             this.listBoxBodegas.Name = "listBoxBodegas";
-            this.listBoxBodegas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxBodegas.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxBodegas.Size = new System.Drawing.Size(150, 164);
             this.listBoxBodegas.TabIndex = 19;
             this.listBoxBodegas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBoxBodegas_MouseUp);
