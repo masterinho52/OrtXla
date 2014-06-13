@@ -30,29 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraCharts.TextAnnotation textAnnotation1 = new DevExpress.XtraCharts.TextAnnotation();
-            DevExpress.XtraCharts.ChartAnchorPoint chartAnchorPoint1 = new DevExpress.XtraCharts.ChartAnchorPoint();
-            DevExpress.XtraCharts.FreePosition freePosition1 = new DevExpress.XtraCharts.FreePosition();
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint1 = new DevExpress.XtraCharts.SeriesPoint("uno", new object[] {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraCharts.TextAnnotation textAnnotation3 = new DevExpress.XtraCharts.TextAnnotation();
+            DevExpress.XtraCharts.ChartAnchorPoint chartAnchorPoint3 = new DevExpress.XtraCharts.ChartAnchorPoint();
+            DevExpress.XtraCharts.FreePosition freePosition3 = new DevExpress.XtraCharts.FreePosition();
+            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel7 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesPoint seriesPoint13 = new DevExpress.XtraCharts.SeriesPoint("uno", new object[] {
             ((object)(1D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint2 = new DevExpress.XtraCharts.SeriesPoint("dos", new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint14 = new DevExpress.XtraCharts.SeriesPoint("dos", new object[] {
             ((object)(2D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint3 = new DevExpress.XtraCharts.SeriesPoint("tres", new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint15 = new DevExpress.XtraCharts.SeriesPoint("tres", new object[] {
             ((object)(40D))});
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint4 = new DevExpress.XtraCharts.SeriesPoint("suno", new object[] {
+            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel8 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesPoint seriesPoint16 = new DevExpress.XtraCharts.SeriesPoint("suno", new object[] {
             ((object)(4D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint5 = new DevExpress.XtraCharts.SeriesPoint("sdos", new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint17 = new DevExpress.XtraCharts.SeriesPoint("sdos", new object[] {
             ((object)(6D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint6 = new DevExpress.XtraCharts.SeriesPoint("stres", new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint18 = new DevExpress.XtraCharts.SeriesPoint("stres", new object[] {
             ((object)(78D))});
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel9 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
             this.splitContainerDatos = new DevExpress.XtraEditors.SplitContainerControl();
             this.buttonActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,6 +69,10 @@
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem31 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem138 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem139 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem140 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barSubItem10 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
@@ -238,6 +242,7 @@
             this.barButtonItem135 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem136 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem137 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem141 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.FACTURACION = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -250,6 +255,7 @@
             this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup29 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ADMINISTRACION = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -280,29 +286,33 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.defaultLookAndFeel2 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.barSubItem30 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem142 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem143 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerDatos)).BeginInit();
             this.splitContainerDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(textAnnotation1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(textAnnotation3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -336,14 +346,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -352,47 +362,47 @@
             // chartControl1
             // 
             resources.ApplyResources(this.chartControl1, "chartControl1");
-            chartAnchorPoint1.X = 6;
-            chartAnchorPoint1.Y = 43;
-            textAnnotation1.AnchorPoint = chartAnchorPoint1;
-            resources.ApplyResources(textAnnotation1, "textAnnotation1");
-            freePosition1.InnerIndents.Left = 0;
-            freePosition1.InnerIndents.Top = 0;
-            textAnnotation1.ShapePosition = freePosition1;
+            chartAnchorPoint3.X = 6;
+            chartAnchorPoint3.Y = 43;
+            textAnnotation3.AnchorPoint = chartAnchorPoint3;
+            resources.ApplyResources(textAnnotation3, "textAnnotation3");
+            freePosition3.InnerIndents.Left = 0;
+            freePosition3.InnerIndents.Top = 0;
+            textAnnotation3.ShapePosition = freePosition3;
             this.chartControl1.AnnotationRepository.AddRange(new DevExpress.XtraCharts.Annotation[] {
-            textAnnotation1});
+            textAnnotation3});
             this.chartControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
+            xyDiagram3.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram3.AxisX.Range.SideMarginsEnabled = true;
+            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram3.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            xyDiagram3.AxisY.Range.SideMarginsEnabled = true;
+            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram3;
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Module";
-            sideBySideBarSeriesLabel1.LineVisible = true;
-            series1.Label = sideBySideBarSeriesLabel1;
-            resources.ApplyResources(series1, "series1");
-            series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint1,
-            seriesPoint2,
-            seriesPoint3});
-            sideBySideBarSeriesLabel2.LineVisible = true;
-            series2.Label = sideBySideBarSeriesLabel2;
-            resources.ApplyResources(series2, "series2");
-            series2.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint4,
-            seriesPoint5,
-            seriesPoint6});
+            sideBySideBarSeriesLabel7.LineVisible = true;
+            series5.Label = sideBySideBarSeriesLabel7;
+            resources.ApplyResources(series5, "series5");
+            series5.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint13,
+            seriesPoint14,
+            seriesPoint15});
+            sideBySideBarSeriesLabel8.LineVisible = true;
+            series6.Label = sideBySideBarSeriesLabel8;
+            resources.ApplyResources(series6, "series6");
+            series6.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint16,
+            seriesPoint17,
+            seriesPoint18});
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2};
-            sideBySideBarSeriesLabel3.LineVisible = true;
-            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel3;
-            resources.ApplyResources(chartTitle1, "chartTitle1");
+        series5,
+        series6};
+            sideBySideBarSeriesLabel9.LineVisible = true;
+            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel9;
+            resources.ApplyResources(chartTitle3, "chartTitle3");
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle1});
+            chartTitle3});
             // 
             // COBRANZA
             // 
@@ -416,6 +426,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barSubItem1);
             this.ribbonPageGroup2.ItemLinks.Add(this.barSubItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barSubItem31);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             resources.ApplyResources(this.ribbonPageGroup2, "ribbonPageGroup2");
             // 
@@ -497,6 +508,41 @@
             this.barButtonItem18.Id = 21;
             this.barButtonItem18.Name = "barButtonItem18";
             this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
+            // 
+            // barSubItem31
+            // 
+            resources.ApplyResources(this.barSubItem31, "barSubItem31");
+            this.barSubItem31.Id = 212;
+            this.barSubItem31.LargeGlyph = global::ortoxela.Properties.Resources.sociocomercial;
+            this.barSubItem31.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem138),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem139),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem140)});
+            this.barSubItem31.Name = "barSubItem31";
+            // 
+            // barButtonItem138
+            // 
+            resources.ApplyResources(this.barButtonItem138, "barButtonItem138");
+            this.barButtonItem138.Glyph = global::ortoxela.Properties.Resources.database_add_24x24_32;
+            this.barButtonItem138.Id = 213;
+            this.barButtonItem138.Name = "barButtonItem138";
+            this.barButtonItem138.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem138_ItemClick);
+            // 
+            // barButtonItem139
+            // 
+            resources.ApplyResources(this.barButtonItem139, "barButtonItem139");
+            this.barButtonItem139.Glyph = global::ortoxela.Properties.Resources.database_process_24x24_32;
+            this.barButtonItem139.Id = 214;
+            this.barButtonItem139.Name = "barButtonItem139";
+            this.barButtonItem139.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem139_ItemClick);
+            // 
+            // barButtonItem140
+            // 
+            resources.ApplyResources(this.barButtonItem140, "barButtonItem140");
+            this.barButtonItem140.Glyph = global::ortoxela.Properties.Resources.database_remove_24x24_32;
+            this.barButtonItem140.Id = 215;
+            this.barButtonItem140.Name = "barButtonItem140";
+            this.barButtonItem140.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem140_ItemClick);
             // 
             // ribbonPageGroup13
             // 
@@ -867,8 +913,15 @@
             this.barButtonItem134,
             this.barButtonItem135,
             this.barButtonItem136,
-            this.barButtonItem137});
-            this.ribbon.MaxItemId = 209;
+            this.barButtonItem137,
+            this.barSubItem31,
+            this.barButtonItem138,
+            this.barButtonItem139,
+            this.barButtonItem140,
+            this.barButtonItem141,
+            this.barButtonItem142,
+            this.barButtonItem143});
+            this.ribbon.MaxItemId = 220;
             this.ribbon.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -885,7 +938,8 @@
             this.repositoryItemFontEdit1,
             this.repositoryItemTextEdit1,
             this.repositoryItemButtonEdit1,
-            this.repositoryItemButtonEdit2});
+            this.repositoryItemButtonEdit2,
+            this.repositoryItemComboBox1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -2188,6 +2242,14 @@
             this.barButtonItem137.Name = "barButtonItem137";
             this.barButtonItem137.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem137_ItemClick);
             // 
+            // barButtonItem141
+            // 
+            resources.ApplyResources(this.barButtonItem141, "barButtonItem141");
+            this.barButtonItem141.Id = 217;
+            this.barButtonItem141.LargeGlyph = global::ortoxela.Properties.Resources.trasladar48;
+            this.barButtonItem141.Name = "barButtonItem141";
+            this.barButtonItem141.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem141_ItemClick);
+            // 
             // FACTURACION
             // 
             resources.ApplyResources(this.FACTURACION, "FACTURACION");
@@ -2239,7 +2301,8 @@
             this.ribbonPageGroup16,
             this.ribbonPageGroup18,
             this.ribbonPageGroup27,
-            this.ribbonPageGroup28});
+            this.ribbonPageGroup28,
+            this.ribbonPageGroup29});
             this.ribbonPage4.Name = "ribbonPage4";
             resources.ApplyResources(this.ribbonPage4, "ribbonPage4");
             // 
@@ -2263,7 +2326,6 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem96);
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem83);
             this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem102);
-            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem137);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             resources.ApplyResources(this.ribbonPageGroup16, "ribbonPageGroup16");
             // 
@@ -2284,6 +2346,12 @@
             this.ribbonPageGroup28.ItemLinks.Add(this.barButtonItem137);
             this.ribbonPageGroup28.Name = "ribbonPageGroup28";
             resources.ApplyResources(this.ribbonPageGroup28, "ribbonPageGroup28");
+            // 
+            // ribbonPageGroup29
+            // 
+            this.ribbonPageGroup29.ItemLinks.Add(this.barButtonItem141);
+            this.ribbonPageGroup29.Name = "ribbonPageGroup29";
+            resources.ApplyResources(this.ribbonPageGroup29, "ribbonPageGroup29");
             // 
             // ADMINISTRACION
             // 
@@ -2357,6 +2425,8 @@
             // 
             this.ribbonPageGroup11.AllowTextClipping = false;
             this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem72);
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem142);
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem143);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             resources.ApplyResources(this.ribbonPageGroup11, "ribbonPageGroup11");
             // 
@@ -2503,6 +2573,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             // 
+            // repositoryItemComboBox1
+            // 
+            resources.ApplyResources(this.repositoryItemComboBox1, "repositoryItemComboBox1");
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("repositoryItemComboBox1.Buttons"))))});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // ribbonStatusBar
             // 
             resources.ApplyResources(this.ribbonStatusBar, "ribbonStatusBar");
@@ -2536,6 +2613,22 @@
             this.barSubItem30.Id = 200;
             this.barSubItem30.Name = "barSubItem30";
             // 
+            // barButtonItem142
+            // 
+            resources.ApplyResources(this.barButtonItem142, "barButtonItem142");
+            this.barButtonItem142.Id = 218;
+            this.barButtonItem142.LargeGlyph = global::ortoxela.Properties.Resources.community_users_48x48_32;
+            this.barButtonItem142.Name = "barButtonItem142";
+            this.barButtonItem142.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem142_ItemClick);
+            // 
+            // barButtonItem143
+            // 
+            resources.ApplyResources(this.barButtonItem143, "barButtonItem143");
+            this.barButtonItem143.Id = 219;
+            this.barButtonItem143.LargeGlyph = global::ortoxela.Properties.Resources.archivo_icono_4678_48;
+            this.barButtonItem143.Name = "barButtonItem143";
+            this.barButtonItem143.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem143_ItemClick);
+            // 
             // Principal
             // 
             resources.ApplyResources(this, "$this");
@@ -2554,13 +2647,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerDatos)).EndInit();
             this.splitContainerDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(textAnnotation1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(textAnnotation3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
@@ -2568,6 +2661,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
@@ -2809,5 +2903,14 @@
         private DevExpress.XtraBars.BarSubItem barSubItem30;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
         private DevExpress.XtraBars.BarButtonItem barButtonItem137;
+        private DevExpress.XtraBars.BarSubItem barSubItem31;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem138;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem139;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem140;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem141;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup29;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem142;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem143;
     }
 }

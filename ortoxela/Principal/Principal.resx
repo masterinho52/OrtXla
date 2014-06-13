@@ -207,16 +207,16 @@
   <data name="chartControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="textAnnotation1.Name" xml:space="preserve">
+  <data name="textAnnotation3.Name" xml:space="preserve">
     <value>Anotación de Texto 1</value>
   </data>
   <data name="chartControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 24</value>
   </data>
-  <data name="series1.Name" xml:space="preserve">
+  <data name="series5.Name" xml:space="preserve">
     <value>Series 1</value>
   </data>
-  <data name="series2.Name" xml:space="preserve">
+  <data name="series6.Name" xml:space="preserve">
     <value>Series 2</value>
   </data>
   <data name="chartControl1.Size" type="System.Drawing.Size, System.Drawing">
@@ -225,7 +225,7 @@
   <data name="chartControl1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="chartTitle1.Text" xml:space="preserve">
+  <data name="chartTitle3.Text" xml:space="preserve">
     <value>GRAFICA DE PRUEBA</value>
   </data>
   <data name="&gt;&gt;chartControl1.Name" xml:space="preserve">
@@ -244,7 +244,7 @@
     <value>Panel2</value>
   </data>
   <data name="splitContainerDatos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1286, 511</value>
+    <value>1290, 513</value>
   </data>
   <data name="splitContainerDatos.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -266,6 +266,15 @@
   </data>
   <data name="COBRANZA.Color" type="System.Drawing.Color, System.Drawing">
     <value>Blue</value>
+  </data>
+  <data name="COBRANZA.Text" xml:space="preserve">
+    <value>COBRANZA</value>
+  </data>
+  <data name="ribbonPage5.Text" xml:space="preserve">
+    <value>ADMINISTRACION</value>
+  </data>
+  <data name="ribbonPageGroup2.Text" xml:space="preserve">
+    <value>CLIENTES</value>
   </data>
   <data name="barSubItem1.Caption" xml:space="preserve">
     <value>CLIENTES</value>
@@ -291,8 +300,20 @@
   <data name="barButtonItem18.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
   </data>
-  <data name="ribbonPageGroup2.Text" xml:space="preserve">
-    <value>CLIENTES</value>
+  <data name="barSubItem31.Caption" xml:space="preserve">
+    <value>SOCIO COMERCIAL</value>
+  </data>
+  <data name="barButtonItem138.Caption" xml:space="preserve">
+    <value>NUEVO</value>
+  </data>
+  <data name="barButtonItem139.Caption" xml:space="preserve">
+    <value>MODIFICAR</value>
+  </data>
+  <data name="barButtonItem140.Caption" xml:space="preserve">
+    <value>ELIMINAR</value>
+  </data>
+  <data name="ribbonPageGroup13.Text" xml:space="preserve">
+    <value>ADMIN</value>
   </data>
   <data name="barSubItem10.Caption" xml:space="preserve">
     <value>TIPO DOCUMENTO</value>
@@ -318,11 +339,11 @@
   <data name="barButtonItem92.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
   </data>
-  <data name="ribbonPageGroup13.Text" xml:space="preserve">
-    <value>ADMIN</value>
+  <data name="ribbonPage6.Text" xml:space="preserve">
+    <value>ABONOS/PAGOS</value>
   </data>
-  <data name="ribbonPage5.Text" xml:space="preserve">
-    <value>ADMINISTRACION</value>
+  <data name="ribbonPageGroup14.Text" xml:space="preserve">
+    <value>GESTION DE ABONOS</value>
   </data>
   <data name="barButtonItem91.Caption" xml:space="preserve">
     <value>ABONAR</value>
@@ -330,17 +351,17 @@
   <data name="barButtonItem97.Caption" xml:space="preserve">
     <value>PAGO ADELANTADO</value>
   </data>
-  <data name="ribbonPageGroup14.Text" xml:space="preserve">
-    <value>GESTION DE ABONOS</value>
+  <data name="ribbonPageGroup17.Text" xml:space="preserve">
+    <value>RECIBOS</value>
   </data>
   <data name="barButtonItem98.Caption" xml:space="preserve">
     <value>CREAR RECIBO</value>
   </data>
-  <data name="ribbonPageGroup17.Text" xml:space="preserve">
-    <value>RECIBOS</value>
+  <data name="ribbonPage7.Text" xml:space="preserve">
+    <value>REPORTES</value>
   </data>
-  <data name="ribbonPage6.Text" xml:space="preserve">
-    <value>ABONOS/PAGOS</value>
+  <data name="ribbonPageGroup19.Text" xml:space="preserve">
+    <value>FACTURAS CREDITO</value>
   </data>
   <data name="barButtonItem103.Caption" xml:space="preserve">
     <value>ABONOS DE FACTURAS CREDITO</value>
@@ -350,15 +371,6 @@
   </data>
   <data name="barButtonItem128.Caption" xml:space="preserve">
     <value>FACTURAS CREDITO CANCELADAS</value>
-  </data>
-  <data name="ribbonPageGroup19.Text" xml:space="preserve">
-    <value>FACTURAS CREDITO</value>
-  </data>
-  <data name="ribbonPage7.Text" xml:space="preserve">
-    <value>REPORTES</value>
-  </data>
-  <data name="COBRANZA.Text" xml:space="preserve">
-    <value>COBRANZA</value>
   </data>
   <data name="barButtonItem112.Caption" xml:space="preserve">
     <value>ABONAR A PROVEEDOR</value>
@@ -417,15 +429,6 @@
   <data name="barSubItem3.Caption" xml:space="preserve">
     <value>TIPO PROVEEDOR</value>
   </data>
-  <data name="barButtonItem21.Caption" xml:space="preserve">
-    <value>NUEVO</value>
-  </data>
-  <data name="barButtonItem22.Caption" xml:space="preserve">
-    <value>MODIFICAR</value>
-  </data>
-  <data name="barButtonItem23.Caption" xml:space="preserve">
-    <value>ELIMINAR</value>
-  </data>
   <data name="barSubItem4.Caption" xml:space="preserve">
     <value>PROVEEDOR</value>
   </data>
@@ -433,6 +436,15 @@
     <value>MODIFICAR</value>
   </data>
   <data name="barButtonItem20.Caption" xml:space="preserve">
+    <value>ELIMINAR</value>
+  </data>
+  <data name="barButtonItem21.Caption" xml:space="preserve">
+    <value>NUEVO</value>
+  </data>
+  <data name="barButtonItem22.Caption" xml:space="preserve">
+    <value>MODIFICAR</value>
+  </data>
+  <data name="barButtonItem23.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
   </data>
   <data name="barSubItem5.Caption" xml:space="preserve">
@@ -474,14 +486,11 @@
   <data name="barButtonItem32.Caption" xml:space="preserve">
     <value>NUEVO</value>
   </data>
-  <data name="barButtonItem38.Caption" xml:space="preserve">
+  <data name="barButtonItem33.Caption" xml:space="preserve">
     <value>MODIFICAR</value>
   </data>
   <data name="barButtonItem34.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
-  </data>
-  <data name="barButtonItem33.Caption" xml:space="preserve">
-    <value>MODIFICAR</value>
   </data>
   <data name="barButtonItem35.Caption" xml:space="preserve">
     <value>NUEVO</value>
@@ -491,6 +500,9 @@
   </data>
   <data name="barButtonItem37.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
+  </data>
+  <data name="barButtonItem38.Caption" xml:space="preserve">
+    <value>MODIFICAR</value>
   </data>
   <data name="barSubItem11.Caption" xml:space="preserve">
     <value>DEPARTAMENTOS</value>
@@ -561,9 +573,6 @@
   <data name="barButtonItem55.Caption" xml:space="preserve">
     <value>MODIFICAR</value>
   </data>
-  <data name="barButtonItem77.Caption" xml:space="preserve">
-    <value>ELIMINAR</value>
-  </data>
   <data name="barSubItem17.Caption" xml:space="preserve">
     <value>SERIES</value>
   </data>
@@ -600,9 +609,6 @@
   <data name="barSubItem20.Caption" xml:space="preserve">
     <value>ROLES</value>
   </data>
-  <data name="barButtonItem71.Caption" xml:space="preserve">
-    <value>NUEVO</value>
-  </data>
   <data name="barButtonItem64.Caption" xml:space="preserve">
     <value>MODIFICAR</value>
   </data>
@@ -630,6 +636,9 @@
   <data name="barButtonItem70.Caption" xml:space="preserve">
     <value>PEDIDO</value>
   </data>
+  <data name="barButtonItem71.Caption" xml:space="preserve">
+    <value>NUEVO</value>
+  </data>
   <data name="barButtonItem72.Caption" xml:space="preserve">
     <value>PERMISOS</value>
   </data>
@@ -650,6 +659,9 @@
   </data>
   <data name="ribbonGalleryBarItem1.Caption" xml:space="preserve">
     <value>ribbonGalleryBarItem1</value>
+  </data>
+  <data name="barButtonItem77.Caption" xml:space="preserve">
+    <value>ELIMINAR</value>
   </data>
   <data name="barButtonItem78.Caption" xml:space="preserve">
     <value>COMPRAS</value>
@@ -774,6 +786,9 @@
   <data name="barSubItem28.Caption" xml:space="preserve">
     <value>TIPO CLIENTE CONTABILIDAD</value>
   </data>
+  <data name="barSubItem29.Caption" xml:space="preserve">
+    <value>TIPO PROVEEDOR CONTABILIDAD</value>
+  </data>
   <data name="barButtonItem129.Caption" xml:space="preserve">
     <value>NUEVO</value>
   </data>
@@ -782,9 +797,6 @@
   </data>
   <data name="barButtonItem131.Caption" xml:space="preserve">
     <value>ELIMINAR</value>
-  </data>
-  <data name="barSubItem29.Caption" xml:space="preserve">
-    <value>TIPO PROVEEDOR CONTABILIDAD</value>
   </data>
   <data name="barButtonItem132.Caption" xml:space="preserve">
     <value>NUEVO</value>
@@ -804,6 +816,15 @@
   <data name="barButtonItem137.Caption" xml:space="preserve">
     <value>Reportes de requisiciones y ajustes</value>
   </data>
+  <data name="barButtonItem141.Caption" xml:space="preserve">
+    <value>Reimpresiones de traslados</value>
+  </data>
+  <data name="barButtonItem142.Caption" xml:space="preserve">
+    <value>ASIGNAR BODEGAS A USUARIOS</value>
+  </data>
+  <data name="barButtonItem143.Caption" xml:space="preserve">
+    <value>ASIGNAR SERIES A BODEGAS</value>
+  </data>
   <data name="ribbon.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -813,50 +834,8 @@
   <data name="FACTURACION.Color" type="System.Drawing.Color, System.Drawing">
     <value>Coral</value>
   </data>
-  <data name="ribbonPageGroup6.Text" xml:space="preserve">
-    <value>ADMINISTRACION</value>
-  </data>
-  <data name="ribbonPageGroup8.Text" xml:space="preserve">
-    <value>TRASLADOS</value>
-  </data>
-  <data name="ribbonPage2.Text" xml:space="preserve">
-    <value>PRODUCTO</value>
-  </data>
-  <data name="ribbonPageGroup5.Text" xml:space="preserve">
-    <value>COMPRAS</value>
-  </data>
-  <data name="ribbonPageGroup12.Text" xml:space="preserve">
-    <value>INVENTARIOS</value>
-  </data>
-  <data name="ribbonPageGroup16.Text" xml:space="preserve">
-    <value>VENTAS</value>
-  </data>
-  <data name="ribbonPageGroup18.Text" xml:space="preserve">
-    <value>BUSCADOR</value>
-  </data>
-  <data name="ribbonPageGroup27.Text" xml:space="preserve">
-    <value>ADMIN</value>
-  </data>
-  <data name="ribbonPageGroup28.Text" xml:space="preserve">
-    <value>REQUISICIONES Y AJUSTES</value>
-  </data>
-  <data name="ribbonPage4.Text" xml:space="preserve">
-    <value>REPORTES</value>
-  </data>
   <data name="FACTURACION.Text" xml:space="preserve">
     <value>FACTURACION</value>
-  </data>
-  <data name="ribbonPageGroup7.Text" xml:space="preserve">
-    <value>BODEGAS</value>
-  </data>
-  <data name="ribbonPageGroup9.Text" xml:space="preserve">
-    <value>TIPOS</value>
-  </data>
-  <data name="ribbonPageGroup4.Text" xml:space="preserve">
-    <value>ESTADO</value>
-  </data>
-  <data name="ribbonPageGroup15.Text" xml:space="preserve">
-    <value>PERSONALIZAR</value>
   </data>
   <data name="ribbonPage1.Text" xml:space="preserve">
     <value>CATALOGOS</value>
@@ -879,53 +858,11 @@
   <data name="PROVEEDORES.Color" type="System.Drawing.Color, System.Drawing">
     <value>Gold</value>
   </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>PROVEEDORES</value>
-  </data>
-  <data name="ribbonPage12.Text" xml:space="preserve">
-    <value>ADMINISTRACION</value>
-  </data>
-  <data name="ribbonPageGroup24.Text" xml:space="preserve">
-    <value>GESTION DE PAGOS</value>
-  </data>
-  <data name="ribbonPage13.Text" xml:space="preserve">
-    <value>ABONOS/PAGOS</value>
-  </data>
-  <data name="ribbonPageGroup25.Text" xml:space="preserve">
-    <value>FACTURAS CREDITO</value>
-  </data>
-  <data name="ribbonPage14.Text" xml:space="preserve">
-    <value>REPORTES</value>
-  </data>
   <data name="PROVEEDORES.Text" xml:space="preserve">
     <value>PROVEEDORES</value>
   </data>
   <data name="CONTABILIDAD.Color" type="System.Drawing.Color, System.Drawing">
     <value>Green</value>
-  </data>
-  <data name="ribbonPageGroup21.Text" xml:space="preserve">
-    <value>CONDICIONES</value>
-  </data>
-  <data name="ribbonPageGroup22.Text" xml:space="preserve">
-    <value>PARTIDAS</value>
-  </data>
-  <data name="ribbonPageGroup26.Text" xml:space="preserve">
-    <value>TIPOS</value>
-  </data>
-  <data name="ribbonPage8.Text" xml:space="preserve">
-    <value>ADMINISTRACION</value>
-  </data>
-  <data name="ribbonPageGroup20.Text" xml:space="preserve">
-    <value>PARTIDA MANUAL</value>
-  </data>
-  <data name="ribbonPage9.Text" xml:space="preserve">
-    <value>CONTABILIDAD</value>
-  </data>
-  <data name="ribbonPageGroup23.Text" xml:space="preserve">
-    <value>REPORTE PARTIDAS</value>
-  </data>
-  <data name="ribbonPage10.Text" xml:space="preserve">
-    <value>REPORTES</value>
   </data>
   <data name="CONTABILIDAD.Text" xml:space="preserve">
     <value>CONTABILIDAD</value>
@@ -946,14 +883,20 @@
   <data name="repositoryItemButtonEdit2.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="repositoryItemComboBox1.AutoHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="repositoryItemComboBox1.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v12.1">
+    <value>Combo</value>
+  </data>
   <data name="ribbon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1286, 147</value>
+    <value>1290, 147</value>
   </data>
   <data name="ribbonStatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 658</value>
+    <value>0, 660</value>
   </data>
   <data name="ribbonStatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1286, 23</value>
+    <value>1290, 23</value>
   </data>
   <data name="&gt;&gt;ribbonStatusBar.Name" xml:space="preserve">
     <value>ribbonStatusBar</value>
@@ -979,6 +922,93 @@
   <data name="&gt;&gt;ribbon.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ribbonPage2.Text" xml:space="preserve">
+    <value>PRODUCTO</value>
+  </data>
+  <data name="ribbonPageGroup6.Text" xml:space="preserve">
+    <value>ADMINISTRACION</value>
+  </data>
+  <data name="ribbonPageGroup8.Text" xml:space="preserve">
+    <value>TRASLADOS</value>
+  </data>
+  <data name="ribbonPage4.Text" xml:space="preserve">
+    <value>REPORTES</value>
+  </data>
+  <data name="ribbonPageGroup5.Text" xml:space="preserve">
+    <value>COMPRAS</value>
+  </data>
+  <data name="ribbonPageGroup12.Text" xml:space="preserve">
+    <value>INVENTARIOS</value>
+  </data>
+  <data name="ribbonPageGroup16.Text" xml:space="preserve">
+    <value>VENTAS</value>
+  </data>
+  <data name="ribbonPageGroup18.Text" xml:space="preserve">
+    <value>BUSCADOR</value>
+  </data>
+  <data name="ribbonPageGroup27.Text" xml:space="preserve">
+    <value>ADMIN</value>
+  </data>
+  <data name="ribbonPageGroup28.Text" xml:space="preserve">
+    <value>REQUISICIONES Y AJUSTES</value>
+  </data>
+  <data name="ribbonPageGroup29.Text" xml:space="preserve">
+    <value>TRASLADOS DE BODEGA</value>
+  </data>
+  <data name="ribbonPageGroup7.Text" xml:space="preserve">
+    <value>BODEGAS</value>
+  </data>
+  <data name="ribbonPageGroup9.Text" xml:space="preserve">
+    <value>TIPOS</value>
+  </data>
+  <data name="ribbonPageGroup4.Text" xml:space="preserve">
+    <value>ESTADO</value>
+  </data>
+  <data name="ribbonPageGroup15.Text" xml:space="preserve">
+    <value>PERSONALIZAR</value>
+  </data>
+  <data name="ribbonPage12.Text" xml:space="preserve">
+    <value>ADMINISTRACION</value>
+  </data>
+  <data name="ribbonPageGroup3.Text" xml:space="preserve">
+    <value>PROVEEDORES</value>
+  </data>
+  <data name="ribbonPage13.Text" xml:space="preserve">
+    <value>ABONOS/PAGOS</value>
+  </data>
+  <data name="ribbonPageGroup24.Text" xml:space="preserve">
+    <value>GESTION DE PAGOS</value>
+  </data>
+  <data name="ribbonPage14.Text" xml:space="preserve">
+    <value>REPORTES</value>
+  </data>
+  <data name="ribbonPageGroup25.Text" xml:space="preserve">
+    <value>FACTURAS CREDITO</value>
+  </data>
+  <data name="ribbonPage8.Text" xml:space="preserve">
+    <value>ADMINISTRACION</value>
+  </data>
+  <data name="ribbonPageGroup21.Text" xml:space="preserve">
+    <value>CONDICIONES</value>
+  </data>
+  <data name="ribbonPageGroup22.Text" xml:space="preserve">
+    <value>PARTIDAS</value>
+  </data>
+  <data name="ribbonPageGroup26.Text" xml:space="preserve">
+    <value>TIPOS</value>
+  </data>
+  <data name="ribbonPage9.Text" xml:space="preserve">
+    <value>CONTABILIDAD</value>
+  </data>
+  <data name="ribbonPageGroup20.Text" xml:space="preserve">
+    <value>PARTIDA MANUAL</value>
+  </data>
+  <data name="ribbonPage10.Text" xml:space="preserve">
+    <value>REPORTES</value>
+  </data>
+  <data name="ribbonPageGroup23.Text" xml:space="preserve">
+    <value>REPORTE PARTIDAS</value>
+  </data>
   <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 17</value>
   </metadata>
@@ -992,7 +1022,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1286, 681</value>
+    <value>1290, 683</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1597,6 +1627,30 @@
     <value>barButtonItem18</value>
   </data>
   <data name="&gt;&gt;barButtonItem18.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barSubItem31.Name" xml:space="preserve">
+    <value>barSubItem31</value>
+  </data>
+  <data name="&gt;&gt;barSubItem31.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem138.Name" xml:space="preserve">
+    <value>barButtonItem138</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem138.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem139.Name" xml:space="preserve">
+    <value>barButtonItem139</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem139.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem140.Name" xml:space="preserve">
+    <value>barButtonItem140</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem140.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ribbonPageGroup13.Name" xml:space="preserve">
@@ -2607,10 +2661,10 @@
   <data name="&gt;&gt;barButtonItem137.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;barButtonItem137.Name" xml:space="preserve">
-    <value>barButtonItem137</value>
+  <data name="&gt;&gt;barButtonItem141.Name" xml:space="preserve">
+    <value>barButtonItem141</value>
   </data>
-  <data name="&gt;&gt;barButtonItem137.Type" xml:space="preserve">
+  <data name="&gt;&gt;barButtonItem141.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ribbonMiniToolbar1.Name" xml:space="preserve">
@@ -2683,6 +2737,12 @@
     <value>ribbonPageGroup28</value>
   </data>
   <data name="&gt;&gt;ribbonPageGroup28.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageGroup29.Name" xml:space="preserve">
+    <value>ribbonPageGroup29</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageGroup29.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ADMINISTRACION.Name" xml:space="preserve">
@@ -2865,6 +2925,12 @@
   <data name="&gt;&gt;repositoryItemButtonEdit2.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit, DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;repositoryItemComboBox1.Name" xml:space="preserve">
+    <value>repositoryItemComboBox1</value>
+  </data>
+  <data name="&gt;&gt;repositoryItemComboBox1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemComboBox, DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;xtraTabbedMdiManager1.Name" xml:space="preserve">
     <value>xtraTabbedMdiManager1</value>
   </data>
@@ -2894,6 +2960,18 @@
   </data>
   <data name="&gt;&gt;barSubItem30.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem142.Name" xml:space="preserve">
+    <value>barButtonItem142</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem142.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem143.Name" xml:space="preserve">
+    <value>barButtonItem143</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem143.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Principal</value>

@@ -9,12 +9,12 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_compras_detalle_proveedor_categoriaTableAdapter" GeneratorDataComponentClassName="v_compras_detalle_proveedor_categoriaTableAdapter" Name="v_compras_detalle_proveedor_categoria" UserDataComponentName="v_compras_detalle_proveedor_categoriaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="v_compras_detalle_proveedor_categoria" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetData">
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_compras_detalle_proveedor_categoria" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        codigo_articulo, Articulo, cantidad_enviada, precio_sin_iva, precio_iva, precio_unidades_sin_iva, precio_unidades_iva, codigo_bodega, nombre_bodega, 
                          fecha_compra, Tipo_Pago, nombre_proveedor, no_documento, descuentoPct, DescuentoQ, total_iva, Total_sin_iva, refer_documento, documento, costo_iva, 
-                         costo_sin_iva, forma_pago, codigo_subcat, nombre_subcategoria
+                         costo_sin_iva, forma_pago, codigo_subcat, nombre_subcategoria, codigo_serie
 FROM            v_compras_detalle_proveedor_categoria</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -46,6 +46,7 @@ FROM            v_compras_detalle_proveedor_categoria</CommandText>
               <Mapping SourceColumn="forma_pago" DataSetColumn="forma_pago" />
               <Mapping SourceColumn="codigo_subcat" DataSetColumn="codigo_subcat" />
               <Mapping SourceColumn="nombre_subcategoria" DataSetColumn="nombre_subcategoria" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -57,7 +58,7 @@ FROM            v_compras_detalle_proveedor_categoria</CommandText>
   <xs:element name="DataSet_v_compras_detalle_proveedor_categoria" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_v_compras_detalle_proveedor_categoria" msprop:Generator_UserDSName="DataSet_v_compras_detalle_proveedor_categoria">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_compras_detalle_proveedor_categoria" msprop:Generator_TableClassName="v_compras_detalle_proveedor_categoriaDataTable" msprop:Generator_TableVarName="tablev_compras_detalle_proveedor_categoria" msprop:Generator_TablePropName="v_compras_detalle_proveedor_categoria" msprop:Generator_RowDeletingName="v_compras_detalle_proveedor_categoriaRowDeleting" msprop:Generator_RowChangingName="v_compras_detalle_proveedor_categoriaRowChanging" msprop:Generator_RowEvHandlerName="v_compras_detalle_proveedor_categoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="v_compras_detalle_proveedor_categoriaRowDeleted" msprop:Generator_UserTableName="v_compras_detalle_proveedor_categoria" msprop:Generator_RowChangedName="v_compras_detalle_proveedor_categoriaRowChanged" msprop:Generator_RowEvArgName="v_compras_detalle_proveedor_categoriaRowChangeEvent" msprop:Generator_RowClassName="v_compras_detalle_proveedor_categoriaRow">
+        <xs:element name="v_compras_detalle_proveedor_categoria" msprop:Generator_TableClassName="v_compras_detalle_proveedor_categoriaDataTable" msprop:Generator_TableVarName="tablev_compras_detalle_proveedor_categoria" msprop:Generator_RowChangedName="v_compras_detalle_proveedor_categoriaRowChanged" msprop:Generator_TablePropName="v_compras_detalle_proveedor_categoria" msprop:Generator_RowDeletingName="v_compras_detalle_proveedor_categoriaRowDeleting" msprop:Generator_RowChangingName="v_compras_detalle_proveedor_categoriaRowChanging" msprop:Generator_RowEvHandlerName="v_compras_detalle_proveedor_categoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="v_compras_detalle_proveedor_categoriaRowDeleted" msprop:Generator_RowClassName="v_compras_detalle_proveedor_categoriaRow" msprop:Generator_UserTableName="v_compras_detalle_proveedor_categoria" msprop:Generator_RowEvArgName="v_compras_detalle_proveedor_categoriaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
@@ -138,6 +139,7 @@ FROM            v_compras_detalle_proveedor_categoria</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

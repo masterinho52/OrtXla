@@ -9,18 +9,11 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_comprasTableAdapter" GeneratorDataComponentClassName="v_comprasTableAdapter" Name="v_compras" UserDataComponentName="v_comprasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.v_compras" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        d.codigo_articulo, a.descripcion AS Articulo, d.cantidad_enviada, d.precio_unitario / 1.12 AS costo_sin_iva, d.precio_unitario AS costo_iva, b.nombre_bodega, 
-                         h.fecha AS fecha_compra, h.contado_credito AS Tipo_Pago, p.nombre_proveedor, p.dias_credito, h.no_documento, h.descuento / h.monto_neto AS descuentoPct, 
-                         h.descuento AS DescuentoQ, h.monto_neto AS total_iva, h.monto_neto / 1.12 AS Total_sin_iva, h.refer_documento
-FROM            header_doctos_inv h INNER JOIN
-                         detalle_doctos_inv d ON h.id_documento = d.id_documento INNER JOIN
-                         proveedores p ON h.codigo_proveedor = p.codigo_proveedor INNER JOIN
-                         articulos a ON d.codigo_articulo = a.codigo_articulo INNER JOIN
-                         bodegas_header b ON d.codigo_bodega = b.codigo_bodega
-WHERE        (h.codigo_serie = 7)</CommandText>
+                    <CommandText>SELECT        v_compras.*
+FROM            v_compras</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -43,6 +36,8 @@ WHERE        (h.codigo_serie = 7)</CommandText>
               <Mapping SourceColumn="total_iva" DataSetColumn="total_iva" />
               <Mapping SourceColumn="Total_sin_iva" DataSetColumn="Total_sin_iva" />
               <Mapping SourceColumn="refer_documento" DataSetColumn="refer_documento" />
+              <Mapping SourceColumn="codigo_bodega" DataSetColumn="codigo_bodega" />
+              <Mapping SourceColumn="codigo_serie" DataSetColumn="codigo_serie" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -54,7 +49,7 @@ WHERE        (h.codigo_serie = 7)</CommandText>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_compras" msprop:Generator_TableClassName="v_comprasDataTable" msprop:Generator_TableVarName="tablev_compras" msprop:Generator_TablePropName="v_compras" msprop:Generator_RowDeletingName="v_comprasRowDeleting" msprop:Generator_UserTableName="v_compras" msprop:Generator_RowChangingName="v_comprasRowChanging" msprop:Generator_RowEvHandlerName="v_comprasRowChangeEventHandler" msprop:Generator_RowDeletedName="v_comprasRowDeleted" msprop:Generator_RowEvArgName="v_comprasRowChangeEvent" msprop:Generator_RowChangedName="v_comprasRowChanged" msprop:Generator_RowClassName="v_comprasRow">
+        <xs:element name="v_compras" msprop:Generator_TableClassName="v_comprasDataTable" msprop:Generator_TableVarName="tablev_compras" msprop:Generator_TablePropName="v_compras" msprop:Generator_RowDeletingName="v_comprasRowDeleting" msprop:Generator_RowChangingName="v_comprasRowChanging" msprop:Generator_RowEvHandlerName="v_comprasRowChangeEventHandler" msprop:Generator_RowDeletedName="v_comprasRowDeleted" msprop:Generator_UserTableName="v_compras" msprop:Generator_RowChangedName="v_comprasRowChanged" msprop:Generator_RowEvArgName="v_comprasRowChangeEvent" msprop:Generator_RowClassName="v_comprasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codigo_articulo" msprop:Generator_ColumnVarNameInTable="columncodigo_articulo" msprop:Generator_ColumnPropNameInRow="codigo_articulo" msprop:Generator_ColumnPropNameInTable="codigo_articuloColumn" msprop:Generator_UserColumnName="codigo_articulo" minOccurs="0">
@@ -82,7 +77,13 @@ WHERE        (h.codigo_serie = 7)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="fecha_compra" msprop:Generator_ColumnVarNameInTable="columnfecha_compra" msprop:Generator_ColumnPropNameInRow="fecha_compra" msprop:Generator_ColumnPropNameInTable="fecha_compraColumn" msprop:Generator_UserColumnName="fecha_compra" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Tipo_Pago" msprop:Generator_ColumnVarNameInTable="columnTipo_Pago" msprop:Generator_ColumnPropNameInRow="Tipo_Pago" msprop:Generator_ColumnPropNameInTable="Tipo_PagoColumn" msprop:Generator_UserColumnName="Tipo_Pago" type="xs:unsignedLong" minOccurs="0" />
+              <xs:element name="Tipo_Pago" msprop:Generator_ColumnVarNameInTable="columnTipo_Pago" msprop:Generator_ColumnPropNameInRow="Tipo_Pago" msprop:Generator_ColumnPropNameInTable="Tipo_PagoColumn" msprop:Generator_UserColumnName="Tipo_Pago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="nombre_proveedor" msprop:Generator_ColumnVarNameInTable="columnnombre_proveedor" msprop:Generator_ColumnPropNameInRow="nombre_proveedor" msprop:Generator_ColumnPropNameInTable="nombre_proveedorColumn" msprop:Generator_UserColumnName="nombre_proveedor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -91,13 +92,7 @@ WHERE        (h.codigo_serie = 7)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="dias_credito" msprop:Generator_ColumnVarNameInTable="columndias_credito" msprop:Generator_ColumnPropNameInRow="dias_credito" msprop:Generator_ColumnPropNameInTable="dias_creditoColumn" msprop:Generator_UserColumnName="dias_credito" type="xs:int" minOccurs="0" />
-              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="65535" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
               <xs:element name="descuentoPct" msprop:Generator_ColumnVarNameInTable="columndescuentoPct" msprop:Generator_ColumnPropNameInRow="descuentoPct" msprop:Generator_ColumnPropNameInTable="descuentoPctColumn" msprop:Generator_UserColumnName="descuentoPct" type="xs:decimal" minOccurs="0" />
               <xs:element name="DescuentoQ" msprop:Generator_ColumnVarNameInTable="columnDescuentoQ" msprop:Generator_ColumnPropNameInRow="DescuentoQ" msprop:Generator_ColumnPropNameInTable="DescuentoQColumn" msprop:Generator_UserColumnName="DescuentoQ" type="xs:decimal" />
               <xs:element name="total_iva" msprop:Generator_ColumnVarNameInTable="columntotal_iva" msprop:Generator_ColumnPropNameInRow="total_iva" msprop:Generator_ColumnPropNameInTable="total_ivaColumn" msprop:Generator_UserColumnName="total_iva" type="xs:decimal" />
@@ -109,6 +104,8 @@ WHERE        (h.codigo_serie = 7)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="codigo_bodega" msprop:Generator_ColumnVarNameInTable="columncodigo_bodega" msprop:Generator_ColumnPropNameInRow="codigo_bodega" msprop:Generator_ColumnPropNameInTable="codigo_bodegaColumn" msprop:Generator_UserColumnName="codigo_bodega" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="codigo_serie" msprop:Generator_ColumnVarNameInTable="columncodigo_serie" msprop:Generator_ColumnPropNameInRow="codigo_serie" msprop:Generator_ColumnPropNameInTable="codigo_serieColumn" msprop:Generator_UserColumnName="codigo_serie" type="xs:unsignedInt" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

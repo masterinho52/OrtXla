@@ -5,8 +5,6 @@
 //
 //     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
 //     se vuelve a generar el código.
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -40,8 +38,8 @@ namespace ortoxela.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;User Id=root; Password=Pntufl4.; Allow User Variables=True; Pers" +
-            "ist Security Info=True;database=ortoxela;connectiontimeout = 240000;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=ortoxela.com.gt;User Id=ortoxela; Password=ortox3l4; Persist Security Info" +
+            "=True;database=ortoxela;connectiontimeout = 240000;")]
         public string ortoxelaConnectionString {
             get {
                 return ((string)(this["ortoxelaConnectionString"]));

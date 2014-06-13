@@ -35,7 +35,9 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.label_numerotraslado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textEdit_nodoc = new DevExpress.XtraEditors.TextEdit();
+            this.label_nodoc2 = new System.Windows.Forms.Label();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.textNoDocumento = new DevExpress.XtraEditors.TextEdit();
@@ -69,6 +71,7 @@
             this.dxValidationProvider3 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_nodoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNoDocumento.Properties)).BeginInit();
@@ -94,7 +97,9 @@
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl1.Controls.Add(this.label_numerotraslado);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.textEdit_nodoc);
+            this.groupControl1.Controls.Add(this.label_nodoc2);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.dateEdit1);
             this.groupControl1.Controls.Add(this.textNoDocumento);
@@ -115,20 +120,42 @@
             this.groupControl1.Text = "Encabezado";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // label_numerotraslado
+            // label1
             // 
-            this.label_numerotraslado.AutoSize = true;
-            this.label_numerotraslado.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_numerotraslado.Location = new System.Drawing.Point(1062, 101);
-            this.label_numerotraslado.Name = "label_numerotraslado";
-            this.label_numerotraslado.Size = new System.Drawing.Size(55, 19);
-            this.label_numerotraslado.TabIndex = 38;
-            this.label_numerotraslado.Text = "label1";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(930, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 19);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "No.";
+            // 
+            // textEdit_nodoc
+            // 
+            this.textEdit_nodoc.Location = new System.Drawing.Point(979, 46);
+            this.textEdit_nodoc.Name = "textEdit_nodoc";
+            this.textEdit_nodoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit_nodoc.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.textEdit_nodoc.Properties.Appearance.Options.UseFont = true;
+            this.textEdit_nodoc.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit_nodoc.Properties.ReadOnly = true;
+            this.textEdit_nodoc.Size = new System.Drawing.Size(100, 22);
+            this.textEdit_nodoc.TabIndex = 41;
+            // 
+            // label_nodoc2
+            // 
+            this.label_nodoc2.AutoSize = true;
+            this.label_nodoc2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nodoc2.Location = new System.Drawing.Point(870, 23);
+            this.label_nodoc2.Name = "label_nodoc2";
+            this.label_nodoc2.Size = new System.Drawing.Size(55, 19);
+            this.label_nodoc2.TabIndex = 40;
+            this.label_nodoc2.Text = "label1";
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Location = new System.Drawing.Point(452, 102);
+            this.labelControl9.Location = new System.Drawing.Point(452, 24);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(41, 20);
             this.labelControl9.TabIndex = 37;
@@ -137,7 +164,7 @@
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(499, 102);
+            this.dateEdit1.Location = new System.Drawing.Point(499, 24);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -148,6 +175,7 @@
             // 
             // textNoDocumento
             // 
+            this.textNoDocumento.EditValue = " ";
             this.textNoDocumento.Location = new System.Drawing.Point(178, 96);
             this.textNoDocumento.Name = "textNoDocumento";
             this.textNoDocumento.Size = new System.Drawing.Size(175, 20);
@@ -159,11 +187,11 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(50, 94);
+            this.labelControl1.Location = new System.Drawing.Point(104, 94);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(123, 20);
+            this.labelControl1.Size = new System.Drawing.Size(68, 20);
             this.labelControl1.TabIndex = 35;
-            this.labelControl1.Text = "Numero Documento:";
+            this.labelControl1.Text = "Referencia:";
             // 
             // simpleButton2
             // 
@@ -178,7 +206,7 @@
             // 
             this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.Location = new System.Drawing.Point(450, 45);
+            this.memoEdit1.Location = new System.Drawing.Point(450, 68);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Size = new System.Drawing.Size(457, 53);
             this.memoEdit1.TabIndex = 5;
@@ -186,7 +214,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(450, 26);
+            this.labelControl5.Location = new System.Drawing.Point(450, 49);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(71, 20);
             this.labelControl5.TabIndex = 11;
@@ -200,6 +228,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookBodegaDestino.Size = new System.Drawing.Size(174, 20);
             this.gridLookBodegaDestino.TabIndex = 1;
+            this.gridLookBodegaDestino.EditValueChanged += new System.EventHandler(this.gridLookBodegaDestino_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -267,10 +296,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(4, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1126, 286);
+            this.gridControl1.Size = new System.Drawing.Size(1122, 285);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -439,6 +468,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_nodoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNoDocumento.Properties)).EndInit();
@@ -497,6 +527,8 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider3;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private System.Windows.Forms.Label label_numerotraslado;
+        private System.Windows.Forms.Label label_nodoc2;
+        private DevExpress.XtraEditors.TextEdit textEdit_nodoc;
+        private System.Windows.Forms.Label label1;
     }
 }

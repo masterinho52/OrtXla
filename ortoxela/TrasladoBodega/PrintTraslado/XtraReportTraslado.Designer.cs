@@ -64,10 +64,12 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.detalleTableAdapter1 = new ortoxela.TrasladoBodega.PrintTraslado.DataSetTrasladoTableAdapters.detalleTableAdapter();
+            this.dataSetTraslado2 = new ortoxela.TrasladoBodega.PrintTraslado.DataSetTraslado();
             this.ID = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTraslado1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTraslado2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -106,7 +108,7 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             // xrLabel11
             // 
             this.xrLabel11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Encabezado.no_doc_traslado")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Encabezado.no_documento")});
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(141.6667F, 85.00001F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -348,7 +350,7 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             this.Detail1});
             this.DetailReport.DataAdapter = this.detalleTableAdapter1;
             this.DetailReport.DataMember = "Encabezado.Encabezado_detalle";
-            this.DetailReport.DataSource = this.dataSetTraslado1;
+            this.DetailReport.DataSource = this.dataSetTraslado2;
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
             // 
@@ -412,6 +414,11 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             // 
             this.detalleTableAdapter1.ClearBeforeFill = true;
             // 
+            // dataSetTraslado2
+            // 
+            this.dataSetTraslado2.DataSetName = "DataSetTraslado";
+            this.dataSetTraslado2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ID
             // 
             this.ID.Name = "ID";
@@ -427,7 +434,7 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             this.DetailReport});
             this.DataAdapter = this.encabezadoTableAdapter;
             this.DataMember = "Encabezado";
-            this.DataSource = this.dataSetTraslado1;
+            this.DataSource = this.dataSetTraslado2;
             this.FilterString = "[no_traslado_bodega] = ?ID";
             this.Margins = new System.Drawing.Printing.Margins(44, 54, 64, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
@@ -436,6 +443,7 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTraslado1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTraslado2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -478,5 +486,6 @@ namespace ortoxela.TrasladoBodega.PrintTraslado
         private DevExpress.XtraReports.Parameters.Parameter ID;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;
+        private DataSetTraslado dataSetTraslado2;
     }
 }

@@ -14,7 +14,7 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        bodegas_header.nombre_bodega AS ORIGEN, bodegas_header_1.nombre_bodega, CONCAT(tipos_documento.nombre_documento, '-', 
                          series_documentos.serie_documento) AS TIPODOCS, traslado_bodega_header.descripcion, traslado_bodega_header.fecha_creacion, 
-                         traslado_bodega_header.no_doc_traslado, traslado_bodega_header.no_traslado_bodega
+                         traslado_bodega_header.no_doc_traslado, traslado_bodega_header.no_traslado_bodega,traslado_bodega_header.no_documento
 FROM            traslado_bodega_header INNER JOIN
                          bodegas_header ON traslado_bodega_header.bodega_origen = bodegas_header.codigo_bodega INNER JOIN
                          bodegas_header bodegas_header_1 ON traslado_bodega_header.bodega_destino = bodegas_header_1.codigo_bodega INNER JOIN
@@ -32,7 +32,7 @@ FROM            traslado_bodega_header INNER JOIN
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
               <Mapping SourceColumn="no_doc_traslado" DataSetColumn="no_doc_traslado" />
               <Mapping SourceColumn="fecha_creacion" DataSetColumn="fecha_creacion" />
-              <Mapping SourceColumn="no_traslado_bodega" DataSetColumn="no_traslado_bodega" />
+              <Mapping SourceColumn="no_documento" DataSetColumn="no_documento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -107,6 +107,7 @@ FROM            traslado_bodega_detail INNER JOIN
               </xs:element>
               <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
               <xs:element name="no_traslado_bodega" msprop:Generator_ColumnVarNameInTable="columnno_traslado_bodega" msprop:Generator_ColumnPropNameInRow="no_traslado_bodega" msprop:Generator_ColumnPropNameInTable="no_traslado_bodegaColumn" msprop:Generator_UserColumnName="no_traslado_bodega" type="xs:int" />
+              <xs:element name="no_documento" msprop:Generator_ColumnVarNameInTable="columnno_documento" msprop:Generator_ColumnPropNameInRow="no_documento" msprop:Generator_ColumnPropNameInTable="no_documentoColumn" msprop:Generator_UserColumnName="no_documento" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -135,7 +136,7 @@ FROM            traslado_bodega_detail INNER JOIN
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint1">
       <xs:selector xpath=".//mstns:Encabezado" />
       <xs:field xpath="mstns:no_traslado_bodega" />
     </xs:unique>

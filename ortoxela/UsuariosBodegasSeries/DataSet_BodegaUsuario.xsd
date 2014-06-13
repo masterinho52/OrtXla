@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_BodegaUsuario" targetNamespace="http://tempuri.org/DataSet_BodegaUsuario.xsd" xmlns:mstns="http://tempuri.org/DataSet_BodegaUsuario.xsd" xmlns="http://tempuri.org/DataSet_BodegaUsuario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="Querys" GeneratorFunctionsComponentClassName="Querys" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="Querys" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ortoxelaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ortoxelaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ortoxela.Properties.Settings.GlobalReference.Default.ortoxelaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListabodegasTableAdapter" GeneratorDataComponentClassName="ListabodegasTableAdapter" Name="Lista_bodegas" UserDataComponentName="ListabodegasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.bodegas_header" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_ListaBodegasActivas" GetMethodModifier="Public" GetMethodName="GetData_ListaBodegasActivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_ListaBodegasActivas" UserSourceName="GetData_ListaBodegasActivas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT codigo_bodega,nombre_bodega,direccion FROM bodegas_header WHERE estadoid=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codigo_bodega" DataSetColumn="codigo_bodega" />
+              <Mapping SourceColumn="nombre_bodega" DataSetColumn="nombre_bodega" />
+              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Lista_usuariosTableAdapter" GeneratorDataComponentClassName="Lista_usuariosTableAdapter" Name="Lista_usuarios" UserDataComponentName="Lista_usuariosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.usuarios" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_ListaUsuariosActivos" GetMethodModifier="Public" GetMethodName="GetData_ListaUsuariosActivos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_ListaUsuariosActivos" UserSourceName="GetData_ListaUsuariosActivos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT userid,nombre,apellido,username 
+FROM usuarios
+WHERE estadoid=1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="userid" DataSetColumn="userid" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Bodega_de_UsuarioTableAdapter" GeneratorDataComponentClassName="Bodega_de_UsuarioTableAdapter" Name="Bodega_de_Usuario" UserDataComponentName="Bodega_de_UsuarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="ortoxela.usuarios_bodegas" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData_bodegasdeusuario" GetMethodModifier="Public" GetMethodName="GetData_bodegasdeusuario" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_bodegasdeusuario" UserSourceName="GetData_bodegasdeusuario">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT userid,codigo_bodega,activo FROM usuarios_bodegas WHERE userid=@nu</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="nu" ColumnName="userid" DataSourceName="ortoxela.usuarios_bodegas" DataTypeServer="int(10) unsigned" DbType="Int32" Direction="Input" ParameterName="@nu" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="userid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="userid" DataSetColumn="userid" />
+              <Mapping SourceColumn="codigo_bodega" DataSetColumn="codigo_bodega" />
+              <Mapping SourceColumn="activo" DataSetColumn="activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources>
+          <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarBodegasdeunUsuario" MethodsParameterType="CLR" Modifier="Public" Name="EliminarBodegasdeunUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="EliminarBodegasdeunUsuario">
+            <DeleteCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>DELETE FROM usuarios_bodegas WHERE userid=@n_us</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="n_us" ColumnName="userid" DataSourceName="ortoxela.usuarios_bodegas" DataTypeServer="int(10) unsigned" DbType="Int32" Direction="Input" ParameterName="@n_us" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="userid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                </Parameters>
+              </DbCommand>
+            </DeleteCommand>
+          </DbSource>
+          <DbSource ConnectionRef="ortoxelaConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="guardarbodegasdeusuario" MethodsParameterType="CLR" Modifier="Public" Name="guardarbodegasdeusuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="guardarbodegasdeusuario">
+            <InsertCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>INSERT INTO usuarios_bodegas(userid,codigo_bodega,activo,fecha_creacion,usuario_creador)
+VALUES(
+@idus,
+@idbo,
+1,
+CURRENT_TIMESTAMP(),
+@uscrea
+)</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idus" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idbo" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@uscrea" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </InsertCommand>
+          </DbSource>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_BodegaUsuario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_BodegaUsuario" msprop:Generator_UserDSName="DataSet_BodegaUsuario">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Lista_bodegas" msprop:Generator_TableClassName="Lista_bodegasDataTable" msprop:Generator_TableVarName="tableLista_bodegas" msprop:Generator_RowChangedName="Lista_bodegasRowChanged" msprop:Generator_TablePropName="Lista_bodegas" msprop:Generator_RowDeletingName="Lista_bodegasRowDeleting" msprop:Generator_RowChangingName="Lista_bodegasRowChanging" msprop:Generator_RowEvHandlerName="Lista_bodegasRowChangeEventHandler" msprop:Generator_RowDeletedName="Lista_bodegasRowDeleted" msprop:Generator_RowClassName="Lista_bodegasRow" msprop:Generator_UserTableName="Lista_bodegas" msprop:Generator_RowEvArgName="Lista_bodegasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_bodega" msprop:Generator_ColumnVarNameInTable="columncodigo_bodega" msprop:Generator_ColumnPropNameInRow="codigo_bodega" msprop:Generator_ColumnPropNameInTable="codigo_bodegaColumn" msprop:Generator_UserColumnName="codigo_bodega" type="xs:unsignedInt" />
+              <xs:element name="nombre_bodega" msprop:Generator_ColumnVarNameInTable="columnnombre_bodega" msprop:Generator_ColumnPropNameInRow="nombre_bodega" msprop:Generator_ColumnPropNameInTable="nombre_bodegaColumn" msprop:Generator_UserColumnName="nombre_bodega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Lista_usuarios" msprop:Generator_TableClassName="Lista_usuariosDataTable" msprop:Generator_TableVarName="tableLista_usuarios" msprop:Generator_TablePropName="Lista_usuarios" msprop:Generator_RowDeletingName="Lista_usuariosRowDeleting" msprop:Generator_RowChangingName="Lista_usuariosRowChanging" msprop:Generator_RowEvHandlerName="Lista_usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="Lista_usuariosRowDeleted" msprop:Generator_UserTableName="Lista_usuarios" msprop:Generator_RowChangedName="Lista_usuariosRowChanged" msprop:Generator_RowEvArgName="Lista_usuariosRowChangeEvent" msprop:Generator_RowClassName="Lista_usuariosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userid" msprop:Generator_ColumnVarNameInTable="columnuserid" msprop:Generator_ColumnPropNameInRow="userid" msprop:Generator_ColumnPropNameInTable="useridColumn" msprop:Generator_UserColumnName="userid" type="xs:unsignedInt" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bodega_de_Usuario" msprop:Generator_TableClassName="Bodega_de_UsuarioDataTable" msprop:Generator_TableVarName="tableBodega_de_Usuario" msprop:Generator_RowChangedName="Bodega_de_UsuarioRowChanged" msprop:Generator_TablePropName="Bodega_de_Usuario" msprop:Generator_RowDeletingName="Bodega_de_UsuarioRowDeleting" msprop:Generator_RowChangingName="Bodega_de_UsuarioRowChanging" msprop:Generator_RowEvHandlerName="Bodega_de_UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Bodega_de_UsuarioRowDeleted" msprop:Generator_RowClassName="Bodega_de_UsuarioRow" msprop:Generator_UserTableName="Bodega_de_Usuario" msprop:Generator_RowEvArgName="Bodega_de_UsuarioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userid" msprop:Generator_ColumnVarNameInTable="columnuserid" msprop:Generator_ColumnPropNameInRow="userid" msprop:Generator_ColumnPropNameInTable="useridColumn" msprop:Generator_UserColumnName="userid" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="codigo_bodega" msprop:Generator_ColumnVarNameInTable="columncodigo_bodega" msprop:Generator_ColumnPropNameInRow="codigo_bodega" msprop:Generator_ColumnPropNameInTable="codigo_bodegaColumn" msprop:Generator_UserColumnName="codigo_bodega" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:byte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Lista_bodegas" />
+      <xs:field xpath="mstns:codigo_bodega" />
+    </xs:unique>
+    <xs:unique name="Lista_usuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Lista_usuarios" />
+      <xs:field xpath="mstns:userid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

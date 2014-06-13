@@ -15,6 +15,17 @@ namespace ortoxela.Clientes
         {
             InitializeComponent();
         }
+
+        public void sociocomercial()
+        {
+            
+            groupControl_abreviatura.Visible = true;
+            radioGroup1.Enabled=false;
+            radioGroup1.SelectedIndex=1;
+            this.Text = "Socio Comercial";
+        }
+
+
         string ssql;
         classortoxela logicaxela = new classortoxela();
 
@@ -43,7 +54,18 @@ namespace ortoxela.Clientes
             }
             else
             {
-                if (clases.ClassVariables.bandera == 2)
+                if ((clases.ClassVariables.bandera == 2)&&(clases.ClassVariables.sociocomercial==true))
+                {
+                    bandera = 2;
+
+                    simpleaceptar.Text = "Modificar";
+                    simpleaceptar.Image = Properties.Resources.database_process_24x24_32;
+                    simpleButton1.Text = "Buscar...";
+                    simpleButton1.Image = Properties.Resources._027_folder_search;
+                    busca_mod_eli2();
+                }
+
+                else if (clases.ClassVariables.bandera == 2)
                 {
                     bandera = 2;
 
@@ -55,7 +77,17 @@ namespace ortoxela.Clientes
                 }
                 else
                 {
-                    if (clases.ClassVariables.bandera == 3)
+                    if ((clases.ClassVariables.bandera == 3)&&(clases.ClassVariables.sociocomercial==true))
+                    {
+                        bandera = 3;
+                        simpleaceptar.Text = "Eliminar";
+                        simpleaceptar.Image = Properties.Resources.database_remove_24x24_32;
+                        simpleButton1.Text = "Buscar...";
+                        simpleButton1.Image = Properties.Resources._027_folder_search;
+                        busca_mod_eli2();
+
+                    }
+                    else if (clases.ClassVariables.bandera == 3)
                     {
                         bandera = 3;
                         simpleaceptar.Text = "Eliminar";
@@ -134,7 +166,7 @@ namespace ortoxela.Clientes
                 llenacombos();
                 groupControl1.Enabled = true;
                 simpleaceptar.Enabled = true;
-                ssql = "SELECT codigo_cliente, nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email,direccion,socio_comercial, afiliacion_igss, estadoid, codigo_tipoc, tipo_cliente_conta " +  
+                ssql = "SELECT codigo_cliente, nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email,direccion,socio_comercial, afiliacion_igss, estadoid, codigo_tipoc, tipo_cliente_conta,abrev,afiliacion_igss " +  
                     "FROM clientes where codigo_cliente=" + clases.ClassVariables.id_busca ;
                 DataTable dt = new DataTable();
                 dt = logicaxela.Tabla(ssql);
@@ -159,6 +191,8 @@ namespace ortoxela.Clientes
                         gridLookUpEstado.EditValue = fila[12].ToString();
                         gridLookUpTipoClie.EditValue = fila[13].ToString();
                         gridLookUpTipoClienteConta.EditValue = fila[14].ToString();
+                        textEdit_abrev.Text = fila[15].ToString();
+                        
                     }
                     catch
                     { }
@@ -170,10 +204,69 @@ namespace ortoxela.Clientes
                 simpleaceptar.Enabled = false;
             }
         }
+
+
+        //
+        private void busca_mod_eli2()
+        {
+            clases.ClassVariables.cadenabusca = "SELECT codigo_cliente as CODIGO, nombre_cliente AS CLIENTE, contacto AS CONTACTO, nombre_paciente AS PACIENTE, telefono_casa AS TELEFONO " +
+                                                "FROM clientes where estadoid<>2 and socio_comercial=true";
+            Form BUSCA = new Buscador.Buscador();
+            BUSCA.ShowDialog();
+            if (clases.ClassVariables.id_busca != "")
+            {
+                llenacombos();
+                groupControl1.Enabled = true;
+                simpleaceptar.Enabled = true;
+                ssql = "SELECT codigo_cliente, nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email,direccion,socio_comercial, afiliacion_igss, estadoid, codigo_tipoc, tipo_cliente_conta,abrev " +
+                    "FROM clientes where codigo_cliente=" + clases.ClassVariables.id_busca;
+                DataTable dt = new DataTable();
+                dt = logicaxela.Tabla(ssql);
+                foreach (DataRow fila in dt.Rows)
+                {
+                    try
+                    {
+                        textNombreClie.Text = fila[1].ToString();
+                        textContacto.Text = fila[2].ToString();
+                        textNombrePaciente.Text = fila[3].ToString();
+                        textNit.Text = fila[4].ToString();
+                        textTelefono.Text = fila[5].ToString();
+                        textCelular.Text = fila[6].ToString();
+                        textFax.Text = fila[7].ToString();
+                        textEmail.Text = fila[8].ToString();
+                        memoEditdireccion.Text = fila[9].ToString();
+                        if (Convert.ToBoolean(fila[10].ToString()) == true)
+                            radioGroup1.SelectedIndex = 1;
+                        else
+                            radioGroup1.SelectedIndex = 0;
+                        textIgss.Text = fila[11].ToString();
+                        gridLookUpEstado.EditValue = fila[12].ToString();
+                        gridLookUpTipoClie.EditValue = fila[13].ToString();
+                        gridLookUpTipoClienteConta.EditValue = fila[14].ToString();
+
+                        textEdit_abrev.Text = fila[15].ToString();
+                        
+                    }
+                    catch
+                    { }
+                }
+            }
+            else
+            {
+                groupControl1.Enabled = false;
+                simpleaceptar.Enabled = false;
+            }
+        }
+        //
+
+
+
         private void insertaCliente()
         {
-            ssql = "INSERT into clientes(nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email, fecha_ingreso, usuario_creador, direccion, socio_comercial, afiliacion_igss, estadoid, codigo_tipoc,tipo_cliente_conta) " +
-            "VALUES ('" + textNombreClie.Text + "', '" + textContacto.Text + "', '" + textNombrePaciente.Text + "', '" + textNit.Text + "', '" + textTelefono.Text + "', '" + textCelular.Text + "', '" + textFax.Text + "', '" + textEmail.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + ", '" + memoEditdireccion.Text + "', " + radioGroup1.SelectedIndex + ", '" + textIgss.Text + "', " + gridLookUpEstado.EditValue + ", " + gridLookUpTipoClie.EditValue + ", " + gridLookUpTipoClienteConta.EditValue + ")";
+            ssql = "INSERT into clientes(nombre_cliente, contacto, nombre_paciente, nit, telefono_casa, telefono_celular, fax_otro_tel, email, fecha_ingreso, usuario_creador, direccion, socio_comercial, afiliacion_igss, estadoid, codigo_tipoc,tipo_cliente_conta,abrev) " +
+                "VALUES ('" + textNombreClie.Text + "', '" + textContacto.Text + "', '" + textNombrePaciente.Text + "', '" + textNit.Text + "', '" + textTelefono.Text + "', '" + textCelular.Text + "', '" + textFax.Text + "', '" + textEmail.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', " + clases.ClassVariables.id_usuario + ", '" + memoEditdireccion.Text + "', " + radioGroup1.SelectedIndex + ", '" + textIgss.Text + "', " + gridLookUpEstado.EditValue + ", " + gridLookUpTipoClie.EditValue + ", " + gridLookUpTipoClienteConta.EditValue +", '"+textEdit_abrev.Text +"' )";
+            
+            
 
             clases.ClassVariables.idnuevo = logicaxela.nuevoid(ssql);
             if (clases.ClassVariables.idnuevo != null)
@@ -224,6 +317,8 @@ namespace ortoxela.Clientes
                                 "nit = '"+textNit.Text+"', telefono_casa = '"+textTelefono.Text+"', telefono_celular = '"+textCelular.Text+"', fax_otro_tel = '"+textFax.Text+"', "+
                                 "email = '" + textEmail.Text + "',fecha_modificacion = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',usuario_modifica = " + clases.ClassVariables.id_usuario + ",direccion ='" + memoEditdireccion.Text + "', " +
                                " socio_comercial = "+radioGroup1.SelectedIndex+", afiliacion_igss = '"+textIgss.Text+"', estadoid = "+gridLookUpEstado.EditValue+", codigo_tipoc = "+gridLookUpTipoClie.EditValue+" "+
+                               " ,abrev = '"+textEdit_abrev.Text+"' "+
+                               
                                     "WHERE codigo_cliente=" + clases.ClassVariables.id_busca;
                         if (clases.ClassMensajes.MODIFICAR(this, ssql))
                         {

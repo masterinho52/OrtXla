@@ -205,7 +205,9 @@ namespace ortoxela.Pedido
                     radioGroup1.SelectedIndex = Convert.ToInt16(Convert.ToBoolean(tempLlena.Rows[0]["contado_credito"]));
                     cadena = "SELECT cli.codigo_cliente,cli.nombre_cliente FROM header_doctos_inv cab INNER JOIN clientes cli ON cli.codigo_cliente=cab.socio_comercial WHERE cab.id_documento=" + id_pedido;
                     tempLlena = logicaorto.Tabla(cadena);
+                if(tempLlena.Rows.Count>0)
                     textSocioComercial.Text = tempLlena.Rows[0]["nombre_cliente"].ToString();
+
                     cadena = "SELECT header_doctos_inv.estadoid FROM header_doctos_inv WHERE header_doctos_inv.id_documento="+id_pedido;
                     tempLlena = logicaorto.Tabla(cadena);
                     int Estado = Convert.ToInt16(tempLlena.Rows[0][0]);
@@ -477,68 +479,129 @@ namespace ortoxela.Pedido
         {
             try
             {
-                cadena = "SELECT header_doctos_inv.id_documento FROM header_doctos_inv INNER JOIN series_documentos ON header_doctos_inv.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_serie='" + gridLookDocFactura.EditValue + "' and header_doctos_inv.no_documento=" + textNumeroDocFactura.Text;
-                if (logicaorto.ExisteRegistro(cadena) == false)
+                if (gridView1.DataRowCount < 12)
                 {
-                    conexion.Close();
-                    conexion.Open();
-                    transa = conexion.BeginTransaction();
-                    string tempoTotalFactura = textTotalFactura.Text.Replace(",", "");
-                    cadena = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento,vendedor) " +
-                            "VALUES (" + gridLookDocFactura.EditValue + "," + gridLookTipoPago.EditValue + ", '" + textNumeroDocFactura.Text + "', " + id_cliente + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ",0," + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ", " + clases.ClassVariables.id_usuario + "," + id_socio_comercial + ",4," + radioGroup1.SelectedIndex + ",'" + textDeposito.Text + "'," + gridLookUpEdit1.EditValue + ");select last_insert_id();";
-                    comando = new MySqlCommand(cadena, conexion);
-                    comando.Transaction = transa;
-                    id_nuevo_factura = comando.ExecuteScalar().ToString();
-                    for (int x = 0; x < gridView4.DataRowCount; x++)
+                    cadena = "SELECT header_doctos_inv.id_documento FROM header_doctos_inv INNER JOIN series_documentos ON header_doctos_inv.codigo_serie=series_documentos.codigo_serie WHERE series_documentos.codigo_serie='" + gridLookDocFactura.EditValue + "' and header_doctos_inv.no_documento=" + textNumeroDocFactura.Text;
+                    if (logicaorto.ExisteRegistro(cadena) == false)
                     {
-                        cadena = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
-                                    "VALUES (" + id_nuevo_factura + ", " + gridView4.GetRowCellValue(x, "CANTIDAD") + ", " + gridView4.GetRowCellValue(x, "UNITARIO") + ", " + gridView4.GetRowCellValue(x, "TOTAL") + ",'" + gridView4.GetRowCellValue(x, "CODIGO") + "', 1)";
+                        conexion.Close();
+                        conexion.Open();
+                        transa = conexion.BeginTransaction();
+                        string tempoTotalFactura = textTotalFactura.Text.Replace(",", "");
+                        cadena = "INSERT into header_doctos_inv(codigo_serie,tipo_pago,no_documento, codigo_cliente, fecha, monto,descuento , monto_neto, usuario_creador,socio_comercial, estadoid,contado_credito,refer_documento,vendedor) " +
+                                "VALUES (" + gridLookDocFactura.EditValue + "," + gridLookTipoPago.EditValue + ", '" + textNumeroDocFactura.Text + "', " + id_cliente + ", '" + dateEdit1.DateTime.ToString("yyyy-MM-dd HH:mm:ss") + "', " + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ",0," + double.Parse(tempoTotalFactura.ToString(), NumberStyles.Currency) + ", " + clases.ClassVariables.id_usuario + "," + id_socio_comercial + ",4," + radioGroup1.SelectedIndex + ",'" + textDeposito.Text + "'," + gridLookUpEdit1.EditValue + ");select last_insert_id();";
+                        comando = new MySqlCommand(cadena, conexion);
+                        comando.Transaction = transa;
+                        id_nuevo_factura = comando.ExecuteScalar().ToString();
+                        for (int x = 0; x < gridView4.DataRowCount; x++)
+                        {
+                            cadena = "INSERT into detalle_doctos_inv(id_documento, cantidad_enviada, precio_unitario, precio_total, codigo_articulo, codigo_bodega) " +
+                                        "VALUES (" + id_nuevo_factura + ", " + gridView4.GetRowCellValue(x, "CANTIDAD") + ", " + gridView4.GetRowCellValue(x, "UNITARIO") + ", " + gridView4.GetRowCellValue(x, "TOTAL") + ",'" + gridView4.GetRowCellValue(x, "CODIGO") + "', 1)";
+                            comando = new MySqlCommand(cadena, conexion);
+                            comando.Transaction = transa;
+                            comando.ExecuteNonQuery();
+                        }
+                        cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
+                                    "VALUES (" + id_cliente + ", " + id_vale + "," + id_nuevo_factura + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
                         comando = new MySqlCommand(cadena, conexion);
                         comando.Transaction = transa;
                         comando.ExecuteNonQuery();
-                    }
-                    cadena = "INSERT into relacion_venta(codigo_cliente, id_vale, id_documento, fecha_creacion, usuario_creador, estadoid) " +
-                                "VALUES (" + id_cliente + ", " + id_vale + "," + id_nuevo_factura + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + clases.ClassVariables.id_usuario + ",4)";
-                    comando = new MySqlCommand(cadena, conexion);
-                    comando.Transaction = transa;
-                    comando.ExecuteNonQuery();
 
-                    cadena = "UPDATE vueltos set vueltos.id_factura=" + id_nuevo_factura + " where vueltos.id_vale=" + id_vale;
-                    comando = new MySqlCommand(cadena, conexion);
-                    comando.Transaction = transa;
-                    comando.ExecuteNonQuery();
-                    cadena = "UPDATE header_doctos_inv SET header_doctos_inv.estadoid=4 WHERE header_doctos_inv.id_documento=" + id_pedido;
-                    comando = new MySqlCommand(cadena, conexion);
-                    comando.Transaction = transa;
-                    comando.ExecuteNonQuery();
-                    transa.Commit();
-                    clases.ClassMensajes.INSERTO(this);
-                    if (radioGroup1.SelectedIndex == 1)
-                    {
-                        LlenaDatosRecibo();
-                        xtraTabPage3.PageVisible = true;
-                    }
+                        cadena = "UPDATE vueltos set vueltos.id_factura=" + id_nuevo_factura + " where vueltos.id_vale=" + id_vale;
+                        comando = new MySqlCommand(cadena, conexion);
+                        comando.Transaction = transa;
+                        comando.ExecuteNonQuery();
+                        cadena = "UPDATE header_doctos_inv SET header_doctos_inv.estadoid=4 WHERE header_doctos_inv.id_documento=" + id_pedido;
+                        comando = new MySqlCommand(cadena, conexion);
+                        comando.Transaction = transa;
+                        comando.ExecuteNonQuery();
+                        transa.Commit();
+                        clases.ClassMensajes.INSERTO(this);
+                        if (radioGroup1.SelectedIndex == 1)
+                        {
+                            LlenaDatosRecibo();
+                            xtraTabPage3.PageVisible = true;
+                        }
 
-                    try
-                    {
-                        Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
-                        reporte.Parameters["ID"].Value = id_nuevo_factura;
-                        reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency).ToString());
-                        
-                        reporte.Parameters["Vende"].Value = textEditVENDEDOR.Text;
-                        reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + textSocioComercial.Text + " - Operado: " + textEdit4.Text;
-                        reporte.RequestParameters = false;
-                        reporte.ShowPreviewDialog();
-                    }
-                    catch
-                    {
+                        try
+                        {
+                            //Pedido.Factura.XtraReportFactura reporte = new Pedido.Factura.XtraReportFactura();
+                            //reporte.Parameters["ID"].Value = id_nuevo_factura;
+                            //reporte.Parameters["LETRAS"].Value = logicaorto.enletras(double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency).ToString());
 
+                            //reporte.Parameters["Vende"].Value = textEditVENDEDOR.Text;
+                            //reporte.Parameters["SM_PC_FO"].Value = "Paciente: " + textNombreCliente.Text + " - Socio Comercial: " + textSocioComercial.Text + " - Operado: " + textEdit4.Text;
+                            //reporte.RequestParameters = false;
+                            //reporte.ShowPreviewDialog();
+
+
+
+
+
+
+                            //k
+
+
+                            string letras = logicaorto.enletras(double.Parse(textTotalDeFactura.Text.ToString(), NumberStyles.Currency).ToString());
+
+                            Pedido.Factura.F_impresion nf = new Pedido.Factura.F_impresion();
+
+                            string con, cre;
+
+                            //ver si es credito o contado
+                            if (radioGroup1.SelectedIndex == 0)
+                            {
+                                con = "X";
+                                cre = " ";
+                            }
+                            else
+                            {
+                                con = " ";
+                                cre = "X";
+                            }
+
+
+
+
+                            if (gridLookDocFactura.Text == "Factura - A")
+                            {
+                                nf.facturaA(Convert.ToInt16(id_nuevo_factura), letras, con, cre, Convert.ToInt16(gridLookDocFactura.EditValue), id_socio_comercial);
+                            }
+                            else if (gridLookDocFactura.Text == "Factura - B")
+                            {
+                                nf.facturaB(Convert.ToInt16(id_nuevo_factura), letras, con, cre, Convert.ToInt16(gridLookDocFactura.EditValue), id_socio_comercial);
+                            }
+                            else if (gridLookDocFactura.Text == "Factura - C")
+                            {
+                                nf.facturaC(Convert.ToInt16(id_nuevo_factura), letras, con, cre, Convert.ToInt16(gridLookDocFactura.EditValue), id_socio_comercial);
+                            }
+                            else if (gridLookDocFactura.Text == "Factura - D")
+                            {
+                                nf.facturaD(Convert.ToInt16(id_nuevo_factura), letras, con, cre, Convert.ToInt16(gridLookDocFactura.EditValue), id_socio_comercial);
+                            }
+                            else if (gridLookDocFactura.Text == "Factura - E")
+                            {
+                                nf.facturaE(Convert.ToInt16(id_nuevo_factura), letras, con, cre, Convert.ToInt16(gridLookDocFactura.EditValue), id_socio_comercial);
+                            }
+
+
+                            nf.ShowDialog();
+                            //k
+                        }
+                        catch
+                        {
+
+                        }
+                        simpleButton9.Enabled = false;
                     }
-                    simpleButton9.Enabled = false;
+                    else
+                    {
+                        alertControl1.Show(this, "INFORMACION", "EL NUMERO DE DOCUMENTO YA EXISTE", Properties.Resources.Advertencia64);
+                    }
                 }
                 else
                 {
-                    alertControl1.Show(this,"INFORMACION","EL NUMERO DE DOCUMENTO YA EXISTE",Properties.Resources.Advertencia64);
+                    MessageBox.Show("No se pueden agregar mas de 12 campos a la factura", "", MessageBoxButtons.OK);
                 }
             }
             catch

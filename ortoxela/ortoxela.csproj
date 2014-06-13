@@ -19,7 +19,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\iPabLiiTo_\Desktop\Version1\</PublishUrl>
+    <PublishUrl>C:\Users\iPabLiiTo_\Desktop\Instalador\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -29,7 +29,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -107,6 +107,7 @@
     <Reference Include="DevExpress.Xpf.ReportDesigner.v12.1.Design, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Ribbon.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Ribbon.v12.1.Design, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -178,6 +179,8 @@
     <Reference Include="System.Core">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq">
@@ -204,6 +207,7 @@
     <Reference Include="System.Xml">
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnulaFactura\FacturaAnula.cs">
@@ -322,6 +326,10 @@
     </Compile>
     <Compile Include="Compra\PrintIngresoProd\XtraReportIngresoProd.Designer.cs">
       <DependentUpon>XtraReportIngresoProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizacion\DataSet_Cotizacion.cs">
+      <DependentUpon>DataSet_Cotizacion.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cotizacion\DataSet_Solicitud_compra.cs">
       <DependentUpon>DataSet_Solicitud_compra.xsd</DependentUpon>
@@ -589,6 +597,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>R_NFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pedido\Vale\DataSet_DG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_DG.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reimpresion\ModContabilidad\Partidas\frm_condicion_conta.cs">
       <SubType>Form</SubType>
@@ -999,6 +1012,22 @@
       <DependentUpon>R_req_aju.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\DataSetTraslado2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTraslado2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\DataSet_ReimpresionTraslado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReimpresionTraslado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.designer.cs">
+      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrasladoBodega\Producto\frm_Existencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1186,6 +1215,38 @@
     <Compile Include="Reportes\Ventas\XtraReport_Ventas_por_SocioComercial.Designer.cs">
       <DependentUpon>XtraReport_Ventas_por_SocioComercial.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrasladoBodega\ReimpresionTraslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrasladoBodega\ReimpresionTraslado.Designer.cs">
+      <DependentUpon>ReimpresionTraslado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\DataSet_BodegaSerie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_BodegaSerie.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\DataSet_BodegaUsuario.cs">
+      <DependentUpon>DataSet_BodegaUsuario.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\DataSet_BodegaUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_BodegaUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\Form_BodegaSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\Form_BodegaSerie.Designer.cs">
+      <DependentUpon>Form_BodegaSerie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\Form_BodegaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosBodegasSeries\Form_BodegaUsuario.Designer.cs">
+      <DependentUpon>Form_BodegaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\CambioContrasena.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1215,17 +1276,6 @@
     </Compile>
     <Compile Include="TipoPago\TipPago.Designer.cs">
       <DependentUpon>TipPago.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TrasladoBodega\PrintTraslado\DataSetTraslado.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.Designer.cs">
-      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
     </Compile>
     <Compile Include="TrasladoBodega\TrasladoBodega.cs">
       <SubType>Form</SubType>
@@ -1570,6 +1620,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>R_req_aju.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.resx">
+      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrasladoBodega\Producto\frm_Existencias.resx">
       <DependentUpon>frm_Existencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -1631,6 +1684,15 @@
     <EmbeddedResource Include="Reportes\Ventas\XtraReport_Ventas_por_SocioComercial.resx">
       <DependentUpon>XtraReport_Ventas_por_SocioComercial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrasladoBodega\ReimpresionTraslado.resx">
+      <DependentUpon>ReimpresionTraslado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosBodegasSeries\Form_BodegaSerie.resx">
+      <DependentUpon>Form_BodegaSerie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosBodegasSeries\Form_BodegaUsuario.resx">
+      <DependentUpon>Form_BodegaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\CambioContrasena.resx">
       <DependentUpon>CambioContrasena.cs</DependentUpon>
     </EmbeddedResource>
@@ -1645,9 +1707,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPago\TipPago.resx">
       <DependentUpon>TipPago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrasladoBodega\PrintTraslado\XtraReportTraslado.resx">
-      <DependentUpon>XtraReportTraslado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrasladoBodega\TrasladoBodega.resx">
       <DependentUpon>TrasladoBodega.cs</DependentUpon>
@@ -1795,6 +1854,17 @@
       <DependentUpon>DataSet_Facturas_Pendientes_Proveedores.xsd</DependentUpon>
     </None>
     <None Include="ortoxela_TemporaryKey.pfx" />
+    <None Include="Pedido\Vale\DataSet_DG.xsc">
+      <DependentUpon>DataSet_DG.xsd</DependentUpon>
+    </None>
+    <None Include="Pedido\Vale\DataSet_DG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_DG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Pedido\Vale\DataSet_DG.xss">
+      <DependentUpon>DataSet_DG.xsd</DependentUpon>
+    </None>
     <None Include="Reimpresion\ModContabilidad\Reportes\DataSetPartidas.xsc">
       <DependentUpon>DataSetPartidas.xsd</DependentUpon>
     </None>
@@ -2188,16 +2258,49 @@
     <None Include="Reportes\Ventas\DataSet_Ventas_TipoCliente.xss">
       <DependentUpon>DataSet_Ventas_TipoCliente.xsd</DependentUpon>
     </None>
-    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xsc">
-      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado2.xsc">
+      <DependentUpon>DataSetTraslado2.xsd</DependentUpon>
     </None>
-    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xsd">
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTraslado2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado2.xss">
+      <DependentUpon>DataSetTraslado2.xsd</DependentUpon>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSet_ReimpresionTraslado.xsc">
+      <DependentUpon>DataSet_ReimpresionTraslado.xsd</DependentUpon>
+    </None>
+    <None Include="TrasladoBodega\PrintTraslado\DataSet_ReimpresionTraslado.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetTraslado.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet_ReimpresionTraslado.Designer.cs</LastGenOutput>
     </None>
-    <None Include="TrasladoBodega\PrintTraslado\DataSetTraslado.xss">
-      <DependentUpon>DataSetTraslado.xsd</DependentUpon>
+    <None Include="TrasladoBodega\PrintTraslado\DataSet_ReimpresionTraslado.xss">
+      <DependentUpon>DataSet_ReimpresionTraslado.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaSerie.xsc">
+      <DependentUpon>DataSet_BodegaSerie.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaSerie.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_BodegaSerie.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaSerie.xss">
+      <DependentUpon>DataSet_BodegaSerie.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaUsuario.xsc">
+      <DependentUpon>DataSet_BodegaUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaUsuario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_BodegaUsuario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UsuariosBodegasSeries\DataSet_BodegaUsuario.xss">
+      <DependentUpon>DataSet_BodegaUsuario.xsd</DependentUpon>
     </None>
     <None Include="Vueltos\Vuelto\DataSetVuelto.xsc">
       <DependentUpon>DataSetVuelto.xsd</DependentUpon>
@@ -2278,6 +2381,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\sociocomercial.ico" />
     <None Include="Resources\Logo final1.jpg" />
     <None Include="Resources\LogoFinal hn.jpg" />
     <None Include="Resources\remove-16.png">

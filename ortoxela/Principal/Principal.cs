@@ -122,6 +122,7 @@ namespace ortoxela.Principal
              DevExpress.Skins.SkinManager.EnableFormSkins();
              DevExpress.UserSkins.BonusSkins.Register();
              defaultLookAndFeel2.LookAndFeel.SkinName = "Office 2010 Silver";
+             
             
             /* registrando los skins */
             BarLocalizer.Active = new MyBarLocalizer();
@@ -2017,7 +2018,92 @@ namespace ortoxela.Principal
             ajreqrep.Show();
         }
 
-     
+        private void barButtonItem138_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            clases.ClassVariables.sociocomercial = false;
+            int cont = 0;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Clientes.form_cliente)
+                    cont++;
+            }
+            if (cont == 0)
+            {
+                clases.ClassVariables.llamadoDentroForm = false;
+                clases.ClassVariables.bandera = 1;
+                //Form nuevo = new Clientes.form_cliente();
+                Clientes.form_cliente nuevo = new Clientes.form_cliente();
+                nuevo.sociocomercial();
+                nuevo.MdiParent = this;
+                nuevo.Show();
+            }
+        }
+
+        private void barButtonItem139_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int cont = 0;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Clientes.form_cliente)
+                    cont++;
+            }
+            if (cont == 0)
+            {
+                clases.ClassVariables.bandera = 2;
+                clases.ClassVariables.llamadoDentroForm = false;
+                //Form nuevo = new Clientes.form_cliente();
+                Clientes.form_cliente nuevo = new Clientes.form_cliente();
+                nuevo.MdiParent = this;
+                nuevo.sociocomercial();
+                clases.ClassVariables.sociocomercial = true;
+                nuevo.Show();
+            }
+        }
+
+        private void barButtonItem140_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int cont = 0;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Clientes.form_cliente)
+                    cont++;
+            }
+            if (cont == 0)
+            {
+                clases.ClassVariables.bandera = 3;
+                clases.ClassVariables.llamadoDentroForm = false;
+                //Form nuevo = new Clientes.form_cliente();
+                //nuevo.MdiParent = this;
+                Clientes.form_cliente nuevo = new Clientes.form_cliente();
+                nuevo.MdiParent = this;
+                nuevo.sociocomercial();
+                clases.ClassVariables.sociocomercial = true;
+                nuevo.Show();
+            }
+        }
+
+        private void barButtonItem141_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            Form reimtras = new TrasladoBodega.ReimpresionTraslado();
+            reimtras.MdiParent = this;
+            reimtras.Show();
+        }
+
+        private void barButtonItem142_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form bodus = new UsuariosBodegasSeries.Form_BodegaUsuario();
+            bodus.MdiParent = this;
+            bodus.Show();
+        }
+
+        private void barButtonItem143_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form serbod = new UsuariosBodegasSeries.Form_BodegaSerie();
+            serbod.MdiParent = this;
+            serbod.Show();
+        }
+
 
 
         
